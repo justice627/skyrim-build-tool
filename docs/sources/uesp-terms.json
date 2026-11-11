@@ -7,6 +7,11 @@
    "section": "Amulet of Talos",
    "missing": false
   },
+  "Bend Will": {
+   "page": "Skyrim:Bend Will",
+   "section": "",
+   "missing": false
+  },
   "Black Book: Epistolary Acumen": {
    "page": "Skyrim:Black Book: Epistolary Acumen",
    "section": "",
@@ -32,9 +37,24 @@
    "section": "",
    "missing": false
   },
+  "Crossbow": {
+   "page": "Skyrim:Crossbow",
+   "section": "",
+   "missing": false
+  },
   "Daedric Gauntlets": {
    "page": "Skyrim:Daedric",
    "section": "Daedric Gauntlets",
+   "missing": false
+  },
+  "Dawnbreaker": {
+   "page": "Skyrim:Dawnbreaker",
+   "section": "",
+   "missing": false
+  },
+  "Dawnguard Rune Axe": {
+   "page": "Skyrim:Dawnguard Rune Axe",
+   "section": "",
    "missing": false
   },
   "Dead Thrall": {
@@ -47,6 +67,16 @@
    "section": "",
    "missing": false
   },
+  "Dragonbone Sword": {
+   "page": "Skyrim:Dragon Items",
+   "section": "Dragonbone Sword",
+   "missing": false
+  },
+  "Dread Zombie": {
+   "page": "Skyrim:Reanimate (spells)",
+   "section": "Dread Zombie",
+   "missing": false
+  },
   "Dual Flurry": {
    "page": "Skyrim:One-handed",
    "section": "Dual Flurry",
@@ -57,9 +87,19 @@
    "section": "Dwarven Crossbow",
    "missing": false
   },
+  "Ebony Dagger": {
+   "page": "Skyrim:Ebony",
+   "section": "Ebony Dagger",
+   "missing": false
+  },
   "Ebonyflesh": {
    "page": "Skyrim:Armor (spells)",
    "section": "Ebonyflesh",
+   "missing": false
+  },
+  "Falmer Heavy Armor": {
+   "page": "Skyrim:Falmer Equipment",
+   "section": "Falmer Heavy Armor",
    "missing": false
   },
   "Falmer War Axe": {
@@ -69,6 +109,11 @@
   },
   "Fear": {
    "page": "Skyrim:Fear",
+   "section": "",
+   "missing": false
+  },
+  "Fire Rune": {
+   "page": "Skyrim:Fire Rune",
    "section": "",
    "missing": false
   },
@@ -87,6 +132,16 @@
    "section": "",
    "missing": false
   },
+  "Frost Cloak": {
+   "page": "Skyrim:Frost Cloak",
+   "section": "",
+   "missing": false
+  },
+  "Frost Rune": {
+   "page": "Skyrim:Frost Rune",
+   "section": "",
+   "missing": false
+  },
   "Fury": {
    "page": "Skyrim:Fury",
    "section": "",
@@ -99,6 +154,31 @@
   },
   "Gloves of the Pugilist": {
    "page": "Skyrim:Gloves of the Pugilist",
+   "section": "",
+   "missing": false
+  },
+  "Greater Ward": {
+   "page": "Skyrim:Ward (spells)",
+   "section": "Greater Ward",
+   "missing": false
+  },
+  "Guild Master's Hood": {
+   "page": "Skyrim:Guild Master's Hood",
+   "section": "",
+   "missing": false
+  },
+  "Invisibility": {
+   "page": "Skyrim:Invisibility",
+   "section": "",
+   "missing": false
+  },
+  "Jester's Clothes": {
+   "page": "Skyrim:Cicero's Clothes",
+   "section": "",
+   "missing": false
+  },
+  "Lightning Rune": {
+   "page": "Skyrim:Lightning Rune",
    "section": "",
    "missing": false
   },
@@ -137,6 +217,11 @@
    "section": "Red Eagle's Fury",
    "missing": false
   },
+  "Revenant": {
+   "page": "Skyrim:Reanimate (spells)",
+   "section": "Revenant",
+   "missing": false
+  },
   "Ring of Bloodlust": {
    "page": "Skyrim:Ring of Bloodlust",
    "section": "",
@@ -144,6 +229,11 @@
   },
   "Ring of Hircine": {
    "page": "Skyrim:Ring of Hircine",
+   "section": "",
+   "missing": false
+  },
+  "Ring of Namira": {
+   "page": "Skyrim:Ring of Namira",
    "section": "",
    "missing": false
   },
@@ -155,6 +245,21 @@
   "Shellbug Helmet": {
    "page": "Skyrim:Animal Parts",
    "section": "Shellbug Helmet",
+   "missing": false
+  },
+  "Spellbreaker": {
+   "page": "Skyrim:Spellbreaker",
+   "section": "",
+   "missing": false
+  },
+  "Spider Scrolls": {
+   "page": "Skyrim:Spider Scrolls",
+   "section": "",
+   "missing": false
+  },
+  "Stalhrim": {
+   "page": "Skyrim:Stalhrim",
+   "section": "",
    "missing": false
   },
   "Targe of the Blooded": {
@@ -187,9 +292,19 @@
    "section": "",
    "missing": false
   },
+  "Wabbajack": {
+   "page": "Skyrim:Wabbajack",
+   "section": "",
+   "missing": false
+  },
   "Windshear": {
    "page": "Skyrim:Windshear",
    "section": "",
+   "missing": false
+  },
+  "Wolf Armor": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Companions Equipment",
    "missing": false
   }
  }

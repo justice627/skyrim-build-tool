@@ -57,11 +57,11 @@ The ledger grouped lore picks by theme, not skills, so 11 sat under builds they 
 
 ## Phase 3b: sourced extras
 
-Spellshield (A6), Witchhunter (A8, vanilla skills only), Vampire Slayer (A9), Druid (A10, with C8 Arcane Beastmaster and C9 Warden), The Preserver (A11), The Madman (A12), Champion of Cyrodiil (A13) and Arcanist (A18). Same pattern as 3a: hand-set weights, `mentions` checked against UESP.
+Status: done (2026-11-11). Eight more builds in "Beyond the class files": Spellshield (A6), Witchhunter (A8, vanilla skills only), Vampire Slayer (A9), Druid (A10), The Preserver (A11), The Madman (A12), Champion of Cyrodiil (A13, weights from FudgeMuppet's The Master) and Arcanist (A18, TheGamer's Spider Mastermind).
 
-- Agent (A15), Pilgrim (A16) and Battlemage (A17) overlap existing builds: add them as aliases or lore picks, not builds.
-- Hold: Divine Crusader (A19, AE-or-mod question unresolved) and Warrior-Poet (A20, derived, spear is a mod).
-- Done when each new build has skills, stone, shouts, a playstyle and an evidence tag.
+- Where a ledger row lists skills without saying which are core (A8, A11, A12, A13), the first two listed get 3 and the rest 2.
+- Lore picks placed by skill fit, not by the ledger's parent: C8 Arcane Beastmaster under Spellshield, C9 Warden under Conjurer (neither fits Druid), A13's lore version Hero of Kvatch under Spellsword, A15 Agent under Trader, A16 Pilgrim under Blacksmith, A17 Battlemage under Bandit chief.
+- Left out: Witchhunter's Purifier and Requiem template (mods). Held: Divine Crusader (A19, AE-or-mod question unresolved) and Warrior-Poet (A20, derived, spear is a mod).
 
 ## Phase 4: perks, together with the user
 

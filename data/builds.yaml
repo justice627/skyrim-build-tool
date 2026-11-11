@@ -559,6 +559,10 @@ builds:
     ref: C19
     evidence: derived
     changes: "Taken from ESO. Fire Destruction, Heavy Armor and shouts, with the Lord Stone."
+  - name: "Hero of Kvatch"
+    ref: A13
+    evidence: derived
+    changes: "The lore version of the Champion of Cyrodiil. One-Handed 3, Heavy Armor 3, Restoration 2, Destruction 2, Sneak 2."
 - id: battle-archer
   family: battle
   name: Battle archer
@@ -644,6 +648,10 @@ builds:
     requires: [DG, DB]
     mentions: ["Falmer War Axe", "Shellbug Helmet", "The Black Star (item)", "Ebonyflesh"]
     changes: "Argonian. Lover Stone, then Atronach. One-Handed, Alteration and Heavy Armor. Two Falmer war axes, the Shellbug Helmet and the Black Star. Paralyze and Ebonyflesh."
+  - name: "Battlemage"
+    ref: A17
+    evidence: partly-sourced
+    changes: "The Battlemage class from Oblivion. One-Handed or Two-Handed, Conjuration, Destruction, Alteration and Alchemy."
 - id: forsworn-briarheart
   family: battle
   name: Forsworn briarheart
@@ -749,6 +757,10 @@ builds:
     evidence: derived
     npc: "Esbern"
     changes: "The archivist. A Restoration and Destruction scholar."
+  - name: "Warden"
+    ref: C9
+    evidence: derived
+    changes: "Taken from ESO's Warden. Frost Destruction, Restoration and Conjuration for a familiar, in light armor."
 - id: mystic
   family: robe
   name: Mystic
@@ -987,6 +999,11 @@ builds:
   description: >-
     Smithing and Speech: forge it, sell it. A one-hander and shield to protect the shop. Start at Warmaiden's
     or the Skyforge and build a business before an adventure.
+  lore:
+  - name: "Pilgrim"
+    ref: A16
+    evidence: partly-sourced
+    changes: "The Pilgrim class: an armed traveler who trades and persuades. Speech, Smithing, Block, a one-handed mace, Light Armor, Restoration and Lockpicking."
 - id: apothecary
   family: craft
   name: Apothecary
@@ -1061,6 +1078,11 @@ builds:
   description: >-
     Speech and Sneak lead, with Pickpocket and Lockpicking for acquiring stock. Haggle, fence and buy
     property. Combat is a last resort.
+  lore:
+  - name: "Agent"
+    ref: A15
+    evidence: partly-sourced
+    changes: "The Agent class from Morrowind and Oblivion: an infiltrator and talker. Illusion, Speech, Sneak, Lockpicking and Pickpocket, with Archery as the weapon. Dress to blend in."
 - id: laborer
   family: folk
   name: Laborer
@@ -1340,3 +1362,125 @@ builds:
     evidence: partly-sourced
     mentions: ["Windshear", "Chain Lightning"]
     changes: "Redguard. Adds Destruction for Chain Lightning. Elemental Fury and Slow Time keep enemies staggered."
+- id: spellshield
+  family: beyond
+  name: Spellshield
+  inspired_by: Community shield-and-spell builds (TheGamer)
+  weights: {DES: 3, BLO: 3, HVA: 3, RES: 2, ILU: 2, CON: 2, Hea: 2, Mag: 2, Sta: 1}
+  evidence: partly-sourced
+  ref: A6
+  stone: {early: mage, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, fire-breath, become-ethereal], evidence: derived}
+  mentions: ["Spellbreaker", "Frost Cloak", "Chain Lightning", "Frenzy", "Greater Ward"]
+  description: >-
+    A shield in one hand and spells in the other, with no melee weapon at all. Bash with the shield to
+    stagger, then follow with Chain Lightning or Frost Cloak. Spellbreaker and Greater Ward stop incoming
+    magic. Frenzy turns crowds on each other. Sources call it strong on every difficulty.
+  lore:
+  - name: "Arcane Beastmaster"
+    ref: C8
+    evidence: partly-sourced
+    requires: [DB]
+    mentions: ["Bend Will"]
+    changes: "FudgeMuppet's Bosmer conjurer. Atronach Stone. Conjuration, Illusion, Enchanting, Block and Restoration with a Bonemold shield. Bend Will tames beasts. J'zargo as the follower."
+- id: witchhunter
+  family: beyond
+  name: Witchhunter
+  inspired_by: The Witchhunter class from Morrowind and Oblivion
+  weights: {ARC: 3, CON: 3, DES: 2, ALC: 2, ENC: 2, LOC: 2, Hea: 2, Mag: 1, Sta: 1}
+  evidence: partly-sourced
+  ref: A8
+  stone: {early: thief, final: mage, evidence: derived, ref: A8}
+  shouts: {ids: [aura-whisper, slow-time, marked-for-death], evidence: derived}
+  mentions: ["Bound Bow"]
+  description: >-
+    Hunts vampires, necromancers and witches. The bow is the main weapon, often a Bound Bow from
+    Conjuration, with Destruction for close calls. Alchemy and Enchanting tune the kit for each target.
+    Lockpicking gets you into their lairs.
+- id: vampire-slayer
+  family: beyond
+  name: Vampire Slayer
+  inspired_by: Community Dawnguard builds (GamersDecide)
+  weights: {ARC: 3, 1HD: 3, ENC: 2, RES: 2, LTA: 2, Hea: 2, Mag: 1, Sta: 2}
+  evidence: partly-sourced
+  ref: A9
+  requires: [DG]
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [aura-whisper, unrelenting-force, marked-for-death], evidence: derived}
+  mentions: ["Dawnbreaker", "Dawnguard Rune Axe", "Crossbow"]
+  description: >-
+    Join the Dawnguard and hunt vampires. A crossbow does the long work, a one-handed weapon the short
+    work: Dawnbreaker or a Dawnguard Rune Axe. Restoration covers healing and harms the undead. Enchanting
+    keeps the kit sharp.
+- id: druid
+  family: beyond
+  name: Druid
+  inspired_by: Community nature builds (GamersDecide)
+  weights: {ALT: 3, ILU: 3, 1HD: 2, ALC: 2, Hea: 1, Mag: 2, Sta: 1}
+  evidence: partly-sourced
+  ref: A10
+  stone: {early: mage, final: lady, evidence: derived}
+  shouts: {ids: [animal-allegiance, kynes-peace, clear-skies], evidence: partly-sourced, ref: A10}
+  description: >-
+    A nature keeper who never kills wildlife. Alteration and Illusion do most of the work, with a staff or
+    a light one-handed weapon and Alchemy from what you gather. Animal Allegiance and Kyne's Peace turn the
+    wild into allies. An animal companion fits the theme.
+- id: preserver
+  family: beyond
+  name: The Preserver
+  inspired_by: FudgeMuppet's Preserver, a necromancer archer
+  weights: {CON: 3, ARC: 3, HVA: 2, SMI: 2, ENC: 2, Hea: 2, Mag: 2, Sta: 1}
+  evidence: partly-sourced
+  ref: A11
+  requires: [DG, DB]
+  stone: {early: ritual, evidence: partly-sourced, ref: A11}
+  shouts: {ids: [summon-durnehviir, soul-tear], evidence: partly-sourced, ref: A11}
+  mentions: ["Falmer Heavy Armor", "Stalhrim", "Ring of Namira", "The Black Star (item)", "Revenant", "Dread Zombie", "Dead Thrall"]
+  description: >-
+    A Bosmer archer turned necromancer. Shoot from behind a crowd of the dead: Revenant, Dread Zombie and
+    then Dead Thrall. Falmer Heavy Armor and a Stalhrim bow from Smithing. The Ring of Namira and the Black
+    Star complete the dark side. Soul Tear and Summon Durnehviir add more undead.
+- id: madman
+  family: beyond
+  name: The Madman
+  inspired_by: FudgeMuppet's Madman, a Sheogorath jester
+  weights: {1HD: 3, SNK: 3, ENC: 2, ALC: 2, SPE: 2, Hea: 2, Mag: 1, Sta: 1}
+  evidence: partly-sourced
+  ref: A12
+  stone: {early: lover, final: atronach, evidence: partly-sourced, ref: A12}
+  shouts: {ids: [unrelenting-force, ice-form, storm-call], evidence: partly-sourced, ref: A12}
+  mentions: ["Wabbajack", "Ebony Dagger", "Jester's Clothes"]
+  description: >-
+    A jester serving Sheogorath. Sneak in with an Ebony Dagger, talk your way out, and let the Wabbajack
+    decide the rest. Jester's Clothes complete the look. Enchanting and Alchemy feed the dagger.
+- id: champion-of-cyrodiil
+  family: beyond
+  name: Champion of Cyrodiil
+  inspired_by: FudgeMuppet's The Master, framed as the Hero of Kvatch
+  aliases: [The Master]
+  weights: {ENC: 3, 1HD: 3, CON: 2, ILU: 2, SNK: 2, Hea: 2, Mag: 2, Sta: 1}
+  evidence: partly-sourced
+  ref: A13
+  requires: [DG, DB]
+  stone: {early: lover, final: lord, evidence: partly-sourced, ref: A13}
+  shouts: {ids: [become-ethereal, slow-time, unrelenting-force], evidence: derived}
+  mentions: ["Guild Master's Hood", "Wolf Armor", "Dragonbone Sword", "The Black Star (item)", "Pacify", "Invisibility", "Muffle"]
+  description: >-
+    The hero who led every guild. A Dragonbone Sword, Wolf Armor and the Guild Master's Hood, with
+    atronachs from Conjuration. Illusion handles the rest: Muffle, Invisibility and Pacify. The Black Star
+    keeps the enchantments charged.
+- id: arcanist
+  family: beyond
+  name: Arcanist
+  inspired_by: TheGamer's Spider Mastermind, a rune trapper
+  aliases: [Spider Mastermind]
+  weights: {DES: 3, ALT: 3, Hea: 1, Mag: 3, Sta: 1}
+  evidence: partly-sourced
+  ref: A18
+  requires: [DB]
+  stone: {early: mage, final: atronach, evidence: derived}
+  shouts: {ids: [slow-time, become-ethereal, throw-voice], evidence: derived}
+  mentions: ["Fire Rune", "Frost Rune", "Lightning Rune", "Spider Scrolls"]
+  description: >-
+    Set traps, then lure enemies into them. Fire Rune, Frost Rune and Lightning Rune do the damage.
+    Alteration keeps you alive while they walk in. Dragonborn's spider scrolls add more trap types.
