@@ -7,7 +7,7 @@ Writes two files to dist/:
 import json
 import re
 
-from common import ATTRS, ROOT, SCHOOL, SKILLS, by_id, load, load_lookup, weights
+from common import ATTRS, ROOT, SCHOOL, SKILLS, by_id, load, load_lookup, npc_classes, weights
 
 LEVELS = 49  # level-ups from level 2 to 50
 
@@ -68,7 +68,27 @@ def npc_name(page_name):
     return re.sub(r"\s*\([^)]*\)$", "", page_name)
 
 
-def render_build(b, classes, stones, shouts):
+def render_lore(b, build_of_npc):
+    """Ledger C picks. `where` names the build the NPC's own UESP class sits in, when that is another build."""
+    out = []
+    for e in b.get("lore", []):
+        home = build_of_npc.get(e.get("npc"))
+        out.append({"n": e["name"], "ref": e["ref"], "changes": e["changes"], "ev": e["evidence"],
+                    "req": e.get("requires", []), "npc": npc_name(e["npc"]) if "npc" in e else "",
+                    "where": home if home and home != b["name"] else ""})
+    return out
+
+
+def npc_homes(doc):
+    """NPC name -> name of the build that holds the NPC's class."""
+    build_of_class = {}
+    for b in doc["builds"]:
+        for e in b["classes"] + [c for v in b.get("variants", []) for c in v["classes"]]:
+            build_of_class[e] = b["name"]
+    return {n: build_of_class[e] for e, names in npc_classes().items() for n in names if e in build_of_class}
+
+
+def render_build(b, classes, stones, shouts, homes):
     w = weights(classes, b["classes"][0])
     attrs, why = plan(w)
     variants = []
@@ -82,7 +102,8 @@ def render_build(b, classes, stones, shouts):
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
-        "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []), "ev": b["evidence"], **render_picks(b, stones, shouts),
+        "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []),
+        "lore": render_lore(b, homes), "ev": b["evidence"], **render_picks(b, stones, shouts),
     }
 
 
@@ -94,9 +115,10 @@ def render_race(r):
 def page_data():
     classes, doc, races = load()
     stones, shouts = by_id(load_lookup("stones")), by_id(load_lookup("shouts"))
+    homes = npc_homes(doc)
     return {
         "fams": doc["families"],
-        "builds": [render_build(b, classes, stones, shouts) for b in doc["builds"]],
+        "builds": [render_build(b, classes, stones, shouts, homes) for b in doc["builds"]],
         "races": [render_race(r) for r in races],
     }
 

@@ -8,6 +8,8 @@
 #   shouts    {ids (2 to 4), evidence, ref (optional)}; ids from shouts.yaml
 #   examples  optional, up to 3 named NPCs who use the build's classes (from docs/sources/uesp-npc-classes.json);
 #             variants can have their own examples
+#   lore      optional ledger C picks: {name, ref, evidence, changes, requires (optional), npc (optional,
+#             must be in the UESP NPC data)}. Text is condensed from the ledger row, nothing added.
 #   requires  optional list of extra requirements beyond the shouts (DG, HF, DB, CC, AE)
 families:
 - id: steel
@@ -49,9 +51,9 @@ families:
 builds:
 - id: housecarl
   family: steel
-  name: Housecarl
+  name: Warrior
   inspired_by: Generic warriors, mercenaries and the one-handed trainers
-  aliases: [Warrior]
+  aliases: [Housecarl]
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
@@ -69,7 +71,7 @@ builds:
     examples: ["Khayla"]
     classes:
     - TrainerSneakJourneyman
-  - label: 'Speech journeyman trainer: adds Speech 3'
+  - label: 'Knight (Speech journeyman trainer): adds Speech 3'
     examples: ["Revyn Sadri"]
     classes:
     - TrainerSpeechcraftJourneyman
@@ -81,6 +83,11 @@ builds:
     Sword, shield and the heaviest plate you can carry. Pull with the bow, then hold the doorway and trade
     blows. No Magicka at all, so healing comes from potions and food. The safest first character in the
     game.
+  lore:
+  - name: "Eternal Champion"
+    ref: C40
+    evidence: derived
+    changes: "A sword-and-board lore label for the Warrior."
 - id: greatsword-mercenary
   family: steel
   name: Greatsword mercenary
@@ -98,9 +105,24 @@ builds:
     classes:
     - TrainerTwoHandedMaster
   description: >-
-    The Housecarl with the shield swapped for a greatsword or warhammer. Heavy armor soaks the hits while
+    The Warrior with the shield swapped for a greatsword or warhammer. Heavy armor soaks the hits while
     power attacks stagger. Block stays useful for bashing even without a shield. Stamina is your real
     resource, so keep a few potions for long fights.
+  lore:
+  - name: "Redoran Swordmaster"
+    ref: C26
+    evidence: partly-sourced
+    requires: [DB]
+    changes: "Lord Stone. Two-Handed, Block, Alteration and Restoration. Redoran Watchman's Helmet, an Ebony Greatsword, and Slow Time."
+  - name: "Kodlak"
+    ref: C27
+    evidence: derived
+    npc: "Kodlak Whitemane"
+    changes: "A Skyforge Steel greatsword, and no beast blood."
+  - name: "Ysgramor"
+    ref: C27
+    evidence: derived
+    changes: "Wuuthrad, which cannot be used with the Shield of Ysgramor. Battle Fury, if you have Dragonborn."
 - id: orc-stronghold-guard
   family: steel
   name: Orc stronghold guard
@@ -248,9 +270,9 @@ builds:
     A tougher, less stealthy archer than the Bosmer classic.
 - id: scout
   family: bow
-  name: Scout
+  name: Stealth Archer
   inspired_by: Combat scouts and the Sneak expert trainer
-  aliases: [Stealth Archer]
+  aliases: [Scout]
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: partly-sourced, ref: B7}
   shouts: {ids: [aura-whisper, slow-time, throw-voice], evidence: partly-sourced, ref: B7}
@@ -265,6 +287,11 @@ builds:
   description: >-
     Stealth archer with Restoration for self-healing and a touch of Alteration. Even three-way attribute
     split. Scout ahead, shoot first, heal between fights instead of buying potions.
+  lore:
+  - name: "Oblivion Scout"
+    ref: C37
+    evidence: partly-sourced
+    changes: "Melee instead of the bow: One-Handed, Block, Light Armor, Alchemy and Smithing."
 - id: thalmor-archer
   family: bow
   name: Thalmor archer
@@ -292,8 +319,9 @@ builds:
     for the land. Natural fit for a Breton.
 - id: cutpurse
   family: shadow
-  name: Cutpurse
+  name: Thief
   inspired_by: Combat thieves and the Thieves Guild trainers
+  aliases: [Cutpurse]
   evidence: sourced
   stone: {early: thief, final: tower, evidence: derived, ref: F1}
   shouts: {ids: [throw-voice, whirlwind-sprint, become-ethereal], evidence: derived}
@@ -303,7 +331,7 @@ builds:
   - TrainerPickpocketMaster
   - TrainerSneakMaster
   variants:
-  - label: 'Lockpicking master trainer: Lockpicking 4'
+  - label: 'Burglar (Lockpicking master trainer): Lockpicking 4'
     examples: ["Vex"]
     classes:
     - TrainerLockpickMaster
@@ -325,6 +353,20 @@ builds:
     Light armor and Sneak, bow and blade as tools rather than the point. Stamina-heavy with no Magicka,
     so you run, jump and escape. Pick a variant for your specialty: locks, archery, pockets or the silver
     tongue.
+  lore:
+  - name: "Brynjolf"
+    ref: C33
+    evidence: derived
+    npc: "Brynjolf"
+    changes: "Guild fixer. Speech 3, Pickpocket 3."
+  - name: "Barenziah"
+    ref: C33
+    evidence: derived
+    changes: "Noble thief. Dunmer, with the Crown of Barenziah."
+  - name: "Acrobat"
+    ref: C33
+    evidence: derived
+    changes: "Light gear and the Steed Stone."
 - id: rogue
   family: shadow
   name: Rogue
@@ -338,6 +380,16 @@ builds:
   description: >-
     The melee thief: one-hander, shield, light armor, Sneak. Sneak attacks open fights; the shield ends
     the ones that go loud. Equal Health and Stamina.
+  lore:
+  - name: "Mercer Frey"
+    ref: C31
+    evidence: derived
+    npc: "Mercer Frey"
+    changes: "Dual wielding, and Illusion for Invisibility. Chillrend."
+  - name: "Silver-tongued Rogue"
+    ref: C32
+    evidence: partly-sourced
+    changes: "Oblivion's Rogue. Adds Illusion, Alchemy and Speech."
 - id: blades-agent
   family: shadow
   name: Blades agent
@@ -351,6 +403,17 @@ builds:
   description: >-
     Bow, katana, shield and Sneak. Hunt dragons from cover and finish them in close. The NPC file puts
     half its points into Magicka with no spells; the plan below moves them into Stamina.
+  lore:
+  - name: "Delphine"
+    ref: C34
+    evidence: derived
+    npc: "Delphine"
+    changes: "Blades armor and a Blades sword."
+  - name: "Esbern"
+    ref: C34
+    evidence: derived
+    npc: "Esbern"
+    changes: "The archivist. A Restoration and Destruction scholar."
 - id: assassin
   family: assassin
   name: Assassin
@@ -373,6 +436,12 @@ builds:
   description: >-
     Dagger sneak attacks and a bow, light armor, a little Alteration. Stamina leads. Kill quietly, contract
     by contract, and never be in the fight for long.
+  lore:
+  - name: "Astrid or the Listener"
+    ref: C29
+    evidence: derived
+    npc: "Astrid"
+    changes: "Dagger and Alchemy. Blade of Woe, Ancient Shrouded Armor and Shadowmere."
 - id: nightingale
   family: assassin
   name: Nightingale
@@ -386,6 +455,12 @@ builds:
     Bow and sword from the shadows, Destruction as a third weapon, light armor. Health-heavy for a stealth
     build, so you survive when the ambush fails. Natural fit for a Thieves Guild run that ends with the
     Nightingale armor.
+  lore:
+  - name: "Karliah"
+    ref: C30
+    evidence: derived
+    npc: "Karliah"
+    changes: "Archery 3, Sneak 3, Alchemy 2 for paralysis poisons, Illusion 2."
 - id: nightblade
   family: assassin
   name: Nightblade
@@ -400,6 +475,11 @@ builds:
     Destruction sneak attacks: Sneak and Destruction lead, Alteration for armor, a one-hander for close
     range. Even attribute split. Works best with Illusion Quiet Casting if you add it, or a Dunmer for
     the Destruction head start.
+  lore:
+  - name: "Illusion Assassin"
+    ref: C24
+    evidence: partly-sourced
+    changes: "Altmer. Illusion replaces Destruction. Bound Dagger, Frenzy and Invisibility, with Aura Whisper."
 - id: vampire
   family: assassin
   name: Vampire
@@ -413,6 +493,19 @@ builds:
   description: >-
     Sneak first, then a blade, Conjuration and Destruction for thralls and drains, light armor. Plays
     from the night. Pair with Vampire Lord or the vanilla vampire stages for Drain Life and Night Eye.
+  lore:
+  - name: "Serana"
+    ref: C28
+    evidence: derived
+    requires: [DG]
+    npc: "Serana"
+    changes: "Pureblood necromancer. Conjuration, frost Destruction and a dagger. Vampire Royal Armor."
+  - name: "Harkon"
+    ref: C28
+    evidence: derived
+    requires: [DG]
+    npc: "Lord Harkon"
+    changes: "Plays as a Vampire Lord, with its perk tree."
 - id: spellsword
   family: battle
   name: Spellsword
@@ -436,6 +529,16 @@ builds:
   description: >-
     Heavy armor, a one-hander, Destruction in the off hand and Restoration to heal. Even attribute split.
     The classic hybrid: never the best at anything, almost never in trouble.
+  lore:
+  - name: "The Mechanist"
+    ref: C18
+    evidence: partly-sourced
+    requires: [DG, DB]
+    changes: "Redguard. Lover Stone, then Atronach. Adds Block. Dwarven armor, Visage of Mzund, Spellbreaker, Keening and the Aetherial Staff."
+  - name: "Dragonknight"
+    ref: C19
+    evidence: derived
+    changes: "Taken from ESO. Fire Destruction, Heavy Armor and shouts, with the Lord Stone."
 - id: battle-archer
   family: battle
   name: Battle archer
@@ -484,6 +587,11 @@ builds:
   description: >-
     A mage who wears plate. Destruction and Illusion lead, heavy armor and a sword back them up. Magicka
     first, but enough Health to survive melee.
+  lore:
+  - name: "Jagar Tharn"
+    ref: C35
+    evidence: derived
+    changes: "Illusion 3, Destruction 3. A courtly impostor."
 - id: penitus-oculatus-agent
   family: battle
   name: Penitus Oculatus agent
@@ -497,6 +605,12 @@ builds:
   description: >-
     One-hander and heavy armor with Destruction backup and a shield. Even attribute split. A bodyguard
     who fights in formation and burns what the sword misses.
+  lore:
+  - name: "The Imperial Spectre"
+    ref: C25
+    evidence: partly-sourced
+    requires: [DG, DB]
+    changes: "Imperial vampire. Lady Stone. Block, One-Handed, Illusion and Sneak. Penitus Oculatus armor, the Blades Sword and Harkon's Sword."
 - id: bandit-chief
   family: battle
   name: Bandit chief
@@ -550,9 +664,9 @@ builds:
     split. The most balanced file in the game. A good base for a no-specialty roleplay.
 - id: destruction-mage
   family: robe
-  name: Destruction mage
+  name: True Mage
   inspired_by: Combat destruction and elemental mages, and Neloth
-  aliases: [Mage, True Mage]
+  aliases: [Destruction mage, Mage]
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived, ref: F1}
   shouts: {ids: [fire-breath, frost-breath, become-ethereal], evidence: derived}
@@ -596,6 +710,19 @@ builds:
   description: >-
     Summons and thralls do the fighting while you heal from behind them. Destruction or a dagger for finishing.
     Magicka-heavy. Pairs with the Breton race.
+  lore:
+  - name: "Mannimarco"
+    ref: C20
+    evidence: derived
+    changes: "A lore hook for the necromancer variant."
+  - name: "Sorcerer"
+    ref: C21
+    evidence: partly-sourced
+    changes: "Adds Heavy Armor, like Oblivion's Sorcerer. The tank version is a Breton in Daedric armor with a shield, the Sanguine Rose and two Dremora Lords."
+  - name: "Storm Sorcerer"
+    ref: C22
+    evidence: derived
+    changes: "Taken from ESO. Conjuration plus shock Destruction."
 - id: mystic
   family: robe
   name: Mystic
@@ -627,6 +754,12 @@ builds:
   description: >-
     Illusion and Destruction together: frenzy a room, burn the survivors. Alteration for armor, Sneak
     for quiet casting. A dagger as a last resort.
+  lore:
+  - name: "The Desert Magician"
+    ref: C23
+    evidence: partly-sourced
+    requires: [DG, DB]
+    changes: "Redguard Volkihar vampire. Atronach Stone. Harmony, Hysteria and Mayhem. Black Book powers and Telvanni robes."
 - id: thalmor-wizard
   family: robe
   name: Thalmor wizard
@@ -640,6 +773,12 @@ builds:
   description: >-
     Conjuration and Destruction lead, a little Alteration and Restoration. Health and Magicka only. Atronach
     in front, lightning behind it.
+  lore:
+  - name: "Ancano"
+    ref: C36
+    evidence: derived
+    npc: "Ancano"
+    changes: "Altmer. Shock Destruction 3, Alteration 2."
 - id: hedge-wizard
   family: robe
   name: Hedge wizard
@@ -661,6 +800,12 @@ builds:
   description: >-
     Self-taught caster: Destruction with Alteration and Restoration, light armor and some Sneak. Less
     glass than a College mage. Good fit for an outlaw or nomad roleplay.
+  lore:
+  - name: "Staff Wizard"
+    ref: C39
+    evidence: partly-sourced
+    requires: [DB]
+    changes: "Staves and scrolls only. A Soul Trap staff recharges the rest. The spider scrolls need Dragonborn."
 - id: spell-merchant
   family: robe
   name: Spell merchant
@@ -712,6 +857,19 @@ builds:
     Restoration and Speech lead, with Alchemy, Smithing and Enchanting for a supporting craft. The NPC
     files grow Stamina instead of Magicka; the plan below moves it to Magicka. A pacifist-leaning healer
     run.
+  lore:
+  - name: "Cleric"
+    ref: C14
+    evidence: partly-sourced
+    changes: "Lord Stone. Restoration, One-Handed, Alteration, Block and Enchanting. A mace, the amulet of one chosen Divine, and Banish Daedra."
+  - name: "Healer"
+    ref: C15
+    evidence: partly-sourced
+    changes: "Adds Alteration, Illusion and Alchemy, with light Destruction. Mage or Apprentice Stone."
+  - name: "Priest of Akatosh"
+    ref: C16
+    evidence: derived
+    changes: "Modeled on Martin Septim. Restoration 3, Speech 3, Conjuration 2. Amulet of Akatosh."
 - id: monk
   family: holy
   name: Monk
@@ -748,6 +906,16 @@ builds:
   description: >-
     Paladin: sword and shield in heavy armor, Restoration for Sun damage against undead and vampires,
     Alteration for wards. Health-first. Built for a Dawnguard run.
+  lore:
+  - name: "Paladin"
+    ref: C12
+    evidence: partly-sourced
+    changes: "One-Handed, Heavy Armor, Restoration, Smithing and Enchanting. Health first, then Magicka, then Stamina. Dawnbreaker, Bolar's Oathblade and the Amulet of Arkay. Avoids Daedric gear."
+  - name: "Isran"
+    ref: C13
+    evidence: derived
+    requires: [DG]
+    changes: "Two-Handed 3, Heavy Armor 3, Restoration 2, plus a crossbow. Dawnguard heavy armor and rune weapons."
 - id: blacksmith
   family: craft
   name: Blacksmith
@@ -833,6 +1001,12 @@ builds:
   description: >-
     Speech 4 leads, with Illusion for Calm and Courage, Alteration and Pickpocket on the side. A dagger
     and bow you barely use. Talk your way through, starting at the Bards College in Solitude.
+  lore:
+  - name: "Battle Bard"
+    ref: C17
+    evidence: partly-sourced
+    requires: [DG, DB]
+    changes: "Nord. Lover Stone, then Atronach. Restoration, Illusion, Enchanting, One-Handed and Speech. Grand Healing, Rally and Pacify, with Soul Tear and Cyclone."
 - id: trader
   family: craft
   name: Trader
@@ -898,8 +1072,9 @@ builds:
     theft. A hard challenge run with no real combat skill.
 - id: prisoner
   family: folk
-  name: Prisoner
-  inspired_by: Prisoners
+  name: Crafter
+  inspired_by: Prisoners (the class is pure Smithing, Enchanting and Alchemy)
+  aliases: [Prisoner]
   evidence: sourced
   stone: {early: lover, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, whirlwind-sprint], evidence: derived}
@@ -988,9 +1163,9 @@ builds:
     file wastes points on Magicka; the plan moves them into Stamina.
 - id: blade-binder
   family: legend
-  name: Blade Binder
+  name: Bound Warrior
   inspired_by: Creation Club class
-  aliases: [Bound Warrior, Warrior Mystic]
+  aliases: [Blade Binder, Warrior Mystic]
   evidence: sourced
   stone: {early: mage, final: lady, evidence: derived}
   shouts: {ids: [slow-time, whirlwind-sprint, become-ethereal], evidence: derived}

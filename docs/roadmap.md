@@ -26,6 +26,19 @@ Rename Cutpurse to Thief. Everything else from ledger B becomes an alias (Stealt
 
 - Add the named-character variants from ledger C: Kodlak, Vilkas, Delphine, Karliah, Isran, Serana, Astrid, Tolfdir and the rest.
 - Done when every row of ledgers B and C is applied or marked rejected.
+- Status: done (2026-11-11).
+
+| Rows | Result |
+|---|---|
+| B1 Cutpurse, B3 Prisoner, B7 Scout | Renamed to Thief, Crafter, Stealth Archer; old names are aliases |
+| B9 Destruction mage, B12 Blade Binder | Renamed to True Mage, Bound Warrior; old names are aliases |
+| B11 Housecarl | Renamed to Warrior, the class's own UESP name; Housecarl is an alias |
+| B2, B6 | Variants renamed Knight and Burglar |
+| B4 Vilkas, B5 Tolfdir | Kept as trainer variants; both show as Examples from UESP |
+| B8 Crusader, B10 Archer, B13 Witcher, Paladin | Kept as aliases; Spellsword, Ranger, Witchblade and Vigilant keep their names |
+| C12 to C37, C39, C40 | Added as lore picks under the ledger's parent build; where UESP puts the NPC's class elsewhere, the pick says so |
+| C20 Bone Shepherd | Rejected: needs a mod. Mannimarco kept as a lore hook |
+| C1 to C11, C38 | Deferred to Phase 3: parents are new builds (Tongue, Werewolf, Poisoner, Druid, Dual-wielder, Pugilist) or need beast form |
 
 ## Phase 3: new builds for the five gaps
 

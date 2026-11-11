@@ -8,6 +8,8 @@ Rules:
 - every class in classes.json is used exactly once across all builds
 - races use real skill names and a three-part attribute ratio
 - stones.yaml and shouts.yaml entries have unique ids, a name, an effect, a known requirement and evidence grade
+- every lore pick (ledger C) has a name, a C-row ref, changes text, a known evidence grade and requirements,
+  and any npc it names exists in the saved UESP NPC data
 - every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
@@ -32,6 +34,25 @@ def check_lookup(kind, entries, errors):
             errors.append(f"{kind} {e.get('id')}: unknown requires {e.get('requires')!r}")
         if e.get("evidence") not in EVIDENCE:
             errors.append(f"{kind} {e.get('id')}: unknown evidence {e.get('evidence')!r}")
+
+
+LORE_REF = re.compile(r"C\d+")
+
+
+def check_lore(name, b, known_npcs, errors):
+    names = Counter(str(e.get("name", "")).strip() for e in b.get("lore", []))
+    errors += [f"{name}: lore pick {n!r} appears {k} times" for n, k in names.items() if k > 1]
+    for e in b.get("lore", []):
+        label = f"{name} [lore {e.get('name')!r}]"
+        if not str(e.get("name", "")).strip() or not str(e.get("changes", "")).strip():
+            errors.append(f"{label}: needs a name and changes")
+        if not LORE_REF.fullmatch(str(e.get("ref", ""))):
+            errors.append(f"{label}: ref {e.get('ref')!r} is not a ledger C row")
+        if e.get("evidence") not in EVIDENCE:
+            errors.append(f"{label}: unknown evidence {e.get('evidence')!r}")
+        errors += [f"{label}: unknown requires {r!r}" for r in e.get("requires", []) if r not in REQUIRES]
+        if "npc" in e and e["npc"] not in known_npcs:
+            errors.append(f"{label}: npc {e['npc']!r} is not in the UESP NPC data")
 
 
 def check_picks(name, b, stones, shouts, errors):
@@ -63,6 +84,7 @@ def main():
     stone_list, shout_list = load_lookup("stones"), load_lookup("shouts")
     stones, shouts = by_id(stone_list), by_id(shout_list)
     npcs = npc_classes()
+    all_npcs = set().union(*npcs.values())
     errors = []
     check_lookup("stone", stone_list, errors)
     check_lookup("shout", shout_list, errors)
@@ -90,6 +112,7 @@ def main():
     for b in doc["builds"]:
         name = b.get("name", b["id"])
         check_picks(name, b, stones, shouts, errors)
+        check_lore(name, b, all_npcs, errors)
         for a in b.get("aliases", []):
             if not isinstance(a, str) or not a.strip():
                 errors.append(f"{name}: empty alias")
