@@ -43,7 +43,7 @@ Rename Cutpurse to Thief. Everything else from ledger B becomes an alias (Stealt
 
 ## Phase 3a: the builds no class file can express
 
-Status: done (2026-11-11). Six builds in a new family, "Beyond the class files": Pugilist (A1), Tongue (A2), Werewolf (A3), Pacifist (A4, with Puppet Master A7 as a lore pick), Poisoner (A5) and Dual-wielder (A14).
+Status: done (2026-11-11). Six builds in a new family, "Community builds" (first named "Beyond the class files"): Pugilist (A1), Tongue (A2), Werewolf (A3), Pacifist (A4, with Puppet Master A7 as a lore pick), Poisoner (A5) and Dual-wielder (A14).
 
 - Hand-set `weights` on the 1 to 4 scale: ledger core skills 3, secondary 2. Attribute ratios are derived. Never graded sourced.
 - New fields: `beast_form` (Werewolf, Vampire Lord) and `black_book` (from `data/black_books.yaml`, sourced from UESP).
@@ -57,7 +57,7 @@ The ledger grouped lore picks by theme, not skills, so 11 sat under builds they 
 
 ## Phase 3b: sourced extras
 
-Status: done (2026-11-11). Eight more builds in "Beyond the class files": Spellshield (A6), Witchhunter (A8, vanilla skills only), Vampire Slayer (A9), Druid (A10), The Preserver (A11), The Madman (A12), Champion of Cyrodiil (A13, weights from FudgeMuppet's The Master) and Arcanist (A18, TheGamer's Spider Mastermind).
+Status: done (2026-11-11). Eight more builds in "Community builds" (first named "Beyond the class files"): Spellshield (A6), Witchhunter (A8, vanilla skills only), Vampire Slayer (A9), Druid (A10), The Preserver (A11), The Madman (A12), Champion of Cyrodiil (A13, weights from FudgeMuppet's The Master) and Arcanist (A18, TheGamer's Spider Mastermind).
 
 - Where a ledger row lists skills without saying which are core (A8, A11, A12, A13), the first two listed get 3 and the rest 2.
 - Lore picks placed by skill fit, not by the ledger's parent: C8 Arcane Beastmaster under Spellshield, C9 Warden under Conjurer (neither fits Druid), A13's lore version Hero of Kvatch under Spellsword, A15 Agent under Trader, A16 Pilgrim under Blacksmith, A17 Battlemage under Bandit chief.

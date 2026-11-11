@@ -49,7 +49,7 @@ families:
   title: Legends
   blurb: Unique characters whose class files read like boss builds.
 - id: beyond
-  title: Beyond the class files
+  title: Community builds
   blurb: Playstyles no NPC class can express. Their skill weights are set by hand from community sources, not read from the game.
 builds:
 - id: housecarl
