@@ -10,6 +10,8 @@ Rules:
 - stones.yaml and shouts.yaml entries have unique ids, a name, an effect, a known requirement and evidence grade
 - every lore pick (ledger C) has a name, a C-row ref, changes text, a known evidence grade and requirements,
   and any npc it names exists in the saved UESP NPC data
+- hand-set builds (no class file) have weights 1-4, a ledger A ref, and are never graded sourced
+- beast forms and Black Book powers resolve; every `mentions` term exists on UESP and is not unobtainable
 - every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
@@ -18,7 +20,8 @@ import re
 import sys
 from collections import Counter
 
-from common import ATTRS, EVIDENCE, REQUIRES, SKILLS, by_id, load, load_lookup, npc_classes, weights
+from common import (ATTRS, BEAST_FORMS, EVIDENCE, REQUIRES, SKILLS, UNUSABLE_PAGES, by_id, load, load_lookup,
+                    npc_classes, uesp_terms, weights)
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
 
@@ -36,10 +39,56 @@ def check_lookup(kind, entries, errors):
             errors.append(f"{kind} {e.get('id')}: unknown evidence {e.get('evidence')!r}")
 
 
-LORE_REF = re.compile(r"C\d+")
+LORE_REF = re.compile(r"[AC]\d+")
+HAND_REF = re.compile(r"A\d+")
 
 
-def check_lore(name, b, known_npcs, errors):
+def check_mentions(label, terms, known, errors):
+    for t in terms:
+        r = known.get(t)
+        if r is None:
+            errors.append(f"{label}: {t!r} is not in uesp-terms.json; run scripts/fetch_terms.py")
+        elif r["missing"]:
+            errors.append(f"{label}: {t!r} has no UESP page")
+        elif r["page"] in UNUSABLE_PAGES:
+            errors.append(f"{label}: {t!r} is listed on UESP as {r['page']}, not a usable item")
+
+
+def check_hand_set(name, b, errors):
+    """Builds with no class file: hand-set weights from a ledger A row, never graded sourced."""
+    w = b["weights"]
+    for k, v in w.items():
+        if k in SKILLS and not (isinstance(v, int) and 1 <= v <= 4):
+            errors.append(f"{name}: hand-set weight {k}={v!r} is not 1-4")
+        elif k in ATTRS and not (isinstance(v, int) and 0 <= v <= 9):
+            errors.append(f"{name}: attribute {k}={v!r} is not 0-9")
+        elif k not in SKILLS and k not in ATTRS:
+            errors.append(f"{name}: unknown code {k}")
+    if not any(k in SKILLS for k in w) or any(a not in w for a in ATTRS) or not sum(w.get(a, 0) for a in ATTRS):
+        errors.append(f"{name}: hand-set weights need at least one skill and all of Hea, Mag, Sta")
+    if not HAND_REF.fullmatch(str(b.get("ref", ""))):
+        errors.append(f"{name}: hand-set build needs a ledger A ref")
+    if b.get("evidence") == "sourced":
+        errors.append(f"{name}: hand-set weights cannot be graded sourced")
+    if b.get("variants") or b.get("examples"):
+        errors.append(f"{name}: variants and examples need class files; use lore picks instead")
+
+
+def check_extras(name, b, books, errors):
+    if "beast_form" in b and b["beast_form"] not in BEAST_FORMS:
+        errors.append(f"{name}: unknown beast form {b['beast_form']!r}")
+    bb = b.get("black_book")
+    if bb:
+        book = books.get(bb.get("book"))
+        if not book:
+            errors.append(f"{name}: unknown Black Book {bb.get('book')!r}")
+        elif bb.get("power") not in {p["name"] for p in book["powers"]}:
+            errors.append(f"{name}: {bb.get('power')!r} is not a power of {book['name']}")
+        if bb.get("evidence") not in EVIDENCE:
+            errors.append(f"{name}: black_book has unknown evidence {bb.get('evidence')!r}")
+
+
+def check_lore(name, b, known_npcs, terms, errors):
     names = Counter(str(e.get("name", "")).strip() for e in b.get("lore", []))
     errors += [f"{name}: lore pick {n!r} appears {k} times" for n, k in names.items() if k > 1]
     for e in b.get("lore", []):
@@ -51,6 +100,7 @@ def check_lore(name, b, known_npcs, errors):
         if e.get("evidence") not in EVIDENCE:
             errors.append(f"{label}: unknown evidence {e.get('evidence')!r}")
         errors += [f"{label}: unknown requires {r!r}" for r in e.get("requires", []) if r not in REQUIRES]
+        check_mentions(label, e.get("mentions", []), terms, errors)
         if "npc" in e and e["npc"] not in known_npcs:
             errors.append(f"{label}: npc {e['npc']!r} is not in the UESP NPC data")
 
@@ -85,6 +135,12 @@ def main():
     stones, shouts = by_id(stone_list), by_id(shout_list)
     npcs = npc_classes()
     all_npcs = set().union(*npcs.values())
+    terms = uesp_terms()
+    book_list = load_lookup("black_books")
+    books = by_id(book_list)
+    for bk in book_list:
+        if bk.get("requires") not in REQUIRES or bk.get("evidence") not in EVIDENCE or len(bk.get("powers", [])) != 3:
+            errors.append(f"black book {bk.get('id')}: needs requires, evidence and three powers")
     errors = []
     check_lookup("stone", stone_list, errors)
     check_lookup("shout", shout_list, errors)
@@ -112,7 +168,15 @@ def main():
     for b in doc["builds"]:
         name = b.get("name", b["id"])
         check_picks(name, b, stones, shouts, errors)
-        check_lore(name, b, all_npcs, errors)
+        check_lore(name, b, all_npcs, terms, errors)
+        check_extras(name, b, books, errors)
+        check_mentions(name, b.get("mentions", []), terms, errors)
+        if ("classes" in b) == ("weights" in b):
+            errors.append(f"{name}: needs either classes or hand-set weights, not both or neither")
+            continue
+        if "weights" in b:
+            check_hand_set(name, b, errors)
+            continue
         for a in b.get("aliases", []):
             if not isinstance(a, str) or not a.strip():
                 errors.append(f"{name}: empty alias")
@@ -158,7 +222,7 @@ def main():
         print("\n".join(f"  - {e}" for e in errors))
         return 1
     print(f"OK: {len(classes)} classes, {len(doc['builds'])} builds, {len(races)} races, "
-          f"{len(stones)} stones, {len(shouts)} shouts")
+          f"{len(stones)} stones, {len(shouts)} shouts, {len(books)} Black Books, {len(terms)} checked terms")
     return 0
 
 

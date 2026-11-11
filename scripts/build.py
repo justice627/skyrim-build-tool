@@ -7,7 +7,8 @@ Writes two files to dist/:
 import json
 import re
 
-from common import ATTRS, ROOT, SCHOOL, SKILLS, by_id, load, load_lookup, npc_classes, weights
+from common import (ATTRS, BEAST_FORMS, ROOT, SCHOOL, SKILLS, by_id, card_weights, load, load_lookup, npc_classes,
+                    weights)
 
 LEVELS = 49  # level-ups from level 2 to 50
 
@@ -44,7 +45,7 @@ def skill_line(w):
     return " · ".join(f"{SKILLS[k]} {v}" for k, v in skills)
 
 
-def render_picks(b, stones, shouts):
+def render_picks(b, stones, shouts, books):
     """Stone, shouts and requirement tags. Requirements are the build's own plus each shout's."""
     st = b["stone"]
     stone = {"early": stones[st["early"]]["name"], "early_fx": stones[st["early"]]["effect"],
@@ -53,13 +54,22 @@ def render_picks(b, stones, shouts):
         stone.update(final=stones[st["final"]]["name"], final_fx=stones[st["final"]]["effect"])
     picked = [shouts[i] for i in b["shouts"]["ids"]]
     req = set(b.get("requires", [])) | {s["requires"] for s in picked} | {stones[st["early"]]["requires"]}
+    beast = book = None
+    if "beast_form" in b:
+        beast_name, beast_req = BEAST_FORMS[b["beast_form"]]
+        beast, req = beast_name, req | {beast_req}
+    if "black_book" in b:
+        bb = b["black_book"]
+        bk = books[bb["book"]]
+        fx = next(p["effect"] for p in bk["powers"] if p["name"] == bb["power"])
+        book, req = {"book": bk["name"], "power": bb["power"], "fx": fx, "ev": bb["evidence"]}, req | {bk["requires"]}
     req.discard("vanilla")
     order = ("DG", "HF", "DB", "CC", "AE")
     return {
         "stone": stone,
         "shouts": {"list": [{"n": s["name"], "fx": s["effect"], "req": s["requires"]} for s in picked],
                    "ev": b["shouts"]["evidence"]},
-        "req": [r for r in order if r in req],
+        "req": [r for r in order if r in req], "beast": beast, "book": book,
     }
 
 
@@ -83,14 +93,16 @@ def npc_homes(doc):
     """NPC name -> name of the build that holds the NPC's class."""
     build_of_class = {}
     for b in doc["builds"]:
-        for e in b["classes"] + [c for v in b.get("variants", []) for c in v["classes"]]:
+        for e in b.get("classes", []) + [c for v in b.get("variants", []) for c in v["classes"]]:
             build_of_class[e] = b["name"]
     return {n: build_of_class[e] for e, names in npc_classes().items() for n in names if e in build_of_class}
 
 
-def render_build(b, classes, stones, shouts, homes):
-    w = weights(classes, b["classes"][0])
-    attrs, why = plan(w)
+def render_build(b, classes, stones, shouts, books, homes):
+    w = card_weights(b, classes)
+    hand = "weights" in b
+    # A hand-set ratio is already a player recommendation, so plan() does not adjust it.
+    attrs, why = ([w[a] for a in ATTRS], "") if hand else plan(w)
     variants = []
     for v in b.get("variants", []):
         vw = weights(classes, v["classes"][0])
@@ -98,12 +110,13 @@ def render_build(b, classes, stones, shouts, homes):
                          "npcs": [npc_name(n) for n in v.get("examples", [])],
                          "attr": [vw.get(a, 0) for a in ATTRS]})
     return {
-        "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b["classes"],
+        "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
+        "hand": hand, "ref": b.get("ref", ""), "mentions": b.get("mentions", []),
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
         "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []),
-        "lore": render_lore(b, homes), "ev": b["evidence"], **render_picks(b, stones, shouts),
+        "lore": render_lore(b, homes), "ev": b["evidence"], **render_picks(b, stones, shouts, books),
     }
 
 
@@ -116,9 +129,10 @@ def page_data():
     classes, doc, races = load()
     stones, shouts = by_id(load_lookup("stones")), by_id(load_lookup("shouts"))
     homes = npc_homes(doc)
+    books = by_id(load_lookup("black_books"))
     return {
         "fams": doc["families"],
-        "builds": [render_build(b, classes, stones, shouts, homes) for b in doc["builds"]],
+        "builds": [render_build(b, classes, stones, shouts, books, homes) for b in doc["builds"]],
         "races": [render_race(r) for r in races],
     }
 

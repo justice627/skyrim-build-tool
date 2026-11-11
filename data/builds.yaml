@@ -48,6 +48,9 @@ families:
 - id: legend
   title: Legends
   blurb: Unique characters whose class files read like boss builds.
+- id: beyond
+  title: Beyond the class files
+  blurb: Playstyles no NPC class can express. Their skill weights are set by hand from community sources, not read from the game.
 builds:
 - id: housecarl
   family: steel
@@ -487,6 +490,7 @@ builds:
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [soul-tear, aura-whisper, marked-for-death], evidence: derived}
+  beast_form: vampire-lord
   examples: ["Serana", "Lord Harkon", "Movarth Piquine"]
   classes:
   - EncClassVampire
@@ -1174,3 +1178,164 @@ builds:
   description: >-
     One-hander and Conjuration at 3: bound weapons and summons. Destruction and Sneak at 2, light armor
     at 1. Even attributes. A conjured-steel duelist.
+- id: pugilist
+  family: beyond
+  name: Pugilist
+  inspired_by: Community unarmed builds (TheGamer, GamersDecide, FudgeMuppet's Sabre Cat)
+  aliases: [Unarmed, Brawler]
+  weights: {HVA: 3, ENC: 3, Hea: 2, Mag: 0, Sta: 1}
+  evidence: partly-sourced
+  ref: A1
+  stone: {early: warrior, final: atronach, evidence: partly-sourced, ref: A1}
+  shouts: {ids: [marked-for-death, unrelenting-force, whirlwind-sprint], evidence: partly-sourced, ref: A1}
+  mentions: ["Fists of Steel", "Gloves of the Pugilist", "Daedric Gauntlets", "Fortify Unarmed Damage"]
+  description: >-
+    Fight with your fists. Heavy Armor's Fists of Steel perk adds your gauntlets' armor rating to every
+    punch, so heavy gauntlets such as Daedric ones hit hard. Enchanting stacks Fortify Unarmed Damage on
+    rings and the Gloves of the Pugilist. Sources say it works on every difficulty except Legendary.
+  lore:
+  - name: "Sabre Cat"
+    ref: A1
+    evidence: partly-sourced
+    requires: [DG, DB]
+    changes: "FudgeMuppet's Khajiit brawler. Adds Conjuration, Restoration and Smithing."
+  - name: "Unarmed Monk"
+    ref: C38
+    evidence: partly-sourced
+    changes: "The Monk fighting with fists, the way Oblivion's Monk used Hand-to-Hand."
+- id: tongue
+  family: beyond
+  name: Tongue
+  inspired_by: The Greybeards and community Dragonborn builds
+  aliases: [The Dragonborn, Thu'um]
+  weights: {SPE: 3, RES: 3, ALT: 2, Hea: 2, Mag: 2, Sta: 1}
+  evidence: partly-sourced
+  ref: A2
+  stone: {early: lord, evidence: partly-sourced, ref: A2}
+  shouts: {ids: [unrelenting-force, become-ethereal, kynes-peace, clear-skies], evidence: partly-sourced, ref: A2}
+  black_book: {book: epistolary-acumen, power: "Dragonborn Force", evidence: partly-sourced, ref: A2}
+  mentions: ["Amulet of Talos", "Black Book: Epistolary Acumen"]
+  description: >-
+    Shouts are the main weapon. Skills only support the Voice: Speech, Restoration and Alteration, as a
+    Greybeard would train. The Amulet of Talos shortens shout cooldowns. The Black Book Epistolary Acumen
+    upgrades a shout. No weapon skill at all, so this is a hard but very different run.
+  lore:
+  - name: "Stormcrown"
+    ref: C1
+    evidence: derived
+    mentions: ["Dragonbane"]
+    changes: "Modeled on Talos. One-Handed 3, Block 3, Heavy Armor 3, Speech 2, Restoration 2. Storm Call and Call Dragon. Amulet of Talos and Dragonbane."
+  - name: "Jarl of the Voice"
+    ref: C2
+    evidence: derived
+    npc: "Ulfric Stormcloak"
+    changes: "Modeled on Ulfric. One-Handed 3, Heavy Armor 2, Block 2, Speech 2. Unrelenting Force."
+  - name: "Ash-King"
+    ref: C3
+    evidence: derived
+    requires: [DB]
+    changes: "Modeled on Wulfharth. Two-Handed 3, Heavy Armor 3, Speech 2, fire Destruction 2. Fire Breath and Dragon Aspect."
+- id: werewolf
+  family: beyond
+  name: Werewolf
+  inspired_by: Community werewolf builds and the Companions questline
+  weights: {2HD: 3, Hea: 2, Mag: 0, Sta: 2}
+  evidence: partly-sourced
+  ref: A3
+  beast_form: werewolf
+  requires: [DG]
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [unrelenting-force, elemental-fury, marked-for-death], evidence: derived}
+  mentions: ["Ring of Hircine", "Savage Feeding", "Totem of Ice Brothers", "Totem of the Moon"]
+  description: >-
+    Beast form is the main mode. Join the Companions, then take the werewolf perk tree from Dawnguard:
+    Savage Feeding, Totem of Ice Brothers and Totem of the Moon. The Ring of Hircine gives extra
+    transformations. In human form, fight with a two-handed weapon.
+  lore:
+  - name: "Ethereal Hunter"
+    ref: C4
+    evidence: partly-sourced
+    requires: [DG, DB]
+    mentions: ["Ring of Bloodlust", "Bound Bow"]
+    changes: "Breton. Steed Stone, then Lord. Archery, Conjuration, Sneak and Heavy Armor. Bound Bow, Ring of Bloodlust and Animal Allegiance. Turns werewolf for open fights."
+  - name: "Aela"
+    ref: C5
+    evidence: derived
+    requires: [DG]
+    npc: "Aela the Huntress"
+    changes: "Archery 3, Light Armor 3, Sneak 2, One-Handed 2. A werewolf huntress."
+  - name: "The Rebel"
+    ref: C6
+    evidence: partly-sourced
+    requires: [DB]
+    mentions: ["Targe of the Blooded", "Ghostblade", "Red Eagle's Fury", "The Pale Blade"]
+    changes: "A Stormcloak werewolf. Steed Stone, then Lord at level 40. Targe of the Blooded, Ghostblade, Red Eagle's Fury and the Pale Blade. Dragonrend and Dragon Aspect."
+- id: pacifist
+  family: beyond
+  name: Pacifist
+  inspired_by: Community pacifist runs (TheGamer, GamersDecide)
+  aliases: [Pacifist Rogue]
+  weights: {SNK: 3, LTA: 3, PIC: 3, ILU: 3, RES: 2, ALT: 2, Hea: 1, Mag: 2, Sta: 1}
+  evidence: partly-sourced
+  ref: A4
+  stone: {early: thief, final: shadow, evidence: derived}
+  shouts: {ids: [throw-voice, whirlwind-sprint], evidence: partly-sourced, ref: A4}
+  mentions: ["Muffle", "Pacify", "Calm", "Fear", "Turn Undead"]
+  description: >-
+    Never strike anyone yourself. Sneak past, calm or scare everything with Muffle, Calm, Pacify, Fear and
+    Turn Undead, and talk or steal your way through the rest. Some guild quests need a kill, so a
+    companion has to land it.
+  lore:
+  - name: "Puppet Master"
+    ref: A7
+    evidence: partly-sourced
+    mentions: ["Dead Thrall", "Call to Arms", "Fury", "Frenzy"]
+    changes: "Illusion and Conjuration core, Speech and armor secondary. Ritual Stone. Dead Thrall and Call to Arms, with Fury and Frenzy turning enemies on each other."
+- id: poisoner
+  family: beyond
+  name: Poisoner
+  inspired_by: Community poison builds (TheGamer)
+  weights: {ALC: 3, SNK: 3, PIC: 3, RES: 2, ILU: 2, LTA: 2, Hea: 1, Mag: 1, Sta: 1}
+  evidence: partly-sourced
+  ref: A5
+  stone: {early: thief, final: serpent, evidence: partly-sourced, ref: A5}
+  shouts: {ids: [aura-whisper, throw-voice, marked-for-death], evidence: derived}
+  black_book: {book: the-hidden-twilight, power: "Mora's Agony", evidence: partly-sourced, ref: A5}
+  mentions: ["Poisoned", "Poison Rune", "Paralysis", "Mora's Agony"]
+  description: >-
+    Brew it, then deliver it. Pickpocket's Poisoned perk lets you plant poisons on people. Paralysis
+    poisons and Poison Rune do the rest, with daggers to finish. The Hidden Twilight Black Book adds Mora's
+    Agony, a field of poisoning tentacles.
+  lore:
+  - name: "The Dealer"
+    ref: C7
+    evidence: partly-sourced
+    requires: [DG]
+    mentions: ["Dwarven Crossbow"]
+    changes: "Khajiit. Thief Stone, then Atronach. A no-magic crossbow sniper with a Dwarven Crossbow and explosive bolts."
+- id: dual-wielder
+  family: beyond
+  name: Dual-wielder
+  inspired_by: Community dual-wield builds (TheGamer)
+  weights: {1HD: 3, LTA: 3, Hea: 1, Mag: 0, Sta: 2}
+  evidence: partly-sourced
+  ref: A14
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [elemental-fury, whirlwind-sprint, marked-for-death], evidence: partly-sourced, ref: A14}
+  mentions: ["Windshear", "Dual Flurry"]
+  description: >-
+    A one-handed weapon in each hand and light armor. Elemental Fury is the key shout: faster swings mean
+    more hits. One-Handed's Dual Flurry perk speeds up dual-wield attacks. Windshear in one hand staggers
+    on every hit.
+  lore:
+  - name: "Praying Mantis"
+    ref: C10
+    evidence: partly-sourced
+    requires: [DG, DB]
+    mentions: ["Falmer War Axe", "Shellbug Helmet", "The Black Star (item)", "Ebonyflesh"]
+    changes: "Argonian. Lover Stone, then Atronach. One-Handed, Alteration and Heavy Armor. Two Falmer war axes, the Shellbug Helmet and the Black Star. Paralyze and Ebonyflesh."
+  - name: "Windshear Stun Master"
+    ref: C11
+    evidence: partly-sourced
+    mentions: ["Windshear", "Chain Lightning"]
+    changes: "Redguard. Adds Destruction for Chain Lightning. Elemental Fury and Slow Time keep enemies staggered."

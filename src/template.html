@@ -74,6 +74,7 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.hand{justify-self:start;font:600 10.5px/1 var(--f-body);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px;border:1px dashed var(--muted);color:var(--muted)}
 .ttl{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
 .req{font:600 10.5px/1 var(--f-body);letter-spacing:.06em;padding:3px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
 .aka{font-size:12px;color:var(--muted)}
@@ -112,6 +113,7 @@ footer a{color:var(--accent)}
 <footer>
   <div>Skill tiers: primary is a class weight of 3 or more, secondary 2, minor 1. The level 50 split divides 49 level-ups by the attribute weights. Where an NPC file grows Magicka with no spells (or the reverse), the plan moves those points and says so.</div>
   <div>Stones and shouts are suggestions written for this tool unless marked otherwise. "Suggested" means worked out here, not read in a source. "Partly sourced" means a community source names part of the pick. Hover a stone or shout for what it does. DG, HF and DB badges mean the build's picks need Dawnguard, Hearthfire or Dragonborn; no badge means the base game is enough.</div>
+  <div>"Beyond the class files" builds have no NPC class in the game. Their skill weights are set by hand from the community sources in the research ledger, on the same 1 to 4 scale, and every perk, item or spell they name was checked against UESP.</div>
   <div>Lore and community picks come from the project's research ledger. They describe how other players or the lore shape a build, so they are leads, not game data. Where a picked character's own UESP class sits in another build, the pick says so.</div>
   <div>Example NPCs are characters whose UESP page lists that exact class, read through UESP's wiki API. Each is one of several NPCs who share the class, not the only one.</div>
   <div>Class weights: <a href="https://en.uesp.net/wiki/Skyrim:Classes">UESP, Skyrim:Classes</a>, from your saved PDF and screenshot. Creatures, undead, Daedra, Falmer, giants and werewolf beast forms are left out. Race skill bonuses are the vanilla values; race attribute plans are recommendations.</div>
@@ -131,20 +133,23 @@ const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'}];
 let st={f:'all',q:''};
 
 function card(b){
+  const eidline=b.hand?`<div class="eid">No class file. Weights set by hand from ledger ${esc(b.ref)}.</div>`:`<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div>`;
   const nv=b.variants.length, nl=b.lore.length, plural=(n,w)=>`${n} ${w}${n>1?'s':''}`;
   const tag=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
   const vars=b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b>${x.npcs.length?`<span>Examples: ${x.npcs.map(esc).join(', ')}</span><br>`:''}<span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span></div>`).join('');
   const lore=b.lore.map(x=>`<div class="v"><b>${esc(x.n)}</b>${x.req.map(r=>` <span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')} ${tag(x.ev)}<span class="chg">${esc(x.changes)}</span>${x.where?`<span class="where">In the game, ${esc(x.npc)} uses a class from the ${esc(x.where)} build.</span>`:''}<span class="ref">Ledger ${esc(x.ref)}</span></div>`).join('');
-  const v=(nv||nl)?`<details><summary>${[nv?plural(nv,'variant'):'',nl?plural(nl,'lore pick'):''].filter(Boolean).join(' · ')}</summary>${nv?`<div class="vlist">${vars}</div>`:''}${nl?`<div class="vhead">Lore and community picks</div><div class="vlist">${lore}</div>`:''}<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div></details>`
-    :`<div class="eid">${b.eids.map(esc).join(', ')}</div>`;
+  const v=(nv||nl)?`<details><summary>${[nv?plural(nv,'variant'):'',nl?plural(nl,'lore pick'):''].filter(Boolean).join(' · ')}</summary>${nv?`<div class="vlist">${vars}</div>`:''}${nl?`<div class="vhead">Lore and community picks</div><div class="vlist">${lore}</div>`:''}${eidline}</details>`
+    :eidline;
   const st=b.stone, sug=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
   const stone=`<span class="pill" title="${esc(st.early_fx)}">${esc(st.early)}</span>${st.final?`<span class="arrow">→</span><span class="pill" title="${esc(st.final_fx)}">${esc(st.final)}</span>`:''}`;
   const shouts=b.shouts.list.map(x=>`<span class="pill" title="${esc(x.fx)}">${esc(x.n)}${x.req!=='vanilla'?` <b>${esc(x.req)}</b>`:''}</span>`).join('');
   return `<article class="card"><div><div class="ttl"><h3>${esc(b.name)}</h3>${b.req.map(r=>`<span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')}</div>${b.aka.length?`<div class="aka">Also known as <b>${b.aka.map(esc).join('</b>, <b>')}</b></div>`:''}<div class="insp">Inspired by: ${esc(b.insp)}</div>${b.npcs.length?`<div class="npcs">Examples: <b>${b.npcs.map(esc).join('</b>, <b>')}</b></div>`:''}</div>
   <p class="desc">${esc(b.desc)}</p>
-  <div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}
+  ${b.hand?'<div class="hand">Hand-set weights</div>':''}<div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}
   <div class="tier pick"><span>Stone</span><div class="sk">${stone}${sug(st.ev)}</div></div>
-  <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${sug(b.shouts.ev)}</div></div></div>
+  <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${sug(b.shouts.ev)}</div></div>${b.beast?`
+  <div class="tier pick"><span>Beast form</span><div class="sk"><span class="pill">${esc(b.beast)}</span></div></div>`:''}${b.book?`
+  <div class="tier pick"><span>Black Book</span><div class="sk"><span class="pill" title="${esc(b.book.fx)}">${esc(b.book.book)}: ${esc(b.book.power)} <b>DB</b></span>${sug(b.book.ev)}</div></div>`:''}</div>
   <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
   ${v}</article>`;
 }
@@ -154,7 +159,7 @@ function raceCard(r){
   <div class="tiers"><div class="tier"><span>Starts 25</span><div class="sk">${pill(r.sig)}</div></div><div class="tier"><span>Starts 20</span><div class="sk">${r.plus5.map(s=>pill(s)).join('')}</div></div></div>
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
-function hay(b){return [b.name,...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function hay(b){return [b.name,...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
 function render(){
   const q=st.q.trim().toLowerCase();let n=0,html='';
   for(const f of DATA.fams){

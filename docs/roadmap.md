@@ -38,14 +38,25 @@ Rename Cutpurse to Thief. Everything else from ledger B becomes an alias (Stealt
 | B8 Crusader, B10 Archer, B13 Witcher, Paladin | Kept as aliases; Spellsword, Ranger, Witchblade and Vigilant keep their names |
 | C12 to C37, C39, C40 | Added as lore picks under the ledger's parent build; where UESP puts the NPC's class elsewhere, the pick says so |
 | C20 Bone Shepherd | Rejected: needs a mod. Mannimarco kept as a lore hook |
-| C1 to C11, C38 | Deferred to Phase 3: parents are new builds (Tongue, Werewolf, Poisoner, Druid, Dual-wielder, Pugilist) or need beast form |
+| C1 to C7, C10, C11, C38 | Added in Phase 3a under Tongue, Werewolf, Poisoner, Dual-wielder and Pugilist |
+| C8, C9 | Deferred to Phase 3b with their parent, Druid |
 
-## Phase 3: new builds for the five gaps
+## Phase 3a: the builds no class file can express
 
-Pugilist (unarmed), Tongue (shouts), Werewolf, Pacifist with Puppet Master, and Poisoner come first, because the NPC class files cannot express them. Then the sourced extras: Witchhunter, Vampire Slayer, Druid, Madman, Spellshield.
+Status: done (2026-11-11). Six builds in a new family, "Beyond the class files": Pugilist (A1), Tongue (A2), Werewolf (A3), Pacifist (A4, with Puppet Master A7 as a lore pick), Poisoner (A5) and Dual-wielder (A14).
 
-- These have no NPC class file. They get hand-set weights on the same 1 to 4 scale, tagged derived, and the page shows that difference.
-- Add the optional beast form (None, Werewolf, Vampire Lord) and Black Book power fields here, with the Werewolf and Tongue builds.
+- Hand-set `weights` on the 1 to 4 scale: ledger core skills 3, secondary 2. Attribute ratios are derived. Never graded sourced.
+- New fields: `beast_form` (Werewolf, Vampire Lord) and `black_book` (from `data/black_books.yaml`, sourced from UESP).
+- Every perk, item, spell or power these builds name is listed in `mentions` and checked against UESP by `scripts/fetch_terms.py` and `validate.py`.
+- The check corrected the ledger twice: Greybeard's Robes are unobtainable (dropped from Tongue), and the Ring of Bloodlust is Dragonborn, not Dawnguard. UESP lists 18 Black Book powers, not 21.
+- Rejected: A2's "Way of the Voice" variant (needs Ordinator, a mod).
+
+## Phase 3b: sourced extras
+
+Spellshield (A6), Witchhunter (A8, vanilla skills only), Vampire Slayer (A9), Druid (A10, with C8 Arcane Beastmaster and C9 Warden), The Preserver (A11), The Madman (A12), Champion of Cyrodiil (A13) and Arcanist (A18). Same pattern as 3a: hand-set weights, `mentions` checked against UESP.
+
+- Agent (A15), Pilgrim (A16) and Battlemage (A17) overlap existing builds: add them as aliases or lore picks, not builds.
+- Hold: Divine Crusader (A19, AE-or-mod question unresolved) and Warrior-Poet (A20, derived, spear is a mod).
 - Done when each new build has skills, stone, shouts, a playstyle and an evidence tag.
 
 ## Phase 4: perks, together with the user

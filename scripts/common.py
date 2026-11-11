@@ -23,6 +23,10 @@ SCHOOL_BY_NAME = {SKILLS[c]: s for c, s in SCHOOL.items()}
 # Mod is left out on purpose: mod-only builds are out of scope.
 REQUIRES = ("vanilla", "DG", "HF", "DB", "CC", "AE")
 EVIDENCE = ("sourced", "partly-sourced", "derived")
+# Beast forms a build can be played in: id -> (name, requirement). Lycanthropy is base game;
+# the werewolf perk tree and the Vampire Lord come with Dawnguard.
+BEAST_FORMS = {"werewolf": ("Werewolf", "vanilla"), "vampire-lord": ("Vampire Lord", "DG")}
+UNUSABLE_PAGES = ("Skyrim:Unobtainable Items",)
 
 
 def load():
@@ -41,6 +45,16 @@ def npc_classes():
     """EditorID -> names of single-NPC UESP pages using that class (docs/sources/uesp-npc-classes.json)."""
     doc = json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())
     return {eid: {n["name"] for n in npcs} for eid, npcs in doc["classes"].items()}
+
+
+def card_weights(b, classes):
+    """The weights a build's card shows: hand-set `weights`, or its first class file's."""
+    return b["weights"] if "weights" in b else classes[b["classes"][0]]["weights"]
+
+
+def uesp_terms():
+    """Term -> {page, section, missing} from docs/sources/uesp-terms.json (written by fetch_terms.py)."""
+    return json.loads((ROOT / "docs" / "sources" / "uesp-terms.json").read_text())["terms"]
 
 
 def by_id(entries):

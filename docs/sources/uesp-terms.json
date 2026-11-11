@@ -1,0 +1,196 @@
+{
+ "retrieved": "2026-11-11",
+ "source": "https://en.uesp.net/w/api.php",
+ "terms": {
+  "Amulet of Talos": {
+   "page": "Skyrim:Amulets of the Divines",
+   "section": "Amulet of Talos",
+   "missing": false
+  },
+  "Black Book: Epistolary Acumen": {
+   "page": "Skyrim:Black Book: Epistolary Acumen",
+   "section": "",
+   "missing": false
+  },
+  "Bound Bow": {
+   "page": "Skyrim:Bound Weapon",
+   "section": "Bound Bow",
+   "missing": false
+  },
+  "Call to Arms": {
+   "page": "Skyrim:Call to Arms",
+   "section": "",
+   "missing": false
+  },
+  "Calm": {
+   "page": "Skyrim:Calm",
+   "section": "",
+   "missing": false
+  },
+  "Chain Lightning": {
+   "page": "Skyrim:Chain Lightning",
+   "section": "",
+   "missing": false
+  },
+  "Daedric Gauntlets": {
+   "page": "Skyrim:Daedric",
+   "section": "Daedric Gauntlets",
+   "missing": false
+  },
+  "Dead Thrall": {
+   "page": "Skyrim:Dead Thrall",
+   "section": "",
+   "missing": false
+  },
+  "Dragonbane": {
+   "page": "Skyrim:Dragonbane",
+   "section": "",
+   "missing": false
+  },
+  "Dual Flurry": {
+   "page": "Skyrim:One-handed",
+   "section": "Dual Flurry",
+   "missing": false
+  },
+  "Dwarven Crossbow": {
+   "page": "Skyrim:Dwarven",
+   "section": "Dwarven Crossbow",
+   "missing": false
+  },
+  "Ebonyflesh": {
+   "page": "Skyrim:Armor (spells)",
+   "section": "Ebonyflesh",
+   "missing": false
+  },
+  "Falmer War Axe": {
+   "page": "Skyrim:Falmer Equipment",
+   "section": "Falmer War Axe",
+   "missing": false
+  },
+  "Fear": {
+   "page": "Skyrim:Fear",
+   "section": "",
+   "missing": false
+  },
+  "Fists of Steel": {
+   "page": "Skyrim:Heavy Armor",
+   "section": "Fists of Steel",
+   "missing": false
+  },
+  "Fortify Unarmed Damage": {
+   "page": "Skyrim:Fortify Unarmed Damage",
+   "section": "",
+   "missing": false
+  },
+  "Frenzy": {
+   "page": "Skyrim:Frenzy",
+   "section": "",
+   "missing": false
+  },
+  "Fury": {
+   "page": "Skyrim:Fury",
+   "section": "",
+   "missing": false
+  },
+  "Ghostblade": {
+   "page": "Skyrim:Ghostblade",
+   "section": "",
+   "missing": false
+  },
+  "Gloves of the Pugilist": {
+   "page": "Skyrim:Gloves of the Pugilist",
+   "section": "",
+   "missing": false
+  },
+  "Mora's Agony": {
+   "page": "Skyrim:Powers",
+   "section": "Mora's Agony",
+   "missing": false
+  },
+  "Muffle": {
+   "page": "Skyrim:Muffle",
+   "section": "",
+   "missing": false
+  },
+  "Pacify": {
+   "page": "Skyrim:Pacify",
+   "section": "",
+   "missing": false
+  },
+  "Paralysis": {
+   "page": "Skyrim:Paralyze (effect)",
+   "section": "",
+   "missing": false
+  },
+  "Poison Rune": {
+   "page": "Skyrim:Poison Rune",
+   "section": "",
+   "missing": false
+  },
+  "Poisoned": {
+   "page": "Skyrim:Pickpocket",
+   "section": "Poisoned",
+   "missing": false
+  },
+  "Red Eagle's Fury": {
+   "page": "Skyrim:Quest Items",
+   "section": "Red Eagle's Fury",
+   "missing": false
+  },
+  "Ring of Bloodlust": {
+   "page": "Skyrim:Ring of Bloodlust",
+   "section": "",
+   "missing": false
+  },
+  "Ring of Hircine": {
+   "page": "Skyrim:Ring of Hircine",
+   "section": "",
+   "missing": false
+  },
+  "Savage Feeding": {
+   "page": "Skyrim:Lycanthropy",
+   "section": "Savage Feeding",
+   "missing": false
+  },
+  "Shellbug Helmet": {
+   "page": "Skyrim:Animal Parts",
+   "section": "Shellbug Helmet",
+   "missing": false
+  },
+  "Targe of the Blooded": {
+   "page": "Skyrim:Targe of the Blooded",
+   "section": "",
+   "missing": false
+  },
+  "The Black Star (item)": {
+   "page": "Skyrim:The Black Star (item)",
+   "section": "",
+   "missing": false
+  },
+  "The Pale Blade": {
+   "page": "Skyrim:The Pale Blade",
+   "section": "",
+   "missing": false
+  },
+  "Totem of Ice Brothers": {
+   "page": "Skyrim:Lycanthropy",
+   "section": "Totem of Ice Brothers",
+   "missing": false
+  },
+  "Totem of the Moon": {
+   "page": "Skyrim:Lycanthropy",
+   "section": "Totem of the Moon",
+   "missing": false
+  },
+  "Turn Undead": {
+   "page": "Skyrim:Turn Undead",
+   "section": "",
+   "missing": false
+  },
+  "Windshear": {
+   "page": "Skyrim:Windshear",
+   "section": "",
+   "missing": false
+  }
+ }
+}

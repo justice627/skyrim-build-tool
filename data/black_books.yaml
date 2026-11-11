@@ -1,0 +1,52 @@
+# Dragonborn Black Books and the powers each one offers (you pick one per book).
+# Source: UESP Skyrim:Powers, read through the wiki API on 2026-11-11 (docs/sources/uesp-powers.wiki).
+# Waking Dreams is a main-quest book with no power to choose, so it is not listed.
+black_books:
+- id: the-hidden-twilight
+  name: "The Hidden Twilight"
+  requires: DB
+  evidence: sourced
+  powers:
+  - {name: "Mora's Agony", effect: "Summons a field of writhing tentacles that lasts 30 seconds and poisons foes who enter it."}
+  - {name: "Mora's Boon", effect: "Fully restores your Health, Magicka and Stamina."}
+  - {name: "Mora's Grasp", effect: "Targets are frozen between Oblivion and Tamriel for 30 seconds, and immune to all damage."}
+- id: filament-and-filigree
+  name: "Filament and Filigree"
+  requires: DB
+  evidence: sourced
+  powers:
+  - {name: "Secret of Arcana", effect: "Spells cost no magicka for 30 seconds."}
+  - {name: "Secret of Protection", effect: "You take half damage for 30 seconds."}
+  - {name: "Secret of Strength", effect: "Power attacks cost no stamina for 30 seconds."}
+- id: untold-legends
+  name: "Untold Legends"
+  requires: DB
+  evidence: sourced
+  powers:
+  - {name: "Bardic Knowledge", effect: "Summons a spectral drum that plays for 300 seconds, improving Stamina Regen for you and nearby allies."}
+  - {name: "Black Market", effect: "Summons a Dremora merchant for 15 seconds."}
+  - {name: "Secret Servant", effect: "Summons a Dremora butler for 15 seconds to carry your excess items."}
+- id: the-winds-of-change
+  name: "The Winds of Change"
+  requires: DB
+  evidence: sourced
+  powers:
+  - {name: "Companion's Insight", effect: "Your attacks, shouts, and destruction spells do no damage to your followers when in combat."}
+  - {name: "Lover's Insight", effect: "Do 10% more damage and get 10% better prices from people of the opposite sex."}
+  - {name: "Scholar's Insight", effect: "Reading Skill Books gives you an extra Skill Point."}
+- id: epistolary-acumen
+  name: "Epistolary Acumen"
+  requires: DB
+  evidence: sourced
+  powers:
+  - {name: "Dragonborn Flame", effect: "When your Fire Breath Shout kills an enemy, a fire wyrm emerges from their corpse to fight for you for 60 seconds."}
+  - {name: "Dragonborn Force", effect: "Your Unrelenting Force shout does more damage and using all three words may disintegrate enemies."}
+  - {name: "Dragonborn Frost", effect: "Your Frost Breath Shout encases foes in ice for 15 seconds."}
+- id: the-sallow-regent
+  name: "The Sallow Regent"
+  requires: DB
+  evidence: sourced
+  powers:
+  - {name: "Seeker of Might", effect: "Combat skills are all 10% more effective."}
+  - {name: "Seeker of Shadows", effect: "Stealth skills are all 10% more effective."}
+  - {name: "Seeker of Sorcery", effect: "All spells cost 10% less magicka. Enchantments are 10% more powerful."}

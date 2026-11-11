@@ -37,6 +37,19 @@ sources:
       scripts/fetch_npcs.py reads every page using the NPC Summary infobox and keeps an NPC when its
       class_details names the EditorID, or its class name matches exactly one EditorID on Skyrim:Classes.
       Pages describing several NPCs are skipped. The normal UESP pages return 403 here; the API does not.
+  - id: uesp-terms
+    title: UESP pages for every perk, item, spell and power named by a build (wiki API)
+    url: https://en.uesp.net/w/api.php
+    used_for: The `mentions` check in validate.py (docs/sources/uesp-terms.json)
+    evidence: sourced
+    notes: >-
+      Confirms each term has a UESP page and is not listed as unobtainable. It does not confirm every
+      claim a build makes about the term; those keep the build's own evidence grade.
+  - id: uesp-black-books
+    title: UESP, Skyrim:Powers (Black Book section)
+    url: https://en.uesp.net/w/api.php
+    used_for: data/black_books.yaml (docs/sources/uesp-powers.wiki)
+    evidence: sourced
   - id: build-text
     title: Build names, groupings, attribute plans and playstyle descriptions
     used_for: data/builds.yaml and the plan logic in scripts/build.py

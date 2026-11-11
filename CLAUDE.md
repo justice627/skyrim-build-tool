@@ -23,6 +23,8 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `docs/roadmap.md`: the phased plan. Work in phase order.
 - `docs/research/`: the community and lore build ledger and the research notes behind it. These are leads, not verified data.
 - `docs/sources/`: the saved UESP class table (PDF plus a screenshot of the rows the PDF dropped), `uesp-npc-classes.json` (which named NPCs use each class), and the raw UESP text behind `stones.yaml`, `shouts.yaml` and the race bonuses.
+- `data/black_books.yaml`: the Dragonborn Black Books and their powers (sourced from UESP).
+- `scripts/fetch_terms.py`: checks every `mentions` term against UESP and saves `docs/sources/uesp-terms.json`. Run it after adding or renaming a mention, before `validate.py`.
 - `scripts/fetch_npcs.py`: refreshes `uesp-npc-classes.json` from UESP's wiki API. UESP's normal pages are blocked from cloud sessions, but `https://en.uesp.net/w/api.php` works.
 
 ## Rules
@@ -42,4 +44,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Every class in `classes.json` is used exactly once across all builds.
 - Every build has `evidence` (grade of its skills), a `stone` (`early`, optional `final`) and 2 to 4 `shouts`, each block with its own `evidence` and an optional ledger `ref` such as `B7`. Optional: `lore` (ledger C picks: `name`, `ref` such as `C12`, `changes`, `evidence`, optional `requires` and `npc`), `aliases`, `requires`, `examples` (up to 3 named NPCs; the validator checks each against `uesp-npc-classes.json`).
 - Evidence grades: `sourced`, `partly-sourced`, `derived`. Requirement tags: `vanilla`, `DG`, `HF`, `DB`, `CC`, `AE`. Mod-only content is out of scope, so there is no `Mod` tag.
+- Hand-set builds (family `beyond`) have `weights` instead of `classes`, plus a ledger A `ref`. Skills 1 to 4, all of Hea, Mag and Sta. Never graded `sourced`. No class variants or examples; use `lore` picks (refs may be A or C rows).
+- `mentions` (on builds and lore picks) lists every perk, item, spell or power the text names, spelled as the UESP page title. The validator rejects terms with no UESP page or that UESP lists as unobtainable. Text must not name anything that is not in `mentions`.
+- Optional `beast_form` (`werewolf`, `vampire-lord`) and `black_book` (`{book, power, evidence, ref}`).
 - Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json`.
