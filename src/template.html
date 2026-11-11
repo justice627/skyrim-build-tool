@@ -1,0 +1,151 @@
+<title>Skyrim Class Builds</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column of build families; each family is a header plus a wrapping grid of build cards. Attribute colors mirror the in-game meters. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#18212b; --muted:#5b6977; --line:#d6dde4; --accent:#2f5d7c;
+  --hp:#b3362f; --mp:#2e64b8; --sp:#3d8a4a;
+  --c-combat:#8a5a3c; --c-magic:#4f5fb0; --c-stealth:#4a7a63;
+  --chip:#e8edf2;
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161c; --surface:#171e26; --ink:#e4e9ee; --muted:#93a1ae; --line:#2a3542; --accent:#86b4d6;
+  --hp:#e0675f; --mp:#6f9bf0; --sp:#6cc07a; --c-combat:#d19a74; --c-magic:#97a3f0; --c-stealth:#86c3a5; --chip:#202a35; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161c; --surface:#171e26; --ink:#e4e9ee; --muted:#93a1ae; --line:#2a3542; --accent:#86b4d6;
+  --hp:#e0675f; --mp:#6f9bf0; --sp:#6cc07a; --c-combat:#d19a74; --c-magic:#97a3f0; --c-stealth:#86c3a5; --chip:#202a35; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:14px/1.55 var(--f-body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:36px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:.02em;text-wrap:balance;margin:0}
+h1{font-size:2.4rem;line-height:1;text-transform:uppercase}
+h2{font-size:1.7rem;text-transform:uppercase}
+h3{font-size:1.35rem;font-weight:600;line-height:1.1}
+.lede{max-width:68ch;color:var(--muted);margin:10px 0 0}
+header{display:grid;gap:14px}
+.howto{max-width:72ch;font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+.controls{display:grid;gap:10px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.controls input{font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.chips button{flex:none;font:600 12px/1 var(--f-body);padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-size:12.5px;color:var(--muted)}
+.fam{display:grid;gap:14px}
+.famhead{display:grid;gap:2px}
+.famhead p{margin:0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:12px;align-content:start;min-width:0}
+.insp{font-size:12px;color:var(--muted);margin-top:3px}
+.desc{margin:0}
+.tiers{display:grid;gap:6px}
+.tier{display:grid;grid-template-columns:76px 1fr;gap:8px;align-items:start}
+.tier>span{font:600 10.5px/2 var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.sk{display:flex;flex-wrap:wrap;gap:4px}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;border-radius:4px;background:var(--chip);font-size:12px;white-space:nowrap}
+.pill b{font:500 11px var(--f-mono);color:var(--muted)}
+.pill i{width:6px;height:6px;border-radius:50%;display:inline-block}
+.sc-c i{background:var(--c-combat)} .sc-m i{background:var(--c-magic)} .sc-s i{background:var(--c-stealth)}
+.attr{display:grid;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
+.bar{display:flex;height:8px;border-radius:2px;overflow:hidden;background:var(--chip)}
+.bar span{display:block;height:100%}
+.hp{background:var(--hp)} .mp{background:var(--mp)} .spb{background:var(--sp)}
+.lv{font:500 12.5px var(--f-mono);display:flex;flex-wrap:wrap;gap:4px 14px;font-variant-numeric:tabular-nums}
+.lv .lab{font:600 10.5px/1.9 var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.lv .h{color:var(--hp)} .lv .m{color:var(--mp)} .lv .s{color:var(--sp)}
+.why{font-size:12px;color:var(--muted)}
+details{font-size:12.5px}
+summary{cursor:pointer;color:var(--accent);font-weight:600}
+.vlist{display:grid;gap:8px;margin-top:8px}
+.v b{display:block;font-weight:600}
+.v span{color:var(--muted)}
+.eid{font:500 11px/1.5 var(--f-mono);color:var(--muted);word-break:break-all;margin-top:8px}
+footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
+footer a{color:var(--accent)}
+.empty{color:var(--muted)}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>Skyrim Class Builds</h1>
+  <p class="lede">The game's playable humanoid NPC classes, read from UESP and turned into player builds you can borrow. Similar classes are grouped into families; near-identical trainer and vendor variants sit inside their parent build. The ten pure race builds close the page.</p>
+  <div class="howto"><b>How to read a build.</b> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk.</div>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--c-combat)"></i>Combat skill</span>
+    <span><i class="sw" style="background:var(--c-magic)"></i>Magic skill</span>
+    <span><i class="sw" style="background:var(--c-stealth)"></i>Stealth skill</span>
+    <span><i class="sw hp"></i>Health</span>
+    <span><i class="sw mp"></i>Magicka</span>
+    <span><i class="sw spb"></i>Stamina</span>
+  </div>
+</header>
+
+<div class="controls">
+  <input id="q" type="search" placeholder="Search builds, skills or NPCs, e.g. Conjuration" aria-label="Search builds">
+  <div class="chips" id="fams" role="group" aria-label="Filter by family"></div>
+  <div class="count" id="cnt"></div>
+</div>
+
+<div id="out" style="display:grid;gap:36px"></div>
+
+<footer>
+  <div>Skill tiers: primary is a class weight of 3 or more, secondary 2, minor 1. The level 50 split divides 49 level-ups by the attribute weights. Where an NPC file grows Magicka with no spells (or the reverse), the plan moves those points and says so.</div>
+  <div>Class weights: <a href="https://en.uesp.net/wiki/Skyrim:Classes">UESP, Skyrim:Classes</a>, from your saved PDF and screenshot. Creatures, undead, Daedra, Falmer, giants and werewolf beast forms are left out. Race skill bonuses are the vanilla values; race attribute plans are recommendations.</div>
+</footer>
+</div>
+
+<script>
+const DATA = __DATA__;
+const SC={Archery:'c',Block:'c','Heavy Armor':'c','One-Handed':'c',Smithing:'c','Two-Handed':'c',Alteration:'m',Conjuration:'m',Destruction:'m',Enchanting:'m',Illusion:'m',Restoration:'m',Alchemy:'s','Light Armor':'s',Lockpicking:'s',Pickpocket:'s',Sneak:'s',Speech:'s'};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pill=(s,w,showW)=>`<span class="pill sc-${SC[s]}"><i></i>${esc(s)}${showW?` <b>${w}</b>`:''}</span>`;
+const tier=(lab,a)=>a.length?`<div class="tier"><span>${lab}</span><div class="sk">${a.map(x=>pill(x.s,x.w,true)).join('')}</div></div>`:'';
+const bar=a=>{const t=a[0]+a[1]+a[2]||1;return `<div class="bar">${['hp','mp','spb'].map((c,i)=>a[i]?`<span class="${c}" style="width:${a[i]/t*100}%"></span>`:'').join('')}</div>`};
+const lv=a=>`<div class="lv"><span class="lab">Level 50</span>${a[0]?`<span class="h">Health ×${a[0]}</span>`:''}${a[1]?`<span class="m">Magicka ×${a[1]}</span>`:''}${a[2]?`<span class="s">Stamina ×${a[2]}</span>`:''}</div>`;
+const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'}];
+let st={f:'all',q:''};
+
+function card(b){
+  const v=b.variants.length?`<details><summary>${b.variants.length} variant${b.variants.length>1?'s':''}</summary><div class="vlist">${b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b><span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span></div>`).join('')}</div><div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div></details>`
+    :`<div class="eid">${b.eids.map(esc).join(', ')}</div>`;
+  return `<article class="card"><div><h3>${esc(b.name)}</h3><div class="insp">Inspired by: ${esc(b.insp)}</div></div>
+  <p class="desc">${esc(b.desc)}</p>
+  <div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}</div>
+  <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
+  ${v}</article>`;
+}
+function raceCard(r){
+  return `<article class="card"><div><h3>${esc(r.race)}</h3><div class="insp">Racial power: ${esc(r.power)}</div></div>
+  <p class="desc">${esc(r.note)}</p>
+  <div class="tiers"><div class="tier"><span>Starts 25</span><div class="sk">${pill(r.sig)}</div></div><div class="tier"><span>Starts 20</span><div class="sk">${r.plus5.map(s=>pill(s)).join('')}</div></div></div>
+  <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
+}
+function hay(b){return [b.name,b.insp,b.desc,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function render(){
+  const q=st.q.trim().toLowerCase();let n=0,html='';
+  for(const f of DATA.fams){
+    if(st.f!=='all'&&st.f!==f.id)continue;
+    const bs=DATA.builds.filter(b=>b.fam===f.id&&(!q||hay(b).includes(q)));
+    if(!bs.length)continue;n+=bs.length;
+    html+=`<section class="fam"><div class="famhead"><h2>${esc(f.title)}</h2><p>${esc(f.blurb)}</p></div><div class="grid">${bs.map(card).join('')}</div></section>`;
+  }
+  if(st.f==='all'||st.f==='race'){
+    const rs=DATA.races.filter(r=>!q||[r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase().includes(q));
+    if(rs.length){n+=rs.length;html+=`<section class="fam"><div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div><div class="grid">${rs.map(raceCard).join('')}</div></section>`}
+  }
+  document.getElementById('out').innerHTML=html||'<p class="empty">No builds match that search.</p>';
+  document.getElementById('cnt').textContent=`${n} build${n===1?'':'s'}`;
+}
+const fe=document.getElementById('fams');
+function chips(){fe.innerHTML=fams.map(f=>`<button type="button" aria-pressed="${st.f===f.id}" data-v="${f.id}">${esc(f.title)}</button>`).join('')}
+fe.onclick=e=>{const b=e.target.closest('button');if(!b)return;st.f=b.dataset.v;chips();render()};
+document.getElementById('q').addEventListener('input',e=>{st.q=e.target.value;render()});
+chips();render();
+</script>

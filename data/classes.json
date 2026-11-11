@@ -1,0 +1,1563 @@
+{
+ "AAAPlayerSpellswordClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "BLO": 1,
+   "1HD": 2,
+   "DES": 3,
+   "RES": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "BYOHHousecarlHjaalmarchClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "HVA": 2,
+   "1HD": 2,
+   "ALT": 2,
+   "DES": 2,
+   "RES": 2,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "Bard": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 1,
+   "1HD": 1,
+   "ALT": 2,
+   "ILU": 2,
+   "PIC": 2,
+   "SPE": 4,
+   "Hea": 2,
+   "Mag": 3,
+   "Sta": 2
+  }
+ },
+ "Beggar": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 1,
+   "BLO": 1,
+   "1HD": 1,
+   "SMI": 1,
+   "ALT": 1,
+   "ENC": 1,
+   "ALC": 1,
+   "LOC": 1,
+   "PIC": 3,
+   "SNK": 2,
+   "SPE": 4,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "Blade": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 3,
+   "BLO": 2,
+   "1HD": 2,
+   "LTA": 1,
+   "SNK": 3,
+   "Hea": 3,
+   "Mag": 3
+  }
+ },
+ "CWSoldierClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 1,
+   "1HD": 2,
+   "2HD": 2,
+   "LTA": 1,
+   "Hea": 3,
+   "Sta": 7
+  }
+ },
+ "Citizen": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 2,
+   "1HD": 2,
+   "SMI": 3,
+   "ENC": 3,
+   "ALC": 3,
+   "LTA": 2,
+   "SNK": 2,
+   "SPE": 2,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "CombatAssassin": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "1HD": 3,
+   "ALT": 1,
+   "LTA": 2,
+   "SNK": 3,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 3
+  }
+ },
+ "CombatBarbarian": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "1HD": 1,
+   "2HD": 3,
+   "LTA": 3,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "CombatMageConjurer": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ALT": 2,
+   "CON": 3,
+   "DES": 2,
+   "RES": 3,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "CombatMageDestruction": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 2,
+   "CON": 1,
+   "DES": 3,
+   "RES": 3,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "CombatMageElemental": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 2,
+   "CON": 2,
+   "DES": 3,
+   "RES": 3,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "CombatMageNecro": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "1HD": 2,
+   "ALT": 2,
+   "CON": 3,
+   "RES": 3,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "CombatMonk": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "1HD": 2,
+   "ALT": 2,
+   "RES": 2,
+   "LTA": 1,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "CombatMystic": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 3,
+   "CON": 2,
+   "ILU": 3,
+   "RES": 1,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 3,
+   "Sta": 1
+  }
+ },
+ "CombatNightblade": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 2,
+   "ALT": 2,
+   "DES": 3,
+   "LTA": 1,
+   "SNK": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "CombatNightingale": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "1HD": 3,
+   "DES": 2,
+   "LTA": 1,
+   "SNK": 2,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "CombatRanger": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "BLO": 2,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 1,
+   "Hea": 3,
+   "Sta": 3
+  }
+ },
+ "CombatRogue": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 1,
+   "BLO": 2,
+   "1HD": 3,
+   "LTA": 2,
+   "SNK": 3,
+   "Hea": 3,
+   "Sta": 3
+  }
+ },
+ "CombatScout": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "ALT": 1,
+   "RES": 2,
+   "LTA": 2,
+   "SNK": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "CombatSorcerer": {
+  "source": "uesp-pdf",
+  "weights": {
+   "HVA": 2,
+   "1HD": 2,
+   "DES": 3,
+   "ILU": 3,
+   "RES": 1,
+   "Hea": 2,
+   "Mag": 3,
+   "Sta": 1
+  }
+ },
+ "CombatSpellsword": {
+  "source": "uesp-pdf",
+  "weights": {
+   "HVA": 3,
+   "1HD": 3,
+   "DES": 3,
+   "RES": 2,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "CombatThief": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 3,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "CombatWarrior1H": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 1,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "CombatWarrior2H": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 1,
+   "2HD": 3,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "CombatWitchblade": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "1HD": 3,
+   "DES": 3,
+   "ILU": 2,
+   "RES": 1,
+   "Hea": 3,
+   "Mag": 3
+  }
+ },
+ "DLC1EncClassKatria": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "BLO": 1,
+   "HVA": 1,
+   "1HD": 2,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 3
+  }
+ },
+ "DLC2EbonyWarriorClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 9,
+   "BLO": 9,
+   "HVA": 9,
+   "1HD": 9,
+   "ALT": 6,
+   "CON": 7,
+   "DES": 3,
+   "RES": 3,
+   "SNK": 8,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "DLC2EncClassBanditBoss": {
+  "source": "uesp-pdf",
+  "weights": {
+   "HVA": 2,
+   "1HD": 3,
+   "ALT": 2,
+   "DES": 3,
+   "RES": 1,
+   "SNK": 1,
+   "Hea": 3,
+   "Mag": 2
+  }
+ },
+ "DLC2EncClassMiraak": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 1,
+   "HVA": 2,
+   "1HD": 2,
+   "ALT": 2,
+   "DES": 2,
+   "RES": 2,
+   "SPE": 8,
+   "Hea": 3,
+   "Mag": 3,
+   "Sta": 2
+  }
+ },
+ "DLC2NPCClassTeldryn": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 3,
+   "CON": 2,
+   "DES": 3,
+   "RES": 1,
+   "LTA": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "DLC2NelothClassTrainer": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 2,
+   "CON": 2,
+   "DES": 3,
+   "RES": 3,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "DLC2csFrea": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 1,
+   "1HD": 3,
+   "ALT": 3,
+   "RES": 2,
+   "LTA": 2,
+   "Hea": 3,
+   "Mag": 1,
+   "Sta": 2
+  }
+ },
+ "DLC2dunKolbjornRalisClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "1HD": 3,
+   "LTA": 3,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "EncClassAlikrMelee": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "HVA": 1,
+   "1HD": 3,
+   "2HD": 3,
+   "LTA": 2,
+   "Hea": 3,
+   "Sta": 2
+  }
+ },
+ "EncClassAlikrMissile": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "BLO": 1,
+   "HVA": 1,
+   "1HD": 2,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 3,
+   "Sta": 2
+  }
+ },
+ "EncClassAlikrWizard": {
+  "source": "uesp-pdf",
+  "weights": {
+   "CON": 2,
+   "DES": 3,
+   "ILU": 2,
+   "RES": 2,
+   "LTA": 1,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 3
+  }
+ },
+ "EncClassBanditMelee": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "HVA": 1,
+   "1HD": 3,
+   "2HD": 3,
+   "LTA": 2,
+   "Hea": 3,
+   "Sta": 2
+  }
+ },
+ "EncClassBanditMissile": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "BLO": 1,
+   "HVA": 1,
+   "1HD": 2,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 3,
+   "Sta": 2
+  }
+ },
+ "EncClassBanditWizard": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "1HD": 1,
+   "ALT": 2,
+   "DES": 3,
+   "RES": 2,
+   "LTA": 1,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 3
+  }
+ },
+ "EncClassForsworn": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 3,
+   "ALT": 1,
+   "DES": 2,
+   "RES": 1,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "EncClassForswornMissile": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "1HD": 1,
+   "ALT": 2,
+   "RES": 1,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 2
+  }
+ },
+ "EncClassForswornShaman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 1,
+   "CON": 2,
+   "DES": 3,
+   "RES": 2,
+   "LTA": 1,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 3
+  }
+ },
+ "EncClassPenitusOculatus": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 1,
+   "HVA": 2,
+   "1HD": 3,
+   "DES": 2,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "EncClassThalmorMelee": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "1HD": 3,
+   "RES": 1,
+   "LTA": 2,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 2
+  }
+ },
+ "EncClassThalmorMissile": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "1HD": 1,
+   "RES": 1,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 2
+  }
+ },
+ "EncClassThalmorWizard": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 1,
+   "CON": 3,
+   "DES": 3,
+   "RES": 1,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 3
+  }
+ },
+ "EncClassVampire": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 2,
+   "ALT": 1,
+   "CON": 2,
+   "DES": 1,
+   "LTA": 2,
+   "SNK": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "Farmer": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "1HD": 2,
+   "SMI": 3,
+   "2HD": 2,
+   "ENC": 3,
+   "ALC": 3,
+   "LTA": 1,
+   "SNK": 1,
+   "SPE": 1,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "GuardImperial": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 1,
+   "BLO": 2,
+   "HVA": 2,
+   "1HD": 3,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "GuardOrc1H": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "HVA": 3,
+   "1HD": 3,
+   "SNK": 2,
+   "Hea": 4,
+   "Mag": 2
+  }
+ },
+ "GuardOrc2H": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "HVA": 3,
+   "2HD": 3,
+   "SNK": 2,
+   "Hea": 4,
+   "Mag": 2
+  }
+ },
+ "GuardSonsSkyrim": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 1,
+   "BLO": 2,
+   "HVA": 2,
+   "2HD": 3,
+   "LTA": 2,
+   "SNK": 2,
+   "Hea": 4,
+   "Mag": 2
+  }
+ },
+ "Jailor": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "1HD": 3,
+   "LTA": 3,
+   "LOC": 2,
+   "PIC": 2,
+   "SNK": 2,
+   "Hea": 3,
+   "Sta": 2
+  }
+ },
+ "Lumberjack": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "1HD": 2,
+   "SMI": 3,
+   "2HD": 2,
+   "ENC": 3,
+   "ALC": 3,
+   "LTA": 1,
+   "SNK": 1,
+   "SPE": 1,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "MQAncientNord": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "1HD": 1,
+   "2HD": 3,
+   "LTA": 3,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "Miner": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "1HD": 2,
+   "SMI": 3,
+   "2HD": 2,
+   "ENC": 3,
+   "ALC": 3,
+   "LTA": 1,
+   "SNK": 1,
+   "SPE": 1,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "NPCclassBelrand": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 3,
+   "DES": 3,
+   "RES": 2,
+   "LTA": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "Priest": {
+  "source": "uesp-pdf",
+  "weights": {
+   "SMI": 2,
+   "CON": 2,
+   "ENC": 1,
+   "RES": 3,
+   "ALC": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Sta": 2
+  }
+ },
+ "Prisoner": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 1,
+   "SMI": 3,
+   "ENC": 3,
+   "ALC": 3,
+   "LOC": 1,
+   "PIC": 1,
+   "SNK": 1,
+   "SPE": 1,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "SoldierImperialNotGuard": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "BLO": 3,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 3,
+   "LTA": 3,
+   "Hea": 3,
+   "Sta": 7
+  }
+ },
+ "SoldierSonsSkyrimNotGuard": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "BLO": 3,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 3,
+   "LTA": 3,
+   "Hea": 1,
+   "Mag": 1
+  }
+ },
+ "TrainerAlchemyExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 1,
+   "ALC": 4,
+   "PIC": 2,
+   "SNK": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "TrainerAlchemyJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 1,
+   "ALC": 3,
+   "PIC": 2,
+   "SNK": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "TrainerAlchemyMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 4,
+   "1HD": 3,
+   "ALT": 1,
+   "LTA": 2,
+   "SNK": 3,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 3
+  }
+ },
+ "TrainerAlterationExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 4,
+   "CON": 3,
+   "DES": 3,
+   "RES": 2,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "TrainerAlterationMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 4,
+   "DES": 1,
+   "ILU": 2,
+   "RES": 1,
+   "SNK": 2,
+   "SPE": 2,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "TrainerBlockExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 3,
+   "1HD": 3,
+   "SMI": 1,
+   "PIC": 2,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerBlockMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 1,
+   "BLO": 3,
+   "HVA": 2,
+   "1HD": 3,
+   "SNK": 2,
+   "Hea": 4,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerConjurationExpert": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ALT": 2,
+   "CON": 3,
+   "DES": 2,
+   "RES": 3,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "TrainerConjurationJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "SMI": 2,
+   "CON": 4,
+   "ENC": 2,
+   "ILU": 2,
+   "RES": 3,
+   "ALC": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Sta": 2
+  }
+ },
+ "TrainerConjurationMaster": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ALT": 2,
+   "CON": 4,
+   "DES": 2,
+   "RES": 3,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "TrainerDestructionExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 2,
+   "CON": 1,
+   "DES": 3,
+   "RES": 3,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 4
+  }
+ },
+ "TrainerDestructionJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 1,
+   "CON": 1,
+   "DES": 3,
+   "ILU": 3,
+   "RES": 1,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 4,
+   "Sta": 1
+  }
+ },
+ "TrainerDestructionMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "HVA": 2,
+   "1HD": 2,
+   "ALT": 1,
+   "DES": 3,
+   "RES": 3,
+   "Hea": 3,
+   "Mag": 3
+  }
+ },
+ "TrainerEnchantingExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 3,
+   "DES": 1,
+   "ENC": 4,
+   "ILU": 2,
+   "RES": 1,
+   "SNK": 2,
+   "SPE": 2,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "TrainerEnchantingMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "SMI": 2,
+   "DES": 2,
+   "ENC": 1,
+   "RES": 3,
+   "ALC": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Sta": 2
+  }
+ },
+ "TrainerHeavyArmorExpert": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 2,
+   "BLO": 3,
+   "1HD": 3,
+   "2HD": 2,
+   "SNK": 1,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerHeavyArmorMaster": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "1HD": 2,
+   "SMI": 3,
+   "PIC": 2,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 3,
+   "Sta": 3
+  }
+ },
+ "TrainerIllusionExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 1,
+   "ALT": 2,
+   "DES": 3,
+   "ILU": 3,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 3,
+   "Sta": 1
+  }
+ },
+ "TrainerIllusionMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "HVA": 2,
+   "1HD": 2,
+   "DES": 3,
+   "ILU": 4,
+   "RES": 1,
+   "Hea": 2,
+   "Mag": 3,
+   "Sta": 1
+  }
+ },
+ "TrainerLightArmorExpert": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 2,
+   "1HD": 2,
+   "SMI": 3,
+   "LTA": 3,
+   "PIC": 2,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerLightArmorJourneyman": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 2,
+   "1HD": 2,
+   "SMI": 2,
+   "LTA": 3,
+   "PIC": 2,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerLightArmorMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "1HD": 3,
+   "ALT": 1,
+   "LTA": 4,
+   "SNK": 3,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 3
+  }
+ },
+ "TrainerLockpickExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 1,
+   "LOC": 4,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "TrainerLockpickMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "LOC": 4,
+   "SNK": 3,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerMarksmanExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 4,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 3,
+   "SPE": 2,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerMarksmanJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 4,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 3,
+   "SPE": 2,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerMarksmanMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 4,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 3,
+   "SPE": 2,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerOneHandedExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 1,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "TrainerOneHandedJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 1,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "TrainerOneHandedMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 1,
+   "SNK": 2,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "TrainerPickpocketExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "PIC": 3,
+   "SNK": 3,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerPickpocketMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 3,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerRestorationExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 3,
+   "CON": 1,
+   "RES": 3,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 3,
+   "Sta": 1
+  }
+ },
+ "TrainerRestorationJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "SMI": 2,
+   "ENC": 2,
+   "ILU": 2,
+   "RES": 3,
+   "ALC": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Sta": 2
+  }
+ },
+ "TrainerRestorationMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "SMI": 2,
+   "ENC": 2,
+   "ILU": 2,
+   "RES": 4,
+   "ALC": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Sta": 2
+  }
+ },
+ "TrainerSmithingExpert": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "1HD": 2,
+   "SMI": 3,
+   "PIC": 2,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerSmithingJourneyman": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "1HD": 2,
+   "SMI": 3,
+   "PIC": 2,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerSmithingMaster": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "1HD": 2,
+   "SMI": 4,
+   "PIC": 2,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "TrainerSneakExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "ALT": 1,
+   "RES": 2,
+   "LTA": 2,
+   "SNK": 4,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "TrainerSneakJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 1,
+   "SNK": 3,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "TrainerSneakMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 3,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerSpeechcraftExpert": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "ARC": 1,
+   "1HD": 1,
+   "ALT": 2,
+   "ILU": 2,
+   "PIC": 2,
+   "SPE": 4,
+   "Hea": 2,
+   "Mag": 3,
+   "Sta": 2
+  }
+ },
+ "TrainerSpeechcraftJourneyman": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 1,
+   "SPE": 3,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "TrainerSpeechcraftMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 1,
+   "1HD": 2,
+   "LTA": 3,
+   "SNK": 3,
+   "SPE": 4,
+   "Hea": 2,
+   "Sta": 4
+  }
+ },
+ "TrainerTwoHandedExpert": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 1,
+   "2HD": 3,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "TrainerTwoHandedMaster": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 2,
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 1,
+   "2HD": 4,
+   "Hea": 4,
+   "Sta": 2
+  }
+ },
+ "VendorApothecary": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 1,
+   "ALC": 3,
+   "PIC": 2,
+   "SNK": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "VendorBlacksmith": {
+  "source": "uesp-screenshot",
+  "weights": {
+   "BLO": 2,
+   "1HD": 2,
+   "SMI": 3,
+   "SNK": 1,
+   "SPE": 3,
+   "Hea": 2,
+   "Mag": 1,
+   "Sta": 2
+  }
+ },
+ "VendorFletcher": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ARC": 3,
+   "SMI": 2,
+   "PIC": 1,
+   "SNK": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Mag": 2,
+   "Sta": 1
+  }
+ },
+ "VendorFood": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 1,
+   "1HD": 2,
+   "PIC": 3,
+   "SNK": 2,
+   "SPE": 3,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "VendorPawnbroker": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 1,
+   "LOC": 2,
+   "PIC": 2,
+   "SNK": 3,
+   "SPE": 3,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "VendorSpells": {
+  "source": "uesp-pdf",
+  "weights": {
+   "ALT": 3,
+   "DES": 1,
+   "ILU": 2,
+   "RES": 1,
+   "SNK": 2,
+   "SPE": 2,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "VendorTailor": {
+  "source": "uesp-pdf",
+  "weights": {
+   "SMI": 2,
+   "LTA": 1,
+   "PIC": 2,
+   "SNK": 3,
+   "SPE": 3,
+   "Hea": 1,
+   "Mag": 1,
+   "Sta": 1
+  }
+ },
+ "Vigilant1hMeleeClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "HVA": 2,
+   "1HD": 2,
+   "ALT": 2,
+   "RES": 2,
+   "LTA": 2,
+   "SNK": 1,
+   "Hea": 3,
+   "Mag": 1,
+   "Sta": 2
+  }
+ },
+ "Vigilant2hMeleeClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 3,
+   "HVA": 3,
+   "2HD": 3,
+   "ALT": 1,
+   "LTA": 2,
+   "SNK": 1,
+   "Hea": 3,
+   "Mag": 1,
+   "Sta": 2
+  }
+ },
+ "ccASVSSE001_BladeBinder": {
+  "source": "uesp-pdf",
+  "weights": {
+   "1HD": 3,
+   "CON": 3,
+   "DES": 2,
+   "LTA": 1,
+   "SNK": 2,
+   "Hea": 2,
+   "Mag": 2,
+   "Sta": 2
+  }
+ },
+ "dlc2DBAncientDragonbornClass": {
+  "source": "uesp-pdf",
+  "weights": {
+   "BLO": 2,
+   "HVA": 3,
+   "1HD": 3,
+   "2HD": 3,
+   "CON": 9,
+   "SNK": 1,
+   "Hea": 4,
+   "Mag": 2,
+   "Sta": 3
+  }
+ }
+}

@@ -1,0 +1,152 @@
+# Pure race builds: only the skills a race starts with a bonus in (+10 signature, +5 others).
+# `attributes` is a recommended Health:Magicka:Stamina ratio, not game data (evidence: derived).
+races:
+- race: Altmer
+  signature: Illusion
+  plus5:
+  - Alchemy
+  - Alteration
+  - Conjuration
+  - Destruction
+  - Enchanting
+  - Restoration
+  attributes:
+  - 1
+  - 2
+  - 0
+  power: 'Highborn: fast Magicka regen'
+  note: >-
+    Pure mage. Starts with +50 Magicka, so Health is the weak point; no armor skill at all, so lean on
+    Alteration's armor spells.
+- race: Argonian
+  signature: Lockpicking
+  plus5:
+  - Alteration
+  - Light Armor
+  - Pickpocket
+  - Restoration
+  - Sneak
+  attributes:
+  - 1
+  - 1
+  - 1
+  power: 'Histskin: fast Health regen'
+  note: >-
+    No offensive skill. Damage has to come from Restoration's anti-undead spells, followers, or Alteration
+    Paralyze. The hardest pure build.
+- race: Bosmer
+  signature: Archery
+  plus5:
+  - Alchemy
+  - Light Armor
+  - Lockpicking
+  - Pickpocket
+  - Sneak
+  attributes:
+  - 2
+  - 0
+  - 1
+  power: Command Animal
+  note: Classic stealth archer. Poisons from Alchemy carry the damage curve.
+- race: Breton
+  signature: Conjuration
+  plus5:
+  - Alchemy
+  - Alteration
+  - Illusion
+  - Restoration
+  - Speech
+  attributes:
+  - 1
+  - 2
+  - 0
+  power: 'Dragonskin: absorb spells'
+  note: >-
+    Summoner with no direct damage school. Atronachs and thralls do the fighting; Illusion keeps you out
+    of it.
+- race: Dunmer
+  signature: Destruction
+  plus5:
+  - Alchemy
+  - Alteration
+  - Illusion
+  - Light Armor
+  - Sneak
+  attributes:
+  - 1
+  - 2
+  - 0
+  power: 'Ancestor''s Wrath: fire cloak'
+  note: >-
+    Stealth caster. Sneak plus Illusion Quiet Casting makes Destruction sneak-attacks possible.
+- race: Imperial
+  signature: Restoration
+  plus5:
+  - Block
+  - Destruction
+  - Enchanting
+  - Heavy Armor
+  - One-Handed
+  attributes:
+  - 2
+  - 1
+  - 1
+  power: 'Voice of the Emperor: calm'
+  note: 'Battlemage paladin: sword and shield in heavy armor, healing and Destruction in reserve.'
+- race: Khajiit
+  signature: Sneak
+  plus5:
+  - Alchemy
+  - Archery
+  - Lockpicking
+  - One-Handed
+  - Pickpocket
+  attributes:
+  - 1
+  - 0
+  - 1
+  power: Night Eye; claws in combat
+  note: Assassin. Daggers and bow from stealth, no armor skill, so don't get caught.
+- race: Nord
+  signature: Two-Handed
+  plus5:
+  - Block
+  - Light Armor
+  - One-Handed
+  - Smithing
+  - Speech
+  attributes:
+  - 1
+  - 0
+  - 1
+  power: 'Battle Cry: fear'
+  note: Light-armor warrior. Two-hander is the main weapon; Speech makes it a trader as well.
+- race: Orc
+  signature: Heavy Armor
+  plus5:
+  - Block
+  - Enchanting
+  - One-Handed
+  - Smithing
+  - Two-Handed
+  attributes:
+  - 2
+  - 0
+  - 1
+  power: Berserker Rage
+  note: 'The most coherent pure build: weapons, armor, and both gear-crafting skills.'
+- race: Redguard
+  signature: One-Handed
+  plus5:
+  - Alteration
+  - Archery
+  - Block
+  - Destruction
+  - Smithing
+  attributes:
+  - 1
+  - 1
+  - 1
+  power: 'Adrenaline Rush: Stamina'
+  note: >-
+    Spellsword without armor skills. Alteration armor spells stand in for Light or Heavy Armor.

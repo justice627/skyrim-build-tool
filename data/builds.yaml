@@ -1,0 +1,730 @@
+# Build families and builds. Skill weights come from data/classes.json via each build's
+# `classes` list; the first class in `classes` is the one whose weights the card shows.
+# Variant classes must share identical weights within one variant (validate.py checks).
+families:
+- id: steel
+  title: Shield and steel
+  blurb: Heavy armor, a weapon you trust, and a lot of Health.
+- id: north
+  title: Northern raiders
+  blurb: Light armor and big swings. Fast, loud, and short on finesse.
+- id: ranks
+  title: Guards and soldiers
+  blurb: Generalist fighters drilled in every weapon and armor type.
+- id: bow
+  title: Bows and the wild
+  blurb: Ranged first, with Sneak and Light Armor to keep distance.
+- id: shadow
+  title: Thieves and shadows
+  blurb: Sneak, locks, pockets, and a blade for when it goes wrong.
+- id: assassin
+  title: Assassins and night casters
+  blurb: Killing from stealth, with steel or with spells.
+- id: battle
+  title: Spellswords and battlemages
+  blurb: A weapon in one hand, a spell in the other.
+- id: robe
+  title: Robed mages
+  blurb: No armor skills. Magicka, distance, and the right school.
+- id: holy
+  title: Healers and holy orders
+  blurb: Restoration first, with a weapon or a staff behind it.
+- id: craft
+  title: Crafters and merchants
+  blurb: Make it, sell it, talk the price up. Fighting is optional.
+- id: folk
+  title: Common folk
+  blurb: Challenge runs built from the lives of ordinary Skyrim.
+- id: legend
+  title: Legends
+  blurb: Unique characters whose class files read like boss builds.
+builds:
+- id: housecarl
+  family: steel
+  name: Housecarl
+  inspired_by: Generic warriors, mercenaries and the one-handed trainers
+  classes:
+  - CombatWarrior1H
+  - TrainerOneHandedExpert
+  - TrainerOneHandedJourneyman
+  variants:
+  - label: 'One-handed master trainer: drops Archery, adds Sneak'
+    classes:
+    - TrainerOneHandedMaster
+  - label: 'Sneak journeyman trainer: adds Sneak 3'
+    classes:
+    - TrainerSneakJourneyman
+  - label: 'Speech journeyman trainer: adds Speech 3'
+    classes:
+    - TrainerSpeechcraftJourneyman
+  - label: 'Lockpicking expert trainer: adds Lockpicking 4'
+    classes:
+    - TrainerLockpickExpert
+  description: >-
+    Sword, shield and the heaviest plate you can carry. Pull with the bow, then hold the doorway and trade
+    blows. No Magicka at all, so healing comes from potions and food. The safest first character in the
+    game.
+- id: greatsword-mercenary
+  family: steel
+  name: Greatsword mercenary
+  inspired_by: Two-handed warriors and trainers
+  classes:
+  - CombatWarrior2H
+  - TrainerTwoHandedExpert
+  variants:
+  - label: 'Two-handed master trainer: Two-Handed 4'
+    classes:
+    - TrainerTwoHandedMaster
+  description: >-
+    The Housecarl with the shield swapped for a greatsword or warhammer. Heavy armor soaks the hits while
+    power attacks stagger. Block stays useful for bashing even without a shield. Stamina is your real
+    resource, so keep a few potions for long fights.
+- id: orc-stronghold-guard
+  family: steel
+  name: Orc stronghold guard
+  inspired_by: Orc warriors guarding the strongholds
+  classes:
+  - GuardOrc1H
+  variants:
+  - label: Two-handed stronghold guard
+    classes:
+    - GuardOrc2H
+  description: >-
+    Heavy armor, one weapon, a bow for walls and gates. The NPC file feeds Magicka it never uses, so your
+    plan moves those points into Stamina. Pairs naturally with the Orc race for Berserker Rage and a free
+    Heavy Armor head start.
+- id: shieldmaster
+  family: steel
+  name: Shieldmaster
+  inspired_by: The Block master and expert trainers
+  classes:
+  - TrainerBlockMaster
+  variants:
+  - label: 'Block expert trainer: shield brawler with Speech and Pickpocket instead of armor'
+    classes:
+    - TrainerBlockExpert
+  description: >-
+    Block is the build. Shield up, perfect the timing, bash to stagger, then strike. Heavy armor and a
+    one-hander do the rest. The NPC weights waste points on Magicka; the plan below puts them into Stamina
+    for more bashes.
+- id: barbarian
+  family: north
+  name: Barbarian
+  inspired_by: Combat barbarians and the ancient Nord heroes in Sovngarde
+  classes:
+  - CombatBarbarian
+  - MQAncientNord
+  description: >-
+    Light armor, a two-hander and a bow on the back. Move faster than the heavy builds, hit harder than
+    the light ones, and live on Health. Plays like a Nord pure build with the Smithing and Speech cut
+    out.
+- id: bandit-raider
+  family: north
+  name: Bandit raider
+  inspired_by: Bandit melee and Alik'r warriors (identical files)
+  classes:
+  - EncClassBanditMelee
+  - EncClassAlikrMelee
+  description: >-
+    One-hander or two-hander, whichever you loot first, plus a shield when it fits. Light armor with a
+    scrap of heavy. A scrappy, gear-agnostic fighter for a run where you take what you find on the road.
+- id: hold-guard
+  family: ranks
+  name: Hold guard
+  inspired_by: Imperial-aligned city guards
+  classes:
+  - GuardImperial
+  variants:
+  - label: 'Stormcloak guard: two-hander instead of one-hander, Magicka instead of Stamina'
+    classes:
+    - GuardSonsSkyrim
+  description: >-
+    Sword and shield, mixed armor, a bow for the walls, a little Sneak for night patrols. Health first.
+    Good for a lawful roleplay where you take bounties and clear the hold's bandit camps.
+- id: legionnaire
+  family: ranks
+  name: Legionnaire
+  inspired_by: Imperial soldiers, Stormcloak soldiers and Civil War soldiers
+  classes:
+  - SoldierImperialNotGuard
+  variants:
+  - label: 'Stormcloak soldier: same skills, Health and Magicka 1:1 instead of Stamina'
+    classes:
+    - SoldierSonsSkyrimNotGuard
+  - label: 'Civil War soldier: lighter skill spread, Stamina 7'
+    classes:
+    - CWSoldierClass
+  description: >-
+    Every weapon and armor skill trained evenly. The Imperial file weights Stamina at 7, the highest in
+    the game, so you sprint, power attack and bash all day. The Stormcloak file swaps that Stamina for
+    unused Magicka; the plan below follows the Imperial version.
+- id: jailor
+  family: ranks
+  name: Jailor
+  inspired_by: Prison guards in the hold jails
+  classes:
+  - Jailor
+  description: >-
+    Sword, shield and light armor, plus the keys: Lockpicking, Pickpocket and Sneak. A watchman who can
+    fight and also get into anywhere. Fits a Dawnguard-style patrol run or a corrupt-guard roleplay.
+- id: ranger
+  family: bow
+  name: Ranger
+  inspired_by: Combat rangers
+  classes:
+  - CombatRanger
+  description: >-
+    Bow first, blade and shield second, light armor throughout. Health and Stamina only, no magic. Hunt,
+    sell pelts, and fight in the open rather than from the shadows.
+- id: highwayman
+  family: bow
+  name: Highwayman
+  inspired_by: Bandit archers and Alik'r archers (identical files)
+  classes:
+  - EncClassBanditMissile
+  - EncClassAlikrMissile
+  description: >-
+    Archery leads, with a backup one-hander and whatever armor fits. Some Sneak for ambushes on the road.
+    A tougher, less stealthy archer than the Bosmer classic.
+- id: scout
+  family: bow
+  name: Scout
+  inspired_by: Combat scouts and the Sneak expert trainer
+  classes:
+  - CombatScout
+  variants:
+  - label: 'Sneak expert trainer: Sneak 4'
+    classes:
+    - TrainerSneakExpert
+  description: >-
+    Stealth archer with Restoration for self-healing and a touch of Alteration. Even three-way attribute
+    split. Scout ahead, shoot first, heal between fights instead of buying potions.
+- id: thalmor-archer
+  family: bow
+  name: Thalmor archer
+  inspired_by: Thalmor archers escorting Justiciars
+  classes:
+  - EncClassThalmorMissile
+  description: >-
+    Bow and light armor, a dagger for close range, Restoration for a quick heal. Disciplined and lean.
+    Roleplay an agent who answers to Elenwen and keeps the Embassy's secrets.
+- id: forsworn-hunter
+  family: bow
+  name: Forsworn hunter
+  inspired_by: Forsworn archers in the Reach
+  classes:
+  - EncClassForswornMissile
+  description: >-
+    Bow from the rocks, Alteration for Oakflesh, Restoration to heal, hide armor. A Reach native who fights
+    for the land. Natural fit for a Breton.
+- id: cutpurse
+  family: shadow
+  name: Cutpurse
+  inspired_by: Combat thieves and the Thieves Guild trainers
+  classes:
+  - CombatThief
+  - TrainerPickpocketMaster
+  - TrainerSneakMaster
+  variants:
+  - label: 'Lockpicking master trainer: Lockpicking 4'
+    classes:
+    - TrainerLockpickMaster
+  - label: 'Archery trainers: Archery 4, Speech 2'
+    classes:
+    - TrainerMarksmanExpert
+    - TrainerMarksmanJourneyman
+    - TrainerMarksmanMaster
+  - label: 'Pickpocket expert trainer: Pickpocket 3'
+    classes:
+    - TrainerPickpocketExpert
+  - label: 'Speech master trainer: Speech 4'
+    classes:
+    - TrainerSpeechcraftMaster
+  description: >-
+    Light armor and Sneak, bow and blade as tools rather than the point. Stamina-heavy with no Magicka,
+    so you run, jump and escape. Pick a variant for your specialty: locks, archery, pockets or the silver
+    tongue.
+- id: rogue
+  family: shadow
+  name: Rogue
+  inspired_by: Combat rogues
+  classes:
+  - CombatRogue
+  description: >-
+    The melee thief: one-hander, shield, light armor, Sneak. Sneak attacks open fights; the shield ends
+    the ones that go loud. Equal Health and Stamina.
+- id: blades-agent
+  family: shadow
+  name: Blades agent
+  inspired_by: The Blades
+  classes:
+  - Blade
+  description: >-
+    Bow, katana, shield and Sneak. Hunt dragons from cover and finish them in close. The NPC file puts
+    half its points into Magicka with no spells; the plan below moves them into Stamina.
+- id: assassin
+  family: assassin
+  name: Assassin
+  inspired_by: Combat assassins and two master trainers
+  classes:
+  - CombatAssassin
+  variants:
+  - label: 'Alchemy master trainer: Archery 4'
+    classes:
+    - TrainerAlchemyMaster
+  - label: 'Light Armor master trainer: Light Armor 4'
+    classes:
+    - TrainerLightArmorMaster
+  description: >-
+    Dagger sneak attacks and a bow, light armor, a little Alteration. Stamina leads. Kill quietly, contract
+    by contract, and never be in the fight for long.
+- id: nightingale
+  family: assassin
+  name: Nightingale
+  inspired_by: The Nightingale combat style
+  classes:
+  - CombatNightingale
+  description: >-
+    Bow and sword from the shadows, Destruction as a third weapon, light armor. Health-heavy for a stealth
+    build, so you survive when the ambush fails. Natural fit for a Thieves Guild run that ends with the
+    Nightingale armor.
+- id: nightblade
+  family: assassin
+  name: Nightblade
+  inspired_by: Combat nightblades
+  classes:
+  - CombatNightblade
+  description: >-
+    Destruction sneak attacks: Sneak and Destruction lead, Alteration for armor, a one-hander for close
+    range. Even attribute split. Works best with Illusion Quiet Casting if you add it, or a Dunmer for
+    the Destruction head start.
+- id: vampire
+  family: assassin
+  name: Vampire
+  inspired_by: Vampire NPCs
+  classes:
+  - EncClassVampire
+  description: >-
+    Sneak first, then a blade, Conjuration and Destruction for thralls and drains, light armor. Plays
+    from the night. Pair with Vampire Lord or the vanilla vampire stages for Drain Life and Night Eye.
+- id: spellsword
+  family: battle
+  name: Spellsword
+  inspired_by: Combat spellswords, plus Belrand and Teldryn Sero
+  classes:
+  - CombatSpellsword
+  variants:
+  - label: 'Belrand: same idea in light armor'
+    classes:
+    - NPCclassBelrand
+  - label: 'Teldryn Sero: light armor, adds Conjuration'
+    classes:
+    - DLC2NPCClassTeldryn
+  description: >-
+    Heavy armor, a one-hander, Destruction in the off hand and Restoration to heal. Even attribute split.
+    The classic hybrid: never the best at anything, almost never in trouble.
+- id: battle-archer
+  family: battle
+  name: Battle archer
+  inspired_by: The player spellsword test class
+  classes:
+  - AAAPlayerSpellswordClass
+  description: >-
+    Bow, Destruction and Restoration with a one-hander and a shield in reserve. A ranged hybrid: shoot,
+    burn, heal. No armor skill, so lean on distance or Alteration if you add it.
+- id: witchblade
+  family: battle
+  name: Witchblade
+  inspired_by: Combat witchblades
+  classes:
+  - CombatWitchblade
+  description: >-
+    Sword and shield with Destruction and Illusion support. Health and Magicka, no Stamina growth, so
+    you cast instead of power attacking. Calm or frenzy a group, then pick them off.
+- id: court-sorcerer
+  family: battle
+  name: Court sorcerer
+  inspired_by: Combat sorcerers and two master trainers
+  classes:
+  - CombatSorcerer
+  variants:
+  - label: 'Illusion master trainer: Illusion 4'
+    classes:
+    - TrainerIllusionMaster
+  - label: 'Destruction master trainer: Alteration and Restoration instead of Illusion'
+    classes:
+    - TrainerDestructionMaster
+  description: >-
+    A mage who wears plate. Destruction and Illusion lead, heavy armor and a sword back them up. Magicka
+    first, but enough Health to survive melee.
+- id: penitus-oculatus-agent
+  family: battle
+  name: Penitus Oculatus agent
+  inspired_by: The Emperor's guard
+  classes:
+  - EncClassPenitusOculatus
+  description: >-
+    One-hander and heavy armor with Destruction backup and a shield. Even attribute split. A bodyguard
+    who fights in formation and burns what the sword misses.
+- id: bandit-chief
+  family: battle
+  name: Bandit chief
+  inspired_by: Bandit bosses on Solstheim
+  classes:
+  - DLC2EncClassBanditBoss
+  description: >-
+    One-hander and Destruction lead, heavy armor, Alteration for armor spells. Health and Magicka only.
+    The boss in the back room who throws fire before drawing the axe.
+- id: forsworn-briarheart
+  family: battle
+  name: Forsworn briarheart
+  inspired_by: Forsworn warriors in the Reach
+  classes:
+  - EncClassForsworn
+  description: >-
+    One-hander with Destruction, light armor, a dash of Alteration and Restoration. Leans on Health and
+    Magicka. A Reach fighter who mixes hagraven magic into melee.
+- id: thalmor-warrior
+  family: battle
+  name: Thalmor warrior
+  inspired_by: Thalmor soldiers
+  classes:
+  - EncClassThalmorMelee
+  description: >-
+    One-hander and shield, light armor, Restoration for small heals. Disciplined and economical. Light
+    Magicka and Sneak for a soldier who also gathers intelligence.
+- id: hjaalmarch-housecarl
+  family: battle
+  name: Hjaalmarch housecarl
+  inspired_by: The steward-class housecarl from Hearthfire
+  classes:
+  - BYOHHousecarlHjaalmarchClass
+  description: >-
+    Everything at 2: heavy armor, one-hander, Alteration, Destruction, Restoration, with an even attribute
+    split. The most balanced file in the game. A good base for a no-specialty roleplay.
+- id: destruction-mage
+  family: robe
+  name: Destruction mage
+  inspired_by: Combat destruction and elemental mages, and Neloth
+  classes:
+  - CombatMageDestruction
+  - TrainerDestructionExpert
+  variants:
+  - label: 'Fire/frost/shock mage and Neloth: adds Conjuration 2'
+    classes:
+    - CombatMageElemental
+    - DLC2NelothClassTrainer
+  - label: 'Alteration expert trainer: Alteration 4, Conjuration 3'
+    classes:
+    - TrainerAlterationExpert
+  description: >-
+    Robes, Destruction and Restoration, Alteration for armor spells. Magicka 4 to Health 2. Keep distance
+    and pick the element the enemy is weak to.
+- id: conjurer
+  family: robe
+  name: Conjurer
+  inspired_by: Combat conjurers, necromancers and the Conjuration trainers
+  classes:
+  - CombatMageConjurer
+  - TrainerConjurationExpert
+  variants:
+  - label: 'Conjuration master trainer: Conjuration 4'
+    classes:
+    - TrainerConjurationMaster
+  - label: 'Necromancer: one-handed dagger instead of Destruction'
+    classes:
+    - CombatMageNecro
+  description: >-
+    Summons and thralls do the fighting while you heal from behind them. Destruction or a dagger for finishing.
+    Magicka-heavy. Pairs with the Breton race.
+- id: mystic
+  family: robe
+  name: Mystic
+  inspired_by: Combat mystics
+  classes:
+  - CombatMystic
+  description: >-
+    Alteration and Illusion control: paralyze, calm, fear, then summon or slip past. No Destruction, so
+    fights are decided by control rather than damage.
+- id: illusionist
+  family: robe
+  name: Illusionist
+  inspired_by: The Illusion expert and Destruction journeyman trainers
+  classes:
+  - TrainerIllusionExpert
+  variants:
+  - label: 'Destruction journeyman trainer: robe caster with more Magicka, adds Conjuration'
+    classes:
+    - TrainerDestructionJourneyman
+  description: >-
+    Illusion and Destruction together: frenzy a room, burn the survivors. Alteration for armor, Sneak
+    for quiet casting. A dagger as a last resort.
+- id: thalmor-wizard
+  family: robe
+  name: Thalmor wizard
+  inspired_by: Thalmor wizards
+  classes:
+  - EncClassThalmorWizard
+  description: >-
+    Conjuration and Destruction lead, a little Alteration and Restoration. Health and Magicka only. Atronach
+    in front, lightning behind it.
+- id: hedge-wizard
+  family: robe
+  name: Hedge wizard
+  inspired_by: Bandit wizards, Alik'r wizards and Forsworn shamans
+  classes:
+  - EncClassBanditWizard
+  variants:
+  - label: 'Alik''r wizard: Conjuration and Illusion instead of Alteration and the dagger'
+    classes:
+    - EncClassAlikrWizard
+  - label: 'Forsworn shaman: Conjuration instead of the dagger, less Alteration'
+    classes:
+    - EncClassForswornShaman
+  description: >-
+    Self-taught caster: Destruction with Alteration and Restoration, light armor and some Sneak. Less
+    glass than a College mage. Good fit for an outlaw or nomad roleplay.
+- id: spell-merchant
+  family: robe
+  name: Spell merchant
+  inspired_by: Court wizards and spell vendors
+  classes:
+  - VendorSpells
+  variants:
+  - label: 'Alteration master trainer: Alteration 4'
+    classes:
+    - TrainerAlterationMaster
+  - label: 'Enchanting expert trainer: Enchanting 4'
+    classes:
+    - TrainerEnchantingExpert
+  description: >-
+    Alteration and Illusion, Speech to sell, Sneak to listen. Very little Destruction. A non-combat mage
+    who solves things with Detect Life, Telekinesis and a good price.
+- id: temple-priest
+  family: holy
+  name: Temple priest
+  inspired_by: Priests and the Restoration and Enchanting trainers
+  classes:
+  - Priest
+  variants:
+  - label: 'Restoration journeyman trainer: Illusion 2 instead of Conjuration'
+    classes:
+    - TrainerRestorationJourneyman
+  - label: 'Restoration master trainer: Restoration 4'
+    classes:
+    - TrainerRestorationMaster
+  - label: 'Enchanting master trainer: Destruction 2 instead of Conjuration'
+    classes:
+    - TrainerEnchantingMaster
+  - label: 'Conjuration journeyman trainer: Conjuration 4'
+    classes:
+    - TrainerConjurationJourneyman
+  description: >-
+    Restoration and Speech lead, with Alchemy, Smithing and Enchanting for a supporting craft. The NPC
+    files grow Stamina instead of Magicka; the plan below moves it to Magicka. A pacifist-leaning healer
+    run.
+- id: monk
+  family: holy
+  name: Monk
+  inspired_by: Combat monks and the Restoration expert trainer
+  classes:
+  - CombatMonk
+  variants:
+  - label: 'Restoration expert trainer: Alteration and Restoration 3, no weapons'
+    classes:
+    - TrainerRestorationExpert
+  description: >-
+    Bow, blade, Alteration and Restoration, all at 2, with light armor. Even attribute split. A wandering
+    generalist who heals himself and travels light.
+- id: vigilant-of-stendarr
+  family: holy
+  name: Vigilant of Stendarr
+  inspired_by: The Vigilants
+  classes:
+  - Vigilant1hMeleeClass
+  variants:
+  - label: 'Two-handed Vigilant: heavy armor and Block at 3'
+    classes:
+    - Vigilant2hMeleeClass
+  description: >-
+    Paladin: sword and shield in heavy armor, Restoration for Sun damage against undead and vampires,
+    Alteration for wards. Health-first. Built for a Dawnguard run.
+- id: blacksmith
+  family: craft
+  name: Blacksmith
+  inspired_by: Blacksmiths and the Smithing and armor trainers
+  classes:
+  - VendorBlacksmith
+  variants:
+  - label: 'Smithing trainers: Pickpocket instead of Block'
+    classes:
+    - TrainerSmithingExpert
+    - TrainerSmithingJourneyman
+  - label: 'Smithing master trainer: Smithing 4'
+    classes:
+    - TrainerSmithingMaster
+  - label: 'Light Armor expert trainer: adds Light Armor 3 and Archery'
+    classes:
+    - TrainerLightArmorExpert
+  - label: 'Light Armor journeyman trainer: same, Smithing 2'
+    classes:
+    - TrainerLightArmorJourneyman
+  - label: 'Heavy Armor master trainer: no Magicka, Health and Stamina 3:3'
+    classes:
+    - TrainerHeavyArmorMaster
+  - label: 'Heavy Armor expert trainer: a fighter, Block 3 and One-Handed 3'
+    classes:
+    - TrainerHeavyArmorExpert
+  description: >-
+    Smithing and Speech: forge it, sell it. A one-hander and shield to protect the shop. Start at Warmaiden's
+    or the Skyforge and build a business before an adventure.
+- id: apothecary
+  family: craft
+  name: Apothecary
+  inspired_by: Apothecaries and the Alchemy trainers
+  classes:
+  - VendorApothecary
+  - TrainerAlchemyJourneyman
+  variants:
+  - label: 'Alchemy expert trainer: Alchemy 4'
+    classes:
+    - TrainerAlchemyExpert
+  description: >-
+    Alchemy and Speech, with Sneak and Pickpocket to collect ingredients from places you should not be.
+    Fights with poisons and potions instead of skill. Even attributes.
+- id: fletcher
+  family: craft
+  name: Fletcher
+  inspired_by: Fletchers
+  classes:
+  - VendorFletcher
+  description: >-
+    Archery and Speech, Smithing for arrows and bows. A craftsman-hunter who sells what he makes. The
+    plan moves the unused Magicka into Stamina.
+- id: bard
+  family: craft
+  name: Bard
+  inspired_by: Bards and the Speech expert trainer
+  classes:
+  - Bard
+  - TrainerSpeechcraftExpert
+  description: >-
+    Speech 4 leads, with Illusion for Calm and Courage, Alteration and Pickpocket on the side. A dagger
+    and bow you barely use. Talk your way through, starting at the Bards College in Solitude.
+- id: trader
+  family: craft
+  name: Trader
+  inspired_by: Pawnbrokers, tailors and food vendors
+  classes:
+  - VendorPawnbroker
+  variants:
+  - label: 'Tailor: Smithing 2, Light Armor 1'
+    classes:
+    - VendorTailor
+  - label: 'Food vendor: Pickpocket 3, Block and One-Handed'
+    classes:
+    - VendorFood
+  description: >-
+    Speech and Sneak lead, with Pickpocket and Lockpicking for acquiring stock. Haggle, fence and buy
+    property. Combat is a last resort.
+- id: laborer
+  family: folk
+  name: Laborer
+  inspired_by: Farmers, miners and lumberjacks (identical files)
+  classes:
+  - Farmer
+  - Miner
+  - Lumberjack
+  description: >-
+    Smithing, Enchanting and Alchemy at 3, with a bow, a one-hander and a two-hander at 2. A crafting-first
+    life sim: chop wood, mine ore, farm, then slowly arm yourself.
+- id: citizen
+  family: folk
+  name: Citizen
+  inspired_by: Townspeople
+  classes:
+  - Citizen
+  description: >-
+    The Laborer with Light Armor, Sneak and Speech added. A settled townsperson who crafts, trades and
+    can defend themselves. Good for a Hearthfire homestead run.
+- id: beggar
+  family: folk
+  name: Beggar
+  inspired_by: Beggars
+  classes:
+  - Beggar
+  description: >-
+    Speech 4 and Pickpocket 3 lead, everything else at 1. Start with nothing and live off charity and
+    theft. A hard challenge run with no real combat skill.
+- id: prisoner
+  family: folk
+  name: Prisoner
+  inspired_by: Prisoners
+  classes:
+  - Prisoner
+  description: >-
+    Smithing, Enchanting and Alchemy at 3, plus a scatter of thieving skills at 1. An ex-convict who learned
+    a trade inside. Starts like a crafter, plays like a survivor.
+- id: ebony-warrior
+  family: legend
+  name: Ebony Warrior
+  inspired_by: The Ebony Warrior (Dragonborn)
+  classes:
+  - DLC2EbonyWarriorClass
+  description: >-
+    Archery, Block, Heavy Armor and One-Handed at 9, Sneak 8, Conjuration and Alteration behind them.
+    A complete warrior with no Magicka growth, so spells come from enchantments. The endgame duelist.
+- id: miraak
+  family: legend
+  name: Miraak
+  inspired_by: Miraak (Dragonborn)
+  classes:
+  - DLC2EncClassMiraak
+  description: >-
+    Speech 8 for the Thu'um, then a broad spread of armor, blade and four magic schools. Health and Magicka
+    over Stamina. A Dragonborn who rules through the Voice.
+- id: ancient-dragonborn
+  family: legend
+  name: Ancient Dragonborn
+  inspired_by: The ancient Dragonborn class (Dragonborn DLC)
+  classes:
+  - dlc2DBAncientDragonbornClass
+  description: >-
+    Conjuration 9 on a heavy-armor warrior frame. Summon, then wade in with sword or greatsword. Health
+    first, Stamina second.
+- id: katria
+  family: legend
+  name: Katria
+  inspired_by: Katria (Dawnguard)
+  classes:
+  - DLC1EncClassKatria
+  description: >-
+    Bow first, mixed armor and a one-hander, Sneak for approaches. Stamina-heavy. An explorer-archer for
+    Dwemer ruins and the Forgotten Vale.
+- id: frea
+  family: legend
+  name: Frea
+  inspired_by: Frea (Dragonborn)
+  classes:
+  - DLC2csFrea
+  description: >-
+    One-hander and Alteration at 3, Restoration and light armor at 2. A Skaal shaman-warrior who shields
+    herself with magic and fights up close.
+- id: ralis-sedarys
+  family: legend
+  name: Ralis Sedarys
+  inspired_by: Ralis Sedarys (Dragonborn)
+  classes:
+  - DLC2dunKolbjornRalisClass
+  description: >-
+    One-hander and light armor at 3, Block and Sneak at 2. A treasure hunter who digs too deep. The NPC
+    file wastes points on Magicka; the plan moves them into Stamina.
+- id: blade-binder
+  family: legend
+  name: Blade Binder
+  inspired_by: Creation Club class
+  classes:
+  - ccASVSSE001_BladeBinder
+  description: >-
+    One-hander and Conjuration at 3: bound weapons and summons. Destruction and Sneak at 2, light armor
+    at 1. Even attributes. A conjured-steel duelist.

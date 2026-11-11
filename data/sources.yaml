@@ -1,0 +1,34 @@
+# Where the data came from. Evidence grades: sourced (read from the source),
+# partly-sourced (some fields read, some derived), derived (worked out, not read anywhere).
+sources:
+  - id: uesp-classes
+    title: UESP, Skyrim:Classes
+    url: https://en.uesp.net/wiki/Skyrim:Classes
+    used_for: Skill and attribute weights in data/classes.json
+    evidence: sourced
+    notes: >-
+      Read from a saved PDF of the page (docs/sources/uesp-skyrim-classes.pdf) using cell positions.
+      The PDF dropped the rows from Bandit Wizard to Conjurer; those 19 classes come from a screenshot
+      (docs/sources/uesp-classes-missing-rows.png) and are marked source: uesp-screenshot.
+  - id: uesp-races
+    title: UESP, Skyrim:Races
+    url: https://en.uesp.net/wiki/Skyrim:Races
+    used_for: Race skill bonuses in data/races.yaml (+10 signature, +5 others)
+    evidence: derived
+    notes: >-
+      Vanilla values written from general game knowledge; the page itself was not read during the
+      project. Verify in Phase 6. Attribute ratios and playstyle notes in races.yaml are also derived.
+  - id: build-text
+    title: Build names, groupings, attribute plans and playstyle descriptions
+    used_for: data/builds.yaml and the plan logic in scripts/build.py
+    evidence: derived
+    notes: >-
+      Written for this tool from the class weights and in-game roles. Where an NPC file grows an
+      attribute its skills never use, build.py moves those points and the card says so.
+  - id: community-ledger
+    title: Skyrim community build ledger
+    used_for: Phases 1 to 6 of docs/roadmap.md
+    evidence: partly-sourced
+    notes: >-
+      docs/research/community-build-ledger.md. Each row carries its own evidence grade and source links.
+      YouTube, Reddit, Nexus and Fandom blocked direct reading during the research, so treat it as leads.
