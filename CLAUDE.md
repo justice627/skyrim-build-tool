@@ -30,7 +30,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 1. Run `python scripts/validate.py` before every commit, and extend it whenever a new field or file is added.
 2. Never invent perks, items, weights, NPC facts or sources. Anything not read from a source is tagged `evidence: derived` and shown as such on the page.
 3. `classes.json` holds UESP numbers only. Interpretation (names, groupings, attribute plans, playstyle text) goes in `builds.yaml` or `build.py`.
-4. One roadmap phase per branch, one PR per phase. Each phase ends with a working page.
+4. One roadmap phase per branch. Each phase ends with a working page. When the work on a branch is done and `validate.py` passes, merge it into `main` (fast-forward when possible), push `main`, then delete the branch locally and on GitHub. No pull requests unless asked; pushing `main` triggers the Pages deploy.
 5. Keep it small: no framework, no bundler, no database. The page stays one self-contained HTML file.
 6. Write player-facing text plainly: American English, short sentences, no em dashes.
 
