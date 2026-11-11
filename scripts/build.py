@@ -6,7 +6,7 @@ Writes two files to dist/:
 """
 import json
 
-from common import ATTRS, DATA, ROOT, SCHOOL, SKILLS, load, weights
+from common import ATTRS, ROOT, SCHOOL, SKILLS, by_id, load, load_lookup, weights
 
 LEVELS = 49  # level-ups from level 2 to 50
 
@@ -43,7 +43,26 @@ def skill_line(w):
     return " · ".join(f"{SKILLS[k]} {v}" for k, v in skills)
 
 
-def render_build(b, classes):
+def render_picks(b, stones, shouts):
+    """Stone, shouts and requirement tags. Requirements are the build's own plus each shout's."""
+    st = b["stone"]
+    stone = {"early": stones[st["early"]]["name"], "early_fx": stones[st["early"]]["effect"],
+             "ev": st["evidence"]}
+    if st.get("final"):
+        stone.update(final=stones[st["final"]]["name"], final_fx=stones[st["final"]]["effect"])
+    picked = [shouts[i] for i in b["shouts"]["ids"]]
+    req = set(b.get("requires", [])) | {s["requires"] for s in picked} | {stones[st["early"]]["requires"]}
+    req.discard("vanilla")
+    order = ("DG", "HF", "DB", "CC", "AE")
+    return {
+        "stone": stone,
+        "shouts": {"list": [{"n": s["name"], "fx": s["effect"], "req": s["requires"]} for s in picked],
+                   "ev": b["shouts"]["evidence"]},
+        "req": [r for r in order if r in req],
+    }
+
+
+def render_build(b, classes, stones, shouts):
     w = weights(classes, b["classes"][0])
     attrs, why = plan(w)
     variants = []
@@ -56,6 +75,7 @@ def render_build(b, classes):
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
+        "aka": b.get("aliases", []), "ev": b["evidence"], **render_picks(b, stones, shouts),
     }
 
 
@@ -66,9 +86,10 @@ def render_race(r):
 
 def page_data():
     classes, doc, races = load()
+    stones, shouts = by_id(load_lookup("stones")), by_id(load_lookup("shouts"))
     return {
         "fams": doc["families"],
-        "builds": [render_build(b, classes) for b in doc["builds"]],
+        "builds": [render_build(b, classes, stones, shouts) for b in doc["builds"]],
         "races": [render_race(r) for r in races],
     }
 

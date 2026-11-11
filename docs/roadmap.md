@@ -5,7 +5,7 @@ This copy holds what Claude Code needs to work through the phases. The research 
 
 ## Order
 
-Phase 0 (move to this repo) comes first. Phases 1 and 2 can start in either order. Phases 3 and 5 wait on Phase 1's fields, and Phase 4 waits on Phase 2's named variants. Phase 6 runs alongside all of them.
+Phase 0 (move to this repo) is done; the one step left is switching Settings > Pages > Source to "GitHub Actions". Phases 1 and 2 can start in either order. Phases 3 and 5 wait on Phase 1's fields, and Phase 4 waits on Phase 2's named variants. Phase 6 runs alongside all of them.
 
 ## Phase 0: repo setup
 
@@ -13,11 +13,12 @@ Done when the repo is on GitHub, `validate.py` passes, and `build.py` reproduces
 
 ## Phase 1: fields that unlock the most
 
-Add to every build: standing stone (early and final), shouts (two to four), requirements (vanilla, Dawnguard, Hearthfire, Dragonborn, Creation, AE, mod), evidence (sourced, partly sourced, derived) and aliases. Beast form and Black Book power are optional fields.
+Add to every build: standing stone (early and final), shouts (two to four), requirements (vanilla, Dawnguard, Hearthfire, Dragonborn, Creation, AE, mod), evidence (sourced, partly sourced, derived) and aliases. Beast form and Black Book power moved to Phase 3, where the first builds that need them arrive.
 
 - New lookup files: `data/stones.yaml`, `data/shouts.yaml`. Builds reference them by id and the validator checks that every id resolves.
 - Defaults for the 56 builds come from ledger section F2 and are tagged derived.
 - Done when every build shows a stone and shouts, and searching "stealth archer" finds Scout.
+- Status: done. UESP was unreachable, so the stone and shout lists are tagged derived until Phase 6 checks them.
 
 ## Phase 2: names and named variants
 
@@ -31,6 +32,7 @@ Rename Cutpurse to Thief. Everything else from ledger B becomes an alias (Stealt
 Pugilist (unarmed), Tongue (shouts), Werewolf, Pacifist with Puppet Master, and Poisoner come first, because the NPC class files cannot express them. Then the sourced extras: Witchhunter, Vampire Slayer, Druid, Madman, Spellshield.
 
 - These have no NPC class file. They get hand-set weights on the same 1 to 4 scale, tagged derived, and the page shows that difference.
+- Add the optional beast form (None, Werewolf, Vampire Lord) and Black Book power fields here, with the Werewolf and Tongue builds.
 - Done when each new build has skills, stone, shouts, a playstyle and an evidence tag.
 
 ## Phase 4: perks, together with the user
@@ -57,9 +59,9 @@ Settle whether Chrysamere, Keening and Sunder need AE or mods. Spot-check the lo
 
 Mod-only builds (Requiem templates, the Ordinator Dragonborn, FudgeMuppet's modded Sand Demon, Celestial and King), ESO class conversions, and full perk templates for all 18 trees.
 
-## Open decisions before Phase 1
+## Decisions (2026-11-11)
 
-- Naming policy. Default: NPC-file names stay primary and community names become aliases, except Cutpurse to Thief.
-- Hand-set weights for new builds. Default: same 1 to 4 scale, visibly marked as set by hand.
-- Mod builds. Default: excluded.
-- Hosting. GitHub Pages is free for a public repo; a private repo needs a paid GitHub plan.
+- Naming: community names become the primary names, and NPC-file names become aliases. Phase 1 adds aliases and alias search; the renames happen in Phase 2.
+- Weights for new builds: set from the research (ledger A core skills) on the 1 to 4 scale, marked as not from an NPC file, with their evidence grade.
+- Mod builds: excluded. The page is vanilla-friendly, so default picks use base-game options where one fits.
+- Hosting: GitHub Pages from the public repo.

@@ -1,6 +1,12 @@
 # Build families and builds. Skill weights come from data/classes.json via each build's
 # `classes` list; the first class in `classes` is the one whose weights the card shows.
 # Variant classes must share identical weights within one variant (validate.py checks).
+# Phase 1 fields on every build:
+#   aliases   optional searchable alternate names
+#   evidence  grade of the skill weights (sourced for every build read from UESP classes)
+#   stone     {early, final (optional), evidence, ref (optional ledger row)}; ids from stones.yaml
+#   shouts    {ids (2 to 4), evidence, ref (optional)}; ids from shouts.yaml
+#   requires  optional list of extra requirements beyond the shouts (DG, HF, DB, CC, AE)
 families:
 - id: steel
   title: Shield and steel
@@ -43,6 +49,10 @@ builds:
   family: steel
   name: Housecarl
   inspired_by: Generic warriors, mercenaries and the one-handed trainers
+  aliases: [Warrior]
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
   classes:
   - CombatWarrior1H
   - TrainerOneHandedExpert
@@ -68,6 +78,9 @@ builds:
   family: steel
   name: Greatsword mercenary
   inspired_by: Two-handed warriors and trainers
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, elemental-fury, marked-for-death], evidence: derived}
   classes:
   - CombatWarrior2H
   - TrainerTwoHandedExpert
@@ -83,6 +96,9 @@ builds:
   family: steel
   name: Orc stronghold guard
   inspired_by: Orc warriors guarding the strongholds
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, disarm, marked-for-death], evidence: derived}
   classes:
   - GuardOrc1H
   variants:
@@ -97,6 +113,9 @@ builds:
   family: steel
   name: Shieldmaster
   inspired_by: The Block master and expert trainers
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, disarm, become-ethereal], evidence: derived}
   classes:
   - TrainerBlockMaster
   variants:
@@ -111,6 +130,9 @@ builds:
   family: north
   name: Barbarian
   inspired_by: Combat barbarians and the ancient Nord heroes in Sovngarde
+  evidence: sourced
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [unrelenting-force, elemental-fury, whirlwind-sprint], evidence: derived}
   classes:
   - CombatBarbarian
   - MQAncientNord
@@ -122,6 +144,9 @@ builds:
   family: north
   name: Bandit raider
   inspired_by: Bandit melee and Alik'r warriors (identical files)
+  evidence: sourced
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [elemental-fury, whirlwind-sprint, dismay], evidence: derived}
   classes:
   - EncClassBanditMelee
   - EncClassAlikrMelee
@@ -132,6 +157,9 @@ builds:
   family: ranks
   name: Hold guard
   inspired_by: Imperial-aligned city guards
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, disarm, call-of-valor], evidence: derived}
   classes:
   - GuardImperial
   variants:
@@ -145,6 +173,9 @@ builds:
   family: ranks
   name: Legionnaire
   inspired_by: Imperial soldiers, Stormcloak soldiers and Civil War soldiers
+  evidence: sourced
+  stone: {early: warrior, final: steed, evidence: derived}
+  shouts: {ids: [unrelenting-force, call-of-valor, marked-for-death], evidence: derived}
   classes:
   - SoldierImperialNotGuard
   variants:
@@ -162,6 +193,9 @@ builds:
   family: ranks
   name: Jailor
   inspired_by: Prison guards in the hold jails
+  evidence: sourced
+  stone: {early: thief, final: lady, evidence: derived}
+  shouts: {ids: [disarm, unrelenting-force, throw-voice], evidence: derived}
   classes:
   - Jailor
   description: >-
@@ -171,6 +205,10 @@ builds:
   family: bow
   name: Ranger
   inspired_by: Combat rangers
+  aliases: [Archer]
+  evidence: sourced
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [animal-allegiance, whirlwind-sprint, slow-time], evidence: derived}
   classes:
   - CombatRanger
   description: >-
@@ -180,6 +218,9 @@ builds:
   family: bow
   name: Highwayman
   inspired_by: Bandit archers and Alik'r archers (identical files)
+  evidence: sourced
+  stone: {early: warrior, final: shadow, evidence: derived}
+  shouts: {ids: [throw-voice, disarm, whirlwind-sprint], evidence: derived}
   classes:
   - EncClassBanditMissile
   - EncClassAlikrMissile
@@ -190,6 +231,10 @@ builds:
   family: bow
   name: Scout
   inspired_by: Combat scouts and the Sneak expert trainer
+  aliases: [Stealth Archer]
+  evidence: sourced
+  stone: {early: thief, final: shadow, evidence: partly-sourced, ref: B7}
+  shouts: {ids: [aura-whisper, slow-time, throw-voice], evidence: partly-sourced, ref: B7}
   classes:
   - CombatScout
   variants:
@@ -203,6 +248,9 @@ builds:
   family: bow
   name: Thalmor archer
   inspired_by: Thalmor archers escorting Justiciars
+  evidence: sourced
+  stone: {early: warrior, final: shadow, evidence: derived}
+  shouts: {ids: [aura-whisper, slow-time, whirlwind-sprint], evidence: derived}
   classes:
   - EncClassThalmorMissile
   description: >-
@@ -212,6 +260,9 @@ builds:
   family: bow
   name: Forsworn hunter
   inspired_by: Forsworn archers in the Reach
+  evidence: sourced
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [animal-allegiance, aura-whisper, whirlwind-sprint], evidence: derived}
   classes:
   - EncClassForswornMissile
   description: >-
@@ -221,6 +272,9 @@ builds:
   family: shadow
   name: Cutpurse
   inspired_by: Combat thieves and the Thieves Guild trainers
+  evidence: sourced
+  stone: {early: thief, final: tower, evidence: derived, ref: F1}
+  shouts: {ids: [throw-voice, whirlwind-sprint, become-ethereal], evidence: derived}
   classes:
   - CombatThief
   - TrainerPickpocketMaster
@@ -248,6 +302,9 @@ builds:
   family: shadow
   name: Rogue
   inspired_by: Combat rogues
+  evidence: sourced
+  stone: {early: thief, final: shadow, evidence: derived}
+  shouts: {ids: [throw-voice, whirlwind-sprint, slow-time], evidence: derived}
   classes:
   - CombatRogue
   description: >-
@@ -257,6 +314,9 @@ builds:
   family: shadow
   name: Blades agent
   inspired_by: The Blades
+  evidence: sourced
+  stone: {early: thief, final: shadow, evidence: derived, ref: F1}
+  shouts: {ids: [dragonrend, whirlwind-sprint, aura-whisper], evidence: derived}
   classes:
   - Blade
   description: >-
@@ -266,6 +326,9 @@ builds:
   family: assassin
   name: Assassin
   inspired_by: Combat assassins and two master trainers
+  evidence: sourced
+  stone: {early: thief, final: shadow, evidence: derived}
+  shouts: {ids: [aura-whisper, throw-voice, slow-time], evidence: derived}
   classes:
   - CombatAssassin
   variants:
@@ -282,6 +345,9 @@ builds:
   family: assassin
   name: Nightingale
   inspired_by: The Nightingale combat style
+  evidence: sourced
+  stone: {early: thief, final: shadow, evidence: derived}
+  shouts: {ids: [aura-whisper, throw-voice, become-ethereal], evidence: derived}
   classes:
   - CombatNightingale
   description: >-
@@ -292,6 +358,9 @@ builds:
   family: assassin
   name: Nightblade
   inspired_by: Combat nightblades
+  evidence: sourced
+  stone: {early: mage, final: shadow, evidence: derived, ref: F1}
+  shouts: {ids: [aura-whisper, throw-voice, slow-time], evidence: derived}
   classes:
   - CombatNightblade
   description: >-
@@ -302,6 +371,9 @@ builds:
   family: assassin
   name: Vampire
   inspired_by: Vampire NPCs
+  evidence: sourced
+  stone: {early: thief, final: shadow, evidence: derived}
+  shouts: {ids: [soul-tear, aura-whisper, marked-for-death], evidence: derived}
   classes:
   - EncClassVampire
   description: >-
@@ -311,6 +383,10 @@ builds:
   family: battle
   name: Spellsword
   inspired_by: Combat spellswords, plus Belrand and Teldryn Sero
+  aliases: [Crusader]
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived, ref: F1}
+  shouts: {ids: [unrelenting-force, fire-breath, elemental-fury], evidence: derived}
   classes:
   - CombatSpellsword
   variants:
@@ -327,6 +403,9 @@ builds:
   family: battle
   name: Battle archer
   inspired_by: The player spellsword test class
+  evidence: sourced
+  stone: {early: mage, final: lady, evidence: derived}
+  shouts: {ids: [slow-time, aura-whisper, storm-call], evidence: derived}
   classes:
   - AAAPlayerSpellswordClass
   description: >-
@@ -336,6 +415,10 @@ builds:
   family: battle
   name: Witchblade
   inspired_by: Combat witchblades
+  aliases: [Witcher]
+  evidence: sourced
+  stone: {early: mage, final: lady, evidence: derived}
+  shouts: {ids: [elemental-fury, unrelenting-force, slow-time], evidence: derived}
   classes:
   - CombatWitchblade
   description: >-
@@ -345,6 +428,9 @@ builds:
   family: battle
   name: Court sorcerer
   inspired_by: Combat sorcerers and two master trainers
+  evidence: sourced
+  stone: {early: mage, final: atronach, evidence: derived}
+  shouts: {ids: [unrelenting-force, fire-breath, slow-time], evidence: derived}
   classes:
   - CombatSorcerer
   variants:
@@ -361,6 +447,9 @@ builds:
   family: battle
   name: Penitus Oculatus agent
   inspired_by: The Emperor's guard
+  evidence: sourced
+  stone: {early: warrior, final: shadow, evidence: derived, ref: F1}
+  shouts: {ids: [aura-whisper, unrelenting-force, slow-time], evidence: derived}
   classes:
   - EncClassPenitusOculatus
   description: >-
@@ -370,6 +459,9 @@ builds:
   family: battle
   name: Bandit chief
   inspired_by: Bandit bosses on Solstheim
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, fire-breath, dismay], evidence: derived}
   classes:
   - DLC2EncClassBanditBoss
   description: >-
@@ -379,6 +471,9 @@ builds:
   family: battle
   name: Forsworn briarheart
   inspired_by: Forsworn warriors in the Reach
+  evidence: sourced
+  stone: {early: mage, final: lady, evidence: derived}
+  shouts: {ids: [animal-allegiance, frost-breath, whirlwind-sprint], evidence: derived}
   classes:
   - EncClassForsworn
   description: >-
@@ -388,6 +483,9 @@ builds:
   family: battle
   name: Thalmor warrior
   inspired_by: Thalmor soldiers
+  evidence: sourced
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [unrelenting-force, elemental-fury, marked-for-death], evidence: derived}
   classes:
   - EncClassThalmorMelee
   description: >-
@@ -397,6 +495,9 @@ builds:
   family: battle
   name: Hjaalmarch housecarl
   inspired_by: The steward-class housecarl from Hearthfire
+  evidence: sourced
+  stone: {early: mage, final: lady, evidence: derived, ref: F1}
+  shouts: {ids: [unrelenting-force, frost-breath, become-ethereal], evidence: derived}
   classes:
   - BYOHHousecarlHjaalmarchClass
   description: >-
@@ -406,6 +507,10 @@ builds:
   family: robe
   name: Destruction mage
   inspired_by: Combat destruction and elemental mages, and Neloth
+  aliases: [Mage, True Mage]
+  evidence: sourced
+  stone: {early: mage, final: atronach, evidence: derived, ref: F1}
+  shouts: {ids: [fire-breath, frost-breath, become-ethereal], evidence: derived}
   classes:
   - CombatMageDestruction
   - TrainerDestructionExpert
@@ -424,6 +529,9 @@ builds:
   family: robe
   name: Conjurer
   inspired_by: Combat conjurers, necromancers and the Conjuration trainers
+  evidence: sourced
+  stone: {early: mage, final: ritual, evidence: derived, ref: F1}
+  shouts: {ids: [become-ethereal, unrelenting-force, call-dragon], evidence: derived}
   classes:
   - CombatMageConjurer
   - TrainerConjurationExpert
@@ -441,6 +549,9 @@ builds:
   family: robe
   name: Mystic
   inspired_by: Combat mystics
+  evidence: sourced
+  stone: {early: mage, final: atronach, evidence: derived}
+  shouts: {ids: [aura-whisper, slow-time, clear-skies], evidence: derived}
   classes:
   - CombatMystic
   description: >-
@@ -450,6 +561,9 @@ builds:
   family: robe
   name: Illusionist
   inspired_by: The Illusion expert and Destruction journeyman trainers
+  evidence: sourced
+  stone: {early: mage, final: atronach, evidence: derived}
+  shouts: {ids: [throw-voice, dismay, kynes-peace], evidence: derived}
   classes:
   - TrainerIllusionExpert
   variants:
@@ -463,6 +577,9 @@ builds:
   family: robe
   name: Thalmor wizard
   inspired_by: Thalmor wizards
+  evidence: sourced
+  stone: {early: mage, final: atronach, evidence: derived}
+  shouts: {ids: [fire-breath, unrelenting-force, become-ethereal], evidence: derived}
   classes:
   - EncClassThalmorWizard
   description: >-
@@ -472,6 +589,9 @@ builds:
   family: robe
   name: Hedge wizard
   inspired_by: Bandit wizards, Alik'r wizards and Forsworn shamans
+  evidence: sourced
+  stone: {early: mage, final: apprentice, evidence: derived}
+  shouts: {ids: [frost-breath, become-ethereal, whirlwind-sprint], evidence: derived}
   classes:
   - EncClassBanditWizard
   variants:
@@ -488,6 +608,9 @@ builds:
   family: robe
   name: Spell merchant
   inspired_by: Court wizards and spell vendors
+  evidence: sourced
+  stone: {early: mage, final: apprentice, evidence: derived}
+  shouts: {ids: [slow-time, throw-voice, kynes-peace], evidence: derived}
   classes:
   - VendorSpells
   variants:
@@ -504,6 +627,9 @@ builds:
   family: holy
   name: Temple priest
   inspired_by: Priests and the Restoration and Enchanting trainers
+  evidence: sourced
+  stone: {early: mage, final: lover, evidence: derived}
+  shouts: {ids: [kynes-peace, clear-skies, call-of-valor], evidence: derived}
   classes:
   - Priest
   variants:
@@ -527,6 +653,9 @@ builds:
   family: holy
   name: Monk
   inspired_by: Combat monks and the Restoration expert trainer
+  evidence: sourced
+  stone: {early: lover, final: lady, evidence: derived}
+  shouts: {ids: [whirlwind-sprint, become-ethereal, kynes-peace], evidence: derived}
   classes:
   - CombatMonk
   variants:
@@ -540,6 +669,10 @@ builds:
   family: holy
   name: Vigilant of Stendarr
   inspired_by: The Vigilants
+  aliases: [Paladin]
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [unrelenting-force, call-of-valor, become-ethereal], evidence: derived}
   classes:
   - Vigilant1hMeleeClass
   variants:
@@ -553,6 +686,9 @@ builds:
   family: craft
   name: Blacksmith
   inspired_by: Blacksmiths and the Smithing and armor trainers
+  evidence: sourced
+  stone: {early: warrior, final: steed, evidence: derived}
+  shouts: {ids: [unrelenting-force, disarm, whirlwind-sprint], evidence: derived}
   classes:
   - VendorBlacksmith
   variants:
@@ -582,6 +718,9 @@ builds:
   family: craft
   name: Apothecary
   inspired_by: Apothecaries and the Alchemy trainers
+  evidence: sourced
+  stone: {early: thief, final: serpent, evidence: derived}
+  shouts: {ids: [throw-voice, whirlwind-sprint, kynes-peace], evidence: derived}
   classes:
   - VendorApothecary
   - TrainerAlchemyJourneyman
@@ -596,6 +735,9 @@ builds:
   family: craft
   name: Fletcher
   inspired_by: Fletchers
+  evidence: sourced
+  stone: {early: warrior, final: steed, evidence: derived}
+  shouts: {ids: [whirlwind-sprint, aura-whisper, slow-time], evidence: derived}
   classes:
   - VendorFletcher
   description: >-
@@ -605,6 +747,9 @@ builds:
   family: craft
   name: Bard
   inspired_by: Bards and the Speech expert trainer
+  evidence: sourced
+  stone: {early: lover, evidence: derived, ref: F1}
+  shouts: {ids: [kynes-peace, throw-voice, call-of-valor], evidence: derived}
   classes:
   - Bard
   - TrainerSpeechcraftExpert
@@ -615,6 +760,9 @@ builds:
   family: craft
   name: Trader
   inspired_by: Pawnbrokers, tailors and food vendors
+  evidence: sourced
+  stone: {early: thief, final: steed, evidence: derived}
+  shouts: {ids: [throw-voice, whirlwind-sprint, kynes-peace], evidence: derived}
   classes:
   - VendorPawnbroker
   variants:
@@ -631,6 +779,9 @@ builds:
   family: folk
   name: Laborer
   inspired_by: Farmers, miners and lumberjacks (identical files)
+  evidence: sourced
+  stone: {early: lover, final: steed, evidence: derived}
+  shouts: {ids: [unrelenting-force, whirlwind-sprint], evidence: derived}
   classes:
   - Farmer
   - Miner
@@ -642,6 +793,9 @@ builds:
   family: folk
   name: Citizen
   inspired_by: Townspeople
+  evidence: sourced
+  stone: {early: lover, evidence: derived}
+  shouts: {ids: [kynes-peace, whirlwind-sprint], evidence: derived}
   classes:
   - Citizen
   description: >-
@@ -651,6 +805,9 @@ builds:
   family: folk
   name: Beggar
   inspired_by: Beggars
+  evidence: sourced
+  stone: {early: lover, final: tower, evidence: derived}
+  shouts: {ids: [throw-voice, whirlwind-sprint], evidence: derived}
   classes:
   - Beggar
   description: >-
@@ -660,6 +817,9 @@ builds:
   family: folk
   name: Prisoner
   inspired_by: Prisoners
+  evidence: sourced
+  stone: {early: lover, final: steed, evidence: derived}
+  shouts: {ids: [unrelenting-force, whirlwind-sprint], evidence: derived}
   classes:
   - Prisoner
   description: >-
@@ -669,6 +829,9 @@ builds:
   family: legend
   name: Ebony Warrior
   inspired_by: The Ebony Warrior (Dragonborn)
+  evidence: sourced
+  stone: {early: warrior, final: lord, evidence: derived}
+  shouts: {ids: [dragonrend, unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
   classes:
   - DLC2EbonyWarriorClass
   description: >-
@@ -678,6 +841,9 @@ builds:
   family: legend
   name: Miraak
   inspired_by: Miraak (Dragonborn)
+  evidence: sourced
+  stone: {early: mage, final: atronach, evidence: derived}
+  shouts: {ids: [bend-will, dragon-aspect, cyclone, unrelenting-force], evidence: derived}
   classes:
   - DLC2EncClassMiraak
   description: >-
@@ -687,6 +853,9 @@ builds:
   family: legend
   name: Ancient Dragonborn
   inspired_by: The ancient Dragonborn class (Dragonborn DLC)
+  evidence: sourced
+  stone: {early: mage, final: ritual, evidence: derived}
+  shouts: {ids: [dragonrend, fire-breath, unrelenting-force, call-dragon], evidence: derived}
   classes:
   - dlc2DBAncientDragonbornClass
   description: >-
@@ -696,6 +865,9 @@ builds:
   family: legend
   name: Katria
   inspired_by: Katria (Dawnguard)
+  evidence: sourced
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [slow-time, aura-whisper, whirlwind-sprint], evidence: derived}
   classes:
   - DLC1EncClassKatria
   description: >-
@@ -705,6 +877,9 @@ builds:
   family: legend
   name: Frea
   inspired_by: Frea (Dragonborn)
+  evidence: sourced
+  stone: {early: mage, final: lady, evidence: derived}
+  shouts: {ids: [cyclone, animal-allegiance, unrelenting-force], evidence: derived}
   classes:
   - DLC2csFrea
   description: >-
@@ -714,6 +889,9 @@ builds:
   family: legend
   name: Ralis Sedarys
   inspired_by: Ralis Sedarys (Dragonborn)
+  evidence: sourced
+  stone: {early: warrior, final: lady, evidence: derived}
+  shouts: {ids: [battle-fury, whirlwind-sprint, unrelenting-force], evidence: derived}
   classes:
   - DLC2dunKolbjornRalisClass
   description: >-
@@ -723,6 +901,10 @@ builds:
   family: legend
   name: Blade Binder
   inspired_by: Creation Club class
+  aliases: [Bound Warrior, Warrior Mystic]
+  evidence: sourced
+  stone: {early: mage, final: lady, evidence: derived}
+  shouts: {ids: [slow-time, whirlwind-sprint, become-ethereal], evidence: derived}
   classes:
   - ccASVSSE001_BladeBinder
   description: >-

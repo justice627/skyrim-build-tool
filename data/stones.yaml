@@ -1,0 +1,83 @@
+# The 13 standing stones. Only one stone blessing is active at a time; the Aetherial Crown
+# (Dawnguard) allows a second. `group`: guardian (the Warrior, Mage and Thief stones near
+# Riverwood) or the guardian whose charge the stone is under (warrior, mage, thief).
+# Written from game knowledge because UESP was not reachable: evidence derived, verify in Phase 6.
+stones:
+- id: warrior
+  name: Warrior Stone
+  group: guardian
+  effect: Combat skills improve 20% faster.
+  requires: vanilla
+  evidence: derived
+- id: mage
+  name: Mage Stone
+  group: guardian
+  effect: Magic skills improve 20% faster.
+  requires: vanilla
+  evidence: derived
+- id: thief
+  name: Thief Stone
+  group: guardian
+  effect: Stealth skills improve 20% faster.
+  requires: vanilla
+  evidence: derived
+- id: lord
+  name: Lord Stone
+  group: warrior
+  effect: Adds 50 armor rating and 25% magic resistance.
+  requires: vanilla
+  evidence: derived
+- id: lady
+  name: Lady Stone
+  group: warrior
+  effect: Health and Stamina regenerate 25% faster.
+  requires: vanilla
+  evidence: derived
+- id: steed
+  name: Steed Stone
+  group: warrior
+  effect: Adds 100 carry weight, and worn armor weighs nothing and does not slow you.
+  requires: vanilla
+  evidence: derived
+- id: apprentice
+  name: Apprentice Stone
+  group: mage
+  effect: Magicka regenerates twice as fast, but you take twice the damage from magic.
+  requires: vanilla
+  evidence: derived
+- id: atronach
+  name: Atronach Stone
+  group: mage
+  effect: Adds 50 Magicka and absorbs 50% of spells, but Magicka regenerates 50% slower.
+  requires: vanilla
+  evidence: derived
+- id: ritual
+  name: Ritual Stone
+  group: mage
+  effect: Once a day, raises all nearby corpses to fight for you.
+  requires: vanilla
+  evidence: derived
+- id: lover
+  name: Lover Stone
+  group: thief
+  effect: All skills improve 15% faster.
+  requires: vanilla
+  evidence: derived
+- id: serpent
+  name: Serpent Stone
+  group: thief
+  effect: Once a day, paralyzes a target and deals poison damage.
+  requires: vanilla
+  evidence: derived
+- id: shadow
+  name: Shadow Stone
+  group: thief
+  effect: Once a day, makes you invisible for 60 seconds.
+  requires: vanilla
+  evidence: derived
+- id: tower
+  name: Tower Stone
+  group: thief
+  effect: Once a day, opens any lock up to Expert.
+  requires: vanilla
+  evidence: derived

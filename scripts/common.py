@@ -19,6 +19,10 @@ ATTRS = ("Hea", "Mag", "Sta")
 # Skill school: c = combat (warrior), m = magic (mage), s = stealth (thief).
 SCHOOL = {code: ("c" if i < 6 else "m" if i < 12 else "s") for i, code in enumerate(SKILLS)}
 SCHOOL_BY_NAME = {SKILLS[c]: s for c, s in SCHOOL.items()}
+# Requirement tags: base game, Dawnguard, Hearthfire, Dragonborn, paid Creation, Anniversary Edition.
+# Mod is left out on purpose: mod-only builds are out of scope.
+REQUIRES = ("vanilla", "DG", "HF", "DB", "CC", "AE")
+EVIDENCE = ("sourced", "partly-sourced", "derived")
 
 
 def load():
@@ -26,6 +30,15 @@ def load():
     builds = yaml.safe_load((DATA / "builds.yaml").read_text())
     races = yaml.safe_load((DATA / "races.yaml").read_text())["races"]
     return classes, builds, races
+
+
+def load_lookup(name):
+    """A list file such as stones.yaml, as a list of entries (ids may repeat; validate.py checks)."""
+    return yaml.safe_load((DATA / f"{name}.yaml").read_text())[name]
+
+
+def by_id(entries):
+    return {e["id"]: e for e in entries}
 
 
 def weights(classes, editor_id):

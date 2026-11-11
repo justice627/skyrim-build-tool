@@ -7,16 +7,63 @@ Rules:
 - classes grouped in one build (or one variant) have identical weights, so merging them hides nothing
 - every class in classes.json is used exactly once across all builds
 - races use real skill names and a three-part attribute ratio
+- stones.yaml and shouts.yaml entries have unique ids, a name, an effect, a known requirement and evidence grade
+- every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
+  known evidence grades and requirements, and aliases that clash with no build name or other alias
 """
+import re
 import sys
 from collections import Counter
 
-from common import ATTRS, SKILLS, load, weights
+from common import ATTRS, EVIDENCE, REQUIRES, SKILLS, by_id, load, load_lookup, weights
+
+LEDGER_REF = re.compile(r"[A-F]\d+")
+
+
+def check_lookup(kind, entries, errors):
+    ids = Counter(e.get("id") for e in entries)
+    errors += [f"{kind} id {i} is used {n} times" for i, n in ids.items() if n > 1]
+    for e in entries:
+        for field in ("id", "name", "effect"):
+            if not str(e.get(field, "")).strip():
+                errors.append(f"{kind} {e.get('id')}: missing {field}")
+        if e.get("requires") not in REQUIRES:
+            errors.append(f"{kind} {e.get('id')}: unknown requires {e.get('requires')!r}")
+        if e.get("evidence") not in EVIDENCE:
+            errors.append(f"{kind} {e.get('id')}: unknown evidence {e.get('evidence')!r}")
+
+
+def check_picks(name, b, stones, shouts, errors):
+    if b.get("evidence") not in EVIDENCE:
+        errors.append(f"{name}: unknown evidence {b.get('evidence')!r}")
+    for r in b.get("requires", []):
+        if r not in REQUIRES:
+            errors.append(f"{name}: unknown requires {r!r}")
+    st = b.get("stone") or {}
+    if not st.get("early"):
+        errors.append(f"{name}: missing stone.early")
+    for key in ("early", "final"):
+        if st.get(key) and st[key] not in stones:
+            errors.append(f"{name}: unknown stone {st[key]!r}")
+    sh = b.get("shouts") or {}
+    ids = sh.get("ids") or []
+    if not 2 <= len(ids) <= 4 or len(set(ids)) != len(ids):
+        errors.append(f"{name}: needs 2 to 4 different shouts, has {ids}")
+    errors += [f"{name}: unknown shout {i!r}" for i in ids if i not in shouts]
+    for label, block in (("stone", st), ("shouts", sh)):
+        if block.get("evidence") not in EVIDENCE:
+            errors.append(f"{name}: {label} has unknown evidence {block.get('evidence')!r}")
+        if "ref" in block and not LEDGER_REF.fullmatch(str(block["ref"])):
+            errors.append(f"{name}: {label} ref {block['ref']!r} is not a ledger row id")
 
 
 def main():
     classes, doc, races = load()
+    stone_list, shout_list = load_lookup("stones"), load_lookup("shouts")
+    stones, shouts = by_id(stone_list), by_id(shout_list)
     errors = []
+    check_lookup("stone", stone_list, errors)
+    check_lookup("shout", shout_list, errors)
     known = set(SKILLS) | set(ATTRS)
 
     for eid, c in classes.items():
@@ -33,8 +80,19 @@ def main():
     errors += [f"build id {i} is used {n} times" for i, n in ids.items() if n > 1]
 
     used = []
+    names = Counter()
+    for b in doc["builds"]:
+        names[b.get("name", "").lower()] += 1
+        for a in b.get("aliases", []):
+            names[str(a).lower()] += 1
     for b in doc["builds"]:
         name = b.get("name", b["id"])
+        check_picks(name, b, stones, shouts, errors)
+        for a in b.get("aliases", []):
+            if not isinstance(a, str) or not a.strip():
+                errors.append(f"{name}: empty alias")
+            elif names[a.lower()] > 1:
+                errors.append(f"{name}: alias {a!r} repeats another build name or alias")
         if b["family"] not in families:
             errors.append(f"{name}: unknown family {b['family']}")
         for field in ("description", "inspired_by"):
@@ -53,10 +111,10 @@ def main():
     errors += [f"class {e} is used {n} times" for e, n in counts.items() if n > 1]
     errors += [f"class {e} is not used by any build" for e in classes if e not in counts]
 
-    names = set(SKILLS.values())
+    skill_names = set(SKILLS.values())
     for r in races:
         for s in [r["signature"], *r["plus5"]]:
-            if s not in names:
+            if s not in skill_names:
                 errors.append(f"race {r['race']}: unknown skill {s}")
         a = r["attributes"]
         if len(a) != 3 or not all(isinstance(x, int) and x >= 0 for x in a) or not sum(a):
@@ -66,7 +124,8 @@ def main():
         print(f"{len(errors)} problem(s):")
         print("\n".join(f"  - {e}" for e in errors))
         return 1
-    print(f"OK: {len(classes)} classes, {len(doc['builds'])} builds, {len(races)} races")
+    print(f"OK: {len(classes)} classes, {len(doc['builds'])} builds, {len(races)} races, "
+          f"{len(stones)} stones, {len(shouts)} shouts")
     return 0
 
 

@@ -1,0 +1,30 @@
+# Dragon shouts. `requires` names the game or DLC the shout comes from.
+# Written from game knowledge because UESP was not reachable: evidence derived, verify in Phase 6.
+shouts:
+- {id: animal-allegiance, name: Animal Allegiance, requires: vanilla, evidence: derived, effect: Nearby animals fight for you.}
+- {id: aura-whisper, name: Aura Whisper, requires: vanilla, evidence: derived, effect: Reveals living and undead creatures through walls.}
+- {id: become-ethereal, name: Become Ethereal, requires: vanilla, evidence: derived, effect: You cannot take damage for a short time but cannot attack.}
+- {id: call-dragon, name: Call Dragon, requires: vanilla, evidence: derived, effect: Calls Odahviing to fight beside you.}
+- {id: call-of-valor, name: Call of Valor, requires: vanilla, evidence: derived, effect: Summons a hero of Sovngarde to fight for you.}
+- {id: clear-skies, name: Clear Skies, requires: vanilla, evidence: derived, effect: Clears fog and bad weather.}
+- {id: disarm, name: Disarm, requires: vanilla, evidence: derived, effect: Knocks the weapon out of an enemy's hands.}
+- {id: dismay, name: Dismay, requires: vanilla, evidence: derived, effect: Makes nearby enemies flee.}
+- {id: dragonrend, name: Dragonrend, requires: vanilla, evidence: derived, effect: Forces a flying dragon to land.}
+- {id: elemental-fury, name: Elemental Fury, requires: vanilla, evidence: derived, effect: Your weapon attacks get faster.}
+- {id: fire-breath, name: Fire Breath, requires: vanilla, evidence: derived, effect: Breathes a cone of fire.}
+- {id: frost-breath, name: Frost Breath, requires: vanilla, evidence: derived, effect: Breathes a cone of frost that drains Stamina.}
+- {id: ice-form, name: Ice Form, requires: vanilla, evidence: derived, effect: Freezes a target solid.}
+- {id: kynes-peace, name: Kyne's Peace, requires: vanilla, evidence: derived, effect: Calms nearby animals.}
+- {id: marked-for-death, name: Marked for Death, requires: vanilla, evidence: derived, effect: Lowers a target's armor and drains its Health.}
+- {id: slow-time, name: Slow Time, requires: vanilla, evidence: derived, effect: Slows time around you.}
+- {id: storm-call, name: Storm Call, requires: vanilla, evidence: derived, effect: Calls a lightning storm that strikes anyone nearby.}
+- {id: throw-voice, name: Throw Voice, requires: vanilla, evidence: derived, effect: Throws your voice to distract or lure enemies.}
+- {id: unrelenting-force, name: Unrelenting Force, requires: vanilla, evidence: derived, effect: Staggers and knocks back whatever is in front of you.}
+- {id: whirlwind-sprint, name: Whirlwind Sprint, requires: vanilla, evidence: derived, effect: Dashes you forward a long way.}
+- {id: drain-vitality, name: Drain Vitality, requires: DG, evidence: derived, effect: Drains a target's Health, Magicka and Stamina.}
+- {id: soul-tear, name: Soul Tear, requires: DG, evidence: derived, effect: Damages a target and raises it as your thrall if it dies.}
+- {id: summon-durnehviir, name: Summon Durnehviir, requires: DG, evidence: derived, effect: Calls the undead dragon Durnehviir to fight for you.}
+- {id: battle-fury, name: Battle Fury, requires: DB, evidence: derived, effect: Your allies attack faster.}
+- {id: bend-will, name: Bend Will, requires: DB, evidence: derived, effect: Makes a target your ally for a short time, and can tame dragons.}
+- {id: cyclone, name: Cyclone, requires: DB, evidence: derived, effect: Throws a whirlwind that tosses enemies around.}
+- {id: dragon-aspect, name: Dragon Aspect, requires: DB, evidence: derived, effect: Raises your armor and melee damage for a short time.}

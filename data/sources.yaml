@@ -18,6 +18,16 @@ sources:
     notes: >-
       Vanilla values written from general game knowledge; the page itself was not read during the
       project. Verify in Phase 6. Attribute ratios and playstyle notes in races.yaml are also derived.
+  - id: uesp-stones-shouts
+    title: UESP, Skyrim:Standing_Stones and Skyrim:Shouts
+    url: https://en.uesp.net/wiki/Skyrim:Standing_Stones
+    used_for: data/stones.yaml and data/shouts.yaml (names, effects, DLC)
+    evidence: derived
+    notes: >-
+      UESP returned 403 to the build environment, so both lists were written from game knowledge.
+      Verify in Phase 6, or save both pages to docs/sources/ and retag them sourced. The stone and
+      shout picks on each build are suggestions written for this tool (derived), except where a
+      ledger row is cited as ref.
   - id: build-text
     title: Build names, groupings, attribute plans and playstyle descriptions
     used_for: data/builds.yaml and the plan logic in scripts/build.py

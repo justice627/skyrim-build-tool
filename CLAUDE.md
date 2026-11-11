@@ -16,6 +16,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `data/classes.json`: raw UESP skill and attribute weights per NPC class EditorID. Source data; do not edit by hand.
 - `data/builds.yaml`: families and builds. Each build points at the class files it comes from, plus variants, inspiration and playstyle text.
 - `data/races.yaml`: pure race builds. Attribute ratios here are recommendations, not game data.
+- `data/stones.yaml`, `data/shouts.yaml`: lookup lists that builds reference by id.
 - `data/sources.yaml`: where data came from and how much to trust it.
 - `scripts/`: `common.py` (loading, skill codes), `validate.py`, `build.py`.
 - `src/template.html`: the page. `__DATA__` is replaced with the built JSON. It is a fragment because claude.ai artifacts supply their own skeleton; `build.py` wraps it into a full document for `index.html`.
@@ -38,4 +39,6 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Weight tiers on the page: primary is 3 or more, secondary 2, minor 1.
 - A build's first class decides the weights its card shows. Classes grouped in one build or one variant must have identical weights; the validator enforces this.
 - Every class in `classes.json` is used exactly once across all builds.
+- Every build has `evidence` (grade of its skills), a `stone` (`early`, optional `final`) and 2 to 4 `shouts`, each block with its own `evidence` and an optional ledger `ref` such as `B7`. Optional: `aliases`, `requires`.
+- Evidence grades: `sourced`, `partly-sourced`, `derived`. Requirement tags: `vanilla`, `DG`, `HF`, `DB`, `CC`, `AE`. Mod-only content is out of scope, so there is no `Mod` tag.
 - Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json`.

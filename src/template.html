@@ -70,6 +70,14 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.ttl{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.req{font:600 10.5px/1 var(--f-body);letter-spacing:.06em;padding:3px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.aka{font-size:12px;color:var(--muted)}
+.aka b{font-weight:600;color:var(--ink)}
+.pick{font-size:12.5px}
+.pick .pill{cursor:help}
+.arrow{color:var(--muted);padding:0 2px}
+.sug{font:600 10px/1.9 var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-style:italic}
 </style>
 
 <div class="wrap">
@@ -88,7 +96,7 @@ footer a{color:var(--accent)}
 </header>
 
 <div class="controls">
-  <input id="q" type="search" placeholder="Search builds, skills or NPCs, e.g. Conjuration" aria-label="Search builds">
+  <input id="q" type="search" placeholder="Search builds, skills, stones or shouts, e.g. stealth archer" aria-label="Search builds">
   <div class="chips" id="fams" role="group" aria-label="Filter by family"></div>
   <div class="count" id="cnt"></div>
 </div>
@@ -97,6 +105,7 @@ footer a{color:var(--accent)}
 
 <footer>
   <div>Skill tiers: primary is a class weight of 3 or more, secondary 2, minor 1. The level 50 split divides 49 level-ups by the attribute weights. Where an NPC file grows Magicka with no spells (or the reverse), the plan moves those points and says so.</div>
+  <div>Stones and shouts are suggestions written for this tool unless marked otherwise. "Suggested" means worked out here, not read in a source. "Partly sourced" means a community source names part of the pick. Hover a stone or shout for what it does. DG, HF and DB badges mean the build's picks need Dawnguard, Hearthfire or Dragonborn; no badge means the base game is enough.</div>
   <div>Class weights: <a href="https://en.uesp.net/wiki/Skyrim:Classes">UESP, Skyrim:Classes</a>, from your saved PDF and screenshot. Creatures, undead, Daedra, Falmer, giants and werewolf beast forms are left out. Race skill bonuses are the vanilla values; race attribute plans are recommendations.</div>
 </footer>
 </div>
@@ -109,15 +118,21 @@ const pill=(s,w,showW)=>`<span class="pill sc-${SC[s]}"><i></i>${esc(s)}${showW?
 const tier=(lab,a)=>a.length?`<div class="tier"><span>${lab}</span><div class="sk">${a.map(x=>pill(x.s,x.w,true)).join('')}</div></div>`:'';
 const bar=a=>{const t=a[0]+a[1]+a[2]||1;return `<div class="bar">${['hp','mp','spb'].map((c,i)=>a[i]?`<span class="${c}" style="width:${a[i]/t*100}%"></span>`:'').join('')}</div>`};
 const lv=a=>`<div class="lv"><span class="lab">Level 50</span>${a[0]?`<span class="h">Health ×${a[0]}</span>`:''}${a[1]?`<span class="m">Magicka ×${a[1]}</span>`:''}${a[2]?`<span class="s">Stamina ×${a[2]}</span>`:''}</div>`;
+const REQ={DG:'Dawnguard',HF:'Hearthfire',DB:'Dragonborn',CC:'a paid Creation',AE:'Anniversary Edition'};
 const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'}];
 let st={f:'all',q:''};
 
 function card(b){
   const v=b.variants.length?`<details><summary>${b.variants.length} variant${b.variants.length>1?'s':''}</summary><div class="vlist">${b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b><span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span></div>`).join('')}</div><div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div></details>`
     :`<div class="eid">${b.eids.map(esc).join(', ')}</div>`;
-  return `<article class="card"><div><h3>${esc(b.name)}</h3><div class="insp">Inspired by: ${esc(b.insp)}</div></div>
+  const st=b.stone, sug=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
+  const stone=`<span class="pill" title="${esc(st.early_fx)}">${esc(st.early)}</span>${st.final?`<span class="arrow">→</span><span class="pill" title="${esc(st.final_fx)}">${esc(st.final)}</span>`:''}`;
+  const shouts=b.shouts.list.map(x=>`<span class="pill" title="${esc(x.fx)}">${esc(x.n)}${x.req!=='vanilla'?` <b>${esc(x.req)}</b>`:''}</span>`).join('');
+  return `<article class="card"><div><div class="ttl"><h3>${esc(b.name)}</h3>${b.req.map(r=>`<span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')}</div>${b.aka.length?`<div class="aka">Also known as <b>${b.aka.map(esc).join('</b>, <b>')}</b></div>`:''}<div class="insp">Inspired by: ${esc(b.insp)}</div></div>
   <p class="desc">${esc(b.desc)}</p>
-  <div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}</div>
+  <div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}
+  <div class="tier pick"><span>Stone</span><div class="sk">${stone}${sug(st.ev)}</div></div>
+  <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${sug(b.shouts.ev)}</div></div></div>
   <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
   ${v}</article>`;
 }
@@ -127,7 +142,7 @@ function raceCard(r){
   <div class="tiers"><div class="tier"><span>Starts 25</span><div class="sk">${pill(r.sig)}</div></div><div class="tier"><span>Starts 20</span><div class="sk">${r.plus5.map(s=>pill(s)).join('')}</div></div></div>
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
-function hay(b){return [b.name,b.insp,b.desc,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function hay(b){return [b.name,...b.aka,b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
 function render(){
   const q=st.q.trim().toLowerCase();let n=0,html='';
   for(const f of DATA.fams){
