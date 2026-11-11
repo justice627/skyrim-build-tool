@@ -12,6 +12,7 @@ Rules:
   and any npc it names exists in the saved UESP NPC data
 - hand-set builds (no class file) have weights 1-4, a ledger A ref, and are never graded sourced
 - beast forms and Black Book powers resolve; every `mentions` term exists on UESP and is not unobtainable
+- lore picks that list 3+ skills share at least half of them with their build (unless they say "adds")
 - every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
@@ -20,8 +21,8 @@ import re
 import sys
 from collections import Counter
 
-from common import (ATTRS, BEAST_FORMS, EVIDENCE, REQUIRES, SKILLS, UNUSABLE_PAGES, by_id, load, load_lookup,
-                    npc_classes, uesp_terms, weights)
+from common import (ATTRS, BEAST_FORMS, EVIDENCE, REQUIRES, SKILLS, UNUSABLE_PAGES, by_id, card_weights, load,
+                    load_lookup, npc_classes, skills_in_text, uesp_terms, weights)
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
 
@@ -86,6 +87,20 @@ def check_extras(name, b, books, errors):
             errors.append(f"{name}: {bb.get('power')!r} is not a power of {book['name']}")
         if bb.get("evidence") not in EVIDENCE:
             errors.append(f"{name}: black_book has unknown evidence {bb.get('evidence')!r}")
+
+
+def check_lore_fit(name, b, classes, errors):
+    """A lore pick that lists 3+ skills must share at least half of them with the build's primary and
+    secondary skills, unless it says it adds or replaces skills. Keeps picks under the build they play like."""
+    core = {k for k, v in card_weights(b, classes).items() if k in SKILLS and v >= 2}
+    for e in b.get("lore", []):
+        text = e.get("changes", "")
+        named = skills_in_text(text)
+        if len(named) < 3 or "adds" in text.lower() or "replaces" in text.lower():
+            continue
+        if len(named & core) * 2 < len(named):
+            errors.append(f"{name} [lore {e['name']!r}]: its skills {sorted(named)} barely overlap the build's "
+                          f"{sorted(core)}; move it to the build it plays like")
 
 
 def check_lore(name, b, known_npcs, terms, errors):
@@ -169,6 +184,8 @@ def main():
         name = b.get("name", b["id"])
         check_picks(name, b, stones, shouts, errors)
         check_lore(name, b, all_npcs, terms, errors)
+        if "classes" in b or "weights" in b:
+            check_lore_fit(name, b, classes, errors)
         check_extras(name, b, books, errors)
         check_mentions(name, b.get("mentions", []), terms, errors)
         if ("classes" in b) == ("weights" in b):

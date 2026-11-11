@@ -91,6 +91,16 @@ builds:
     ref: C40
     evidence: derived
     changes: "A sword-and-board lore label for the Warrior."
+  - name: "Stormcrown"
+    ref: C1
+    evidence: derived
+    mentions: ["Dragonbane"]
+    changes: "Modeled on Talos. One-Handed 3, Block 3, Heavy Armor 3, Speech 2, Restoration 2. Storm Call and Call Dragon. Amulet of Talos and Dragonbane."
+  - name: "Jarl of the Voice"
+    ref: C2
+    evidence: derived
+    npc: "Ulfric Stormcloak"
+    changes: "Modeled on Ulfric. One-Handed 3, Heavy Armor 2, Block 2, Speech 2. Unrelenting Force."
 - id: greatsword-mercenary
   family: steel
   name: Greatsword mercenary
@@ -257,6 +267,11 @@ builds:
   description: >-
     Bow first, blade and shield second, light armor throughout. Health and Stamina only, no magic. Hunt,
     sell pelts, and fight in the open rather than from the shadows.
+  lore:
+  - name: "Oblivion Scout"
+    ref: C37
+    evidence: partly-sourced
+    changes: "Melee instead of the bow: One-Handed, Block, Light Armor, Alchemy and Smithing."
 - id: highwayman
   family: bow
   name: Highwayman
@@ -290,11 +305,6 @@ builds:
   description: >-
     Stealth archer with Restoration for self-healing and a touch of Alteration. Even three-way attribute
     split. Scout ahead, shoot first, heal between fights instead of buying potions.
-  lore:
-  - name: "Oblivion Scout"
-    ref: C37
-    evidence: partly-sourced
-    changes: "Melee instead of the bow: One-Handed, Block, Light Armor, Alchemy and Smithing."
 - id: thalmor-archer
   family: bow
   name: Thalmor archer
@@ -370,6 +380,12 @@ builds:
     ref: C33
     evidence: derived
     changes: "Light gear and the Steed Stone."
+  - name: "Aela"
+    ref: C5
+    evidence: derived
+    requires: [DG]
+    npc: "Aela the Huntress"
+    changes: "Archery 3, Light Armor 3, Sneak 2, One-Handed 2. A werewolf huntress."
 - id: rogue
   family: shadow
   name: Rogue
@@ -393,6 +409,11 @@ builds:
     ref: C32
     evidence: partly-sourced
     changes: "Oblivion's Rogue. Adds Illusion, Alchemy and Speech."
+  - name: "The Imperial Spectre"
+    ref: C25
+    evidence: partly-sourced
+    requires: [DG, DB]
+    changes: "Imperial vampire. Lady Stone. Block, One-Handed, Illusion and Sneak. Penitus Oculatus armor, the Blades Sword and Harkon's Sword."
 - id: blades-agent
   family: shadow
   name: Blades agent
@@ -412,11 +433,6 @@ builds:
     evidence: derived
     npc: "Delphine"
     changes: "Blades armor and a Blades sword."
-  - name: "Esbern"
-    ref: C34
-    evidence: derived
-    npc: "Esbern"
-    changes: "The archivist. A Restoration and Destruction scholar."
 - id: assassin
   family: assassin
   name: Assassin
@@ -609,12 +625,6 @@ builds:
   description: >-
     One-hander and heavy armor with Destruction backup and a shield. Even attribute split. A bodyguard
     who fights in formation and burns what the sword misses.
-  lore:
-  - name: "The Imperial Spectre"
-    ref: C25
-    evidence: partly-sourced
-    requires: [DG, DB]
-    changes: "Imperial vampire. Lady Stone. Block, One-Handed, Illusion and Sneak. Penitus Oculatus armor, the Blades Sword and Harkon's Sword."
 - id: bandit-chief
   family: battle
   name: Bandit chief
@@ -627,6 +637,13 @@ builds:
   description: >-
     One-hander and Destruction lead, heavy armor, Alteration for armor spells. Health and Magicka only.
     The boss in the back room who throws fire before drawing the axe.
+  lore:
+  - name: "Praying Mantis"
+    ref: C10
+    evidence: partly-sourced
+    requires: [DG, DB]
+    mentions: ["Falmer War Axe", "Shellbug Helmet", "The Black Star (item)", "Ebonyflesh"]
+    changes: "Argonian. Lover Stone, then Atronach. One-Handed, Alteration and Heavy Armor. Two Falmer war axes, the Shellbug Helmet and the Black Star. Paralyze and Ebonyflesh."
 - id: forsworn-briarheart
   family: battle
   name: Forsworn briarheart
@@ -727,6 +744,11 @@ builds:
     ref: C22
     evidence: derived
     changes: "Taken from ESO. Conjuration plus shock Destruction."
+  - name: "Esbern"
+    ref: C34
+    evidence: derived
+    npc: "Esbern"
+    changes: "The archivist. A Restoration and Destruction scholar."
 - id: mystic
   family: robe
   name: Mystic
@@ -740,6 +762,12 @@ builds:
   description: >-
     Alteration and Illusion control: paralyze, calm, fear, then summon or slip past. No Destruction, so
     fights are decided by control rather than damage.
+  lore:
+  - name: "Puppet Master"
+    ref: A7
+    evidence: partly-sourced
+    mentions: ["Dead Thrall", "Call to Arms", "Fury", "Frenzy"]
+    changes: "Illusion and Conjuration core, Speech and armor secondary. Ritual Stone. Dead Thrall and Call to Arms, with Fury and Frenzy turning enemies on each other."
 - id: illusionist
   family: robe
   name: Illusionist
@@ -862,10 +890,6 @@ builds:
     files grow Stamina instead of Magicka; the plan below moves it to Magicka. A pacifist-leaning healer
     run.
   lore:
-  - name: "Cleric"
-    ref: C14
-    evidence: partly-sourced
-    changes: "Lord Stone. Restoration, One-Handed, Alteration, Block and Enchanting. A mace, the amulet of one chosen Divine, and Banish Daedra."
   - name: "Healer"
     ref: C15
     evidence: partly-sourced
@@ -920,6 +944,10 @@ builds:
     evidence: derived
     requires: [DG]
     changes: "Two-Handed 3, Heavy Armor 3, Restoration 2, plus a crossbow. Dawnguard heavy armor and rune weapons."
+  - name: "Cleric"
+    ref: C14
+    evidence: partly-sourced
+    changes: "Lord Stone. Restoration, One-Handed, Alteration, Block and Enchanting. A mace, the amulet of one chosen Divine, and Banish Daedra."
 - id: blacksmith
   family: craft
   name: Blacksmith
@@ -1010,7 +1038,7 @@ builds:
     ref: C17
     evidence: partly-sourced
     requires: [DG, DB]
-    changes: "Nord. Lover Stone, then Atronach. Restoration, Illusion, Enchanting, One-Handed and Speech. Grand Healing, Rally and Pacify, with Soul Tear and Cyclone."
+    changes: "Nord. Lover Stone, then Atronach. Adds One-Handed, Restoration and Enchanting to the Bard's Speech and Illusion. Grand Healing, Rally and Pacify, with Soul Tear and Cyclone."
 - id: trader
   family: craft
   name: Trader
@@ -1101,6 +1129,13 @@ builds:
   description: >-
     Archery, Block, Heavy Armor and One-Handed at 9, Sneak 8, Conjuration and Alteration behind them.
     A complete warrior with no Magicka growth, so spells come from enchantments. The endgame duelist.
+  lore:
+  - name: "Ethereal Hunter"
+    ref: C4
+    evidence: partly-sourced
+    requires: [DG, DB]
+    mentions: ["Ring of Bloodlust", "Bound Bow"]
+    changes: "Breton. Steed Stone, then Lord. Archery, Conjuration, Sneak and Heavy Armor. Bound Bow, Ring of Bloodlust and Animal Allegiance. Turns werewolf for open fights."
 - id: miraak
   family: legend
   name: Miraak
@@ -1114,6 +1149,12 @@ builds:
   description: >-
     Speech 8 for the Thu'um, then a broad spread of armor, blade and four magic schools. Health and Magicka
     over Stamina. A Dragonborn who rules through the Voice.
+  lore:
+  - name: "Ash-King"
+    ref: C3
+    evidence: derived
+    requires: [DB]
+    changes: "Modeled on Wulfharth. Two-Handed 3, Heavy Armor 3, Speech 2, fire Destruction 2. Fire Breath and Dragon Aspect."
 - id: ancient-dragonborn
   family: legend
   name: Ancient Dragonborn
@@ -1219,22 +1260,6 @@ builds:
     Shouts are the main weapon. Skills only support the Voice: Speech, Restoration and Alteration, as a
     Greybeard would train. The Amulet of Talos shortens shout cooldowns. The Black Book Epistolary Acumen
     upgrades a shout. No weapon skill at all, so this is a hard but very different run.
-  lore:
-  - name: "Stormcrown"
-    ref: C1
-    evidence: derived
-    mentions: ["Dragonbane"]
-    changes: "Modeled on Talos. One-Handed 3, Block 3, Heavy Armor 3, Speech 2, Restoration 2. Storm Call and Call Dragon. Amulet of Talos and Dragonbane."
-  - name: "Jarl of the Voice"
-    ref: C2
-    evidence: derived
-    npc: "Ulfric Stormcloak"
-    changes: "Modeled on Ulfric. One-Handed 3, Heavy Armor 2, Block 2, Speech 2. Unrelenting Force."
-  - name: "Ash-King"
-    ref: C3
-    evidence: derived
-    requires: [DB]
-    changes: "Modeled on Wulfharth. Two-Handed 3, Heavy Armor 3, Speech 2, fire Destruction 2. Fire Breath and Dragon Aspect."
 - id: werewolf
   family: beyond
   name: Werewolf
@@ -1252,18 +1277,6 @@ builds:
     Savage Feeding, Totem of Ice Brothers and Totem of the Moon. The Ring of Hircine gives extra
     transformations. In human form, fight with a two-handed weapon.
   lore:
-  - name: "Ethereal Hunter"
-    ref: C4
-    evidence: partly-sourced
-    requires: [DG, DB]
-    mentions: ["Ring of Bloodlust", "Bound Bow"]
-    changes: "Breton. Steed Stone, then Lord. Archery, Conjuration, Sneak and Heavy Armor. Bound Bow, Ring of Bloodlust and Animal Allegiance. Turns werewolf for open fights."
-  - name: "Aela"
-    ref: C5
-    evidence: derived
-    requires: [DG]
-    npc: "Aela the Huntress"
-    changes: "Archery 3, Light Armor 3, Sneak 2, One-Handed 2. A werewolf huntress."
   - name: "The Rebel"
     ref: C6
     evidence: partly-sourced
@@ -1285,12 +1298,6 @@ builds:
     Never strike anyone yourself. Sneak past, calm or scare everything with Muffle, Calm, Pacify, Fear and
     Turn Undead, and talk or steal your way through the rest. Some guild quests need a kill, so a
     companion has to land it.
-  lore:
-  - name: "Puppet Master"
-    ref: A7
-    evidence: partly-sourced
-    mentions: ["Dead Thrall", "Call to Arms", "Fury", "Frenzy"]
-    changes: "Illusion and Conjuration core, Speech and armor secondary. Ritual Stone. Dead Thrall and Call to Arms, with Fury and Frenzy turning enemies on each other."
 - id: poisoner
   family: beyond
   name: Poisoner
@@ -1328,12 +1335,6 @@ builds:
     more hits. One-Handed's Dual Flurry perk speeds up dual-wield attacks. Windshear in one hand staggers
     on every hit.
   lore:
-  - name: "Praying Mantis"
-    ref: C10
-    evidence: partly-sourced
-    requires: [DG, DB]
-    mentions: ["Falmer War Axe", "Shellbug Helmet", "The Black Star (item)", "Ebonyflesh"]
-    changes: "Argonian. Lover Stone, then Atronach. One-Handed, Alteration and Heavy Armor. Two Falmer war axes, the Shellbug Helmet and the Black Star. Paralyze and Ebonyflesh."
   - name: "Windshear Stun Master"
     ref: C11
     evidence: partly-sourced

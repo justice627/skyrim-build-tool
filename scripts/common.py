@@ -47,6 +47,13 @@ def npc_classes():
     return {eid: {n["name"] for n in npcs} for eid, npcs in doc["classes"].items()}
 
 
+def skills_in_text(text):
+    """Skill codes named in free text such as a lore pick's `changes` ("fire Destruction" counts)."""
+    import re
+    low = text.lower()
+    return {c for c, n in SKILLS.items() if re.search(r"\b" + re.escape(n.lower()) + r"\b", low)}
+
+
 def card_weights(b, classes):
     """The weights a build's card shows: hand-set `weights`, or its first class file's."""
     return b["weights"] if "weights" in b else classes[b["classes"][0]]["weights"]

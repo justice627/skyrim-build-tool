@@ -27,13 +27,16 @@ h3{font-size:1.35rem;font-weight:600;line-height:1.1}
 .lede{max-width:68ch;color:var(--muted);margin:10px 0 0}
 header{display:grid;gap:14px}
 .howto{max-width:72ch;font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+.howto summary{color:var(--ink);font-weight:400}
+.howto[open] summary{margin-bottom:6px}
 .legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:var(--muted)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
 .controls{display:grid;gap:10px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.controls input{font:inherit;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
+.controls input{font:inherit;font-size:16px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
 .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.chips.more{-webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent)}
 .chips button{flex:none;font:600 12px/1 var(--f-body);padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
 .chips button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -70,10 +73,25 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 .v .where,.v .ref{display:block;font-size:11.5px}
 .v .where{color:var(--ink);font-style:italic}
 .vhead{margin-top:12px;font:600 10.5px/1.9 var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.eid{font:500 11px/1.5 var(--f-mono);color:var(--muted);word-break:break-all;margin-top:8px}
+.eid{font:500 11px/1.5 var(--f-mono);color:var(--muted);overflow-wrap:anywhere;margin-top:8px}
+.eid.note{font:12px/1.5 var(--f-body)}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.mhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.more-res>summary{font-size:13px;margin-top:4px}
+.more-res[open]>summary{margin-bottom:12px}
+@media (max-width:640px){
+  .wrap{gap:24px;padding-block:18px 40px}
+  h1{font-size:1.9rem} h2{font-size:1.4rem}
+  .lede{font-size:13px;margin-top:6px}
+  header{gap:10px}
+  .legend{font-size:11.5px;gap:4px 12px}
+  .controls{gap:6px;padding-block:6px}
+  .controls input{padding:6px 10px}
+  .chips button{padding:6px 10px}
+  .count{font-size:11.5px}
+}
 .hand{justify-self:start;font:600 10.5px/1 var(--f-body);text-transform:uppercase;letter-spacing:.06em;padding:4px 7px;border-radius:4px;border:1px dashed var(--muted);color:var(--muted)}
 .ttl{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
 .req{font:600 10.5px/1 var(--f-body);letter-spacing:.06em;padding:3px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
@@ -91,7 +109,7 @@ footer a{color:var(--accent)}
 <header>
   <h1>Skyrim Class Builds</h1>
   <p class="lede">The game's playable humanoid NPC classes, read from UESP and turned into player builds you can borrow. Similar classes are grouped into families; near-identical trainer and vendor variants sit inside their parent build. The ten pure race builds close the page.</p>
-  <div class="howto"><b>How to read a build.</b> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk.</div>
+  <details class="howto" open><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk.</details>
   <div class="legend">
     <span><i class="sw" style="background:var(--c-combat)"></i>Combat skill</span>
     <span><i class="sw" style="background:var(--c-magic)"></i>Magic skill</span>
@@ -103,7 +121,7 @@ footer a{color:var(--accent)}
 </header>
 
 <div class="controls">
-  <input id="q" type="search" placeholder="Search builds, skills, stones or shouts, e.g. stealth archer" aria-label="Search builds">
+  <input id="q" type="search" placeholder="Search builds, skills or NPCs" aria-label="Search builds">
   <div class="chips" id="fams" role="group" aria-label="Filter by family"></div>
   <div class="count" id="cnt"></div>
 </div>
@@ -133,7 +151,7 @@ const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'}];
 let st={f:'all',q:''};
 
 function card(b){
-  const eidline=b.hand?`<div class="eid">No class file. Weights set by hand from ledger ${esc(b.ref)}.</div>`:`<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div>`;
+  const eidline=b.hand?`<div class="eid note">No class file. Weights set by hand from ledger ${esc(b.ref)}.</div>`:`<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div>`;
   const nv=b.variants.length, nl=b.lore.length, plural=(n,w)=>`${n} ${w}${n>1?'s':''}`;
   const tag=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
   const vars=b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b>${x.npcs.length?`<span>Examples: ${x.npcs.map(esc).join(', ')}</span><br>`:''}<span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span></div>`).join('');
@@ -160,24 +178,56 @@ function raceCard(r){
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
 function hay(b){return [b.name,...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function strong(b,q){return [b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].some(t=>t&&t.toLowerCase().includes(q))}
+function raceHay(r){return [r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase()}
+const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div>';
 function render(){
   const q=st.q.trim().toLowerCase();let n=0,html='';
-  for(const f of DATA.fams){
-    if(st.f!=='all'&&st.f!==f.id)continue;
-    const bs=DATA.builds.filter(b=>b.fam===f.id&&(!q||hay(b).includes(q)));
-    if(!bs.length)continue;n+=bs.length;
-    html+=`<section class="fam"><div class="famhead"><h2>${esc(f.title)}</h2><p>${esc(f.blurb)}</p></div><div class="grid">${bs.map(card).join('')}</div></section>`;
-  }
-  if(st.f==='all'||st.f==='race'){
-    const rs=DATA.races.filter(r=>!q||[r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase().includes(q));
-    if(rs.length){n+=rs.length;html+=`<section class="fam"><div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div><div class="grid">${rs.map(raceCard).join('')}</div></section>`}
+  const famOk=b=>st.f==='all'||st.f===b.fam, raceOk=st.f==='all'||st.f==='race';
+  if(!q){
+    for(const f of DATA.fams){
+      if(st.f!=='all'&&st.f!==f.id)continue;
+      const bs=DATA.builds.filter(b=>b.fam===f.id);
+      if(!bs.length)continue;n+=bs.length;
+      html+=`<section class="fam"><div class="famhead"><h2>${esc(f.title)}</h2><p>${esc(f.blurb)}</p></div><div class="grid">${bs.map(card).join('')}</div></section>`;
+    }
+    if(raceOk){n+=DATA.races.length;html+=`<section class="fam">${raceHead}<div class="grid">${DATA.races.map(raceCard).join('')}</div></section>`}
+    document.getElementById('cnt').textContent=`${n} build${n===1?'':'s'}`;
+  }else{
+    // Search: builds whose name, alias or a named character matches come first; builds that only
+    // mention the words in their text follow in a folded list.
+    const hits=DATA.builds.filter(b=>famOk(b)&&hay(b).includes(q));
+    const best=hits.filter(b=>strong(b,q)), rest=hits.filter(b=>!strong(b,q));
+    const rs=raceOk?DATA.races.filter(r=>raceHay(r).includes(q)):[];
+    const bestR=rs.filter(r=>r.race.toLowerCase().includes(q)), restR=rs.filter(r=>!r.race.toLowerCase().includes(q));
+    const cards=(bs,races)=>bs.map(card).join('')+races.map(raceCard).join('');
+    const nb=best.length+bestR.length, nr=rest.length+restR.length;
+    if(nb)html+=`<section class="fam"><div class="famhead"><h2>Best matches</h2><p>Name, alias, primary skill or a named character matches.</p></div><div class="grid">${cards(best,bestR)}</div></section>`;
+    if(nr){
+      const inner=`<div class="grid">${cards(rest,restR)}</div>`;
+      html+=nb?`<details class="more-res fam"><summary>${nr} more build${nr===1?'':'s'} mention “${esc(st.q.trim())}”</summary>${inner}</details>`
+              :`<section class="fam"><div class="famhead"><h2>Mentions</h2><p>These builds mention it in their text.</p></div>${inner}</section>`;
+    }
+    n=nb+nr;
+    document.getElementById('cnt').textContent=nb&&nr?`${nb} best match${nb===1?'':'es'} · ${nr} more mention it`:`${n} build${n===1?'':'s'}`;
   }
   document.getElementById('out').innerHTML=html||'<p class="empty">No builds match that search.</p>';
-  document.getElementById('cnt').textContent=`${n} build${n===1?'':'s'}`;
 }
+function toResults(){
+  const out=document.getElementById('out'), bar=document.querySelector('.controls');
+  const y=out.getBoundingClientRect().top+scrollY-bar.offsetHeight-8;
+  if(scrollY<y-4)scrollTo({top:y,behavior:'smooth'});
+}
+function fade(){fe.classList.toggle('more',fe.scrollLeft+fe.clientWidth<fe.scrollWidth-4)}
 const fe=document.getElementById('fams');
 function chips(){fe.innerHTML=fams.map(f=>`<button type="button" aria-pressed="${st.f===f.id}" data-v="${f.id}">${esc(f.title)}</button>`).join('')}
-fe.onclick=e=>{const b=e.target.closest('button');if(!b)return;st.f=b.dataset.v;chips();render()};
-document.getElementById('q').addEventListener('input',e=>{st.q=e.target.value;render()});
-chips();render();
+fe.onclick=e=>{const b=e.target.closest('button');if(!b)return;st.f=b.dataset.v;chips();render();
+  const on=fe.querySelector('[aria-pressed="true"]');if(on)on.scrollIntoView({block:'nearest',inline:'nearest'});fade();toResults()};
+fe.addEventListener('scroll',fade,{passive:true});addEventListener('resize',fade);
+const qi=document.getElementById('q');
+qi.addEventListener('input',e=>{st.q=e.target.value;render()});
+qi.addEventListener('keydown',e=>{if(e.key==='Enter'){qi.blur();toResults()}});
+qi.addEventListener('search',()=>{if(qi.value)toResults()});
+if(matchMedia('(max-width:640px)').matches)document.querySelector('.howto').removeAttribute('open');
+chips();render();fade();
 </script>

@@ -51,6 +51,10 @@ Status: done (2026-11-11). Six builds in a new family, "Beyond the class files":
 - The check corrected the ledger twice: Greybeard's Robes are unobtainable (dropped from Tongue), and the Ring of Bloodlust is Dragonborn, not Dawnguard. UESP lists 18 Black Book powers, not 21.
 - Rejected: A2's "Way of the Voice" variant (needs Ordinator, a mod).
 
+### Lore pick placement fix (2026-11-11)
+
+The ledger grouped lore picks by theme, not skills, so 11 sat under builds they do not play like. Each moved to the build its skills match: Stormcrown and Jarl of the Voice to Warrior, Ash-King to Miraak, Ethereal Hunter to Ebony Warrior, Aela to Thief, Puppet Master to Mystic, Praying Mantis to Bandit chief, Cleric to Vigilant of Stendarr, Esbern to Conjurer, Oblivion Scout to Ranger, The Imperial Spectre to Rogue. Brynjolf, Mercer Frey and Astrid stay: they tweak one or two skills on their own UESP class's build. Battle Bard stays, reworded as additions to the Bard. `validate.py` now rejects picks whose skills barely overlap their build.
+
 ## Phase 3b: sourced extras
 
 Spellshield (A6), Witchhunter (A8, vanilla skills only), Vampire Slayer (A9), Druid (A10, with C8 Arcane Beastmaster and C9 Warden), The Preserver (A11), The Madman (A12), Champion of Cyrodiil (A13) and Arcanist (A18). Same pattern as 3a: hand-set weights, `mentions` checked against UESP.
