@@ -1,0 +1,198 @@
+{{Trail}}
+There are ten playable '''races''' in ''[[Skyrim:Skyrim|Skyrim]]'', each with its own unique abilities and [[Skyrim:Powers|powers]], as well as a +10 bonus to one [[Skyrim:Skills|skill]] and +5 bonuses to five other skills. Race is the only choice during the [[Skyrim:Character Creation|character creation]] process that has an effect on your character's skills and abilities.
+
+The following table summarizes the differences between the ten playable races. Full details on all racial abilities and powers are provided on the individual race pages.
+{|class="wikitable sortable"
+! Race
+! class="unsortable" | Male
+! class="unsortable" | Female
+! Abilities
+! Powers
+! Initial Bonuses
+! Height (M)
+! Height (F)
+|-
+! [[Skyrim:Argonian|Argonian]]<br>{{ID|00013740}}
+| [[File:SR-race-Argonian (male).jpg|60px]]
+| [[File:SR-race-Argonian (female).jpg|60px]]
+|
+* [[Skyrim:Resist Disease|Resist Disease]] 50%
+* [[Skyrim:Waterbreathing (effect)|Waterbreathing]]
+* [[Skyrim:Argonian#Traits|Higher]] unarmed damage
+* [[Skyrim:Survival Mode|Survival]]{{Creation Club|Survival Mode}}: Weakness to Cold 25%. May consume raw meat without food poisoning.
+| [[Skyrim:Histskin|Histskin]]
+*Recover health 10x faster for 60 seconds, once per day †
+|
+* +10 [[Skyrim:Lockpicking|Lockpicking]]
+* +5 [[Skyrim:Alteration|Alteration]], [[Skyrim:Light Armor|Light Armor]], [[Skyrim:Pickpocket|Pickpocket]], [[Skyrim:Restoration|Restoration]], [[Skyrim:Sneak|Sneak]]
+| 1.01
+| 1.00
+|-
+! [[Skyrim:Breton|Breton]]<br>{{ID|00013741}}
+| [[File:SR-race-Breton (male).jpg|60px]]
+| [[File:SR-race-Breton (female).jpg|60px]]
+|
+* [[Skyrim:Resist Magic|Resist Magic]] 25%
+| [[Skyrim:Dragonskin|Dragonskin]]
+*Absorb 50% of the magicka from hostile spells for 60 seconds, once per day
+|
+* +10 [[Skyrim:Conjuration|Conjuration ]]
+* +5 [[Skyrim:Alchemy|Alchemy]], [[Skyrim:Alteration|Alteration]], [[Skyrim:Illusion|Illusion]], [[Skyrim:Restoration|Restoration]], [[Skyrim:Speech|Speech]]
+* ''Additional Spell: ''[[Skyrim:Conjure Familiar|Conjure Familiar]]
+| 1.00
+| 0.95
+|-
+! [[Skyrim:Dark Elf|Dark Elf]]<br>{{ID|00013742}}
+| [[File:SR-race-Dark Elf (male).jpg|60px]]
+| [[File:SR-race-Dark Elf (female).jpg|60px]]
+|
+* [[Skyrim:Resist Fire|Resist Fire]] 50%
+* [[Skyrim:Survival Mode|Survival]]{{Creation Club|Survival Mode}}: Resist Fatigue 25%
+| [[Skyrim:Ancestor's Wrath|Ancestor's Wrath]]
+*Opponents getting too close take 8 points of fire damage per second for 60 seconds, once per day
+|
+* +10 [[Skyrim:Destruction|Destruction]]
+* +5 [[Skyrim:Alchemy|Alchemy]], [[Skyrim:Alteration|Alteration]], [[Skyrim:Illusion|Illusion]], [[Skyrim:Light Armor|Light Armor]], [[Skyrim:Sneak|Sneak]]
+* ''Additional Spell: ''[[Skyrim:Sparks|Sparks]]
+| 1.00
+| 1.00
+|-
+! [[Skyrim:High Elf|High Elf]]<br>{{ID|00013743}}
+| [[File:SR-race-High Elf (male).jpg|60px]]
+| [[File:SR-race-High Elf (female).jpg|60px]]
+|
+* +50 [[Skyrim:Magicka|Magicka]]
+* [[Skyrim:Survival Mode|Survival]]{{Creation Club|Survival Mode}}: Resist Fatigue 25%
+| [[Skyrim:Highborn|Highborn]]
+*Regenerate magicka 25x faster for 60 seconds, once per day ††
+|
+* +10 [[Skyrim:Illusion|Illusion]]
+* +5 [[Skyrim:Alteration|Alteration]], [[Skyrim:Conjuration|Conjuration]], [[Skyrim:Destruction|Destruction]], [[Skyrim:Enchanting|Enchanting]], [[Skyrim:Restoration|Restoration]]
+* ''Additional Spell: ''[[Skyrim:Fury|Fury]]
+| 1.08
+| 1.08
+|-
+! [[Skyrim:Imperial|Imperial]]<br>{{ID|00013744}}
+| [[File:SR-race-Imperial (male).jpg|60px]]
+| [[File:SR-race-Imperial (female).jpg|60px]]
+|
+* [[Skyrim:Imperial Luck|Imperial Luck]]: Imperials always find more gold.†††
+| [[Skyrim:Voice of the Emperor|Voice of the Emperor]]
+*Calms nearby people for 60 seconds, once per day
+|
+* +10 [[Skyrim:Restoration|Restoration]]
+* +5 [[Skyrim:Block|Block]], [[Skyrim:Destruction|Destruction]], [[Skyrim:Enchanting|Enchanting]], [[Skyrim:Heavy Armor|Heavy Armor]], [[Skyrim:One-handed|One-handed]]
+| 1.00
+| 1.00
+|-
+! [[Skyrim:Khajiit|Khajiit]]<br>{{ID|00013745}}
+| [[File:SR-race-Khajiit (male).jpg|60px]]
+| [[File:SR-race-Khajiit (female).jpg|60px]]
+|
+* [[Skyrim:Claws|Claws]]: Claws do 12 damage (see [[#Notes|notes]]).
+* [[Skyrim:Survival Mode|Survival]]{{Creation Club|Survival Mode}}: +15 Warmth. May consume raw meat without food poisoning.
+| [[Skyrim:Khajiit#Traits|Night Eye]]
+*Improved night vision for 60 seconds, can be used multiple times a day.
+|
+* +10 [[Skyrim:Sneak|Sneak]]
+* +5 [[Skyrim:Alchemy|Alchemy]], [[Skyrim:Archery|Archery]], [[Skyrim:Lockpicking|Lockpicking]], [[Skyrim:Pickpocket|Pickpocket]], [[Skyrim:One-handed|One-handed]]
+| 1.00
+| 0.95
+|-
+! [[Skyrim:Nord|Nord]]<br>{{ID|00013746}}
+| [[File:SR-race-Nord (male).jpg|60px]]
+| [[File:SR-race-Nord (female).jpg|60px]]
+|
+* [[Skyrim:Resist Frost|Resist Frost]] 50%
+* [[Skyrim:Survival Mode|Survival]]{{Creation Club|Survival Mode}}: +25 Warmth
+| [[Skyrim:Battle Cry|Battle Cry]]
+*Targets flee for 30 seconds, once per day
+|
+* +10 [[Skyrim:Two-handed|Two-handed]]
+* +5 [[Skyrim:Block|Block]], [[Skyrim:Light Armor|Light Armor]], [[Skyrim:One-handed|One-handed]], [[Skyrim:Smithing|Smithing]], [[Skyrim:Speech|Speech]]
+| 1.03
+| 1.03
+|-
+! [[Skyrim:Orc|Orc]]<br>{{ID|00013747}}
+| [[File:SR-race-Orc (male).jpg|60px]]
+| [[File:SR-race-Orc (female).jpg|60px]]
+|
+* [[Skyrim:Survival Mode|Survival]]{{Creation Club|Survival Mode}}: Resist Fatigue and Hunger by 15%. +10 Warmth.
+| [[Skyrim:Berserker Rage|Berserker Rage]]
+*You take half damage and do double damage for 60 seconds, once per day
+|
+* +10 [[Skyrim:Heavy Armor|Heavy Armor]]
+* +5 [[Skyrim:Block|Block]], [[Skyrim:Enchanting|Enchanting]], [[Skyrim:One-handed|One-handed]], [[Skyrim:Smithing|Smithing]], [[Skyrim:Two-handed|Two-handed]]
+* ''Additional status:'' [[Skyrim:Blood-Kin|Blood-Kin]]
+| 1.045
+| 1.045
+|-
+! [[Skyrim:Redguard|Redguard]]<br>{{ID|00013748}}
+| [[File:SR-race-Redguard (male).jpg|60px]]
+| [[File:SR-race-Redguard (female).jpg|60px]]
+|
+* [[Skyrim:Resist Poison|Resist Poison]] 50%
+| [[Skyrim:Adrenaline Rush|Adrenaline Rush]]
+*Stamina regenerates 10x faster for 60 seconds, once per day ††††
+|
+* +10 [[Skyrim:One-handed|One-handed]]
+* +5 [[Skyrim:Alteration|Alteration]], [[Skyrim:Archery|Archery]], [[Skyrim:Block|Block]], [[Skyrim:Destruction|Destruction]], [[Skyrim:Smithing|Smithing]]
+| 1.005
+| 1.00
+|-
+! [[Skyrim:Wood Elf|Wood Elf]]<br>{{ID|00013749}}
+| [[File:SR-race-Wood Elf (male).jpg|60px]]
+| [[File:SR-race-Wood Elf (female).jpg|60px]]
+|
+* [[Skyrim:Resist Poison|Resist Poison]] 50%
+* [[Skyrim:Resist Disease|Resist Disease]] 50%
+* [[Skyrim:Survival Mode|Survival]]{{Creation Club|Survival Mode}}: Resist Fatigue 25%
+| [[Skyrim:Command Animal|Command Animal]]
+*Make an animal an ally for 60 seconds, once per day
+|
+* +10 [[Skyrim:Archery|Archery]]
+* +5 [[Skyrim:Alchemy|Alchemy]], [[Skyrim:Light Armor|Light Armor]], [[Skyrim:Lockpicking|Lockpicking]], [[Skyrim:Pickpocket|Pickpocket]], [[Skyrim:Sneak|Sneak]]
+| 0.98
+| 1.00
+|}
+
+†Histskin adds 10 to the 0.7 base HealRate, resulting in 10.7% regen per second or a ~15.29x multiplier, not 10x.
+
+††Highborn adds 25 to the 3 base MagickaRate, resulting in 28% regen per second or a ~9.33x multiplier, not 25x.
+
+†††Due to a bug, after exiting the cave under Helgen Keep, all races get the Imperial Luck ability: the only difference being that Imperials can see it among active effects.
+
+††††Adrenaline Rush adds 50 to the 5 base StaminaRate, resulting in 55% regen per second or an 11x multiplier, not 10x.
+==Non-Playable Races==
+Other NPC races exist in the game but are not available for you to play:
+* [[Skyrim:Child|Child]] (including Breton, Imperial, Nord, and Redguard children)
+* [[Skyrim:Elder|Elder]] ("Old People Race" in the game data)
+* [[Skyrim:Dark Seducer|Dark Seducer]]{{CC|Saints & Seducers}}
+* [[Skyrim:Dremora|Dremora]]
+* [[Skyrim:Golden Saint|Golden Saint]]{{CC|Saints & Seducers}}
+* {{Anchor|Invisible Race}} (the race of the [[Skyrim:Ancient Dragonborn|Ancient Dragonborn]]{{DB}})
+* [[Skyrim:Mannequins|Mannequin]] (categorized as an NPC race to allow mannequins to equip the armors and outfits they are meant to display)
+* [[Skyrim:Snow Elf|Snow Elf]]{{DG}}
+
+==Notes==
+* For each playable race, there is also a different race used by [[Skyrim:Vampirism|vampires]]. For example, non-vampire Bretons use "BretonRace", whereas Breton vampires use "BretonRaceVampire". However, this is not apparent in-game, as the traits of each race are usually the same for its vampire counterpart (except for a number of oversights).
+* The <code>[[Skyrim:Console#setrace|setrace]]</code>, <code>[[Skyrim:Console#setplayerrace|setplayerrace]]</code>, and <code>[[Skyrim:Console#showracemenu|showracemenu]]</code> [[Skyrim:Console|console]] commands can be used to change your race after character creation. Only <code>[[Skyrim:Console#setrace|player.setrace]]</code> will not break your skills after switching a race.
+* The [[Skyrim:Movement|movement]] speed of each race is dependent on its height. As shown above, High Elves have the largest speed multiplier due to being the tallest race. This was likely done so the same animations (with the same speed) could be used for every character without them appearing to moonwalk.
+* There is a persistent but false rumor that [[Skyrim:Damage|melee damage]] is also affected by height, apparently based on a misunderstanding of the [[Skyrim:Console#setscale|<code>setscale</code>]] command. See [https://web.archive.org/web/20200226050502/http://forums.bethsoft.com/topic/1286166-hidden-stat-differences-based-on-race-selection/page-2#entry19603197 this post on the Bethesda forums] for reference.
+* There are many minor dialogue differences depending on the race you choose. However, the only two instances where an NPC's reaction to your race actually matters to gameplay are your [[Skyrim:Blood-Kin|Blood-Kin]] status and the quest [[Skyrim:Diplomatic Immunity|Diplomatic Immunity]].
+* Although the in-game text says ''"Khajiit claws do 15 points of damage."'', the actual effect magnitude is only 12 points.
+* Certain races (Argonians, Khajiit, Nords, and Imperials) are able to perform an alchemy loop through [[Skyrim:Glitches#Infinitely_Powerful_Items|superstacking]] without being a Werewolf or Vampire Lord, if they have a specific item that the player enchanted with a Fortify Alchemy effect. Khajiit vampires can superstack with Gold Rings, Nord vampires can superstack with the Bone Hawk Amulet, Imperial vampires can superstack with Forsworn Gauntlets, and Khajiit and Argonians can superstack with the Worn Shrouded Cowl, whether or not they're vampires.
+* Along with information like height and skill bonuses, a weight value can be found in the game data. The meaning or impact of this value is unclear; however, it seems to affect how easily a race is ragdolled or moved.
+:{|class=wikitable style="text-align:center"
+|-
+! ''Weight'' !! Argonian !! Breton !! Dark Elf!! High Elf !! Imperial !! Khajiit !! Nord !! Orc !! Redguard !! Wood Elf
+|-
+! Female
+| 1 || 1 || 1 || 0.5 || 1 || 1 || 1 || 1 || 1 || 1
+|-
+! Male
+| 0.5 || 1 || 1 || 0.5 || 1 || 0.5 || 1 || 1 || 1 || 1
+|}
+
+All other races in the game are considered to be [[Skyrim:Creatures|creatures]], with every variety of creature having its own race; these creature races are not detailed here.
+{{Skyrim Races}}

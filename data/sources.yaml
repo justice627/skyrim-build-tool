@@ -13,20 +13,20 @@ sources:
   - id: uesp-races
     title: UESP, Skyrim:Races
     url: https://en.uesp.net/wiki/Skyrim:Races
-    used_for: Race skill bonuses in data/races.yaml (+10 signature, +5 others)
-    evidence: derived
+    used_for: Race skill bonuses and powers in data/races.yaml (+10 signature, +5 others)
+    evidence: partly-sourced
     notes: >-
-      Vanilla values written from general game knowledge; the page itself was not read during the
-      project. Verify in Phase 6. Attribute ratios and playstyle notes in races.yaml are also derived.
+      Skill bonuses and power names checked against the page through the wiki API on 2026-11-11
+      (docs/sources/uesp-races.wiki). That check removed a wrong +5 Alchemy from the Altmer. Attribute
+      ratios and playstyle notes are still derived.
   - id: uesp-stones-shouts
-    title: UESP, Skyrim:Standing_Stones and Skyrim:Shouts
-    url: https://en.uesp.net/wiki/Skyrim:Standing_Stones
+    title: UESP, Skyrim:Standing Stone and Skyrim:Dragon Shouts
+    url: https://en.uesp.net/wiki/Skyrim:Standing_Stone
     used_for: data/stones.yaml and data/shouts.yaml (names, effects, DLC)
-    evidence: derived
+    evidence: sourced
     notes: >-
-      UESP returned 403 to the build environment, so both lists were written from game knowledge.
-      Verify in Phase 6, or save both pages to docs/sources/ and retag them sourced. The stone and
-      shout picks on each build are suggestions written for this tool (derived), except where a
+      Read through the wiki API on 2026-11-11; the raw text is in docs/sources/. The stone and shout
+      picks on each build are still suggestions written for this tool (derived), except where a
       ledger row is cited as ref.
   - id: uesp-npc-classes
     title: UESP NPC pages, read through the wiki API (en.uesp.net/w/api.php)

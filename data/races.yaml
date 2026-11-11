@@ -1,10 +1,10 @@
 # Pure race builds: only the skills a race starts with a bonus in (+10 signature, +5 others).
+# Skill bonuses and powers: UESP Skyrim:Races, read through the wiki API on 2026-11-11 (docs/sources/uesp-races.wiki).
 # `attributes` is a recommended Health:Magicka:Stamina ratio, not game data (evidence: derived).
 races:
 - race: Altmer
   signature: Illusion
   plus5:
-  - Alchemy
   - Alteration
   - Conjuration
   - Destruction

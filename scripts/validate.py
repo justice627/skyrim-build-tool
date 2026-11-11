@@ -124,6 +124,8 @@ def main():
         for s in [r["signature"], *r["plus5"]]:
             if s not in skill_names:
                 errors.append(f"race {r['race']}: unknown skill {s}")
+        if len(set(r["plus5"])) != 5 or r["signature"] in r["plus5"]:
+            errors.append(f"race {r['race']}: needs five different +5 skills besides the signature skill")
         a = r["attributes"]
         if len(a) != 3 or not all(isinstance(x, int) and x >= 0 for x in a) or not sum(a):
             errors.append(f"race {r['race']}: attributes must be three non-negative ints")

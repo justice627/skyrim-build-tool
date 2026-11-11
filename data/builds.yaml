@@ -224,7 +224,7 @@ builds:
   inspired_by: Combat rangers
   aliases: [Archer]
   evidence: sourced
-  stone: {early: warrior, final: lady, evidence: derived}
+  stone: {early: thief, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, whirlwind-sprint, slow-time], evidence: derived}
   examples: ["Jenassa", "Annekke Crag-Jumper", "Angi"]
   classes:
@@ -237,7 +237,7 @@ builds:
   name: Highwayman
   inspired_by: Bandit archers and Alik'r archers (identical files)
   evidence: sourced
-  stone: {early: warrior, final: shadow, evidence: derived}
+  stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [throw-voice, disarm, whirlwind-sprint], evidence: derived}
   examples: ["Valdr", "Orthjolf"]
   classes:
@@ -270,7 +270,7 @@ builds:
   name: Thalmor archer
   inspired_by: Thalmor archers escorting Justiciars
   evidence: sourced
-  stone: {early: warrior, final: shadow, evidence: derived}
+  stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [aura-whisper, slow-time, whirlwind-sprint], evidence: derived}
   classes:
   - EncClassThalmorMissile
@@ -282,7 +282,7 @@ builds:
   name: Forsworn hunter
   inspired_by: Forsworn archers in the Reach
   evidence: sourced
-  stone: {early: warrior, final: lady, evidence: derived}
+  stone: {early: thief, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, aura-whisper, whirlwind-sprint], evidence: derived}
   examples: ["Daenella"]
   classes:
@@ -811,7 +811,7 @@ builds:
   name: Fletcher
   inspired_by: Fletchers
   evidence: sourced
-  stone: {early: warrior, final: steed, evidence: derived}
+  stone: {early: thief, final: steed, evidence: derived}
   shouts: {ids: [whirlwind-sprint, aura-whisper, slow-time], evidence: derived}
   examples: ["Elrindir", "Fihada"]
   classes:
@@ -952,7 +952,7 @@ builds:
   name: Katria
   inspired_by: Katria (Dawnguard)
   evidence: sourced
-  stone: {early: warrior, final: lady, evidence: derived}
+  stone: {early: thief, final: lady, evidence: derived}
   shouts: {ids: [slow-time, aura-whisper, whirlwind-sprint], evidence: derived}
   examples: ["Katria"]
   classes:

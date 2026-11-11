@@ -22,7 +22,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `src/template.html`: the page. `__DATA__` is replaced with the built JSON. It is a fragment because claude.ai artifacts supply their own skeleton; `build.py` wraps it into a full document for `index.html`.
 - `docs/roadmap.md`: the phased plan. Work in phase order.
 - `docs/research/`: the community and lore build ledger and the research notes behind it. These are leads, not verified data.
-- `docs/sources/`: the saved UESP class table (PDF plus a screenshot of the rows the PDF dropped), and `uesp-npc-classes.json`, which named NPCs use each class.
+- `docs/sources/`: the saved UESP class table (PDF plus a screenshot of the rows the PDF dropped), `uesp-npc-classes.json` (which named NPCs use each class), and the raw UESP text behind `stones.yaml`, `shouts.yaml` and the race bonuses.
 - `scripts/fetch_npcs.py`: refreshes `uesp-npc-classes.json` from UESP's wiki API. UESP's normal pages are blocked from cloud sessions, but `https://en.uesp.net/w/api.php` works.
 
 ## Rules

@@ -18,7 +18,7 @@ Add to every build: standing stone (early and final), shouts (two to four), requ
 - New lookup files: `data/stones.yaml`, `data/shouts.yaml`. Builds reference them by id and the validator checks that every id resolves.
 - Defaults for the 56 builds come from ledger section F2 and are tagged derived.
 - Done when every build shows a stone and shouts, and searching "stealth archer" finds Scout.
-- Status: done. UESP was unreachable, so the stone and shout lists are tagged derived until Phase 6 checks them.
+- Status: done. The stone and shout lists, and the race skill bonuses, were checked against UESP through its wiki API on 2026-11-11 and are tagged sourced. The per-build picks stay derived.
 
 ## Phase 2: names and named variants
 
@@ -51,7 +51,7 @@ Attach gear kits to builds (Spell Knight Armor to Spellsword, Necromantic Grimoi
 
 ## Phase 6: verification, alongside the rest
 
-Settle whether Chrysamere, Keening and Sunder need AE or mods. Spot-check the lore claims marked unverified in the ledger. Watch the FudgeMuppet videos for Sabre Cat, Preserver, Mechanist and Ronin.
+Done early: stones, shouts and race skill bonuses checked against UESP (2026-11-11). Still open: settle whether Chrysamere, Keening and Sunder need AE or mods. Spot-check the lore claims marked unverified in the ledger. Watch the FudgeMuppet videos for Sabre Cat, Preserver, Mechanist and Ronin.
 
 - Done when no row is still tagged unverified.
 

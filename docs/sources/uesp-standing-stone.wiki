@@ -1,0 +1,122 @@
+{{Trail|Places}}[[File:SR-mapicon-Doomstone.png|left]][[File:SR-place-Guardian Stones.jpg|thumb|right|The three Guardian Stones]]
+The '''Standing Stones''' are magical stones found in the wilderness which can give your character special abilities and powers. There are thirteen Standing Stones in total, each associated with one of Tamriel's thirteen [[Lore:Astronomy#Constellations|constellations]]. Usually, only one stone's effects can be active at a time, although you can change which stone is active at any time by  activating a different Standing Stone. However, by wearing the [[Skyrim:Aetherial Crown|Aetherial Crown]]{{DG}}, you may be affected by two Standing Stones concurrently. 
+
+The first three stones most players will encounter are the three [[Skyrim:The Guardian Stones|Guardian Stones]]: the Mage Stone, the Thief Stone, and the Warrior Stone.  These three stones are found together in a circle along the road to [[Skyrim:Riverwood|Riverwood]] near [[Skyrim:Lake Ilinalta|Lake Ilinalta]]. Selecting one of these stones allows you to effectively specialize in one group of [[Skyrim:skills|skills]]. All of the other stones are located on their own.
+
+{{NewLine}}
+{|class="wikitable sortable"
+! width=1% class="unsortable" | Icon !! width=14% | Stone Name<br>([[Skyrim:Form ID|IDs]]) !! width=40% class="unsortable" | Description and Effects !! width=45% class="unsortable" | Location
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Apprentice Stone|{{Anchor|The Apprentice Stone}}]]'''<br>{{Small|Ability ID: 000e5f4e<br>Weakness ID: 0010e439}}
+| ''Those under the sign of The Apprentice recover Magicka faster, but are more susceptible to Magicka damage:''
+*[[Skyrim:Regenerate Magicka|Regenerate Magicka]], 100% faster
+*[[Skyrim:Weakness to Magic|Weakness to Magic]], 100%
+| On an island in the [[Skyrim:Hjaalmarch|Hjaalmarch]] marsh, just north of [[Skyrim:Fort Snowhawk|Fort Snowhawk]], west-northwest of  [[Skyrim:Morthal|Morthal]] <br>Compass Marker visible from the East Empire Company Warehouse. {{Map Link|The Apprentice Stone}}. 
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Atronach Stone|{{Anchor|The Atronach Stone}}]]'''<br>{{Small|Ability ID: 000e5f51}}
+| ''Those under the sign of The Atronach absorb a portion of incoming spell damage and have a larger pool of Magicka, but recover it more slowly:''
+*[[Skyrim:Spell Absorption|Spell Absorption]], 50%
+*[[Skyrim:Damage Magicka Regen|Damage Magicka Regen]], 50%
+*[[Skyrim:Fortify Magicka|Fortify Magicka]], 50 pts
+| In the southernmost part of the hot springs of [[Skyrim:Eastmarch|Eastmarch]], northwest of [[Skyrim:Mistwatch|Mistwatch]] and east-northeast of [[Skyrim:Darkwater Crossing|Darkwater Crossing]] {{Map Link|The Atronach Stone}}.
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Lady Stone|{{Anchor|The Lady Stone}}]]'''<br>{{Small|Ability ID: 000e5f54}}
+| ''Those under the sign of The Lady regenerate Health and Stamina more quickly:''
+*[[Skyrim:Regenerate Health|Regenerate Health]], 25% faster
+*[[Skyrim:Regenerate Stamina|Regenerate Stamina]], 25% faster
+| On an island in [[Skyrim:Lake Ilinalta|Lake Ilinalta]], directly north of [[Skyrim:Falkreath|Falkreath]] {{Map Link|The Lady Stone}}.
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Lord Stone|{{Anchor|The Lord Stone}}]]'''<br>{{Small|Ability ID: 000e5f58}}
+| ''Those under the sign of The Lord are more resistant to both Magicka and physical damage:''
+*[[Skyrim:Armor#Armor Rating|Armor]], 50 pts
+*[[Skyrim:Resist Magic|Resist Magic]], 25%
+| East of [[Skyrim:Morthal|Morthal]], northeast of the [[Skyrim:Shrine of Mehrunes Dagon|Shrine of Mehrunes Dagon]], about one and a half times as far as [[Skyrim:Stonehills|Stonehills]], up on the mountain. Follow the path starting north of the [[Skyrim:Hall of the Vigilant|Hall of the Vigilant]] to the Shrine and the Stone {{Map Link|The Lord Stone}}.
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Lover Stone|{{Anchor|The Lover Stone}}]]'''<br>{{Small|Ability ID: 000e5f5a<br>Perk ID: 000e5f57}}
+| ''Those under the sign of The Lover always feel a Lover's Comfort (All skills improve faster):'' 
+* All [[Skyrim:Skills|skills]] improve 15% faster
+| Northeast of [[Skyrim:Markarth|Markarth]] (Follow road North), just north of [[Skyrim:Kolskeggr Mine|Kolskeggr Mine]] {{Map Link|The Lover Stone}}.
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Mage Stone|{{Anchor|The Mage Stone}}]]'''<br>{{Small|Ability ID: 000e5f47<br>Perk ID: 000e5f49}}
+| ''Those under the sign of the Mage will learn all magic skills (including [[Skyrim:Enchanting|Enchanting]]) 20% faster:''
+* All [[Skyrim:Magic Overview|magic]] skills improve 20% faster
+| Southwest of [[Skyrim:Riverwood|Riverwood]], by the roadside, one of the Guardian Stones {{Map Link|The Guardian Stones}}.
+|-
+| [[File:SR-icon-spell-Reanimate.png|75 px]]
+| '''[[Skyrim:The Ritual Stone|{{Anchor|The Ritual Stone}}]]'''<br>{{Small|Ability ID: 000e7329}}
+| ''Once a day, those under the sign of The Ritual can reanimate nearby corpses to fight for them:''
+* [[Skyrim:Reanimate|Dead Thrall]], 75 pts for 200 secs in 75 ft
+| East of [[Skyrim:Whiterun|Whiterun]], by the roadside, above the entrance to [[Skyrim:Graywinter Watch|Graywinter Watch]] {{Map Link|The Ritual Stone}}
+|-
+| [[File:SR-icon-spell-Paralyze.png|75 px]]
+| '''[[Skyrim:The Serpent Stone|{{Anchor|The Serpent Stone}}]]'''<br>{{Small|Ability ID: 000e5f61}}
+| ''Once a day, those under the sign of The Serpent can use a ranged paralyzing poison on opponents:''
+* [[Skyrim:Paralyze (effect)|Paralyze]], for 5 secs
+* [[Skyrim:Damage Health|Damage Health]], 5 pts for 5 secs
+|  Directly east of the [[Skyrim:College of Winterhold (place)|College of Winterhold]] and northeast of the [[Skyrim:Wreck of The Pride of Tel Vos|Wreck of The Pride of Tel Vos]], on an icy island in the [[Skyrim:Sea of Ghosts|Sea of Ghosts]] {{Map Link|The Serpent Stone}}.
+|-
+| [[File:SR-icon-spell-Invisibility.png|75 px]]
+| '''[[Skyrim:The Shadow Stone|{{Anchor|The Shadow Stone}}]]'''<br>{{Small|Ability ID: 000e732a}}
+| ''Once a day, those under the sign of The Shadow can become invisible for an extended period:''
+* [[Skyrim:Invisibility (effect)|Invisibility]], for 60 secs
+| South of [[Skyrim:Riften|Riften]], near [[Skyrim:Nightingale Hall|Nightingale Hall]] {{Map Link|The Shadow Stone}}.
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Steed Stone|{{Anchor|The Steed Stone}}]]'''<br>{{Small|Ability ID: 000e5f5e<br>Perk ID: 0001bac9}}
+| ''Those under the sign of The Steed can carry more and do not suffer a movement penalty from armor:''
+* Worn armor of all types is weightless and carries no speed penalty
+* [[Skyrim:Fortify Carry Weight|Fortify Carry Weight]], 100 pts (only adds 50 points extra carry weight in survival mode)
+| Northwest of [[Skyrim:Solitude|Solitude]], near [[Skyrim:Ironback Hideout|Ironback Hideout]] {{Map Link|The Steed Stone}}.
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Thief Stone|{{Anchor|The Thief Stone}}]]'''<br>{{Small|Ability ID: 000e5f45<br>Perk ID: 000e5f46}}
+| ''Those under the sign of the Thief will learn all stealth skills 20% faster:''
+* All [[Skyrim:stealth|stealth]] skills (including [[Skyrim:Archery|Archery]] and [[Skyrim:Alchemy|Alchemy]]) improve 20% faster
+| Southwest of [[Skyrim:Riverwood|Riverwood]], by the roadside, one of the Guardian Stones {{Map Link|The Guardian Stones}}.
+|-
+| [[File:SR-icon-spell-Alteration.png|75 px]]
+| '''[[Skyrim:The Tower Stone|{{Anchor|The Tower Stone}}]]'''<br>{{Small|Ability ID: 000e7328<br>Perk ID: 000e7326}}
+| ''Once a day, those under the sign of The Tower have the option to automatically open an Expert or lower lock:''
+* Unlock any lock, up to Expert in difficulty
+| About halfway between [[Skyrim:Dawnstar|Dawnstar]] and [[Skyrim:Winterhold|Winterhold]], on a high snow-covered cliff {{Map Link|The Tower Stone}}.
+|-
+| [[File:SR-icon-spell-Magic Hat.png|75 px]]
+| '''[[Skyrim:The Warrior Stone|{{Anchor|The Warrior Stone}}]]'''<br>{{Small|Ability ID: 000e5f4c<br>Perk ID: 000e5f4a}}
+| ''Those under the sign of the Warrior will learn all combat skills 20% faster:''
+* All [[Skyrim:combat|combat]] skills (excluding Archery, including [[Skyrim:Smithing|Smithing]]) improve 20% faster 
+| Southwest of [[Skyrim:Riverwood|Riverwood]], by the roadside, one of the Guardian Stones {{Map Link|The Guardian Stones}}.
+|}
+
+==Achievements==
+[[Skyrim:Achievements|Achievements]] related to the Standing Stones are:
+* {{achievement|Blessed}}
+** You must discover one standing stone, then activate its blessing.  This is most easily accomplished using one of the three Guardian Stones.
+* {{achievement|Standing Stones (achievement)}}
+** You must discover all thirteen of the standing stones (see [[#Bugs|bugs]]).
+
+== Notes ==
+* The Standing Stones are comparable to the [[Oblivion:Doomstones#Birthsign Stones|Birthsign Stones]] from [[Oblivion:Oblivion|Oblivion]].
+* If you are at or near one of the Standing Stones, and bring up the local map, the map title may refer to it as a "Doomstone".  Nothing else in the game seems to use this term for these objects, though.
+* [[Skyrim:Followers|Followers]] won't pray at a Standing Stone if you order them to do so.
+* Reading ''[[Skyrim:An Explorer's Guide to Skyrim|An Explorer's Guide to Skyrim]]'' will mark the locations of the following Stones on your map: the Guardian Stones, the Ritual Stone, the Shadow Stone, and the Lover Stone.
+* Although the loading screen tip states the Apprentice Stone doubles both magicka regeneration and magicka, only magicka regeneration is doubled.
+* Many of the markings on the paper map provided with some copies of Skyrim correspond to the Standing Stones.{{ref|name=SPMap|[[:File:MER-art-Skyrim Anthology Map.jpg|Map of Skyrim]]}}
+* [[Skyrim:Archery|Archery]] is boosted by the Thief Stone. Whether this is intentional or not is unclear:
+** Archery is displayed clearly in the Warrior section of the skill menu, and as each menu section contains a consistent six skills, the Thief Stone's governance of Archery breaks that consistency, perhaps suggesting that this is unintentional.
+** Because Archery has been a stealth skill in previous Elder Scrolls games, its playstyle differs from the Warrior's typical melee tactics and synergizes with [[Skyrim:Sneak|Sneak]], and the Thief would have no offensive skills if not for Archery, some players believe that Archery was intentionally placed under the Thief Stone.
+** {{Pc22}} The [[Skyrim_Mod:Unofficial Skyrim Patch|Unofficial Skyrim Patch]], version 1.2, moves Archery under the Warrior Stone.
+
+== Bugs ==
+{{Bug|[[Skyrim:The Atronach Stone|The Atronach Stone]] has a 50% chance of causing all [[Skyrim:Conjuration_Spells|Summoning]] spells and powers to fail. See [[Skyrim:Spell Absorption#Bugs|Spell Absorption]] for details.|USKP|1.0}}
+{{Bug|Reading ''An Explorer's Guide to Skyrim'' after the Guardian, Ritual, Lover, and Shadow Stones are marked on the map will cause a "Map updated." message to appear on the top left of the screen again, though no new Stones will be marked.}}
+{{Bug|It is possible to receive the "Standing Stones" achievement by visiting any of the standing stones a total of 13 times rather than finding all 13 (or visiting the Guardian Stones 5 times). This may result in being stated to have visited more than 13 stones, as repeat visits are not taken into account. You must wait for the location to respawn for repeat visits to increment the counter.|USKP|1.2.7}}
+{{Bug|There is no loading screen for the Tower Stone.|USKP|2.0.7}}
+
+==References==
+<references/>
