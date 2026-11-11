@@ -6,6 +6,8 @@
 #   evidence  grade of the skill weights (sourced for every build read from UESP classes)
 #   stone     {early, final (optional), evidence, ref (optional ledger row)}; ids from stones.yaml
 #   shouts    {ids (2 to 4), evidence, ref (optional)}; ids from shouts.yaml
+#   examples  optional, up to 3 named NPCs who use the build's classes (from docs/sources/uesp-npc-classes.json);
+#             variants can have their own examples
 #   requires  optional list of extra requirements beyond the shouts (DG, HF, DB, CC, AE)
 families:
 - id: steel
@@ -53,21 +55,26 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
+  examples: ["Lydia", "Hadvar", "Ulfric Stormcloak"]
   classes:
   - CombatWarrior1H
   - TrainerOneHandedExpert
   - TrainerOneHandedJourneyman
   variants:
   - label: 'One-handed master trainer: drops Archery, adds Sneak'
+    examples: ["Chief Burguk"]
     classes:
     - TrainerOneHandedMaster
   - label: 'Sneak journeyman trainer: adds Sneak 3'
+    examples: ["Khayla"]
     classes:
     - TrainerSneakJourneyman
   - label: 'Speech journeyman trainer: adds Speech 3'
+    examples: ["Revyn Sadri"]
     classes:
     - TrainerSpeechcraftJourneyman
   - label: 'Lockpicking expert trainer: adds Lockpicking 4'
+    examples: ["Ma'jhad"]
     classes:
     - TrainerLockpickExpert
   description: >-
@@ -81,11 +88,13 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, marked-for-death], evidence: derived}
+  examples: ["Mjoll the Lioness", "Torbjorn Shatter-Shield"]
   classes:
   - CombatWarrior2H
   - TrainerTwoHandedExpert
   variants:
   - label: 'Two-handed master trainer: Two-Handed 4'
+    examples: ["Vilkas"]
     classes:
     - TrainerTwoHandedMaster
   description: >-
@@ -99,10 +108,12 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, marked-for-death], evidence: derived}
+  examples: ["Borgakh the Steel Heart", "Chief Yamarz"]
   classes:
   - GuardOrc1H
   variants:
   - label: Two-handed stronghold guard
+    examples: ["Chief Mauhulakh"]
     classes:
     - GuardOrc2H
   description: >-
@@ -116,10 +127,12 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, become-ethereal], evidence: derived}
+  examples: ["Chief Larak"]
   classes:
   - TrainerBlockMaster
   variants:
   - label: 'Block expert trainer: shield brawler with Speech and Pickpocket instead of armor'
+    examples: ["Njada Stonearm"]
     classes:
     - TrainerBlockExpert
   description: >-
@@ -133,6 +146,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, whirlwind-sprint], evidence: derived}
+  examples: ["Ralof", "Tsun"]
   classes:
   - CombatBarbarian
   - MQAncientNord
@@ -147,6 +161,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [elemental-fury, whirlwind-sprint, dismay], evidence: derived}
+  examples: ["Kematu", "Rochelle the Red"]
   classes:
   - EncClassBanditMelee
   - EncClassAlikrMelee
@@ -164,6 +179,7 @@ builds:
   - GuardImperial
   variants:
   - label: 'Stormcloak guard: two-hander instead of one-hander, Magicka instead of Stamina'
+    examples: ["Gunjar"]
     classes:
     - GuardSonsSkyrim
   description: >-
@@ -176,6 +192,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, marked-for-death], evidence: derived}
+  examples: ["Legate Rikke", "General Tullius"]
   classes:
   - SoldierImperialNotGuard
   variants:
@@ -209,6 +226,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, whirlwind-sprint, slow-time], evidence: derived}
+  examples: ["Jenassa", "Annekke Crag-Jumper", "Angi"]
   classes:
   - CombatRanger
   description: >-
@@ -221,6 +239,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: shadow, evidence: derived}
   shouts: {ids: [throw-voice, disarm, whirlwind-sprint], evidence: derived}
+  examples: ["Valdr", "Orthjolf"]
   classes:
   - EncClassBanditMissile
   - EncClassAlikrMissile
@@ -235,10 +254,12 @@ builds:
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: partly-sourced, ref: B7}
   shouts: {ids: [aura-whisper, slow-time, throw-voice], evidence: partly-sourced, ref: B7}
+  examples: ["Urag gro-Shub", "Jiub"]
   classes:
   - CombatScout
   variants:
   - label: 'Sneak expert trainer: Sneak 4'
+    examples: ["Garvey"]
     classes:
     - TrainerSneakExpert
   description: >-
@@ -263,6 +284,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, aura-whisper, whirlwind-sprint], evidence: derived}
+  examples: ["Daenella"]
   classes:
   - EncClassForswornMissile
   description: >-
@@ -275,23 +297,28 @@ builds:
   evidence: sourced
   stone: {early: thief, final: tower, evidence: derived, ref: F1}
   shouts: {ids: [throw-voice, whirlwind-sprint, become-ethereal], evidence: derived}
+  examples: ["Brynjolf", "Karliah", "Delvin Mallory"]
   classes:
   - CombatThief
   - TrainerPickpocketMaster
   - TrainerSneakMaster
   variants:
   - label: 'Lockpicking master trainer: Lockpicking 4'
+    examples: ["Vex"]
     classes:
     - TrainerLockpickMaster
   - label: 'Archery trainers: Archery 4, Speech 2'
+    examples: ["Aela the Huntress", "Faendal"]
     classes:
     - TrainerMarksmanExpert
     - TrainerMarksmanJourneyman
     - TrainerMarksmanMaster
   - label: 'Pickpocket expert trainer: Pickpocket 3'
+    examples: ["Silda the Unseen"]
     classes:
     - TrainerPickpocketExpert
   - label: 'Speech master trainer: Speech 4'
+    examples: ["Giraud Gemane"]
     classes:
     - TrainerSpeechcraftMaster
   description: >-
@@ -305,6 +332,7 @@ builds:
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [throw-voice, whirlwind-sprint, slow-time], evidence: derived}
+  examples: ["Mercer Frey", "Etienne Rarnis"]
   classes:
   - CombatRogue
   description: >-
@@ -317,6 +345,7 @@ builds:
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [dragonrend, whirlwind-sprint, aura-whisper], evidence: derived}
+  examples: ["Delphine"]
   classes:
   - Blade
   description: >-
@@ -329,13 +358,16 @@ builds:
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [aura-whisper, throw-voice, slow-time], evidence: derived}
+  examples: ["Astrid", "Cicero", "Veezara"]
   classes:
   - CombatAssassin
   variants:
   - label: 'Alchemy master trainer: Archery 4'
+    examples: ["Babette"]
     classes:
     - TrainerAlchemyMaster
   - label: 'Light Armor master trainer: Light Armor 4'
+    examples: ["Nazir"]
     classes:
     - TrainerLightArmorMaster
   description: >-
@@ -361,6 +393,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [aura-whisper, throw-voice, slow-time], evidence: derived}
+  examples: ["Maven Black-Briar", "Irileth"]
   classes:
   - CombatNightblade
   description: >-
@@ -374,6 +407,7 @@ builds:
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [soul-tear, aura-whisper, marked-for-death], evidence: derived}
+  examples: ["Serana", "Lord Harkon", "Movarth Piquine"]
   classes:
   - EncClassVampire
   description: >-
@@ -387,13 +421,16 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived, ref: F1}
   shouts: {ids: [unrelenting-force, fire-breath, elemental-fury], evidence: derived}
+  examples: ["Dexion Evicus", "Kesh the Clean"]
   classes:
   - CombatSpellsword
   variants:
   - label: 'Belrand: same idea in light armor'
+    examples: ["Belrand"]
     classes:
     - NPCclassBelrand
   - label: 'Teldryn Sero: light armor, adds Conjuration'
+    examples: ["Teldryn Sero"]
     classes:
     - DLC2NPCClassTeldryn
   description: >-
@@ -419,6 +456,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: lady, evidence: derived}
   shouts: {ids: [elemental-fury, unrelenting-force, slow-time], evidence: derived}
+  examples: ["Madanach", "Malur Seloth"]
   classes:
   - CombatWitchblade
   description: >-
@@ -431,13 +469,16 @@ builds:
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [unrelenting-force, fire-breath, slow-time], evidence: derived}
+  examples: ["J'zargo", "Onmund", "Enthir"]
   classes:
   - CombatSorcerer
   variants:
   - label: 'Illusion master trainer: Illusion 4'
+    examples: ["Drevis Neloren"]
     classes:
     - TrainerIllusionMaster
   - label: 'Destruction master trainer: Alteration and Restoration instead of Illusion'
+    examples: ["Faralda"]
     classes:
     - TrainerDestructionMaster
   description: >-
@@ -450,6 +491,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [aura-whisper, unrelenting-force, slow-time], evidence: derived}
+  examples: ["Captain Avidius"]
   classes:
   - EncClassPenitusOculatus
   description: >-
@@ -474,6 +516,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, frost-breath, whirlwind-sprint], evidence: derived}
+  examples: ["Crowstooth"]
   classes:
   - EncClassForsworn
   description: >-
@@ -486,6 +529,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, marked-for-death], evidence: derived}
+  examples: ["Captain Valmir"]
   classes:
   - EncClassThalmorMelee
   description: >-
@@ -498,6 +542,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: lady, evidence: derived, ref: F1}
   shouts: {ids: [unrelenting-force, frost-breath, become-ethereal], evidence: derived}
+  examples: ["Valdimar"]
   classes:
   - BYOHHousecarlHjaalmarchClass
   description: >-
@@ -511,15 +556,18 @@ builds:
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived, ref: F1}
   shouts: {ids: [fire-breath, frost-breath, become-ethereal], evidence: derived}
+  examples: ["Marcurio", "Festus Krex", "Sybille Stentor"]
   classes:
   - CombatMageDestruction
   - TrainerDestructionExpert
   variants:
   - label: 'Fire/frost/shock mage and Neloth: adds Conjuration 2'
+    examples: ["Ancano", "Farengar Secret-Fire", "Neloth"]
     classes:
     - CombatMageElemental
     - DLC2NelothClassTrainer
   - label: 'Alteration expert trainer: Alteration 4, Conjuration 3'
+    examples: ["Dravynea the Stoneweaver"]
     classes:
     - TrainerAlterationExpert
   description: >-
@@ -532,14 +580,17 @@ builds:
   evidence: sourced
   stone: {early: mage, final: ritual, evidence: derived, ref: F1}
   shouts: {ids: [become-ethereal, unrelenting-force, call-dragon], evidence: derived}
+  examples: ["Esbern", "Savos Aren", "Phinis Gestor"]
   classes:
   - CombatMageConjurer
   - TrainerConjurationExpert
   variants:
   - label: 'Conjuration master trainer: Conjuration 4'
+    examples: ["Falion"]
     classes:
     - TrainerConjurationMaster
   - label: 'Necromancer: one-handed dagger instead of Destruction'
+    examples: ["Arniel Gane"]
     classes:
     - CombatMageNecro
   description: >-
@@ -552,6 +603,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [aura-whisper, slow-time, clear-skies], evidence: derived}
+  examples: ["Brelyna Maryon", "Idgrod Ravencrone"]
   classes:
   - CombatMystic
   description: >-
@@ -564,10 +616,12 @@ builds:
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [throw-voice, dismay, kynes-peace], evidence: derived}
+  examples: ["Atub"]
   classes:
   - TrainerIllusionExpert
   variants:
   - label: 'Destruction journeyman trainer: robe caster with more Magicka, adds Conjuration'
+    examples: ["Wuunferth the Unliving"]
     classes:
     - TrainerDestructionJourneyman
   description: >-
@@ -580,6 +634,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [fire-breath, unrelenting-force, become-ethereal], evidence: derived}
+  examples: ["Ancarion"]
   classes:
   - EncClassThalmorWizard
   description: >-
@@ -592,6 +647,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: apprentice, evidence: derived}
   shouts: {ids: [frost-breath, become-ethereal, whirlwind-sprint], evidence: derived}
+  examples: ["Feran Sadri", "Vingalmo"]
   classes:
   - EncClassBanditWizard
   variants:
@@ -599,6 +655,7 @@ builds:
     classes:
     - EncClassAlikrWizard
   - label: 'Forsworn shaman: Conjuration instead of the dagger, less Alteration'
+    examples: ["Storn Crag-Strider"]
     classes:
     - EncClassForswornShaman
   description: >-
@@ -615,9 +672,11 @@ builds:
   - VendorSpells
   variants:
   - label: 'Alteration master trainer: Alteration 4'
+    examples: ["Tolfdir"]
     classes:
     - TrainerAlterationMaster
   - label: 'Enchanting expert trainer: Enchanting 4'
+    examples: ["Sergius Turrianus"]
     classes:
     - TrainerEnchantingExpert
   description: >-
@@ -634,15 +693,19 @@ builds:
   - Priest
   variants:
   - label: 'Restoration journeyman trainer: Illusion 2 instead of Conjuration'
+    examples: ["Aphia Velothi"]
     classes:
     - TrainerRestorationJourneyman
   - label: 'Restoration master trainer: Restoration 4'
+    examples: ["Danica Pure-Spring"]
     classes:
     - TrainerRestorationMaster
   - label: 'Enchanting master trainer: Destruction 2 instead of Conjuration'
+    examples: ["Hamal"]
     classes:
     - TrainerEnchantingMaster
   - label: 'Conjuration journeyman trainer: Conjuration 4'
+    examples: ["Runil"]
     classes:
     - TrainerConjurationJourneyman
   description: >-
@@ -656,10 +719,12 @@ builds:
   evidence: sourced
   stone: {early: lover, final: lady, evidence: derived}
   shouts: {ids: [whirlwind-sprint, become-ethereal, kynes-peace], evidence: derived}
+  examples: ["Anuriel"]
   classes:
   - CombatMonk
   variants:
   - label: 'Restoration expert trainer: Alteration and Restoration 3, no weapons'
+    examples: ["Colette Marence"]
     classes:
     - TrainerRestorationExpert
   description: >-
@@ -673,6 +738,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, become-ethereal], evidence: derived}
+  examples: ["Vigilant Tolan", "Keeper Carcette"]
   classes:
   - Vigilant1hMeleeClass
   variants:
@@ -689,26 +755,33 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, whirlwind-sprint], evidence: derived}
+  examples: ["Adrianne Avenicci", "Alvor", "Oengul War-Anvil"]
   classes:
   - VendorBlacksmith
   variants:
   - label: 'Smithing trainers: Pickpocket instead of Block'
+    examples: ["Balimund", "Ghorza gra-Bagol"]
     classes:
     - TrainerSmithingExpert
     - TrainerSmithingJourneyman
   - label: 'Smithing master trainer: Smithing 4'
+    examples: ["Eorlund Gray-Mane"]
     classes:
     - TrainerSmithingMaster
   - label: 'Light Armor expert trainer: adds Light Armor 3 and Archery'
+    examples: ["Grelka"]
     classes:
     - TrainerLightArmorExpert
   - label: 'Light Armor journeyman trainer: same, Smithing 2'
+    examples: ["Scouts-Many-Marshes"]
     classes:
     - TrainerLightArmorJourneyman
   - label: 'Heavy Armor master trainer: no Magicka, Health and Stamina 3:3'
+    examples: ["Farkas"]
     classes:
     - TrainerHeavyArmorMaster
   - label: 'Heavy Armor expert trainer: a fighter, Block 3 and One-Handed 3'
+    examples: ["Gharol"]
     classes:
     - TrainerHeavyArmorExpert
   description: >-
@@ -721,11 +794,13 @@ builds:
   evidence: sourced
   stone: {early: thief, final: serpent, evidence: derived}
   shouts: {ids: [throw-voice, whirlwind-sprint, kynes-peace], evidence: derived}
+  examples: ["Avrusa Sarethi", "Lami"]
   classes:
   - VendorApothecary
   - TrainerAlchemyJourneyman
   variants:
   - label: 'Alchemy expert trainer: Alchemy 4'
+    examples: ["Arcadia"]
     classes:
     - TrainerAlchemyExpert
   description: >-
@@ -738,6 +813,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: steed, evidence: derived}
   shouts: {ids: [whirlwind-sprint, aura-whisper, slow-time], evidence: derived}
+  examples: ["Elrindir", "Fihada"]
   classes:
   - VendorFletcher
   description: >-
@@ -750,6 +826,7 @@ builds:
   evidence: sourced
   stone: {early: lover, evidence: derived, ref: F1}
   shouts: {ids: [kynes-peace, throw-voice, call-of-valor], evidence: derived}
+  examples: ["Ogmund"]
   classes:
   - Bard
   - TrainerSpeechcraftExpert
@@ -763,13 +840,16 @@ builds:
   evidence: sourced
   stone: {early: thief, final: steed, evidence: derived}
   shouts: {ids: [throw-voice, whirlwind-sprint, kynes-peace], evidence: derived}
+  examples: ["Brand-Shei", "Fralia Gray-Mane", "Camilla Valerius"]
   classes:
   - VendorPawnbroker
   variants:
   - label: 'Tailor: Smithing 2, Light Armor 1'
+    examples: ["Taarie"]
     classes:
     - VendorTailor
   - label: 'Food vendor: Pickpocket 3, Block and One-Handed'
+    examples: ["Vekel the Man"]
     classes:
     - VendorFood
   description: >-
@@ -782,6 +862,7 @@ builds:
   evidence: sourced
   stone: {early: lover, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, whirlwind-sprint], evidence: derived}
+  examples: ["Gerdur", "Sven", "Roggi Knot-Beard"]
   classes:
   - Farmer
   - Miner
@@ -796,6 +877,7 @@ builds:
   evidence: sourced
   stone: {early: lover, evidence: derived}
   shouts: {ids: [kynes-peace, whirlwind-sprint], evidence: derived}
+  examples: ["Elisif the Fair", "Proventus Avenicci", "Sheogorath"]
   classes:
   - Citizen
   description: >-
@@ -808,6 +890,7 @@ builds:
   evidence: sourced
   stone: {early: lover, final: tower, evidence: derived}
   shouts: {ids: [throw-voice, whirlwind-sprint], evidence: derived}
+  examples: ["Brenuin", "Narfi"]
   classes:
   - Beggar
   description: >-
@@ -820,6 +903,7 @@ builds:
   evidence: sourced
   stone: {early: lover, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, whirlwind-sprint], evidence: derived}
+  examples: ["Lokir"]
   classes:
   - Prisoner
   description: >-
@@ -832,6 +916,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [dragonrend, unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
+  examples: ["Ebony Warrior"]
   classes:
   - DLC2EbonyWarriorClass
   description: >-
@@ -844,6 +929,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [bend-will, dragon-aspect, cyclone, unrelenting-force], evidence: derived}
+  examples: ["Miraak (person)"]
   classes:
   - DLC2EncClassMiraak
   description: >-
@@ -868,6 +954,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [slow-time, aura-whisper, whirlwind-sprint], evidence: derived}
+  examples: ["Katria"]
   classes:
   - DLC1EncClassKatria
   description: >-
@@ -880,6 +967,7 @@ builds:
   evidence: sourced
   stone: {early: mage, final: lady, evidence: derived}
   shouts: {ids: [cyclone, animal-allegiance, unrelenting-force], evidence: derived}
+  examples: ["Frea"]
   classes:
   - DLC2csFrea
   description: >-
@@ -892,6 +980,7 @@ builds:
   evidence: sourced
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [battle-fury, whirlwind-sprint, unrelenting-force], evidence: derived}
+  examples: ["Ralis Sedarys"]
   classes:
   - DLC2dunKolbjornRalisClass
   description: >-

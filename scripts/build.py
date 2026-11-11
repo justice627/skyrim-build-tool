@@ -5,6 +5,7 @@ Writes two files to dist/:
 - artifact.html  the same page without the document skeleton, for publishing as a claude.ai artifact
 """
 import json
+import re
 
 from common import ATTRS, ROOT, SCHOOL, SKILLS, by_id, load, load_lookup, weights
 
@@ -62,6 +63,11 @@ def render_picks(b, stones, shouts):
     }
 
 
+def npc_name(page_name):
+    """'Miraak (person)' -> 'Miraak': UESP disambiguates pages, the page shows the character's name."""
+    return re.sub(r"\s*\([^)]*\)$", "", page_name)
+
+
 def render_build(b, classes, stones, shouts):
     w = weights(classes, b["classes"][0])
     attrs, why = plan(w)
@@ -69,13 +75,14 @@ def render_build(b, classes, stones, shouts):
     for v in b.get("variants", []):
         vw = weights(classes, v["classes"][0])
         variants.append({"label": v["label"], "eids": v["classes"], "skills": skill_line(vw),
+                         "npcs": [npc_name(n) for n in v.get("examples", [])],
                          "attr": [vw.get(a, 0) for a in ATTRS]})
     return {
         "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b["classes"],
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
-        "aka": b.get("aliases", []), "ev": b["evidence"], **render_picks(b, stones, shouts),
+        "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []), "ev": b["evidence"], **render_picks(b, stones, shouts),
     }
 
 

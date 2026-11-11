@@ -1,0 +1,6423 @@
+{
+ "retrieved": "2026-11-11",
+ "source": "https://en.uesp.net/w/api.php",
+ "classes": {
+  "AAAPlayerSpellswordClass": [
+   {
+    "name": "Shadow",
+    "page": "Skyrim:Shadow",
+    "size": 3173,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Prisoner",
+    "page": "Skyrim:Prisoner",
+    "size": 1624,
+    "matched_by": "class name"
+   }
+  ],
+  "BYOHHousecarlHjaalmarchClass": [
+   {
+    "name": "Valdimar",
+    "page": "Skyrim:Valdimar",
+    "size": 4180,
+    "matched_by": "class_details"
+   }
+  ],
+  "Bard": [],
+  "Beggar": [
+   {
+    "name": "Degaine",
+    "page": "Skyrim:Degaine",
+    "size": 8754,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rirns Llervu",
+    "page": "Skyrim:Rirns Llervu",
+    "size": 6949,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gissur",
+    "page": "Skyrim:Gissur",
+    "size": 6888,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Brenuin",
+    "page": "Skyrim:Brenuin",
+    "size": 6766,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dervenin",
+    "page": "Skyrim:Dervenin",
+    "size": 6575,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Narfi",
+    "page": "Skyrim:Narfi",
+    "size": 6182,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Noster Eagle-Eye",
+    "page": "Skyrim:Noster Eagle-Eye",
+    "size": 5493,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Angrenor Once-Honored",
+    "page": "Skyrim:Angrenor Once-Honored",
+    "size": 4934,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Snilf",
+    "page": "Skyrim:Snilf",
+    "size": 4743,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Edda",
+    "page": "Skyrim:Edda",
+    "size": 4113,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gadnor",
+    "page": "Skyrim:Gadnor",
+    "size": 3050,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Wood Elf (dead)",
+    "page": "Skyrim:Wood Elf (dead)",
+    "size": 2110,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hefid the Deaf",
+    "page": "Skyrim:Hefid the Deaf",
+    "size": 2044,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Arena Fan",
+    "page": "Skyrim:Arena Fan",
+    "size": 1448,
+    "matched_by": "class name"
+   }
+  ],
+  "Blade": [
+   {
+    "name": "Delphine",
+    "page": "Skyrim:Delphine",
+    "size": 89285,
+    "matched_by": "class name"
+   }
+  ],
+  "CWSoldierClass": [
+   {
+    "name": "Redoran Guard",
+    "page": "Skyrim:Redoran Guard",
+    "size": 19109,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Markarth City Guard",
+    "page": "Skyrim:Markarth City Guard",
+    "size": 13888,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Riften Guard",
+    "page": "Skyrim:Riften Guard",
+    "size": 9436,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Quentin Cipius",
+    "page": "Skyrim:Legate Quentin Cipius",
+    "size": 8268,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Fasendil",
+    "page": "Skyrim:Legate Fasendil",
+    "size": 7223,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Adventus Caesennius",
+    "page": "Skyrim:Legate Adventus Caesennius",
+    "size": 6098,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pale Hold Guard",
+    "page": "Skyrim:Pale Hold Guard",
+    "size": 5754,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Yrsarald Thrice-Pierced",
+    "page": "Skyrim:Yrsarald Thrice-Pierced",
+    "size": 5526,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stormcloak Guard",
+    "page": "Skyrim:Stormcloak Guard",
+    "size": 5154,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial Guard",
+    "page": "Skyrim:Imperial Guard",
+    "size": 4861,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Taurinus Duilis",
+    "page": "Skyrim:Legate Taurinus Duilis",
+    "size": 4756,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Istar Cairn-Breaker",
+    "page": "Skyrim:Istar Cairn-Breaker",
+    "size": 4734,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hjornskar Head-Smasher",
+    "page": "Skyrim:Hjornskar Head-Smasher",
+    "size": 4171,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gonnar Oath-Giver",
+    "page": "Skyrim:Gonnar Oath-Giver",
+    "size": 4075,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kai Wet-Pommel",
+    "page": "Skyrim:Kai Wet-Pommel",
+    "size": 4072,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Frorkmar Banner-Torn",
+    "page": "Skyrim:Frorkmar Banner-Torn",
+    "size": 4064,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kottir Red-Shoal",
+    "page": "Skyrim:Kottir Red-Shoal",
+    "size": 3903,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stormcloak Quartermaster",
+    "page": "Skyrim:Stormcloak Quartermaster",
+    "size": 3885,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Riften Guard Jailor",
+    "page": "Skyrim:Riften Guard Jailor",
+    "size": 3863,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Arrald Frozen-Heart",
+    "page": "Skyrim:Arrald Frozen-Heart",
+    "size": 3862,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thorygg Sun-Killer",
+    "page": "Skyrim:Thorygg Sun-Killer",
+    "size": 3818,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Klija Wolf-Claw",
+    "page": "Skyrim:Klija Wolf-Claw",
+    "size": 3815,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aldepius",
+    "page": "Skyrim:Aldepius",
+    "size": 3735,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Hrollod",
+    "page": "Skyrim:Legate Hrollod",
+    "size": 3696,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Skulnar",
+    "page": "Skyrim:Legate Skulnar",
+    "size": 3601,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Sevan Telendas",
+    "page": "Skyrim:Legate Sevan Telendas",
+    "size": 3592,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Emmanuel Admand",
+    "page": "Skyrim:Legate Emmanuel Admand",
+    "size": 3541,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Legate Constantius Tituleius",
+    "page": "Skyrim:Legate Constantius Tituleius",
+    "size": 3440,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial Quartermaster",
+    "page": "Skyrim:Imperial Quartermaster",
+    "size": 3353,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial Guard Jailor",
+    "page": "Skyrim:Imperial Guard Jailor",
+    "size": 3257,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Redoran Guard (dead)",
+    "page": "Skyrim:Redoran Guard (dead)",
+    "size": 2855,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial Courier",
+    "page": "Skyrim:Imperial Courier",
+    "size": 2204,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stormcloak Courier",
+    "page": "Skyrim:Stormcloak Courier",
+    "size": 2204,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hjaalmarch Guard",
+    "page": "Skyrim:Hjaalmarch Guard",
+    "size": 2188,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Shor's Stone Guard",
+    "page": "Skyrim:Shor's Stone Guard",
+    "size": 2163,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ivarstead Guard",
+    "page": "Skyrim:Ivarstead Guard",
+    "size": 2112,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Roadside Guard",
+    "page": "Skyrim:Roadside Guard",
+    "size": 2016,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Reach Hold Guard",
+    "page": "Skyrim:Reach Hold Guard",
+    "size": 1862,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stormcloak Champion",
+    "page": "Skyrim:Stormcloak Champion",
+    "size": 1853,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bodyguard (Carvains)",
+    "page": "Skyrim:Bodyguard (Carvains)",
+    "size": 1748,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial Champion",
+    "page": "Skyrim:Imperial Champion",
+    "size": 1737,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial Deserter",
+    "page": "Skyrim:Imperial Deserter",
+    "size": 1513,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Silver-Blood Guard",
+    "page": "Skyrim:Silver-Blood Guard",
+    "size": 1501,
+    "matched_by": "class name"
+   },
+   {
+    "name": "East Empire Mercenary",
+    "page": "Skyrim:East Empire Mercenary",
+    "size": 1425,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial General",
+    "page": "Skyrim:Imperial General",
+    "size": 1397,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thalmor Prisoner",
+    "page": "Skyrim:Thalmor Prisoner",
+    "size": 1389,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Haafingar Guard",
+    "page": "Skyrim:Haafingar Guard",
+    "size": 1369,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rift Guard",
+    "page": "Skyrim:Rift Guard",
+    "size": 1052,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stormcloak General",
+    "page": "Skyrim:Stormcloak General",
+    "size": 588,
+    "matched_by": "class name"
+   }
+  ],
+  "Citizen": [
+   {
+    "name": "Vittoria Vici",
+    "page": "Skyrim:Vittoria Vici",
+    "size": 31074,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Elisif the Fair",
+    "page": "Skyrim:Elisif the Fair",
+    "size": 31057,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Proventus Avenicci",
+    "page": "Skyrim:Proventus Avenicci",
+    "size": 20607,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sheogorath",
+    "page": "Skyrim:Sheogorath",
+    "size": 20226,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Laila Law-Giver",
+    "page": "Skyrim:Laila Law-Giver",
+    "size": 18243,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Razelan",
+    "page": "Skyrim:Razelan",
+    "size": 15032,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Klimmek",
+    "page": "Skyrim:Klimmek",
+    "size": 14782,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Malborn",
+    "page": "Skyrim:Malborn",
+    "size": 14516,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ysolda",
+    "page": "Skyrim:Ysolda",
+    "size": 14490,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Korir",
+    "page": "Skyrim:Korir",
+    "size": 14043,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Eltrys",
+    "page": "Skyrim:Eltrys",
+    "size": 13983,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Raerek",
+    "page": "Skyrim:Raerek",
+    "size": 12200,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jorleif",
+    "page": "Skyrim:Jorleif",
+    "size": 12160,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Orthus Endario",
+    "page": "Skyrim:Orthus Endario",
+    "size": 12041,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bolli",
+    "page": "Skyrim:Bolli",
+    "size": 12034,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sorli the Builder",
+    "page": "Skyrim:Sorli the Builder",
+    "size": 11014,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sabjorn",
+    "page": "Skyrim:Sabjorn",
+    "size": 10955,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Endon",
+    "page": "Skyrim:Endon",
+    "size": 10920,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jon Battle-Born",
+    "page": "Skyrim:Jon Battle-Born",
+    "size": 10673,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Constance Michel",
+    "page": "Skyrim:Constance Michel",
+    "size": 10641,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Omluag",
+    "page": "Skyrim:Omluag",
+    "size": 10433,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Haelga",
+    "page": "Skyrim:Haelga",
+    "size": 10370,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Suvaris Atheron",
+    "page": "Skyrim:Suvaris Atheron",
+    "size": 10341,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Mallus Maccius",
+    "page": "Skyrim:Mallus Maccius",
+    "size": 10224,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Viola Giordano",
+    "page": "Skyrim:Viola Giordano",
+    "size": 10099,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Wujeeta",
+    "page": "Skyrim:Wujeeta",
+    "size": 10075,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nilsine Shatter-Shield",
+    "page": "Skyrim:Nilsine Shatter-Shield",
+    "size": 9927,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vantus Loreius",
+    "page": "Skyrim:Vantus Loreius",
+    "size": 9918,
+    "matched_by": "class name"
+   },
+   {
+    "name": "From-Deepest-Fathoms",
+    "page": "Skyrim:From-Deepest-Fathoms",
+    "size": 9863,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kraldar",
+    "page": "Skyrim:Kraldar",
+    "size": 9861,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kjeld",
+    "page": "Skyrim:Kjeld",
+    "size": 9080,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Reburrus Quintilius",
+    "page": "Skyrim:Reburrus Quintilius",
+    "size": 8982,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tova Shatter-Shield",
+    "page": "Skyrim:Tova Shatter-Shield",
+    "size": 8749,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Mikael",
+    "page": "Skyrim:Mikael",
+    "size": 8693,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nivenor",
+    "page": "Skyrim:Nivenor",
+    "size": 8630,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Betrid Silver-Blood",
+    "page": "Skyrim:Betrid Silver-Blood",
+    "size": 7947,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rhiada",
+    "page": "Skyrim:Rhiada",
+    "size": 7858,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Iddra",
+    "page": "Skyrim:Iddra",
+    "size": 7284,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pactur",
+    "page": "Skyrim:Pactur",
+    "size": 7278,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lars Battle-Born",
+    "page": "Skyrim:Lars Battle-Born",
+    "size": 7153,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bassianus Axius",
+    "page": "Skyrim:Bassianus Axius",
+    "size": 6916,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Adelaisa Vendicci",
+    "page": "Skyrim:Adelaisa Vendicci",
+    "size": 6802,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Greta",
+    "page": "Skyrim:Greta",
+    "size": 6614,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Olava the Feeble",
+    "page": "Skyrim:Olava the Feeble",
+    "size": 6551,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tythis Ulen",
+    "page": "Skyrim:Tythis Ulen",
+    "size": 6436,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Idesa Sadri",
+    "page": "Skyrim:Idesa Sadri",
+    "size": 6312,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Saerlund",
+    "page": "Skyrim:Saerlund",
+    "size": 6179,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ranmir",
+    "page": "Skyrim:Ranmir",
+    "size": 6103,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Brill",
+    "page": "Skyrim:Brill",
+    "size": 6080,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Anton Virane",
+    "page": "Skyrim:Anton Virane",
+    "size": 6033,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Khajiit (dead)",
+    "page": "Skyrim:Khajiit (dead)",
+    "size": 5868,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Temba Wide-Arm",
+    "page": "Skyrim:Temba Wide-Arm",
+    "size": 5859,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nazeem",
+    "page": "Skyrim:Nazeem",
+    "size": 5658,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tekla",
+    "page": "Skyrim:Tekla",
+    "size": 5468,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Shahvee",
+    "page": "Skyrim:Shahvee",
+    "size": 5426,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hathrasil",
+    "page": "Skyrim:Hathrasil",
+    "size": 5265,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gwilin",
+    "page": "Skyrim:Gwilin",
+    "size": 5231,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Niluva Hlaalu",
+    "page": "Skyrim:Niluva Hlaalu",
+    "size": 5095,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Swims-In-Deep-Water",
+    "page": "Skyrim:Swims-In-Deep-Water",
+    "size": 5093,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hilde",
+    "page": "Skyrim:Hilde",
+    "size": 4882,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Plautis Carvain",
+    "page": "Skyrim:Plautis Carvain",
+    "size": 4867,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Octieve San",
+    "page": "Skyrim:Octieve San",
+    "size": 4858,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Margret",
+    "page": "Skyrim:Margret",
+    "size": 4787,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Deep-In-His-Cups",
+    "page": "Skyrim:Deep-In-His-Cups",
+    "size": 4772,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bulfrek",
+    "page": "Skyrim:Bulfrek",
+    "size": 4423,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thaena",
+    "page": "Skyrim:Thaena",
+    "size": 4207,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thonjolf",
+    "page": "Skyrim:Thonjolf",
+    "size": 4173,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Corpse",
+    "page": "Skyrim:Corpse",
+    "size": 4151,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Narri",
+    "page": "Skyrim:Narri",
+    "size": 4077,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Maluril",
+    "page": "Skyrim:Maluril",
+    "size": 4074,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Medresi Dran",
+    "page": "Skyrim:Medresi Dran",
+    "size": 4045,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Salonia Carvain",
+    "page": "Skyrim:Salonia Carvain",
+    "size": 4032,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Torture Victim",
+    "page": "Skyrim:Torture Victim",
+    "size": 3976,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Cairine",
+    "page": "Skyrim:Cairine",
+    "size": 3884,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aquillius Aeresius",
+    "page": "Skyrim:Aquillius Aeresius",
+    "size": 3856,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Viriya",
+    "page": "Skyrim:Viriya",
+    "size": 3849,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Breton (dead)",
+    "page": "Skyrim:Breton (dead)",
+    "size": 3787,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Agnis",
+    "page": "Skyrim:Agnis",
+    "size": 3551,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Voada",
+    "page": "Skyrim:Voada",
+    "size": 3446,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tilma the Haggard",
+    "page": "Skyrim:Tilma the Haggard",
+    "size": 3350,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nils",
+    "page": "Skyrim:Nils",
+    "size": 3349,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Una",
+    "page": "Skyrim:Una",
+    "size": 3343,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Mena",
+    "page": "Skyrim:Mena",
+    "size": 3271,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Geimund",
+    "page": "Skyrim:Geimund",
+    "size": 3267,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hreinn",
+    "page": "Skyrim:Hreinn",
+    "size": 3244,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ma'zaka",
+    "page": "Skyrim:Ma'zaka",
+    "size": 3216,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ysgramor",
+    "page": "Skyrim:Ysgramor",
+    "size": 3194,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial (dead)",
+    "page": "Skyrim:Imperial (dead)",
+    "size": 3147,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Odar",
+    "page": "Skyrim:Odar",
+    "size": 3110,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pelagius the Mad",
+    "page": "Skyrim:Pelagius the Mad",
+    "size": 2888,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Erdi",
+    "page": "Skyrim:Erdi",
+    "size": 2812,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sirgar",
+    "page": "Skyrim:Sirgar",
+    "size": 2769,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Alexia Vici",
+    "page": "Skyrim:Alexia Vici",
+    "size": 2735,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rondach",
+    "page": "Skyrim:Rondach",
+    "size": 2712,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fridrika",
+    "page": "Skyrim:Fridrika",
+    "size": 2707,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bendt",
+    "page": "Skyrim:Bendt",
+    "size": 2616,
+    "matched_by": "class name"
+   },
+   {
+    "name": "High King Torygg",
+    "page": "Skyrim:High King Torygg",
+    "size": 2544,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Argonian (NPC)",
+    "page": "Skyrim:Argonian (NPC)",
+    "size": 2475,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Noble",
+    "page": "Skyrim:Noble",
+    "size": 2452,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sudi",
+    "page": "Skyrim:Sudi",
+    "size": 2412,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fjori",
+    "page": "Skyrim:Fjori",
+    "size": 2361,
+    "matched_by": "class name"
+   },
+   {
+    "name": "High Elf (NPC)",
+    "page": "Skyrim:High Elf (NPC)",
+    "size": 2289,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Abelone",
+    "page": "Skyrim:Abelone",
+    "size": 2281,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Larina",
+    "page": "Skyrim:Larina",
+    "size": 2242,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ramati",
+    "page": "Skyrim:Ramati",
+    "size": 2163,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Horm",
+    "page": "Skyrim:Horm",
+    "size": 2050,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Waiter",
+    "page": "Skyrim:Waiter",
+    "size": 1996,
+    "matched_by": "class name"
+   },
+   {
+    "name": "East Empire Dockmaster",
+    "page": "Skyrim:East Empire Dockmaster",
+    "size": 1881,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Alethius",
+    "page": "Skyrim:Alethius",
+    "size": 1841,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tsavani",
+    "page": "Skyrim:Tsavani",
+    "size": 1755,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Captive",
+    "page": "Skyrim:Captive",
+    "size": 1704,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Mani",
+    "page": "Skyrim:Mani",
+    "size": 1688,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Karan",
+    "page": "Skyrim:Karan",
+    "size": 1646,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Afflicted",
+    "page": "Skyrim:Afflicted",
+    "size": 1598,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Marina",
+    "page": "Skyrim:Marina",
+    "size": 1498,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Leyathil",
+    "page": "Skyrim:Leyathil",
+    "size": 1482,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Usha",
+    "page": "Skyrim:Usha",
+    "size": 1241,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Igrit",
+    "page": "Skyrim:Igrit",
+    "size": 1213,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Verin",
+    "page": "Skyrim:Verin",
+    "size": 1185,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Galtius",
+    "page": "Skyrim:Galtius",
+    "size": 1183,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sailor",
+    "page": "Skyrim:Sailor",
+    "size": 1177,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Synod Researcher",
+    "page": "Skyrim:Synod Researcher",
+    "size": 1091,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ma'tasarr",
+    "page": "Skyrim:Ma'tasarr",
+    "size": 1060,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Confidence (NPC)",
+    "page": "Skyrim:Confidence (NPC)",
+    "size": 1023,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bodyguard (Pelagius)",
+    "page": "Skyrim:Bodyguard (Pelagius)",
+    "size": 982,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pelagius the Suspicious",
+    "page": "Skyrim:Pelagius the Suspicious",
+    "size": 941,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Addict",
+    "page": "Skyrim:Addict",
+    "size": 802,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pelagius the Tormented",
+    "page": "Skyrim:Pelagius the Tormented",
+    "size": 772,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sacrifice",
+    "page": "Skyrim:Sacrifice",
+    "size": 720,
+    "matched_by": "class name"
+   }
+  ],
+  "CombatAssassin": [
+   {
+    "name": "Cicero",
+    "page": "Skyrim:Cicero",
+    "size": 47373,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Astrid",
+    "page": "Skyrim:Astrid",
+    "size": 39497,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gabriella",
+    "page": "Skyrim:Gabriella",
+    "size": 16512,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Arnbjorn",
+    "page": "Skyrim:Arnbjorn",
+    "size": 11422,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Veezara",
+    "page": "Skyrim:Veezara",
+    "size": 10486,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ingun Black-Briar",
+    "page": "Skyrim:Ingun Black-Briar",
+    "size": 9995,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Emperor Titus Mede II (real)",
+    "page": "Skyrim:Emperor Titus Mede II (real)",
+    "size": 7416,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Deeja",
+    "page": "Skyrim:Deeja",
+    "size": 4610,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "J'datharr",
+    "page": "Skyrim:J'datharr",
+    "size": 4007,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Emperor Titus Mede II (decoy)",
+    "page": "Skyrim:Emperor Titus Mede II (decoy)",
+    "size": 3750,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Deekus",
+    "page": "Skyrim:Deekus",
+    "size": 3550,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ilas-Tei",
+    "page": "Skyrim:Ilas-Tei",
+    "size": 2469,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Noblewoman",
+    "page": "Skyrim:Noblewoman",
+    "size": 2007,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nobleman (Dawnguard)",
+    "page": "Skyrim:Nobleman (Dawnguard)",
+    "size": 1454,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatBarbarian": [
+   {
+    "name": "Ralof",
+    "page": "Skyrim:Ralof",
+    "size": 20251,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Igmund",
+    "page": "Skyrim:Igmund",
+    "size": 18267,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Erik the Slayer",
+    "page": "Skyrim:Erik the Slayer",
+    "size": 13657,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Yngvar the Singer",
+    "page": "Skyrim:Yngvar the Singer",
+    "size": 11142,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dryston",
+    "page": "Skyrim:Dryston",
+    "size": 2831,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Salvianus",
+    "page": "Skyrim:Salvianus",
+    "size": 2592,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Knjakr",
+    "page": "Skyrim:Knjakr",
+    "size": 2114,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Torturer's Assistant",
+    "page": "Skyrim:Torturer's Assistant",
+    "size": 2033,
+    "matched_by": "class name"
+   }
+  ],
+  "CombatMageConjurer": [
+   {
+    "name": "Esbern",
+    "page": "Skyrim:Esbern",
+    "size": 34618,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Savos Aren",
+    "page": "Skyrim:Savos Aren",
+    "size": 27241,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Calcelmo",
+    "page": "Skyrim:Calcelmo",
+    "size": 22383,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Paratus Decimius",
+    "page": "Skyrim:Paratus Decimius",
+    "size": 12004,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Elder Othreloth",
+    "page": "Skyrim:Elder Othreloth",
+    "size": 8901,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Aicantar",
+    "page": "Skyrim:Aicantar",
+    "size": 8033,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Selveni Nethri",
+    "page": "Skyrim:Selveni Nethri",
+    "size": 7038,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sam Guevenne",
+    "page": "Skyrim:Sam Guevenne",
+    "size": 6130,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ildari Sarothril",
+    "page": "Skyrim:Ildari Sarothril",
+    "size": 4511,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bashnag",
+    "page": "Skyrim:Bashnag",
+    "size": 4248,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Lu'ah Al-Skaven",
+    "page": "Skyrim:Lu'ah Al-Skaven",
+    "size": 3971,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Student",
+    "page": "Skyrim:Student",
+    "size": 3802,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Malkoran",
+    "page": "Skyrim:Malkoran",
+    "size": 3575,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Arondil",
+    "page": "Skyrim:Arondil",
+    "size": 3551,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Anise",
+    "page": "Skyrim:Anise",
+    "size": 3473,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Modig Gilgar",
+    "page": "Skyrim:Modig Gilgar",
+    "size": 3348,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sanyon",
+    "page": "Skyrim:Sanyon",
+    "size": 3222,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nimphaneth",
+    "page": "Skyrim:Nimphaneth",
+    "size": 3078,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ivara of Olenveld",
+    "page": "Skyrim:Ivara of Olenveld",
+    "size": 3015,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sebastian Lort",
+    "page": "Skyrim:Sebastian Lort",
+    "size": 2713,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thoron",
+    "page": "Skyrim:Thoron",
+    "size": 2693,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Daynas Valen",
+    "page": "Skyrim:Daynas Valen",
+    "size": 2319,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gauldur",
+    "page": "Skyrim:Gauldur",
+    "size": 1813,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vals Veran",
+    "page": "Skyrim:Vals Veran",
+    "size": 1812,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Lushak gra-Ragdam",
+    "page": "Skyrim:Lushak gra-Ragdam",
+    "size": 1714,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Stromm",
+    "page": "Skyrim:Stromm",
+    "size": 1067,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Raleth Eldri",
+    "page": "Skyrim:Raleth Eldri",
+    "size": 945,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Staubin",
+    "page": "Skyrim:Staubin",
+    "size": 792,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Erj",
+    "page": "Skyrim:Erj",
+    "size": 732,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Krag",
+    "page": "Skyrim:Krag",
+    "size": 624,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatMageDestruction": [
+   {
+    "name": "Festus Krex",
+    "page": "Skyrim:Festus Krex",
+    "size": 19507,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Silus Vesuius",
+    "page": "Skyrim:Silus Vesuius",
+    "size": 17120,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ondolemar",
+    "page": "Skyrim:Ondolemar",
+    "size": 14578,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Madena",
+    "page": "Skyrim:Madena",
+    "size": 12987,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bolar",
+    "page": "Skyrim:Bolar",
+    "size": 8680,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Marcurio",
+    "page": "Skyrim:Marcurio",
+    "size": 8516,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sharamph",
+    "page": "Skyrim:Sharamph",
+    "size": 8065,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Murbul",
+    "page": "Skyrim:Murbul",
+    "size": 6267,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Galdrus Hlervu",
+    "page": "Skyrim:Galdrus Hlervu",
+    "size": 6000,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dremora Merchant",
+    "page": "Skyrim:Dremora Merchant",
+    "size": 4954,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Torturer",
+    "page": "Skyrim:Torturer",
+    "size": 3595,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dremora Butler",
+    "page": "Skyrim:Dremora Butler",
+    "size": 2355,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Blue God",
+    "page": "Skyrim:Blue God",
+    "size": 1715,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mage",
+    "page": "Skyrim:Mage",
+    "size": 1483,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatMageElemental": [
+   {
+    "name": "Mirabelle Ervine",
+    "page": "Skyrim:Mirabelle Ervine",
+    "size": 26075,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ancano",
+    "page": "Skyrim:Ancano",
+    "size": 20850,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Farengar Secret-Fire",
+    "page": "Skyrim:Farengar Secret-Fire",
+    "size": 19750,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Wylandriah",
+    "page": "Skyrim:Wylandriah",
+    "size": 15558,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nurelion",
+    "page": "Skyrim:Nurelion",
+    "size": 12795,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Orthorn",
+    "page": "Skyrim:Orthorn",
+    "size": 12391,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Aranea Ienith",
+    "page": "Skyrim:Aranea Ienith",
+    "size": 11663,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Jouane Manette",
+    "page": "Skyrim:Jouane Manette",
+    "size": 9285,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Illia",
+    "page": "Skyrim:Illia",
+    "size": 8289,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "The Caller",
+    "page": "Skyrim:The Caller",
+    "size": 7313,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Melaran",
+    "page": "Skyrim:Melaran",
+    "size": 6351,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Taron Dreth",
+    "page": "Skyrim:Taron Dreth",
+    "size": 5882,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nenya",
+    "page": "Skyrim:Nenya",
+    "size": 5029,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sild the Warlock",
+    "page": "Skyrim:Sild the Warlock",
+    "size": 5027,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Veren Duleri",
+    "page": "Skyrim:Veren Duleri",
+    "size": 4538,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thorek",
+    "page": "Skyrim:Thorek",
+    "size": 3796,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kornalus",
+    "page": "Skyrim:Kornalus",
+    "size": 2726,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Shavari",
+    "page": "Skyrim:Shavari",
+    "size": 2650,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ma'randru-jo",
+    "page": "Skyrim:Ma'randru-jo",
+    "size": 2647,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ardwen",
+    "page": "Skyrim:Ardwen",
+    "size": 2573,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Estormo",
+    "page": "Skyrim:Estormo",
+    "size": 2350,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Faldrus",
+    "page": "Skyrim:Faldrus",
+    "size": 2346,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Drelas",
+    "page": "Skyrim:Drelas",
+    "size": 1905,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Haldyn",
+    "page": "Skyrim:Haldyn",
+    "size": 1856,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Wilmuth",
+    "page": "Skyrim:Wilmuth",
+    "size": 1374,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Naris the Wicked",
+    "page": "Skyrim:Naris the Wicked",
+    "size": 1304,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Eranya",
+    "page": "Skyrim:Eranya",
+    "size": 1174,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatMageNecro": [
+   {
+    "name": "Arniel Gane",
+    "page": "Skyrim:Arniel Gane",
+    "size": 30165,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ritual Master",
+    "page": "Skyrim:Ritual Master",
+    "size": 3043,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatMonk": [
+   {
+    "name": "Anuriel",
+    "page": "Skyrim:Anuriel",
+    "size": 8891,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Maurice Jondrelle",
+    "page": "Skyrim:Maurice Jondrelle",
+    "size": 6540,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kust",
+    "page": "Skyrim:Kust",
+    "size": 3482,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatMystic": [
+   {
+    "name": "Brelyna Maryon",
+    "page": "Skyrim:Brelyna Maryon",
+    "size": 20625,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Idgrod Ravencrone",
+    "page": "Skyrim:Idgrod Ravencrone",
+    "size": 18002,
+    "matched_by": "class name"
+   }
+  ],
+  "CombatNightblade": [
+   {
+    "name": "Maven Black-Briar",
+    "page": "Skyrim:Maven Black-Briar",
+    "size": 88462,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Irileth",
+    "page": "Skyrim:Irileth",
+    "size": 21846,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gulum-Ei",
+    "page": "Skyrim:Gulum-Ei",
+    "size": 15815,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nepos the Nose",
+    "page": "Skyrim:Nepos the Nose",
+    "size": 14776,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Eola",
+    "page": "Skyrim:Eola",
+    "size": 12424,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Safia",
+    "page": "Skyrim:Safia",
+    "size": 5474,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Xander",
+    "page": "Skyrim:Xander",
+    "size": 2841,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kaie",
+    "page": "Skyrim:Kaie",
+    "size": 2684,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tyra Blood-Fire",
+    "page": "Skyrim:Tyra Blood-Fire",
+    "size": 1895,
+    "matched_by": "class name"
+   }
+  ],
+  "CombatNightingale": [],
+  "CombatRanger": [
+   {
+    "name": "Angi",
+    "page": "Skyrim:Angi",
+    "size": 13561,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Annekke Crag-Jumper",
+    "page": "Skyrim:Annekke Crag-Jumper",
+    "size": 8646,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jenassa",
+    "page": "Skyrim:Jenassa",
+    "size": 7924,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Derkeethus",
+    "page": "Skyrim:Derkeethus",
+    "size": 7836,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Banning",
+    "page": "Skyrim:Banning",
+    "size": 7594,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Durak",
+    "page": "Skyrim:Durak",
+    "size": 6810,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aslfur",
+    "page": "Skyrim:Aslfur",
+    "size": 6577,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ghorbash the Iron Hand",
+    "page": "Skyrim:Ghorbash the Iron Hand",
+    "size": 6372,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Yatul",
+    "page": "Skyrim:Yatul",
+    "size": 6219,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Froki Whetted-Blade",
+    "page": "Skyrim:Froki Whetted-Blade",
+    "size": 6194,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gisli",
+    "page": "Skyrim:Gisli",
+    "size": 5307,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tormir",
+    "page": "Skyrim:Tormir",
+    "size": 5031,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Urog",
+    "page": "Skyrim:Urog",
+    "size": 4668,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ugor",
+    "page": "Skyrim:Ugor",
+    "size": 3782,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aringoth",
+    "page": "Skyrim:Aringoth",
+    "size": 3096,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Olur",
+    "page": "Skyrim:Olur",
+    "size": 2932,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kjar",
+    "page": "Skyrim:Kjar",
+    "size": 2906,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nagrub",
+    "page": "Skyrim:Nagrub",
+    "size": 2864,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ulundil",
+    "page": "Skyrim:Ulundil",
+    "size": 2843,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Barknar",
+    "page": "Skyrim:Barknar",
+    "size": 2842,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aesrael",
+    "page": "Skyrim:Aesrael",
+    "size": 2000,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Durian",
+    "page": "Skyrim:Durian",
+    "size": 1942,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lob",
+    "page": "Skyrim:Lob",
+    "size": 1875,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Guthrum",
+    "page": "Skyrim:Guthrum",
+    "size": 1726,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Assassin (Bow of Shadows)",
+    "page": "Skyrim:Assassin (Bow of Shadows)",
+    "size": 1435,
+    "matched_by": "class name"
+   }
+  ],
+  "CombatRogue": [
+   {
+    "name": "Mercer Frey",
+    "page": "Skyrim:Mercer Frey",
+    "size": 23198,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jaree-Ra",
+    "page": "Skyrim:Jaree-Ra",
+    "size": 13211,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Calixto Corrium",
+    "page": "Skyrim:Calixto Corrium",
+    "size": 8974,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Etienne Rarnis",
+    "page": "Skyrim:Etienne Rarnis",
+    "size": 7915,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Balagog gro-Nolob",
+    "page": "Skyrim:Balagog gro-Nolob",
+    "size": 5018,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Susanna the Wicked",
+    "page": "Skyrim:Susanna the Wicked",
+    "size": 4827,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stands-In-Shallows",
+    "page": "Skyrim:Stands-In-Shallows",
+    "size": 4079,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Captain Wayfinder",
+    "page": "Skyrim:Captain Wayfinder",
+    "size": 3507,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Voldsea Giryon",
+    "page": "Skyrim:Voldsea Giryon",
+    "size": 2283,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ravam Verethi",
+    "page": "Skyrim:Ravam Verethi",
+    "size": 1822,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Luaffyn",
+    "page": "Skyrim:Luaffyn",
+    "size": 1725,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Delacourt",
+    "page": "Skyrim:Delacourt",
+    "size": 1686,
+    "matched_by": "class name"
+   }
+  ],
+  "CombatScout": [
+   {
+    "name": "Urag gro-Shub",
+    "page": "Skyrim:Urag gro-Shub",
+    "size": 23752,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Jiub",
+    "page": "Skyrim:Jiub",
+    "size": 13078,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Anoriath",
+    "page": "Skyrim:Anoriath",
+    "size": 10720,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Lillith Maiden-Loom",
+    "page": "Skyrim:Lillith Maiden-Loom",
+    "size": 5617,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Alik'r Prisoner",
+    "page": "Skyrim:Alik'r Prisoner",
+    "size": 4416,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Teeba-Ei",
+    "page": "Skyrim:Teeba-Ei",
+    "size": 4410,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Neetrenaza",
+    "page": "Skyrim:Neetrenaza",
+    "size": 2319,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Zaynabi",
+    "page": "Skyrim:Zaynabi",
+    "size": 1908,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatSorcerer": [
+   {
+    "name": "Enthir",
+    "page": "Skyrim:Enthir",
+    "size": 39619,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "J'zargo",
+    "page": "Skyrim:J'zargo",
+    "size": 21236,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Onmund",
+    "page": "Skyrim:Onmund",
+    "size": 17607,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nelacar",
+    "page": "Skyrim:Nelacar",
+    "size": 16166,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nirya",
+    "page": "Skyrim:Nirya",
+    "size": 13818,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Elenwen",
+    "page": "Skyrim:Elenwen",
+    "size": 12639,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Quintus Navale",
+    "page": "Skyrim:Quintus Navale",
+    "size": 10565,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Takes-In-Light",
+    "page": "Skyrim:Takes-In-Light",
+    "size": 7184,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Quaranir",
+    "page": "Skyrim:Quaranir",
+    "size": 6728,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Atmah",
+    "page": "Skyrim:Atmah",
+    "size": 6363,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Idgrod the Younger",
+    "page": "Skyrim:Idgrod the Younger",
+    "size": 6145,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hafnar Ice-Fist",
+    "page": "Skyrim:Hafnar Ice-Fist",
+    "size": 5976,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rulindil",
+    "page": "Skyrim:Rulindil",
+    "size": 5232,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rulnik Wind-Strider",
+    "page": "Skyrim:Rulnik Wind-Strider",
+    "size": 5039,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Beem-Ja",
+    "page": "Skyrim:Beem-Ja",
+    "size": 4868,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Malyn Varen",
+    "page": "Skyrim:Malyn Varen",
+    "size": 4567,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Elvali Veren",
+    "page": "Skyrim:Elvali Veren",
+    "size": 4523,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Girduin",
+    "page": "Skyrim:Girduin",
+    "size": 4276,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Niyya",
+    "page": "Skyrim:Niyya",
+    "size": 3668,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Yag gra-Gortwog",
+    "page": "Skyrim:Yag gra-Gortwog",
+    "size": 2490,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Arniel's Shade",
+    "page": "Skyrim:Arniel's Shade",
+    "size": 2476,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nerien",
+    "page": "Skyrim:Nerien",
+    "size": 2468,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Endrast",
+    "page": "Skyrim:Endrast",
+    "size": 2055,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Isabelle Rolaine",
+    "page": "Skyrim:Isabelle Rolaine",
+    "size": 2034,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Merilar Rendas",
+    "page": "Skyrim:Merilar Rendas",
+    "size": 1977,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gavros Plinius",
+    "page": "Skyrim:Gavros Plinius",
+    "size": 1564,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Tandil",
+    "page": "Skyrim:Tandil",
+    "size": 1168,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gelebros",
+    "page": "Skyrim:Gelebros",
+    "size": 1074,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatSpellsword": [
+   {
+    "name": "Dexion Evicus",
+    "page": "Skyrim:Dexion Evicus",
+    "size": 20763,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kesh the Clean",
+    "page": "Skyrim:Kesh the Clean",
+    "size": 5110,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Orchendor",
+    "page": "Skyrim:Orchendor",
+    "size": 4534,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Knight of the Crypt",
+    "page": "Skyrim:Knight of the Crypt",
+    "size": 3401,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sulla Trebatius",
+    "page": "Skyrim:Sulla Trebatius",
+    "size": 3279,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatThief": [
+   {
+    "name": "Brynjolf",
+    "page": "Skyrim:Brynjolf",
+    "size": 60616,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Karliah",
+    "page": "Skyrim:Karliah",
+    "size": 51735,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Niranye",
+    "page": "Skyrim:Niranye",
+    "size": 19622,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sibbi Black-Briar",
+    "page": "Skyrim:Sibbi Black-Briar",
+    "size": 16493,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Glover Mallory",
+    "page": "Skyrim:Glover Mallory",
+    "size": 15648,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Maul",
+    "page": "Skyrim:Maul",
+    "size": 14933,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sapphire (person)",
+    "page": "Skyrim:Sapphire (person)",
+    "size": 13776,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bersi Honey-Hand",
+    "page": "Skyrim:Bersi Honey-Hand",
+    "size": 9358,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gallus",
+    "page": "Skyrim:Gallus",
+    "size": 8539,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Romlyn Dreth",
+    "page": "Skyrim:Romlyn Dreth",
+    "size": 7790,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Cynric Endell",
+    "page": "Skyrim:Cynric Endell",
+    "size": 7242,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rune",
+    "page": "Skyrim:Rune",
+    "size": 7050,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thrynn",
+    "page": "Skyrim:Thrynn",
+    "size": 6744,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Arvel the Swift",
+    "page": "Skyrim:Arvel the Swift",
+    "size": 5969,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ravyn Imyan",
+    "page": "Skyrim:Ravyn Imyan",
+    "size": 5882,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Garthar",
+    "page": "Skyrim:Garthar",
+    "size": 5280,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Grisvar the Unlucky",
+    "page": "Skyrim:Grisvar the Unlucky",
+    "size": 3455,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Molgrom Twice-Killed",
+    "page": "Skyrim:Molgrom Twice-Killed",
+    "size": 3403,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dorian",
+    "page": "Skyrim:Dorian",
+    "size": 3147,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Threki the Innocent",
+    "page": "Skyrim:Threki the Innocent",
+    "size": 2930,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Linwe",
+    "page": "Skyrim:Linwe",
+    "size": 2617,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Valie",
+    "page": "Skyrim:Valie",
+    "size": 2239,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gian the Fist",
+    "page": "Skyrim:Gian the Fist",
+    "size": 1957,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Assassin",
+    "page": "Skyrim:Assassin",
+    "size": 1892,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thief (Pets of Skyrim)",
+    "page": "Skyrim:Thief (Pets of Skyrim)",
+    "size": 1319,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Summerset Shadow",
+    "page": "Skyrim:Summerset Shadow",
+    "size": 1211,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatWarrior1H": [
+   {
+    "name": "Galmar Stone-Fist",
+    "page": "Skyrim:Galmar Stone-Fist",
+    "size": 70969,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ulfric Stormcloak",
+    "page": "Skyrim:Ulfric Stormcloak",
+    "size": 68576,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Balgruuf the Greater",
+    "page": "Skyrim:Balgruuf the Greater",
+    "size": 53939,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hadvar",
+    "page": "Skyrim:Hadvar",
+    "size": 45974,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thonar Silver-Blood",
+    "page": "Skyrim:Thonar Silver-Blood",
+    "size": 37424,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Skjor",
+    "page": "Skyrim:Skjor",
+    "size": 29897,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Adril Arano",
+    "page": "Skyrim:Adril Arano",
+    "size": 29630,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Erikur",
+    "page": "Skyrim:Erikur",
+    "size": 28184,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hero of Sovngarde",
+    "page": "Skyrim:Hero of Sovngarde",
+    "size": 25632,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vignar Gray-Mane",
+    "page": "Skyrim:Vignar Gray-Mane",
+    "size": 23934,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Falk Firebeard",
+    "page": "Skyrim:Falk Firebeard",
+    "size": 22399,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kodlak Whitemane",
+    "page": "Skyrim:Kodlak Whitemane",
+    "size": 21625,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Brunwulf Free-Winter",
+    "page": "Skyrim:Brunwulf Free-Winter",
+    "size": 18201,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thongvor Silver-Blood",
+    "page": "Skyrim:Thongvor Silver-Blood",
+    "size": 17369,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Avulstein Gray-Mane",
+    "page": "Skyrim:Avulstein Gray-Mane",
+    "size": 15675,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "M'aiq the Liar",
+    "page": "Skyrim:M'aiq the Liar",
+    "size": 15249,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Skald",
+    "page": "Skyrim:Skald",
+    "size": 14533,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Septimus Signus",
+    "page": "Skyrim:Septimus Signus",
+    "size": 14272,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Captain Lonely-Gale",
+    "page": "Skyrim:Captain Lonely-Gale",
+    "size": 13893,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sinding",
+    "page": "Skyrim:Sinding",
+    "size": 13143,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Olfrid Battle-Born",
+    "page": "Skyrim:Olfrid Battle-Born",
+    "size": 12896,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Brina Merilis",
+    "page": "Skyrim:Brina Merilis",
+    "size": 12884,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hemming Black-Briar",
+    "page": "Skyrim:Hemming Black-Briar",
+    "size": 12138,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Lleril Morvayn",
+    "page": "Skyrim:Lleril Morvayn",
+    "size": 12046,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nocturnal",
+    "page": "Skyrim:Nocturnal",
+    "size": 11785,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bryling",
+    "page": "Skyrim:Bryling",
+    "size": 11099,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Spectral Assassin",
+    "page": "Skyrim:Spectral Assassin",
+    "size": 10388,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vulwulf Snow-Shod",
+    "page": "Skyrim:Vulwulf Snow-Shod",
+    "size": 10286,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Indaryn",
+    "page": "Skyrim:Indaryn",
+    "size": 10042,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gormlaith Golden-Hilt",
+    "page": "Skyrim:Gormlaith Golden-Hilt",
+    "size": 9946,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hakon One-Eye",
+    "page": "Skyrim:Hakon One-Eye",
+    "size": 9683,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Cosnach",
+    "page": "Skyrim:Cosnach",
+    "size": 9417,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mulush gro-Shugurz",
+    "page": "Skyrim:Mulush gro-Shugurz",
+    "size": 8951,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Faleen",
+    "page": "Skyrim:Faleen",
+    "size": 8690,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hofgrir Horse-Crusher",
+    "page": "Skyrim:Hofgrir Horse-Crusher",
+    "size": 8413,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Idolaf Battle-Born",
+    "page": "Skyrim:Idolaf Battle-Born",
+    "size": 8176,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Asgeir Snow-Shod",
+    "page": "Skyrim:Asgeir Snow-Shod",
+    "size": 8137,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gorm",
+    "page": "Skyrim:Gorm",
+    "size": 7994,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Uthgerd the Unbroken",
+    "page": "Skyrim:Uthgerd the Unbroken",
+    "size": 7983,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Horik Halfhand",
+    "page": "Skyrim:Horik Halfhand",
+    "size": 7909,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Augur of Dunlain",
+    "page": "Skyrim:Augur of Dunlain",
+    "size": 7791,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Felldir the Old",
+    "page": "Skyrim:Felldir the Old",
+    "size": 7649,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Skulvar Sable-Hilt",
+    "page": "Skyrim:Skulvar Sable-Hilt",
+    "size": 7560,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rorik",
+    "page": "Skyrim:Rorik",
+    "size": 7360,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Valindor",
+    "page": "Skyrim:Valindor",
+    "size": 7321,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hrongar",
+    "page": "Skyrim:Hrongar",
+    "size": 7310,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rolff Stone-Fist",
+    "page": "Skyrim:Rolff Stone-Fist",
+    "size": 7129,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Lydia",
+    "page": "Skyrim:Lydia",
+    "size": 7037,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Golldir",
+    "page": "Skyrim:Golldir",
+    "size": 7015,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Zaria",
+    "page": "Skyrim:Zaria",
+    "size": 6945,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Celann",
+    "page": "Skyrim:Celann",
+    "size": 6727,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Breya",
+    "page": "Skyrim:Breya",
+    "size": 6465,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ria",
+    "page": "Skyrim:Ria",
+    "size": 6365,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kharjo",
+    "page": "Skyrim:Kharjo",
+    "size": 6311,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Jod",
+    "page": "Skyrim:Jod",
+    "size": 6248,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Torvar",
+    "page": "Skyrim:Torvar",
+    "size": 6214,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Aerin",
+    "page": "Skyrim:Aerin",
+    "size": 6122,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Meridia",
+    "page": "Skyrim:Meridia",
+    "size": 6118,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Roggvir",
+    "page": "Skyrim:Roggvir",
+    "size": 5969,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Unmid Snow-Shod",
+    "page": "Skyrim:Unmid Snow-Shod",
+    "size": 5630,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Irnskar Ironhand",
+    "page": "Skyrim:Irnskar Ironhand",
+    "size": 5495,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Atar",
+    "page": "Skyrim:Atar",
+    "size": 5463,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Watches-The-Roots",
+    "page": "Skyrim:Watches-The-Roots",
+    "size": 5257,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kjeld the Younger",
+    "page": "Skyrim:Kjeld the Younger",
+    "size": 5077,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bolgeir Bearclaw",
+    "page": "Skyrim:Bolgeir Bearclaw",
+    "size": 4891,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thadgeir",
+    "page": "Skyrim:Thadgeir",
+    "size": 4862,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vorstag",
+    "page": "Skyrim:Vorstag",
+    "size": 4634,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vasha",
+    "page": "Skyrim:Vasha",
+    "size": 4541,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Helvard",
+    "page": "Skyrim:Helvard",
+    "size": 4468,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Jervar",
+    "page": "Skyrim:Jervar",
+    "size": 4450,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Imperial Captain",
+    "page": "Skyrim:Imperial Captain",
+    "size": 4449,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bolund",
+    "page": "Skyrim:Bolund",
+    "size": 4331,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gaius Maro",
+    "page": "Skyrim:Gaius Maro",
+    "size": 4331,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Fultheim the Fearless",
+    "page": "Skyrim:Fultheim the Fearless",
+    "size": 4292,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Velehk Sain",
+    "page": "Skyrim:Velehk Sain",
+    "size": 4113,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mul gro-Largash",
+    "page": "Skyrim:Mul gro-Largash",
+    "size": 4063,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Verner Rock-Chucker",
+    "page": "Skyrim:Verner Rock-Chucker",
+    "size": 4046,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Haming",
+    "page": "Skyrim:Haming",
+    "size": 4023,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Indara Caerellia",
+    "page": "Skyrim:Indara Caerellia",
+    "size": 3950,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Drennen",
+    "page": "Skyrim:Drennen",
+    "size": 3939,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Stig Salt-Plank",
+    "page": "Skyrim:Stig Salt-Plank",
+    "size": 3908,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rayya",
+    "page": "Skyrim:Rayya",
+    "size": 3853,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bergritte Battle-Born",
+    "page": "Skyrim:Bergritte Battle-Born",
+    "size": 3846,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gadba gro-Largash",
+    "page": "Skyrim:Gadba gro-Largash",
+    "size": 3745,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Alea Quintus",
+    "page": "Skyrim:Alea Quintus",
+    "size": 3739,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Skooma Dealer (NPC)",
+    "page": "Skyrim:Skooma Dealer (NPC)",
+    "size": 3724,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Fultheim",
+    "page": "Skyrim:Fultheim",
+    "size": 3570,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Aspiring Mage",
+    "page": "Skyrim:Aspiring Mage",
+    "size": 3565,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kibell",
+    "page": "Skyrim:Kibell",
+    "size": 3481,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Julienne Lylvieve",
+    "page": "Skyrim:Julienne Lylvieve",
+    "size": 3472,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gregor",
+    "page": "Skyrim:Gregor",
+    "size": 3327,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hadring",
+    "page": "Skyrim:Hadring",
+    "size": 3172,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Eydvina Shield-Hearth",
+    "page": "Skyrim:Eydvina Shield-Hearth",
+    "size": 3144,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Svaknir",
+    "page": "Skyrim:Svaknir",
+    "size": 3067,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hewnon Black-Skeever",
+    "page": "Skyrim:Hewnon Black-Skeever",
+    "size": 3055,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vilod",
+    "page": "Skyrim:Vilod",
+    "size": 3002,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sifnar Ironkettle",
+    "page": "Skyrim:Sifnar Ironkettle",
+    "size": 2759,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Eimar",
+    "page": "Skyrim:Eimar",
+    "size": 2531,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Olaf One-Eye",
+    "page": "Skyrim:Olaf One-Eye",
+    "size": 2512,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ruki",
+    "page": "Skyrim:Ruki",
+    "size": 2497,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sultry Maiden",
+    "page": "Skyrim:Sultry Maiden",
+    "size": 2479,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Pjofr Ice-Blade",
+    "page": "Skyrim:Pjofr Ice-Blade",
+    "size": 2478,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Iona",
+    "page": "Skyrim:Iona",
+    "size": 2396,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Umana",
+    "page": "Skyrim:Umana",
+    "size": 2396,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Jurgen Windcaller",
+    "page": "Skyrim:Jurgen Windcaller",
+    "size": 2370,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Fenrig",
+    "page": "Skyrim:Fenrig",
+    "size": 2334,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Agrane Peryval",
+    "page": "Skyrim:Agrane Peryval",
+    "size": 2317,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Karita (warrior)",
+    "page": "Skyrim:Karita (warrior)",
+    "size": 2239,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Jordis the Sword-Maiden",
+    "page": "Skyrim:Jordis the Sword-Maiden",
+    "size": 2236,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Argis the Bulwark",
+    "page": "Skyrim:Argis the Bulwark",
+    "size": 2203,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bjorlam",
+    "page": "Skyrim:Bjorlam",
+    "size": 2181,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Geirlund",
+    "page": "Skyrim:Geirlund",
+    "size": 2148,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vidrald",
+    "page": "Skyrim:Vidrald",
+    "size": 2094,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Calder",
+    "page": "Skyrim:Calder",
+    "size": 2091,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Briehl",
+    "page": "Skyrim:Briehl",
+    "size": 2042,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thorgar",
+    "page": "Skyrim:Thorgar",
+    "size": 1932,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "East Empire Dockworker",
+    "page": "Skyrim:East Empire Dockworker",
+    "size": 1929,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Alding",
+    "page": "Skyrim:Alding",
+    "size": 1902,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gunding",
+    "page": "Skyrim:Gunding",
+    "size": 1869,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Alfarinn",
+    "page": "Skyrim:Alfarinn",
+    "size": 1843,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Wounded Soldier",
+    "page": "Skyrim:Wounded Soldier",
+    "size": 1823,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ulfgar the Unending",
+    "page": "Skyrim:Ulfgar the Unending",
+    "size": 1799,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sigaar",
+    "page": "Skyrim:Sigaar",
+    "size": 1788,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dalan Merchad",
+    "page": "Skyrim:Dalan Merchad",
+    "size": 1785,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Engar",
+    "page": "Skyrim:Engar",
+    "size": 1738,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "J'Kier",
+    "page": "Skyrim:J'Kier",
+    "size": 1736,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hunroor",
+    "page": "Skyrim:Hunroor",
+    "size": 1672,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Lodi",
+    "page": "Skyrim:Lodi",
+    "size": 1639,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Badnir",
+    "page": "Skyrim:Badnir",
+    "size": 1615,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Matlara",
+    "page": "Skyrim:Matlara",
+    "size": 1604,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sickly Farmer",
+    "page": "Skyrim:Sickly Farmer",
+    "size": 1601,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Angvid",
+    "page": "Skyrim:Angvid",
+    "size": 1598,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nikulas",
+    "page": "Skyrim:Nikulas",
+    "size": 1579,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Commoner",
+    "page": "Skyrim:Commoner",
+    "size": 1529,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gunjar (Hearthfire)",
+    "page": "Skyrim:Gunjar (Hearthfire)",
+    "size": 1492,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dunmer Ghost",
+    "page": "Skyrim:Dunmer Ghost",
+    "size": 1474,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Irlof",
+    "page": "Skyrim:Irlof",
+    "size": 1458,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gjuk",
+    "page": "Skyrim:Gjuk",
+    "size": 1382,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Erlendr",
+    "page": "Skyrim:Erlendr",
+    "size": 1344,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Markus",
+    "page": "Skyrim:Markus",
+    "size": 1334,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Heddic Volunnar",
+    "page": "Skyrim:Heddic Volunnar",
+    "size": 1265,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Snorreid",
+    "page": "Skyrim:Snorreid",
+    "size": 1038,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mercenary (Goldenglow)",
+    "page": "Skyrim:Mercenary (Goldenglow)",
+    "size": 946,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Imperial Captain (Alternative Armors - Silver)",
+    "page": "Skyrim:Imperial Captain (Alternative Armors - Silver)",
+    "size": 826,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatWarrior2H": [
+   {
+    "name": "Mjoll the Lioness",
+    "page": "Skyrim:Mjoll the Lioness",
+    "size": 27349,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Captain Veleth",
+    "page": "Skyrim:Captain Veleth",
+    "size": 19508,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Commander Maro",
+    "page": "Skyrim:Commander Maro",
+    "size": 9930,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mogrul (Dragonborn)",
+    "page": "Skyrim:Mogrul (Dragonborn)",
+    "size": 9464,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Harrald",
+    "page": "Skyrim:Harrald",
+    "size": 7995,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ahtar",
+    "page": "Skyrim:Ahtar",
+    "size": 7635,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Benor",
+    "page": "Skyrim:Benor",
+    "size": 6297,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "General Falx Carius",
+    "page": "Skyrim:General Falx Carius",
+    "size": 5645,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sabine Nytte",
+    "page": "Skyrim:Sabine Nytte",
+    "size": 4206,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ingjard",
+    "page": "Skyrim:Ingjard",
+    "size": 3560,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ghost of Old Hroldan",
+    "page": "Skyrim:Ghost of Old Hroldan",
+    "size": 3414,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Stenvar",
+    "page": "Skyrim:Stenvar",
+    "size": 3135,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Wary Outlaw",
+    "page": "Skyrim:Wary Outlaw",
+    "size": 1914,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Unemployed Laborer",
+    "page": "Skyrim:Unemployed Laborer",
+    "size": 1881,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rexus",
+    "page": "Skyrim:Rexus",
+    "size": 1875,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Itinerant Lumberjack",
+    "page": "Skyrim:Itinerant Lumberjack",
+    "size": 1865,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Corrupt Agent",
+    "page": "Skyrim:Corrupt Agent",
+    "size": 1850,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Griefstricken Chef",
+    "page": "Skyrim:Griefstricken Chef",
+    "size": 1830,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Traveling Dignitary",
+    "page": "Skyrim:Traveling Dignitary",
+    "size": 1827,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Visiting Noble",
+    "page": "Skyrim:Visiting Noble",
+    "size": 1811,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Seasoned Hunter",
+    "page": "Skyrim:Seasoned Hunter",
+    "size": 1772,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dishonored Skald",
+    "page": "Skyrim:Dishonored Skald",
+    "size": 1684,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Scheming Servant",
+    "page": "Skyrim:Scheming Servant",
+    "size": 1678,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Indolent Farmer",
+    "page": "Skyrim:Indolent Farmer",
+    "size": 1675,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Nervous Patron",
+    "page": "Skyrim:Nervous Patron",
+    "size": 1652,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Desperate Gambler",
+    "page": "Skyrim:Desperate Gambler",
+    "size": 1638,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Beautiful Barbarian",
+    "page": "Skyrim:Beautiful Barbarian",
+    "size": 1636,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Reckless Mage",
+    "page": "Skyrim:Reckless Mage",
+    "size": 1506,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ghost Captain",
+    "page": "Skyrim:Ghost Captain",
+    "size": 1348,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Coldhearted Gravedigger",
+    "page": "Skyrim:Coldhearted Gravedigger",
+    "size": 1318,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Big Laborer",
+    "page": "Skyrim:Big Laborer",
+    "size": 1177,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Grim Shieldmaiden",
+    "page": "Skyrim:Grim Shieldmaiden",
+    "size": 1140,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Poor Fishwife",
+    "page": "Skyrim:Poor Fishwife",
+    "size": 1088,
+    "matched_by": "class_details"
+   }
+  ],
+  "CombatWitchblade": [
+   {
+    "name": "Madanach",
+    "page": "Skyrim:Madanach",
+    "size": 12354,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Uaile",
+    "page": "Skyrim:Uaile",
+    "size": 9325,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nana Ildene",
+    "page": "Skyrim:Nana Ildene",
+    "size": 8742,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vigilant Tyranus",
+    "page": "Skyrim:Vigilant Tyranus",
+    "size": 8216,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Malur Seloth",
+    "page": "Skyrim:Malur Seloth",
+    "size": 7016,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Uraccen",
+    "page": "Skyrim:Uraccen",
+    "size": 6080,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Braig",
+    "page": "Skyrim:Braig",
+    "size": 6012,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Duach",
+    "page": "Skyrim:Duach",
+    "size": 4247,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Odvan",
+    "page": "Skyrim:Odvan",
+    "size": 3215,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Weylin",
+    "page": "Skyrim:Weylin",
+    "size": 2805,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Donnel",
+    "page": "Skyrim:Donnel",
+    "size": 2521,
+    "matched_by": "class name"
+   },
+   {
+    "name": "J'zhar",
+    "page": "Skyrim:J'zhar",
+    "size": 2255,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Morven",
+    "page": "Skyrim:Morven",
+    "size": 2028,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tynan",
+    "page": "Skyrim:Tynan",
+    "size": 1979,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Eris",
+    "page": "Skyrim:Eris",
+    "size": 1910,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ehlhiel",
+    "page": "Skyrim:Ehlhiel",
+    "size": 1573,
+    "matched_by": "class name"
+   }
+  ],
+  "DLC1EncClassKatria": [
+   {
+    "name": "Katria",
+    "page": "Skyrim:Katria",
+    "size": 10041,
+    "matched_by": "class name"
+   }
+  ],
+  "DLC2EbonyWarriorClass": [
+   {
+    "name": "Ebony Warrior",
+    "page": "Skyrim:Ebony Warrior",
+    "size": 9371,
+    "matched_by": "class name"
+   }
+  ],
+  "DLC2EncClassBanditBoss": [],
+  "DLC2EncClassMiraak": [
+   {
+    "name": "Miraak (person)",
+    "page": "Skyrim:Miraak (person)",
+    "size": 22904,
+    "matched_by": "class name"
+   }
+  ],
+  "DLC2NPCClassTeldryn": [
+   {
+    "name": "Teldryn Sero",
+    "page": "Skyrim:Teldryn Sero",
+    "size": 15076,
+    "matched_by": "class_details"
+   }
+  ],
+  "DLC2NelothClassTrainer": [
+   {
+    "name": "Neloth",
+    "page": "Skyrim:Neloth",
+    "size": 91119,
+    "matched_by": "class_details"
+   }
+  ],
+  "DLC2csFrea": [
+   {
+    "name": "Frea",
+    "page": "Skyrim:Frea",
+    "size": 31746,
+    "matched_by": "class name"
+   }
+  ],
+  "DLC2dunKolbjornRalisClass": [
+   {
+    "name": "Ralis Sedarys",
+    "page": "Skyrim:Ralis Sedarys",
+    "size": 15215,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassAlikrMelee": [
+   {
+    "name": "Kematu",
+    "page": "Skyrim:Kematu",
+    "size": 6676,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fijeh",
+    "page": "Skyrim:Fijeh",
+    "size": 4163,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Majid the Mad",
+    "page": "Skyrim:Majid the Mad",
+    "size": 2470,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Azzadal",
+    "page": "Skyrim:Azzadal",
+    "size": 1913,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rakeed",
+    "page": "Skyrim:Rakeed",
+    "size": 1373,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ismal",
+    "page": "Skyrim:Ismal",
+    "size": 760,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassAlikrMissile": [],
+  "EncClassAlikrWizard": [],
+  "EncClassBanditMelee": [
+   {
+    "name": "Tilisu Severin",
+    "page": "Skyrim:Tilisu Severin",
+    "size": 8415,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mirri Severin",
+    "page": "Skyrim:Mirri Severin",
+    "size": 6606,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Werebear",
+    "page": "Skyrim:Werebear",
+    "size": 4465,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Eydis (Dragonborn)",
+    "page": "Skyrim:Eydis (Dragonborn)",
+    "size": 1784,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rochelle the Red",
+    "page": "Skyrim:Rochelle the Red",
+    "size": 1654,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kolbjorn Guard",
+    "page": "Skyrim:Kolbjorn Guard",
+    "size": 1546,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Esmond Tyne",
+    "page": "Skyrim:Esmond Tyne",
+    "size": 1541,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Saints Bandit Leader",
+    "page": "Skyrim:Saints Bandit Leader",
+    "size": 1158,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Celeste",
+    "page": "Skyrim:Celeste",
+    "size": 1102,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bradyn",
+    "page": "Skyrim:Bradyn",
+    "size": 1074,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mireli",
+    "page": "Skyrim:Mireli",
+    "size": 975,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Seducers Bandit Leader",
+    "page": "Skyrim:Seducers Bandit Leader",
+    "size": 833,
+    "matched_by": "class_details"
+   }
+  ],
+  "EncClassBanditMissile": [
+   {
+    "name": "Valdr",
+    "page": "Skyrim:Valdr",
+    "size": 8312,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Orthjolf",
+    "page": "Skyrim:Orthjolf",
+    "size": 6230,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Drahff",
+    "page": "Skyrim:Drahff",
+    "size": 3867,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pirate",
+    "page": "Skyrim:Pirate",
+    "size": 3581,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Telrav",
+    "page": "Skyrim:Telrav",
+    "size": 3294,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dealer",
+    "page": "Skyrim:Dealer",
+    "size": 3285,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ghost Adventurer",
+    "page": "Skyrim:Ghost Adventurer",
+    "size": 2086,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Garuk Windrime",
+    "page": "Skyrim:Garuk Windrime",
+    "size": 2073,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gunther",
+    "page": "Skyrim:Gunther",
+    "size": 1934,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Remy",
+    "page": "Skyrim:Remy",
+    "size": 1280,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vagrant",
+    "page": "Skyrim:Vagrant",
+    "size": 1102,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Orc Hunter",
+    "page": "Skyrim:Orc Hunter",
+    "size": 915,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassBanditWizard": [
+   {
+    "name": "Vingalmo",
+    "page": "Skyrim:Vingalmo",
+    "size": 12699,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Feran Sadri",
+    "page": "Skyrim:Feran Sadri",
+    "size": 9965,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stalleo",
+    "page": "Skyrim:Stalleo",
+    "size": 8016,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Anska",
+    "page": "Skyrim:Anska",
+    "size": 7783,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Stalf",
+    "page": "Skyrim:Stalf",
+    "size": 3722,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Wyndelius Gatharian",
+    "page": "Skyrim:Wyndelius Gatharian",
+    "size": 3620,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pirate Mage",
+    "page": "Skyrim:Pirate Mage",
+    "size": 3587,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Malkus",
+    "page": "Skyrim:Malkus",
+    "size": 2914,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hamelyn",
+    "page": "Skyrim:Hamelyn",
+    "size": 2846,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Wizard",
+    "page": "Skyrim:Wizard",
+    "size": 2525,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Seeks-Ancient-Artifacts",
+    "page": "Skyrim:Seeks-Ancient-Artifacts",
+    "size": 2340,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Brutius",
+    "page": "Skyrim:Brutius",
+    "size": 2223,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Evethra",
+    "page": "Skyrim:Evethra",
+    "size": 2205,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thomas",
+    "page": "Skyrim:Thomas",
+    "size": 2180,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thalin Ebonhand",
+    "page": "Skyrim:Thalin Ebonhand",
+    "size": 2164,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Brandish",
+    "page": "Skyrim:Brandish",
+    "size": 1976,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Challenger",
+    "page": "Skyrim:Challenger",
+    "size": 1849,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jonquil",
+    "page": "Skyrim:Jonquil",
+    "size": 1732,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Alvasorr the Rat",
+    "page": "Skyrim:Alvasorr the Rat",
+    "size": 1690,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fire Spirit",
+    "page": "Skyrim:Fire Spirit",
+    "size": 1589,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Servos Rendas",
+    "page": "Skyrim:Servos Rendas",
+    "size": 1569,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rahd",
+    "page": "Skyrim:Rahd",
+    "size": 1538,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Elberon's Apprentice",
+    "page": "Skyrim:Elberon's Apprentice",
+    "size": 1514,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Talvur",
+    "page": "Skyrim:Talvur",
+    "size": 1497,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sild's Assistant",
+    "page": "Skyrim:Sild's Assistant",
+    "size": 1441,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hans",
+    "page": "Skyrim:Hans",
+    "size": 1395,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Attendant",
+    "page": "Skyrim:Attendant",
+    "size": 1273,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ulyn",
+    "page": "Skyrim:Ulyn",
+    "size": 1244,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Frost Spirit",
+    "page": "Skyrim:Frost Spirit",
+    "size": 984,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hoddreid",
+    "page": "Skyrim:Hoddreid",
+    "size": 966,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Saden",
+    "page": "Skyrim:Saden",
+    "size": 866,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassForsworn": [
+   {
+    "name": "Champion of Boethiah",
+    "page": "Skyrim:Champion of Boethiah",
+    "size": 3188,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sanctuary Guardian",
+    "page": "Skyrim:Sanctuary Guardian",
+    "size": 2640,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Crowstooth",
+    "page": "Skyrim:Crowstooth",
+    "size": 2412,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Moric Sidrey",
+    "page": "Skyrim:Moric Sidrey",
+    "size": 1586,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassForswornMissile": [
+   {
+    "name": "Daenella",
+    "page": "Skyrim:Daenella",
+    "size": 2265,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassForswornShaman": [
+   {
+    "name": "Storn Crag-Strider",
+    "page": "Skyrim:Storn Crag-Strider",
+    "size": 17937,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassPenitusOculatus": [
+   {
+    "name": "Penitus Oculatus Agent",
+    "page": "Skyrim:Penitus Oculatus Agent",
+    "size": 7422,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Arcturus",
+    "page": "Skyrim:Arcturus",
+    "size": 1800,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lieutenant Salvarus",
+    "page": "Skyrim:Lieutenant Salvarus",
+    "size": 1511,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Captain Avidius",
+    "page": "Skyrim:Captain Avidius",
+    "size": 1375,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassThalmorMelee": [
+   {
+    "name": "Captain Valmir",
+    "page": "Skyrim:Captain Valmir",
+    "size": 7016,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Northwatch Guard",
+    "page": "Skyrim:Northwatch Guard",
+    "size": 1693,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thalmor Soldier (corpse)",
+    "page": "Skyrim:Thalmor Soldier (corpse)",
+    "size": 1093,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassThalmorMissile": [],
+  "EncClassThalmorWizard": [
+   {
+    "name": "Ancarion",
+    "page": "Skyrim:Ancarion",
+    "size": 6650,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Agent Lorcalin",
+    "page": "Skyrim:Agent Lorcalin",
+    "size": 2201,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Northwatch Interrogator",
+    "page": "Skyrim:Northwatch Interrogator",
+    "size": 1316,
+    "matched_by": "class name"
+   }
+  ],
+  "EncClassVampire": [
+   {
+    "name": "Serana",
+    "page": "Skyrim:Serana",
+    "size": 123262,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lord Harkon",
+    "page": "Skyrim:Lord Harkon",
+    "size": 43288,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Valerica",
+    "page": "Skyrim:Valerica",
+    "size": 30464,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Alva",
+    "page": "Skyrim:Alva",
+    "size": 7340,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hestla",
+    "page": "Skyrim:Hestla",
+    "size": 5043,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Movarth Piquine",
+    "page": "Skyrim:Movarth Piquine",
+    "size": 4119,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lokil",
+    "page": "Skyrim:Lokil",
+    "size": 4060,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Salonia Caelia",
+    "page": "Skyrim:Salonia Caelia",
+    "size": 3812,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rargal Thrallmaster",
+    "page": "Skyrim:Rargal Thrallmaster",
+    "size": 3717,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Laelette the Vampire",
+    "page": "Skyrim:Laelette the Vampire",
+    "size": 3402,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Venarus Vulpin",
+    "page": "Skyrim:Venarus Vulpin",
+    "size": 2872,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Visiting Advisor",
+    "page": "Skyrim:Visiting Advisor",
+    "size": 2667,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Traveler",
+    "page": "Skyrim:Traveler",
+    "size": 2399,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vighar",
+    "page": "Skyrim:Vighar",
+    "size": 2006,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vampire Naturalist",
+    "page": "Skyrim:Vampire Naturalist",
+    "size": 1975,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vampire Scout",
+    "page": "Skyrim:Vampire Scout",
+    "size": 1946,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Feral Vampire",
+    "page": "Skyrim:Feral Vampire",
+    "size": 1813,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vampire Assassin",
+    "page": "Skyrim:Vampire Assassin",
+    "size": 1780,
+    "matched_by": "class name"
+   }
+  ],
+  "Farmer": [
+   {
+    "name": "Fethis Alor",
+    "page": "Skyrim:Fethis Alor",
+    "size": 15282,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Drovas Relvi",
+    "page": "Skyrim:Drovas Relvi",
+    "size": 12581,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Varona Nelas",
+    "page": "Skyrim:Varona Nelas",
+    "size": 11786,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Shadr",
+    "page": "Skyrim:Shadr",
+    "size": 10440,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Torsten Cruel-Sea",
+    "page": "Skyrim:Torsten Cruel-Sea",
+    "size": 10109,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ennis",
+    "page": "Skyrim:Ennis",
+    "size": 9251,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Cindiri Arano",
+    "page": "Skyrim:Cindiri Arano",
+    "size": 8937,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lynly Star-Sung",
+    "page": "Skyrim:Lynly Star-Sung",
+    "size": 8203,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dreyla Alor",
+    "page": "Skyrim:Dreyla Alor",
+    "size": 8106,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Garyn Ienth",
+    "page": "Skyrim:Garyn Ienth",
+    "size": 7687,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Varnius Junius",
+    "page": "Skyrim:Varnius Junius",
+    "size": 7577,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Mathies",
+    "page": "Skyrim:Mathies",
+    "size": 7036,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fastred",
+    "page": "Skyrim:Fastred",
+    "size": 6243,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hillevi Cruel-Sea",
+    "page": "Skyrim:Hillevi Cruel-Sea",
+    "size": 6232,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Azzada Lylvieve",
+    "page": "Skyrim:Azzada Lylvieve",
+    "size": 6156,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Boti",
+    "page": "Skyrim:Boti",
+    "size": 6044,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dravin Llanith",
+    "page": "Skyrim:Dravin Llanith",
+    "size": 5821,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nord (dead)",
+    "page": "Skyrim:Nord (dead)",
+    "size": 5819,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Reldith",
+    "page": "Skyrim:Reldith",
+    "size": 5689,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Reveler",
+    "page": "Skyrim:Reveler",
+    "size": 4697,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Rogatus Salvius",
+    "page": "Skyrim:Rogatus Salvius",
+    "size": 4631,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Belyn Hlaalu",
+    "page": "Skyrim:Belyn Hlaalu",
+    "size": 4560,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Faryl Atheron",
+    "page": "Skyrim:Faryl Atheron",
+    "size": 4548,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aduri Sarethi",
+    "page": "Skyrim:Aduri Sarethi",
+    "size": 4522,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jofthor",
+    "page": "Skyrim:Jofthor",
+    "size": 4480,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lemkil",
+    "page": "Skyrim:Lemkil",
+    "size": 4329,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Synda Llanith",
+    "page": "Skyrim:Synda Llanith",
+    "size": 4252,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ulves Romoran",
+    "page": "Skyrim:Ulves Romoran",
+    "size": 4089,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Addvild",
+    "page": "Skyrim:Addvild",
+    "size": 3918,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Alfhild Battle-Born",
+    "page": "Skyrim:Alfhild Battle-Born",
+    "size": 3873,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tulvur",
+    "page": "Skyrim:Tulvur",
+    "size": 3785,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Adisla",
+    "page": "Skyrim:Adisla",
+    "size": 3725,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bolfrida Brandy-Mug",
+    "page": "Skyrim:Bolfrida Brandy-Mug",
+    "size": 3708,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vigdis Salvius",
+    "page": "Skyrim:Vigdis Salvius",
+    "size": 3702,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Borvir",
+    "page": "Skyrim:Borvir",
+    "size": 3406,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dark Elf (dead)",
+    "page": "Skyrim:Dark Elf (dead)",
+    "size": 3274,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Michel Lylvieve",
+    "page": "Skyrim:Michel Lylvieve",
+    "size": 3271,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Katla",
+    "page": "Skyrim:Katla",
+    "size": 3096,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Severio Pelagia",
+    "page": "Skyrim:Severio Pelagia",
+    "size": 2920,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Leonara Arius",
+    "page": "Skyrim:Leonara Arius",
+    "size": 2869,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Curwe",
+    "page": "Skyrim:Curwe",
+    "size": 2756,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Redguard Woman",
+    "page": "Skyrim:Redguard Woman",
+    "size": 2637,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Watchman",
+    "page": "Skyrim:Watchman",
+    "size": 2439,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Snilling",
+    "page": "Skyrim:Snilling",
+    "size": 2359,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Refugee",
+    "page": "Skyrim:Refugee",
+    "size": 2063,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Frightened Woman",
+    "page": "Skyrim:Frightened Woman",
+    "size": 2004,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Redguard (dead)",
+    "page": "Skyrim:Redguard (dead)",
+    "size": 1953,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hrodulf",
+    "page": "Skyrim:Hrodulf",
+    "size": 1850,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Orc (dead)",
+    "page": "Skyrim:Orc (dead)",
+    "size": 1773,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Nimriel",
+    "page": "Skyrim:Nimriel",
+    "size": 1651,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gloth",
+    "page": "Skyrim:Gloth",
+    "size": 1534,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lund",
+    "page": "Skyrim:Lund",
+    "size": 1497,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bjornolfr",
+    "page": "Skyrim:Bjornolfr",
+    "size": 1436,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gwendolyn",
+    "page": "Skyrim:Gwendolyn",
+    "size": 1414,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Leifnarr",
+    "page": "Skyrim:Leifnarr",
+    "size": 1326,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Firir",
+    "page": "Skyrim:Firir",
+    "size": 1138,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Beggar (person)",
+    "page": "Skyrim:Beggar (person)",
+    "size": 1122,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sirayar",
+    "page": "Skyrim:Sirayar",
+    "size": 1104,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Baral Sendu",
+    "page": "Skyrim:Baral Sendu",
+    "size": 1088,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thief (Irkngthand)",
+    "page": "Skyrim:Thief (Irkngthand)",
+    "size": 1083,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dead Scholar",
+    "page": "Skyrim:Dead Scholar",
+    "size": 980,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Josla",
+    "page": "Skyrim:Josla",
+    "size": 904,
+    "matched_by": "class name"
+   }
+  ],
+  "GuardImperial": [],
+  "GuardOrc1H": [
+   {
+    "name": "Chief Yamarz",
+    "page": "Skyrim:Chief Yamarz",
+    "size": 8959,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Urzoga gra-Shugurz",
+    "page": "Skyrim:Urzoga gra-Shugurz",
+    "size": 7351,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Borkul the Beast",
+    "page": "Skyrim:Borkul the Beast",
+    "size": 6715,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Borgakh the Steel Heart",
+    "page": "Skyrim:Borgakh the Steel Heart",
+    "size": 5022,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Gularzob",
+    "page": "Skyrim:Gularzob",
+    "size": 3336,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Arob",
+    "page": "Skyrim:Arob",
+    "size": 3329,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Umurn",
+    "page": "Skyrim:Umurn",
+    "size": 2856,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bagrak",
+    "page": "Skyrim:Bagrak",
+    "size": 2738,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Oglub",
+    "page": "Skyrim:Oglub",
+    "size": 2613,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Shel",
+    "page": "Skyrim:Shel",
+    "size": 2440,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ogol",
+    "page": "Skyrim:Ogol",
+    "size": 2333,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Mahk",
+    "page": "Skyrim:Mahk",
+    "size": 1969,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ghak",
+    "page": "Skyrim:Ghak",
+    "size": 1966,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dulug",
+    "page": "Skyrim:Dulug",
+    "size": 1929,
+    "matched_by": "class_details"
+   }
+  ],
+  "GuardOrc2H": [
+   {
+    "name": "Chief Mauhulakh",
+    "page": "Skyrim:Chief Mauhulakh",
+    "size": 7635,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dushnamub",
+    "page": "Skyrim:Dushnamub",
+    "size": 6022,
+    "matched_by": "class_details"
+   }
+  ],
+  "GuardSonsSkyrim": [
+   {
+    "name": "Gunjar",
+    "page": "Skyrim:Gunjar",
+    "size": 1957,
+    "matched_by": "class_details"
+   }
+  ],
+  "Jailor": [],
+  "Lumberjack": [
+   {
+    "name": "Gerdur",
+    "page": "Skyrim:Gerdur",
+    "size": 13082,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Grelod the Kind",
+    "page": "Skyrim:Grelod the Kind",
+    "size": 11868,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sven",
+    "page": "Skyrim:Sven",
+    "size": 10713,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hod",
+    "page": "Skyrim:Hod",
+    "size": 10456,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gianna",
+    "page": "Skyrim:Gianna",
+    "size": 9215,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thonnir",
+    "page": "Skyrim:Thonnir",
+    "size": 8931,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jorgen",
+    "page": "Skyrim:Jorgen",
+    "size": 8817,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Grosta",
+    "page": "Skyrim:Grosta",
+    "size": 6766,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ganna Uriel",
+    "page": "Skyrim:Ganna Uriel",
+    "size": 6634,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gemma Uriel",
+    "page": "Skyrim:Gemma Uriel",
+    "size": 6466,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hroggar",
+    "page": "Skyrim:Hroggar",
+    "size": 5677,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Olda",
+    "page": "Skyrim:Olda",
+    "size": 5427,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Horgeir",
+    "page": "Skyrim:Horgeir",
+    "size": 5368,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hert",
+    "page": "Skyrim:Hert",
+    "size": 4777,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kharag gro-Shurkul",
+    "page": "Skyrim:Kharag gro-Shurkul",
+    "size": 4599,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hern",
+    "page": "Skyrim:Hern",
+    "size": 4355,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Solaf",
+    "page": "Skyrim:Solaf",
+    "size": 4292,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Embry",
+    "page": "Skyrim:Embry",
+    "size": 3983,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ennodius Papius",
+    "page": "Skyrim:Ennodius Papius",
+    "size": 3777,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gralnach",
+    "page": "Skyrim:Gralnach",
+    "size": 3761,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aeri",
+    "page": "Skyrim:Aeri",
+    "size": 3455,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hjorunn",
+    "page": "Skyrim:Hjorunn",
+    "size": 3308,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kodrir",
+    "page": "Skyrim:Kodrir",
+    "size": 3138,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gilfre",
+    "page": "Skyrim:Gilfre",
+    "size": 3035,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Leifur",
+    "page": "Skyrim:Leifur",
+    "size": 2860,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lodvar",
+    "page": "Skyrim:Lodvar",
+    "size": 2737,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Torolf",
+    "page": "Skyrim:Torolf",
+    "size": 1451,
+    "matched_by": "class name"
+   }
+  ],
+  "MQAncientNord": [
+   {
+    "name": "Tsun",
+    "page": "Skyrim:Tsun",
+    "size": 8953,
+    "matched_by": "class name"
+   }
+  ],
+  "Miner": [
+   {
+    "name": "Crescius Caerellius",
+    "page": "Skyrim:Crescius Caerellius",
+    "size": 14794,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Roggi Knot-Beard",
+    "page": "Skyrim:Roggi Knot-Beard",
+    "size": 10829,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bralsa Drel",
+    "page": "Skyrim:Bralsa Drel",
+    "size": 9227,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ainethach",
+    "page": "Skyrim:Ainethach",
+    "size": 8682,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sylgja",
+    "page": "Skyrim:Sylgja",
+    "size": 8004,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Beitild",
+    "page": "Skyrim:Beitild",
+    "size": 7367,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Enmon",
+    "page": "Skyrim:Enmon",
+    "size": 6981,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lash gra-Dushnikh",
+    "page": "Skyrim:Lash gra-Dushnikh",
+    "size": 6651,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Perth",
+    "page": "Skyrim:Perth",
+    "size": 6624,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Odfel",
+    "page": "Skyrim:Odfel",
+    "size": 6373,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Leigelf",
+    "page": "Skyrim:Leigelf",
+    "size": 6220,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Pavo Attius",
+    "page": "Skyrim:Pavo Attius",
+    "size": 5827,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Grogmar gro-Burzag",
+    "page": "Skyrim:Grogmar gro-Burzag",
+    "size": 5818,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gat gro-Shargakh",
+    "page": "Skyrim:Gat gro-Shargakh",
+    "size": 4847,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ragnar",
+    "page": "Skyrim:Ragnar",
+    "size": 4825,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Skaggi Scar-Face",
+    "page": "Skyrim:Skaggi Scar-Face",
+    "size": 4542,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Belchimac",
+    "page": "Skyrim:Belchimac",
+    "size": 4274,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tuthul",
+    "page": "Skyrim:Tuthul",
+    "size": 4024,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gestur Rockbreaker",
+    "page": "Skyrim:Gestur Rockbreaker",
+    "size": 3955,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Irgnir",
+    "page": "Skyrim:Irgnir",
+    "size": 3947,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fruki",
+    "page": "Skyrim:Fruki",
+    "size": 3768,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lond",
+    "page": "Skyrim:Lond",
+    "size": 3533,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Karl",
+    "page": "Skyrim:Karl",
+    "size": 3526,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sanguine",
+    "page": "Skyrim:Sanguine",
+    "size": 3477,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Daighre",
+    "page": "Skyrim:Daighre",
+    "size": 3245,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Holgeir",
+    "page": "Skyrim:Holgeir",
+    "size": 2643,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Swanhvir",
+    "page": "Skyrim:Swanhvir",
+    "size": 2530,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Harald",
+    "page": "Skyrim:Harald",
+    "size": 2435,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sosia Tremellia",
+    "page": "Skyrim:Sosia Tremellia",
+    "size": 2368,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gul",
+    "page": "Skyrim:Gul",
+    "size": 2191,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jesper",
+    "page": "Skyrim:Jesper",
+    "size": 2146,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ghamorz",
+    "page": "Skyrim:Ghamorz",
+    "size": 2009,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Evul Seloth",
+    "page": "Skyrim:Evul Seloth",
+    "size": 1977,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Naris Mavani",
+    "page": "Skyrim:Naris Mavani",
+    "size": 1848,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tolenos Omoren",
+    "page": "Skyrim:Tolenos Omoren",
+    "size": 1832,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Meden Maren",
+    "page": "Skyrim:Meden Maren",
+    "size": 1823,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bor",
+    "page": "Skyrim:Bor",
+    "size": 1710,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Irine",
+    "page": "Skyrim:Irine",
+    "size": 1674,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Mogdurz",
+    "page": "Skyrim:Mogdurz",
+    "size": 1663,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Vereth",
+    "page": "Skyrim:Vereth",
+    "size": 1597,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gunnar Stone-Eye",
+    "page": "Skyrim:Gunnar Stone-Eye",
+    "size": 1531,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Borgny",
+    "page": "Skyrim:Borgny",
+    "size": 1492,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gjak",
+    "page": "Skyrim:Gjak",
+    "size": 1488,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Willem",
+    "page": "Skyrim:Willem",
+    "size": 1456,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Adeber",
+    "page": "Skyrim:Adeber",
+    "size": 1454,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bodil",
+    "page": "Skyrim:Bodil",
+    "size": 1450,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ennoc",
+    "page": "Skyrim:Ennoc",
+    "size": 1356,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Edith",
+    "page": "Skyrim:Edith",
+    "size": 1296,
+    "matched_by": "class name"
+   }
+  ],
+  "NPCclassBelrand": [
+   {
+    "name": "Belrand",
+    "page": "Skyrim:Belrand",
+    "size": 7409,
+    "matched_by": "class_details"
+   }
+  ],
+  "Priest": [],
+  "Prisoner": [
+   {
+    "name": "Lokir",
+    "page": "Skyrim:Lokir",
+    "size": 9216,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Alain Dufont",
+    "page": "Skyrim:Alain Dufont",
+    "size": 6117,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Bjartur",
+    "page": "Skyrim:Bjartur",
+    "size": 3935,
+    "matched_by": "class name"
+   }
+  ],
+  "SoldierImperialNotGuard": [
+   {
+    "name": "Legate Rikke",
+    "page": "Skyrim:Legate Rikke",
+    "size": 52779,
+    "matched_by": "class name"
+   },
+   {
+    "name": "General Tullius",
+    "page": "Skyrim:General Tullius",
+    "size": 39170,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Captain Aldis",
+    "page": "Skyrim:Captain Aldis",
+    "size": 11439,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Commander Caius",
+    "page": "Skyrim:Commander Caius",
+    "size": 5025,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sinmir",
+    "page": "Skyrim:Sinmir",
+    "size": 3986,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imperial Archer",
+    "page": "Skyrim:Imperial Archer",
+    "size": 1726,
+    "matched_by": "class name"
+   }
+  ],
+  "SoldierSonsSkyrimNotGuard": [
+   {
+    "name": "Stormcloak Archer",
+    "page": "Skyrim:Stormcloak Archer",
+    "size": 1241,
+    "matched_by": "class name"
+   }
+  ],
+  "TrainerAlchemyExpert": [
+   {
+    "name": "Milore Ienth",
+    "page": "Skyrim:Milore Ienth",
+    "size": 10915,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Arcadia",
+    "page": "Skyrim:Arcadia",
+    "size": 5943,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerAlchemyJourneyman": [
+   {
+    "name": "Lami",
+    "page": "Skyrim:Lami",
+    "size": 8825,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerAlchemyMaster": [
+   {
+    "name": "Babette",
+    "page": "Skyrim:Babette",
+    "size": 21659,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerAlterationExpert": [
+   {
+    "name": "Dravynea the Stoneweaver",
+    "page": "Skyrim:Dravynea the Stoneweaver",
+    "size": 7928,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerAlterationMaster": [
+   {
+    "name": "Tolfdir",
+    "page": "Skyrim:Tolfdir",
+    "size": 24778,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerBlockExpert": [
+   {
+    "name": "Njada Stonearm",
+    "page": "Skyrim:Njada Stonearm",
+    "size": 5997,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerBlockMaster": [
+   {
+    "name": "Chief Larak",
+    "page": "Skyrim:Chief Larak",
+    "size": 5899,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerConjurationExpert": [
+   {
+    "name": "Phinis Gestor",
+    "page": "Skyrim:Phinis Gestor",
+    "size": 13008,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerConjurationJourneyman": [
+   {
+    "name": "Runil",
+    "page": "Skyrim:Runil",
+    "size": 10999,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerConjurationMaster": [
+   {
+    "name": "Falion",
+    "page": "Skyrim:Falion",
+    "size": 21213,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Talvas Fathryon",
+    "page": "Skyrim:Talvas Fathryon",
+    "size": 14836,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerDestructionExpert": [
+   {
+    "name": "Sybille Stentor",
+    "page": "Skyrim:Sybille Stentor",
+    "size": 20731,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Garan Marethi",
+    "page": "Skyrim:Garan Marethi",
+    "size": 14828,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Namasur",
+    "page": "Skyrim:Namasur",
+    "size": 2229,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerDestructionJourneyman": [
+   {
+    "name": "Wuunferth the Unliving",
+    "page": "Skyrim:Wuunferth the Unliving",
+    "size": 11962,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerDestructionMaster": [
+   {
+    "name": "Faralda",
+    "page": "Skyrim:Faralda",
+    "size": 27382,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerEnchantingExpert": [
+   {
+    "name": "Sergius Turrianus",
+    "page": "Skyrim:Sergius Turrianus",
+    "size": 11671,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerEnchantingMaster": [
+   {
+    "name": "Hamal",
+    "page": "Skyrim:Hamal",
+    "size": 6422,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerHeavyArmorExpert": [
+   {
+    "name": "Gharol",
+    "page": "Skyrim:Gharol",
+    "size": 7304,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerHeavyArmorMaster": [
+   {
+    "name": "Farkas",
+    "page": "Skyrim:Farkas",
+    "size": 22184,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Kuvar",
+    "page": "Skyrim:Kuvar",
+    "size": 11662,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerIllusionExpert": [
+   {
+    "name": "Atub",
+    "page": "Skyrim:Atub",
+    "size": 12306,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerIllusionMaster": [
+   {
+    "name": "Drevis Neloren",
+    "page": "Skyrim:Drevis Neloren",
+    "size": 13512,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerLightArmorExpert": [
+   {
+    "name": "Grelka",
+    "page": "Skyrim:Grelka",
+    "size": 14288,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerLightArmorJourneyman": [
+   {
+    "name": "Scouts-Many-Marshes",
+    "page": "Skyrim:Scouts-Many-Marshes",
+    "size": 8050,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerLightArmorMaster": [
+   {
+    "name": "Nazir",
+    "page": "Skyrim:Nazir",
+    "size": 23015,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerLockpickExpert": [
+   {
+    "name": "Ma'jhad",
+    "page": "Skyrim:Ma'jhad",
+    "size": 3124,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ra'zhinda",
+    "page": "Skyrim:Ra'zhinda",
+    "size": 1879,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerLockpickMaster": [
+   {
+    "name": "Vex",
+    "page": "Skyrim:Vex",
+    "size": 27912,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerMarksmanExpert": [
+   {
+    "name": "Aela the Huntress",
+    "page": "Skyrim:Aela the Huntress",
+    "size": 47402,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerMarksmanJourneyman": [
+   {
+    "name": "Faendal",
+    "page": "Skyrim:Faendal",
+    "size": 7879,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerMarksmanMaster": [
+   {
+    "name": "Niruin",
+    "page": "Skyrim:Niruin",
+    "size": 9986,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerOneHandedExpert": [
+   {
+    "name": "Athis",
+    "page": "Skyrim:Athis",
+    "size": 7585,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerOneHandedJourneyman": [
+   {
+    "name": "Amren",
+    "page": "Skyrim:Amren",
+    "size": 7464,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerOneHandedMaster": [
+   {
+    "name": "Chief Burguk",
+    "page": "Skyrim:Chief Burguk",
+    "size": 6443,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerPickpocketExpert": [
+   {
+    "name": "Silda the Unseen",
+    "page": "Skyrim:Silda the Unseen",
+    "size": 4257,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerPickpocketMaster": [
+   {
+    "name": "Vipir the Fleet",
+    "page": "Skyrim:Vipir the Fleet",
+    "size": 10666,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerRestorationExpert": [
+   {
+    "name": "Colette Marence",
+    "page": "Skyrim:Colette Marence",
+    "size": 13632,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerRestorationJourneyman": [
+   {
+    "name": "Aphia Velothi",
+    "page": "Skyrim:Aphia Velothi",
+    "size": 9493,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerRestorationMaster": [
+   {
+    "name": "Danica Pure-Spring",
+    "page": "Skyrim:Danica Pure-Spring",
+    "size": 14531,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Florentius Baenius",
+    "page": "Skyrim:Florentius Baenius",
+    "size": 12013,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Acolyte Aldren",
+    "page": "Skyrim:Acolyte Aldren",
+    "size": 1356,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSmithingExpert": [
+   {
+    "name": "Balimund",
+    "page": "Skyrim:Balimund",
+    "size": 6077,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSmithingJourneyman": [
+   {
+    "name": "Ghorza gra-Bagol",
+    "page": "Skyrim:Ghorza gra-Bagol",
+    "size": 10112,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSmithingMaster": [
+   {
+    "name": "Eorlund Gray-Mane",
+    "page": "Skyrim:Eorlund Gray-Mane",
+    "size": 23491,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSneakExpert": [
+   {
+    "name": "Garvey",
+    "page": "Skyrim:Garvey",
+    "size": 4476,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSneakJourneyman": [
+   {
+    "name": "Khayla",
+    "page": "Skyrim:Khayla",
+    "size": 1320,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSneakMaster": [
+   {
+    "name": "Delvin Mallory",
+    "page": "Skyrim:Delvin Mallory",
+    "size": 34062,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSpeechcraftExpert": [
+   {
+    "name": "Ogmund",
+    "page": "Skyrim:Ogmund",
+    "size": 5725,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSpeechcraftJourneyman": [
+   {
+    "name": "Revyn Sadri",
+    "page": "Skyrim:Revyn Sadri",
+    "size": 10183,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Dro'marash",
+    "page": "Skyrim:Dro'marash",
+    "size": 1669,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerSpeechcraftMaster": [
+   {
+    "name": "Giraud Gemane",
+    "page": "Skyrim:Giraud Gemane",
+    "size": 10008,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerTwoHandedExpert": [
+   {
+    "name": "Torbjorn Shatter-Shield",
+    "page": "Skyrim:Torbjorn Shatter-Shield",
+    "size": 10491,
+    "matched_by": "class_details"
+   }
+  ],
+  "TrainerTwoHandedMaster": [
+   {
+    "name": "Vilkas",
+    "page": "Skyrim:Vilkas",
+    "size": 20792,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Wulf Wild-Blood",
+    "page": "Skyrim:Wulf Wild-Blood",
+    "size": 9741,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Fura Bloodmouth",
+    "page": "Skyrim:Fura Bloodmouth",
+    "size": 9360,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Modhna",
+    "page": "Skyrim:Modhna",
+    "size": 2339,
+    "matched_by": "class_details"
+   }
+  ],
+  "VendorApothecary": [
+   {
+    "name": "Muiri",
+    "page": "Skyrim:Muiri",
+    "size": 12796,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Elynea Mothren",
+    "page": "Skyrim:Elynea Mothren",
+    "size": 11884,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Avrusa Sarethi",
+    "page": "Skyrim:Avrusa Sarethi",
+    "size": 11818,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vivienne Onis",
+    "page": "Skyrim:Vivienne Onis",
+    "size": 9980,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Bothela",
+    "page": "Skyrim:Bothela",
+    "size": 9726,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Elgrim",
+    "page": "Skyrim:Elgrim",
+    "size": 8113,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Frida",
+    "page": "Skyrim:Frida",
+    "size": 7447,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hafjorg",
+    "page": "Skyrim:Hafjorg",
+    "size": 7044,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Angeline Morrard",
+    "page": "Skyrim:Angeline Morrard",
+    "size": 6880,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Herluin Lothaire",
+    "page": "Skyrim:Herluin Lothaire",
+    "size": 4923,
+    "matched_by": "class_details"
+   }
+  ],
+  "VendorBlacksmith": [
+   {
+    "name": "Alvor",
+    "page": "Skyrim:Alvor",
+    "size": 17793,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Filnjar",
+    "page": "Skyrim:Filnjar",
+    "size": 10634,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Adrianne Avenicci",
+    "page": "Skyrim:Adrianne Avenicci",
+    "size": 9474,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Beirand",
+    "page": "Skyrim:Beirand",
+    "size": 9049,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Oengul War-Anvil",
+    "page": "Skyrim:Oengul War-Anvil",
+    "size": 8186,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Moth gro-Bagol",
+    "page": "Skyrim:Moth gro-Bagol",
+    "size": 8071,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Jonna",
+    "page": "Skyrim:Jonna",
+    "size": 7918,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Lod",
+    "page": "Skyrim:Lod",
+    "size": 7810,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Ulfberth War-Bear",
+    "page": "Skyrim:Ulfberth War-Bear",
+    "size": 7343,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Hermir Strong-Heart",
+    "page": "Skyrim:Hermir Strong-Heart",
+    "size": 6917,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Sigrid",
+    "page": "Skyrim:Sigrid",
+    "size": 6786,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rustleif",
+    "page": "Skyrim:Rustleif",
+    "size": 6278,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Thorald Gray-Mane",
+    "page": "Skyrim:Thorald Gray-Mane",
+    "size": 5419,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Arnskar Ember-Master",
+    "page": "Skyrim:Arnskar Ember-Master",
+    "size": 4726,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Shuftharz",
+    "page": "Skyrim:Shuftharz",
+    "size": 4514,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Rundi",
+    "page": "Skyrim:Rundi",
+    "size": 4328,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Asbjorn Fire-Tamer",
+    "page": "Skyrim:Asbjorn Fire-Tamer",
+    "size": 4323,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vanryth Gatharian",
+    "page": "Skyrim:Vanryth Gatharian",
+    "size": 4291,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Tacitus Sallustius",
+    "page": "Skyrim:Tacitus Sallustius",
+    "size": 4169,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Heimvar",
+    "page": "Skyrim:Heimvar",
+    "size": 4119,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Seren",
+    "page": "Skyrim:Seren",
+    "size": 4109,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Yisra",
+    "page": "Skyrim:Yisra",
+    "size": 2430,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Garakh",
+    "page": "Skyrim:Garakh",
+    "size": 2322,
+    "matched_by": "class_details"
+   }
+  ],
+  "VendorFletcher": [
+   {
+    "name": "Fihada",
+    "page": "Skyrim:Fihada",
+    "size": 7707,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Elrindir",
+    "page": "Skyrim:Elrindir",
+    "size": 6227,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Syndus",
+    "page": "Skyrim:Syndus",
+    "size": 4521,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jawanan",
+    "page": "Skyrim:Jawanan",
+    "size": 4141,
+    "matched_by": "class name"
+   }
+  ],
+  "VendorFood": [
+   {
+    "name": "Vekel the Man",
+    "page": "Skyrim:Vekel the Man",
+    "size": 15407,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Talen-Jei",
+    "page": "Skyrim:Talen-Jei",
+    "size": 11704,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Olfina Gray-Mane",
+    "page": "Skyrim:Olfina Gray-Mane",
+    "size": 11548,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Carlotta Valentia",
+    "page": "Skyrim:Carlotta Valentia",
+    "size": 11242,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Marise Aravel",
+    "page": "Skyrim:Marise Aravel",
+    "size": 11117,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Evette San",
+    "page": "Skyrim:Evette San",
+    "size": 10751,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sorex Vinius",
+    "page": "Skyrim:Sorex Vinius",
+    "size": 10742,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Keerava",
+    "page": "Skyrim:Keerava",
+    "size": 10696,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lisbet",
+    "page": "Skyrim:Lisbet",
+    "size": 10216,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Wilhelm",
+    "page": "Skyrim:Wilhelm",
+    "size": 10086,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Saadia",
+    "page": "Skyrim:Saadia",
+    "size": 10031,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Elda Early-Dawn",
+    "page": "Skyrim:Elda Early-Dawn",
+    "size": 9690,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dirge",
+    "page": "Skyrim:Dirge",
+    "size": 9250,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Frabbi",
+    "page": "Skyrim:Frabbi",
+    "size": 9236,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Svana Far-Shield",
+    "page": "Skyrim:Svana Far-Shield",
+    "size": 9169,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ambarys Rendar",
+    "page": "Skyrim:Ambarys Rendar",
+    "size": 9099,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hogni Red-Arm",
+    "page": "Skyrim:Hogni Red-Arm",
+    "size": 8850,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kleppr",
+    "page": "Skyrim:Kleppr",
+    "size": 8839,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Haran",
+    "page": "Skyrim:Haran",
+    "size": 8089,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ungrien",
+    "page": "Skyrim:Ungrien",
+    "size": 7470,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Addvar",
+    "page": "Skyrim:Addvar",
+    "size": 7449,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Dagur",
+    "page": "Skyrim:Dagur",
+    "size": 7435,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Corpulus Vinius",
+    "page": "Skyrim:Corpulus Vinius",
+    "size": 7279,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Orgnar",
+    "page": "Skyrim:Orgnar",
+    "size": 7143,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Jala",
+    "page": "Skyrim:Jala",
+    "size": 7096,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Mralki",
+    "page": "Skyrim:Mralki",
+    "size": 6884,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Galathil",
+    "page": "Skyrim:Galathil",
+    "size": 6737,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Eydis",
+    "page": "Skyrim:Eydis",
+    "size": 6729,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sondas Drenim",
+    "page": "Skyrim:Sondas Drenim",
+    "size": 6102,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Faida",
+    "page": "Skyrim:Faida",
+    "size": 5701,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Thoring",
+    "page": "Skyrim:Thoring",
+    "size": 5546,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Valga Vinicia",
+    "page": "Skyrim:Valga Vinicia",
+    "size": 4047,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Imedhnain",
+    "page": "Skyrim:Imedhnain",
+    "size": 4006,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Christer",
+    "page": "Skyrim:Christer",
+    "size": 3948,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Leontius Salvius",
+    "page": "Skyrim:Leontius Salvius",
+    "size": 2673,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sigurd",
+    "page": "Skyrim:Sigurd",
+    "size": 2254,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Gerda",
+    "page": "Skyrim:Gerda",
+    "size": 2044,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fianna",
+    "page": "Skyrim:Fianna",
+    "size": 1972,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ingrid",
+    "page": "Skyrim:Ingrid",
+    "size": 882,
+    "matched_by": "class name"
+   }
+  ],
+  "VendorPawnbroker": [
+   {
+    "name": "Geldis Sadri",
+    "page": "Skyrim:Geldis Sadri",
+    "size": 17715,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Madesi",
+    "page": "Skyrim:Madesi",
+    "size": 16114,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Brand-Shei",
+    "page": "Skyrim:Brand-Shei",
+    "size": 15788,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Fralia Gray-Mane",
+    "page": "Skyrim:Fralia Gray-Mane",
+    "size": 13917,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Siddgeir",
+    "page": "Skyrim:Siddgeir",
+    "size": 13388,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Camilla Valerius",
+    "page": "Skyrim:Camilla Valerius",
+    "size": 12840,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Tonilia",
+    "page": "Skyrim:Tonilia",
+    "size": 12520,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Birna",
+    "page": "Skyrim:Birna",
+    "size": 12484,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Kerah",
+    "page": "Skyrim:Kerah",
+    "size": 11317,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Aval Atheron",
+    "page": "Skyrim:Aval Atheron",
+    "size": 10094,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Lucan Valerius",
+    "page": "Skyrim:Lucan Valerius",
+    "size": 8278,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Hulda",
+    "page": "Skyrim:Hulda",
+    "size": 8235,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ri'saad",
+    "page": "Skyrim:Ri'saad",
+    "size": 7606,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Belethor",
+    "page": "Skyrim:Belethor",
+    "size": 7016,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Drifa",
+    "page": "Skyrim:Drifa",
+    "size": 6738,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ahkari",
+    "page": "Skyrim:Ahkari",
+    "size": 6225,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Brelas",
+    "page": "Skyrim:Brelas",
+    "size": 6094,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Ma'dran",
+    "page": "Skyrim:Ma'dran",
+    "size": 5910,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Malthyr Elenil",
+    "page": "Skyrim:Malthyr Elenil",
+    "size": 5670,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Sayma",
+    "page": "Skyrim:Sayma",
+    "size": 4515,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Saffir",
+    "page": "Skyrim:Saffir",
+    "size": 4473,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Atahbah",
+    "page": "Skyrim:Atahbah",
+    "size": 2355,
+    "matched_by": "class name"
+   }
+  ],
+  "VendorSpells": [],
+  "VendorTailor": [
+   {
+    "name": "Taarie",
+    "page": "Skyrim:Taarie",
+    "size": 6672,
+    "matched_by": "class name"
+   },
+   {
+    "name": "Endarie",
+    "page": "Skyrim:Endarie",
+    "size": 5762,
+    "matched_by": "class name"
+   }
+  ],
+  "Vigilant1hMeleeClass": [
+   {
+    "name": "Vigilant Tolan",
+    "page": "Skyrim:Vigilant Tolan",
+    "size": 14523,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Vigilant Adalvald",
+    "page": "Skyrim:Vigilant Adalvald",
+    "size": 3779,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Keeper Carcette",
+    "page": "Skyrim:Keeper Carcette",
+    "size": 2807,
+    "matched_by": "class_details"
+   },
+   {
+    "name": "Volk",
+    "page": "Skyrim:Volk",
+    "size": 1850,
+    "matched_by": "class_details"
+   }
+  ],
+  "Vigilant2hMeleeClass": [],
+  "ccASVSSE001_BladeBinder": [],
+  "dlc2DBAncientDragonbornClass": []
+ }
+}

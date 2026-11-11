@@ -37,6 +37,12 @@ def load_lookup(name):
     return yaml.safe_load((DATA / f"{name}.yaml").read_text())[name]
 
 
+def npc_classes():
+    """EditorID -> names of single-NPC UESP pages using that class (docs/sources/uesp-npc-classes.json)."""
+    doc = json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())
+    return {eid: {n["name"] for n in npcs} for eid, npcs in doc["classes"].items()}
+
+
 def by_id(entries):
     return {e["id"]: e for e in entries}
 

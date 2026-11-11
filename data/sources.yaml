@@ -28,6 +28,15 @@ sources:
       Verify in Phase 6, or save both pages to docs/sources/ and retag them sourced. The stone and
       shout picks on each build are suggestions written for this tool (derived), except where a
       ledger row is cited as ref.
+  - id: uesp-npc-classes
+    title: UESP NPC pages, read through the wiki API (en.uesp.net/w/api.php)
+    url: https://en.uesp.net/w/api.php
+    used_for: Example NPCs on builds and variants (docs/sources/uesp-npc-classes.json)
+    evidence: sourced
+    notes: >-
+      scripts/fetch_npcs.py reads every page using the NPC Summary infobox and keeps an NPC when its
+      class_details names the EditorID, or its class name matches exactly one EditorID on Skyrim:Classes.
+      Pages describing several NPCs are skipped. The normal UESP pages return 403 here; the API does not.
   - id: build-text
     title: Build names, groupings, attribute plans and playstyle descriptions
     used_for: data/builds.yaml and the plan logic in scripts/build.py

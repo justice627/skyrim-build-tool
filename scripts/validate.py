@@ -8,6 +8,7 @@ Rules:
 - every class in classes.json is used exactly once across all builds
 - races use real skill names and a three-part attribute ratio
 - stones.yaml and shouts.yaml entries have unique ids, a name, an effect, a known requirement and evidence grade
+- every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
 """
@@ -15,7 +16,7 @@ import re
 import sys
 from collections import Counter
 
-from common import ATTRS, EVIDENCE, REQUIRES, SKILLS, by_id, load, load_lookup, weights
+from common import ATTRS, EVIDENCE, REQUIRES, SKILLS, by_id, load, load_lookup, npc_classes, weights
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
 
@@ -61,6 +62,7 @@ def main():
     classes, doc, races = load()
     stone_list, shout_list = load_lookup("stones"), load_lookup("shouts")
     stones, shouts = by_id(stone_list), by_id(shout_list)
+    npcs = npc_classes()
     errors = []
     check_lookup("stone", stone_list, errors)
     check_lookup("shout", shout_list, errors)
@@ -98,8 +100,14 @@ def main():
         for field in ("description", "inspired_by"):
             if not str(b.get(field, "")).strip():
                 errors.append(f"{name}: missing {field}")
-        groups = [("main", b["classes"])] + [(v["label"], v["classes"]) for v in b.get("variants", [])]
-        for label, eids in groups:
+        groups = [("main", b["classes"], b.get("examples", []))]
+        groups += [(v["label"], v["classes"], v.get("examples", [])) for v in b.get("variants", [])]
+        for label, eids, examples in groups:
+            known_npcs = set().union(*(npcs.get(e, set()) for e in eids))
+            if len(set(examples)) != len(examples) or len(examples) > 3:
+                errors.append(f"{name} [{label}]: examples must be up to 3 different NPCs")
+            errors += [f"{name} [{label}]: {n!r} does not use these classes in the UESP NPC data"
+                       for n in examples if n not in known_npcs]
             missing = [e for e in eids if e not in classes]
             errors += [f"{name} [{label}]: class {e} not in classes.json" for e in missing]
             present = [e for e in eids if e in classes]
