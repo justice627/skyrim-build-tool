@@ -1,0 +1,305 @@
+{
+ "retrieved": "2026-11-12",
+ "source": "https://en.uesp.net/w/api.php",
+ "npcs": {
+  "Adrianne Avenicci": [
+   "Steel Mace"
+  ],
+  "Aela the Huntress": [
+   "Ancient Nord Armor",
+   "Hunting Bow"
+  ],
+  "Ancano": [
+   "Thalmor Robes"
+  ],
+  "Angi": [
+   "Hunting Bow"
+  ],
+  "Annekke Crag-Jumper": [
+   "Pickaxe",
+   "Hunting Bow"
+  ],
+  "Arniel Gane": [
+   "Adept Robes of Alteration"
+  ],
+  "Astrid": [
+   "Shrouded Armor",
+   "Blade of Woe"
+  ],
+  "Atub": [
+   "Hooded Black Mage Robes"
+  ],
+  "Balimund": [
+   "The Scorched Hammer"
+  ],
+  "Belrand": [
+   "Iron Armor",
+   "Iron Sword"
+  ],
+  "Brelyna Maryon": [
+   "Staff of Lightning Bolts"
+  ],
+  "Brenuin": [
+   "Ragged Robes"
+  ],
+  "Captain Avidius": [
+   "Imperial Sword"
+  ],
+  "Captain Valmir": [
+   "Imperial Light Armor",
+   "Imperial Sword",
+   "Stormcloak Officer Armor"
+  ],
+  "Chief Larak": [
+   "Fur Armor"
+  ],
+  "Colette Marence": [
+   "Master Robes of Restoration"
+  ],
+  "Crowstooth": [
+   "Forsworn Armor",
+   "Forsworn Bow",
+   "Forsworn Sword"
+  ],
+  "Daenella": [
+   "Black Mage Robes"
+  ],
+  "Danica Pure-Spring": [
+   "Hooded Monk Robes"
+  ],
+  "Delphine": [
+   "Orcish Bow"
+  ],
+  "Dexion Evicus": [
+   "Moth Priest Robes",
+   "Akaviri Sword"
+  ],
+  "Dravynea the Stoneweaver": [
+   "Blue Mage Robes"
+  ],
+  "Drevis Neloren": [
+   "Master Robes of Illusion"
+  ],
+  "Ebony Warrior": [
+   "Ebony Armor of Regeneration",
+   "Ebony Sword of the Vampire",
+   "Ebony Shield of Fire Suppression",
+   "Ebony Bow of Winter"
+  ],
+  "Elrindir": [
+   "Steel War Axe",
+   "Long Bow"
+  ],
+  "Enthir": [
+   "Expert Robes of Illusion"
+  ],
+  "Eorlund Gray-Mane": [
+   "Hide Armor",
+   "Skyforge Steel Sword"
+  ],
+  "Etienne Rarnis": [
+   "Steel Sword"
+  ],
+  "Faendal": [
+   "Hunting Bow"
+  ],
+  "Falion": [
+   "Blue Mage Robes"
+  ],
+  "Faralda": [
+   "Master Robes of Destruction"
+  ],
+  "Farengar Secret-Fire": [
+   "Blue Mage Robes"
+  ],
+  "Farkas": [
+   "Steel Armor",
+   "Skyforge Steel Greatsword",
+   "Iron Greatsword",
+   "Wolf Armor"
+  ],
+  "Feran Sadri": [
+   "Vampire Armor"
+  ],
+  "Festus Krex": [
+   "Shrouded Robes"
+  ],
+  "Fihada": [
+   "Long Bow"
+  ],
+  "Frea": [
+   "Nordic Carved Armor",
+   "Stalhrim War Axe",
+   "Nordic War Axe",
+   "Nordic Bow"
+  ],
+  "Garvey": [
+   "Ragged Robes"
+  ],
+  "General Tullius": [
+   "General Tullius' Armor"
+  ],
+  "Gharol": [
+   "Steel War Axe",
+   "Hunting Bow",
+   "Orcish War Axe",
+   "Orcish Bow"
+  ],
+  "Grelka": [
+   "Leather Armor"
+  ],
+  "Gunjar": [
+   "Stormcloak Cuirass",
+   "Iron War Axe"
+  ],
+  "Hadvar": [
+   "Imperial Sword",
+   "Iron Shield",
+   "Long Bow"
+  ],
+  "Hamal": [
+   "Monk Robes",
+   "Steel War Axe of Ice"
+  ],
+  "Irileth": [
+   "Leather Armor"
+  ],
+  "J'zargo": [
+   "Novice Robes of Conjuration"
+  ],
+  "Jenassa": [
+   "Leather Armor",
+   "Iron Sword",
+   "Hunting Bow"
+  ],
+  "Karliah": [
+   "Karliah's Bow"
+  ],
+  "Keeper Carcette": [
+   "Apprentice Robes of Restoration"
+  ],
+  "Kematu": [
+   "Hammerfell Garb"
+  ],
+  "Khayla": [
+   "Steel Armor",
+   "Steel Sword",
+   "Steel Shield"
+  ],
+  "Legate Rikke": [
+   "Imperial Armor"
+  ],
+  "Lord Harkon": [
+   "Vampire Royal Armor",
+   "Harkon's Sword"
+  ],
+  "Lydia": [
+   "Steel Armor",
+   "Steel Sword",
+   "Steel Shield",
+   "Hunting Bow"
+  ],
+  "Ma'jhad": [
+   "Steel Greatsword"
+  ],
+  "Marcurio": [
+   "Adept Robes of Destruction"
+  ],
+  "Miraak (person)": [
+   "Miraak's Robes",
+   "Miraak's Sword",
+   "Miraak's Staff"
+  ],
+  "Mjoll the Lioness": [
+   "Banded Iron Armor"
+  ],
+  "Narfi": [
+   "Ragged Robes"
+  ],
+  "Njada Stonearm": [
+   "Hide Armor",
+   "Skyforge Steel Sword",
+   "Steel Shield",
+   "Hunting Bow"
+  ],
+  "Ogmund": [
+   "Leather Armor",
+   "Iron Sword",
+   "Iron Shield"
+  ],
+  "Onmund": [
+   "Novice Robes of Alteration"
+  ],
+  "Orthjolf": [
+   "Vampire Armor"
+  ],
+  "Phinis Gestor": [
+   "Master Robes of Conjuration"
+  ],
+  "Ralis Sedarys": [
+   "Pickaxe",
+   "Leather Armor"
+  ],
+  "Runil": [
+   "Monk Robes"
+  ],
+  "Savos Aren": [
+   "Archmage's Robes",
+   "Blue Mage Robes"
+  ],
+  "Serana": [
+   "Vampire Royal Armor"
+  ],
+  "Sergius Turrianus": [
+   "Adept Robes of Alteration"
+  ],
+  "Silda the Unseen": [
+   "Ragged Robes"
+  ],
+  "Sybille Stentor": [
+   "Blue Mage Robes"
+  ],
+  "Teldryn Sero": [
+   "Chitin Armor",
+   "Elven Sword"
+  ],
+  "Tolfdir": [
+   "Master Robes of Alteration"
+  ],
+  "Tsun": [
+   "Tsun's Armor",
+   "Tsun's Battle Axe"
+  ],
+  "Ulfric Stormcloak": [
+   "Steel War Axe of Cowardice"
+  ],
+  "Urag gro-Shub": [
+   "Adept Robes of Conjuration"
+  ],
+  "Valdimar": [
+   "Scaled Armor",
+   "Steel Mace"
+  ],
+  "Valdr": [
+   "Studded Armor",
+   "Steel Sword",
+   "Hunting Bow"
+  ],
+  "Veezara": [
+   "Shrouded Armor",
+   "Steel Sword"
+  ],
+  "Vigilant Tolan": [
+   "Apprentice Robes of Restoration"
+  ],
+  "Vilkas": [
+   "Banded Iron Shield"
+  ],
+  "Vingalmo": [
+   "Vampire Armor"
+  ],
+  "Wuunferth the Unliving": [
+   "Blue Mage Robes"
+  ]
+ }
+}

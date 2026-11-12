@@ -26,6 +26,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `data/kits.yaml`, `data/modifiers.yaml`: gear kits (ledger D) and challenge runs (ledger F1).
 - `data/black_books.yaml`: the Dragonborn Black Books and their powers (sourced from UESP).
 - `scripts/fetch_terms.py`: checks every `mentions` term against UESP and saves `docs/sources/uesp-terms.json`. Run it after adding or renaming a mention, before `validate.py`.
+- `scripts/fetch_gear.py`: what each build's Example characters wear, from their UESP pages (`docs/sources/uesp-npc-gear.json`). Run before `fetch_terms.py`.
 - `scripts/fetch_npcs.py`: refreshes `uesp-npc-classes.json` from UESP's wiki API. UESP's normal pages are blocked from cloud sessions, but `https://en.uesp.net/w/api.php` works.
 
 ## Rules
@@ -54,5 +55,6 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Gear kits (`data/kits.yaml`) list UESP item titles and the build ids they fit. Do not type requirement tags for kits: `build.py` reads them from each item's UESP origin (`fetch_terms.py` records `CC:<Creation>`, `DG`, `DB`, `HF` or `base`). Challenge runs (`data/modifiers.yaml`) have a rule, ledger M ref and natural `pairs`; items a rule names go in `mentions`.
 - Playstyle filter tags come from `playstyles()` in `scripts/common.py`: weapon, armor and Block skills are combat, the five spell schools magic, Sneak, Pickpocket and Lockpicking stealth; Light Armor does not count. A style is tagged when its skills (weight 2 or more) hold 30% of the fighting total. "k" (Craft) is added when Smithing, Enchanting, Alchemy and Speech weigh at least as much as the biggest fighting style. A build's `playstyles` field overrides the rule; keep overrides rare and give the reason in a comment.
 - Optional `play`: one or two sentences on how to actually play a build where its data misleads (too many primaries, both armors or both weapon styles, Sneak in heavy armor). Shown as "In play", always suggested. Perks or items it names go in `mentions`.
+- Gear: every card shows a Gear line. `signature` (on builds, variants and lore picks) lists a group's own set as UESP titles, with a comment naming the UESP page that ties group and gear; `fetch_terms.py` checks each item and records its origin from the item's own row or section. `loadout` comes from `loadout()` in `common.py` (armor from the armor skills, hands from weapon, Block and spell skills); a `loadout: {armor, hands}` override is allowed where the characters or the In play line say otherwise, with the reason in a comment. "As worn by" comes from `scripts/fetch_gear.py` (`docs/sources/uesp-npc-gear.json`).
 - Optional `beast_form` (`werewolf`, `vampire-lord`) and `black_book` (`{book, power, evidence, ref}`).
 - Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json`.

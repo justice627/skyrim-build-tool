@@ -104,6 +104,10 @@ Left for a person, because YouTube is blocked here. Watch and note anything that
 
 Every UESP lore faction checked for how it fights (ledger G, `docs/research/lore-groups.md`). 616 groups: 134 described well enough to read in full, 324 too thin (listed as gaps), 158 that do not fight. No group needed a new build. 19 became aliases and 44 became lore picks under the build they play like. Not yet done: the 324 gap groups, and gear for lore picks (to look at with the gear review).
 
+## Gear review (2026-11-12)
+
+Every card has a Gear line: the group's own set where it has one (Imperial, Stormcloak, Thieves Guild, Shrouded, Nightingale, Blades, Penitus Oculatus, Thalmor, Forsworn, Vampire, Dawnguard, plus character sets such as Miraak's and Frea's), checked on UESP with DLC and Creation tags, then the suggested loadout. "As worn by" under More lists what Example characters wear (83 characters). Lore picks show their gear too (Indoril, bonemold, chitin, Stalhrim, Morag Tong). The check found three mismatches between a card and its gear, now noted: Blades armor and Frea's Nordic carved armor are heavy, and Dawnguard armor comes in light and heavy sets that must not be mixed.
+
 ## Out of scope
 
 Mod-only builds (Requiem templates, the Ordinator Dragonborn, FudgeMuppet's modded Sand Demon, Celestial and King), ESO class conversions, and full perk templates for all 18 trees.

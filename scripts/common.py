@@ -86,6 +86,44 @@ def playstyles(w, min_weight=2, share=0.3):
     return out
 
 
+ARMOR = {"heavy": "Heavy armor", "light": "Light armor", "robes": "Robes", "clothes": "Clothes",
+         "robes-heavy": "Robes, steel boots and gauntlets"}
+HANDS = {"one-handed": "One-handed weapon", "dual": "A weapon in each hand", "shield": "Shield",
+         "two-handed": "Two-handed weapon", "bow": "Bow", "spells": "Spells", "staff": "Staff", "fists": "Fists"}
+
+
+def loadout(w, override=None):
+    """Recommended armor and hands from the card's skills (a suggestion, rule 7). builds.yaml may override."""
+    if override:
+        return {"armor": override["armor"], "hands": list(override["hands"])}
+    g = lambda k: w.get(k, 0)
+    spells = sum(1 for k in ("ALT", "CON", "DES", "ILU", "RES") if g(k) >= 2)
+    if g("HVA") >= 2 and g("HVA") >= g("LTA"):
+        armor = "heavy"
+    elif g("LTA") >= 2:
+        armor = "light"
+    elif max(g("HVA"), g("LTA")) >= 1:
+        armor = "heavy" if g("HVA") > g("LTA") else "light"
+    elif spells:
+        armor = "robes"
+    else:
+        armor = "clothes"
+    hands = []
+    if g("2HD") >= 2 and g("2HD") > g("1HD"):
+        hands.append("two-handed")
+    elif g("1HD") >= 2:
+        hands.append("one-handed")
+    if g("BLO") >= 2 and "two-handed" not in hands:
+        hands.append("shield")
+    if g("ARC") >= 3:
+        hands.insert(0, "bow") if g("ARC") > max(g("1HD"), g("2HD")) else hands.append("bow")
+    if spells:
+        hands.append("spells") if hands else hands.insert(0, "spells")
+    if not hands and g("1HD") >= 1:
+        hands.append("one-handed")
+    return {"armor": armor, "hands": hands}
+
+
 def card_weights(b, classes):
     """The weights a build's card shows: hand-set `weights`, or its first class file's."""
     return b["weights"] if "weights" in b else classes[b["classes"][0]]["weights"]

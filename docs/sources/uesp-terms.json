@@ -14,17 +14,52 @@
    "missing": false,
    "tree": "DES"
   },
+  "Adept Robes of Alteration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Adept Robes of Alteration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Adept Robes of Conjuration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Adept Robes of Conjuration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Adept Robes of Destruction": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Adept Robes of Destruction",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Agile Defender": {
    "page": "Skyrim:Light Armor",
    "section": "Agile Defender",
    "missing": false,
    "tree": "LTA"
   },
+  "Akaviri Sword": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Akaviri Sword",
+   "missing": false,
+   "tree": null,
+   "origin": "DG"
+  },
   "Amulet of Talos": {
    "page": "Skyrim:Amulets of the Divines",
    "section": "Amulet of Talos",
    "missing": false,
    "tree": null
+  },
+  "Ancient Nord Armor": {
+   "page": "Skyrim:Skyforge",
+   "section": "Ancient Nord Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Apprentice Conjuration": {
    "page": "Skyrim:Conjuration",
@@ -37,6 +72,13 @@
    "section": "Apprentice Destruction",
    "missing": false,
    "tree": "DES"
+  },
+  "Apprentice Robes of Restoration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Apprentice Robes of Restoration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Arcane Archer Pack": {
    "page": "Skyrim:Arcane Archer Pack",
@@ -82,6 +124,20 @@
    "missing": false,
    "tree": "DES"
   },
+  "Banded Iron Armor": {
+   "page": "Skyrim:Iron",
+   "section": "Banded Iron Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Banded Iron Shield": {
+   "page": "Skyrim:Iron",
+   "section": "Banded Iron Shield",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Barbarian": {
    "page": "Skyrim:Classes",
    "section": "Barbarian",
@@ -101,6 +157,34 @@
    "missing": false,
    "tree": null
   },
+  "Black Mage Robes": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Black Mage Robes",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Blade of Woe": {
+   "page": "Skyrim:Blade of Woe",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Blades Armor": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Blades Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Blades Sword": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Blades Sword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Bladesman": {
    "page": "Skyrim:One-handed",
    "section": "Bladesman",
@@ -113,6 +197,13 @@
    "missing": false,
    "tree": null,
    "origin": "CC:Dawnfang & Duskfang"
+  },
+  "Blue Mage Robes": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Blue Mage Robes",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Bone Breaker": {
    "page": "Skyrim:One-handed",
@@ -127,11 +218,12 @@
    "tree": null,
    "origin": "CC:Necromantic Grimoire"
   },
-  "Bonemold": {
+  "Bonemold Armor": {
    "page": "Skyrim:Bonemold",
-   "section": "",
+   "section": "Bonemold Armor",
    "missing": false,
-   "tree": null
+   "tree": null,
+   "origin": "DB"
   },
   "Bound Bow": {
    "page": "Skyrim:Bound Weapon",
@@ -169,6 +261,13 @@
    "section": "Champion's Stance",
    "missing": false,
    "tree": "2HD"
+  },
+  "Chitin Armor": {
+   "page": "Skyrim:Chitin",
+   "section": "Chitin Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
   },
   "Cleaver of St. Felms": {
    "page": "Skyrim:Cleaver of St. Felms",
@@ -220,6 +319,13 @@
    "tree": null,
    "origin": "CC:Dawnfang & Duskfang"
   },
+  "Dawnguard Armor": {
+   "page": "Skyrim:Dawnguard Equipment",
+   "section": "Dawnguard Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "DG"
+  },
   "Dawnguard Rune Axe": {
    "page": "Skyrim:Dawnguard Rune Axe",
    "section": "",
@@ -268,6 +374,13 @@
    "missing": false,
    "tree": "2HD"
   },
+  "Dragon Priest Masks": {
+   "page": "Skyrim:Armor Artifacts",
+   "section": "Dragon Priest Masks",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Dragonbane": {
    "page": "Skyrim:Dragonbane",
    "section": "",
@@ -298,11 +411,46 @@
    "missing": false,
    "tree": null
   },
+  "Ebony Armor": {
+   "page": "Skyrim:Ebony",
+   "section": "Ebony Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Ebony Armor of Regeneration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "of Regeneration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Ebony Bow of Winter": {
+   "page": "Skyrim:Generic Magic Weapons",
+   "section": "of Winter",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Ebony Dagger": {
    "page": "Skyrim:Ebony",
    "section": "Ebony Dagger",
    "missing": false,
    "tree": null
+  },
+  "Ebony Shield of Fire Suppression": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "of Fire Suppression",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Ebony Sword of the Vampire": {
+   "page": "Skyrim:Generic Magic Weapons",
+   "section": "of the Vampire",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Ebonyflesh": {
    "page": "Skyrim:Armor (spells)",
@@ -321,6 +469,27 @@
    "section": "Elemental Protection",
    "missing": false,
    "tree": "BLO"
+  },
+  "Elven Light Armor": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Elven Light Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Elven Sword": {
+   "page": "Skyrim:Elven",
+   "section": "Elven Sword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Expert Robes of Illusion": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Expert Robes of Illusion",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Extra Damage": {
    "page": "Skyrim:Damage",
@@ -406,6 +575,27 @@
    "missing": false,
    "tree": null
   },
+  "Forsworn Armor": {
+   "page": "Skyrim:Forsworn Equipment",
+   "section": "Forsworn Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Forsworn Bow": {
+   "page": "Skyrim:Forsworn Equipment",
+   "section": "Forsworn Bow",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Forsworn Sword": {
+   "page": "Skyrim:Forsworn Equipment",
+   "section": "Forsworn Sword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Fortify Unarmed Damage": {
    "page": "Skyrim:Fortify Unarmed Damage",
    "section": "",
@@ -430,11 +620,25 @@
    "missing": false,
    "tree": null
   },
+  "Fur Armor": {
+   "page": "Skyrim:Armor",
+   "section": "Fur Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Fury": {
    "page": "Skyrim:Fury",
    "section": "",
    "missing": false,
    "tree": null
+  },
+  "General Tullius' Armor": {
+   "page": "Skyrim:General Tullius' Armor",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Ghostblade": {
    "page": "Skyrim:Ghostblade",
@@ -479,6 +683,41 @@
    "missing": false,
    "tree": "1HD"
   },
+  "Hammerfell Garb": {
+   "page": "Skyrim:Clothing",
+   "section": "0007bc19",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Harkon's Sword": {
+   "page": "Skyrim:Harkon's Sword",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "DG"
+  },
+  "Hide Armor": {
+   "page": "Skyrim:Animal Hides",
+   "section": "Hide Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Hooded Black Mage Robes": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "of Quickening",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Hooded Monk Robes": {
+   "page": "Skyrim:Clothing",
+   "section": "00107106",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Hopesfire": {
    "page": "Skyrim:Hopesfire",
    "section": "",
@@ -486,17 +725,52 @@
    "tree": null,
    "origin": "CC:Ghosts of the Tribunal"
   },
+  "Hunting Bow": {
+   "page": "Skyrim:Weapons",
+   "section": "Hunting Bow",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Impact": {
    "page": "Skyrim:Destruction",
    "section": "Impact",
    "missing": false,
    "tree": "DES"
   },
+  "Imperial Armor": {
+   "page": "Skyrim:Steel",
+   "section": "Imperial Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Imperial Light Armor": {
+   "page": "Skyrim:Steel",
+   "section": "Imperial Light Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Imperial Sword": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Imperial Sword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Increase Detection": {
    "page": "Skyrim:Increase Detection",
    "section": "",
    "missing": true,
    "tree": null
+  },
+  "Indoril Armor": {
+   "page": "Skyrim:Chitin",
+   "section": "Indoril Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
   },
   "Invisibility": {
    "page": "Skyrim:Invisibility",
@@ -510,15 +784,64 @@
    "missing": true,
    "tree": null
   },
+  "Iron Armor": {
+   "page": "Skyrim:Iron",
+   "section": "Iron Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Iron Greatsword": {
+   "page": "Skyrim:Iron",
+   "section": "Iron Greatsword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Iron Shield": {
+   "page": "Skyrim:Iron",
+   "section": "Iron Shield",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Iron Sword": {
+   "page": "Skyrim:Iron Sword",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Iron War Axe": {
+   "page": "Skyrim:Iron",
+   "section": "Iron War Axe",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Jester's Clothes": {
    "page": "Skyrim:Cicero's Clothes",
    "section": "",
    "missing": false,
    "tree": null
   },
+  "Karliah's Bow": {
+   "page": "Skyrim:Karliah's Bow",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Keening": {
    "page": "Skyrim:Keening",
    "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Leather Armor": {
+   "page": "Skyrim:Animal Hides",
+   "section": "Leather Armor",
    "missing": false,
    "tree": null,
    "origin": "base"
@@ -548,6 +871,13 @@
    "missing": false,
    "tree": "2HD"
   },
+  "Long Bow": {
+   "page": "Skyrim:Weapons",
+   "section": "Long Bow",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "MS02IncreaseDamage": {
    "page": "Skyrim:Damage",
    "section": "NPC-Only",
@@ -573,11 +903,88 @@
    "missing": false,
    "tree": "ALT"
   },
+  "Master Robes of Alteration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Master Robes of Alteration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Master Robes of Conjuration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Master Robes of Conjuration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Master Robes of Destruction": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Master Robes of Destruction",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Master Robes of Illusion": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Master Robes of Illusion",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Master Robes of Restoration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "Master Robes of Restoration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Miraak's Robes": {
+   "page": "Skyrim:Miraak's Robes",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
+  "Miraak's Staff": {
+   "page": "Skyrim:Miraak's Staff",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
+  "Miraak's Sword": {
+   "page": "Skyrim:Miraak's Sword",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
+  "Monk Robes": {
+   "page": "Skyrim:Clothing",
+   "section": "000bacf3",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Mora's Agony": {
    "page": "Skyrim:Powers",
    "section": "Mora's Agony",
    "missing": false,
    "tree": null
+  },
+  "Morag Tong Armor": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Morag Tong Equipment",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
+  "Moth Priest Robes": {
+   "page": "Skyrim:Unobtainable Items",
+   "section": "xx0047d7",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Muffle": {
    "page": "Skyrim:Muffle",
@@ -611,11 +1018,39 @@
    "tree": null,
    "origin": "CC:Necromantic Grimoire"
   },
+  "Nightingale Armor": {
+   "page": "Skyrim:Nightingale Armor",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Nirnroot": {
    "page": "Skyrim:Nirnroot",
    "section": "",
    "missing": false,
    "tree": null
+  },
+  "Nordic Bow": {
+   "page": "Skyrim:Nordic",
+   "section": "Nordic Bow",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
+  "Nordic Carved Armor": {
+   "page": "Skyrim:Nordic",
+   "section": "Nordic Carved Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
+  "Nordic War Axe": {
+   "page": "Skyrim:Nordic",
+   "section": "Nordic War Axe",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
   },
   "Novice Conjuration": {
    "page": "Skyrim:Conjuration",
@@ -628,6 +1063,34 @@
    "section": "Novice Destruction",
    "missing": false,
    "tree": "DES"
+  },
+  "Novice Robes of Alteration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "of Minor Alteration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Novice Robes of Conjuration": {
+   "page": "Skyrim:Generic Magic Apparel",
+   "section": "of Minor Conjuration",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Orcish Bow": {
+   "page": "Skyrim:Orcish",
+   "section": "Orcish Bow",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Orcish War Axe": {
+   "page": "Skyrim:Orcish",
+   "section": "Orcish War Axe",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Overdraw": {
    "page": "Skyrim:Archery",
@@ -647,11 +1110,19 @@
    "missing": false,
    "tree": null
   },
+  "Penitus Oculatus Armor": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Penitus Oculatus Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Pickaxe": {
    "page": "Skyrim:Specialty Gear",
    "section": "Pickaxe",
    "missing": false,
-   "tree": null
+   "tree": null,
+   "origin": "base"
   },
   "Poison Rune": {
    "page": "Skyrim:Poison Rune",
@@ -676,6 +1147,13 @@
    "section": "Quick Shot",
    "missing": false,
    "tree": "ARC"
+  },
+  "Ragged Robes": {
+   "page": "Skyrim:Clothing",
+   "section": "00013105",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Ranger": {
    "page": "Skyrim:Ranger",
@@ -776,6 +1254,13 @@
    "tree": null,
    "origin": "base"
   },
+  "Scaled Armor": {
+   "page": "Skyrim:Advanced Armors",
+   "section": "Scaled Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Shellbug Helmet": {
    "page": "Skyrim:Animal Parts",
    "section": "Shellbug Helmet",
@@ -784,6 +1269,20 @@
   },
   "Shield of Ysgramor": {
    "page": "Skyrim:Shield of Ysgramor",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Shrouded Armor": {
+   "page": "Skyrim:Shrouded Armor",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Shrouded Robes": {
+   "page": "Skyrim:Shrouded Robes",
    "section": "",
    "missing": false,
    "tree": null,
@@ -801,6 +1300,20 @@
    "section": "Skullcrusher",
    "missing": false,
    "tree": "2HD"
+  },
+  "Skyforge Steel Greatsword": {
+   "page": "Skyrim:Weapons",
+   "section": "Skyforge Steel Greatsword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Skyforge Steel Sword": {
+   "page": "Skyrim:Weapons",
+   "section": "Skyforge Steel Sword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Spell Knight Armor": {
    "page": "Skyrim:Spell Knight Armor",
@@ -835,6 +1348,13 @@
    "tree": null,
    "origin": "CC:Staff of Hasedoki"
   },
+  "Staff of Lightning Bolts": {
+   "page": "Skyrim:Staves",
+   "section": "Staff of Lightning Bolts",
+   "missing": false,
+   "tree": null,
+   "origin": "DG"
+  },
   "Staff of Sheogorath": {
    "page": "Skyrim:Staff of Sheogorath",
    "section": "",
@@ -848,6 +1368,20 @@
    "missing": false,
    "tree": null
   },
+  "Stalhrim Armor": {
+   "page": "Skyrim:Stalhrim",
+   "section": "Stalhrim Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
+  "Stalhrim War Axe": {
+   "page": "Skyrim:Stalhrim",
+   "section": "Stalhrim War Axe",
+   "missing": false,
+   "tree": null,
+   "origin": "DB"
+  },
   "Stealth": {
    "page": "Skyrim:Stealth",
    "section": "",
@@ -855,12 +1389,89 @@
    "perk_page": "Skyrim:Sneak",
    "tree": "SNK"
   },
+  "Steel Armor": {
+   "page": "Skyrim:Steel",
+   "section": "Steel Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Steel Greatsword": {
+   "page": "Skyrim:Steel",
+   "section": "Steel Greatsword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Steel Mace": {
+   "page": "Skyrim:Steel",
+   "section": "Steel Mace",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Steel Shield": {
+   "page": "Skyrim:Steel",
+   "section": "Steel Shield",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Steel Sword": {
+   "page": "Skyrim:Steel",
+   "section": "Steel Sword",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Steel War Axe": {
+   "page": "Skyrim:Steel",
+   "section": "Steel War Axe",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Steel War Axe of Cowardice": {
+   "page": "Skyrim:Generic Magic Weapons",
+   "section": "of Cowardice",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Steel War Axe of Ice": {
+   "page": "Skyrim:Generic Magic Weapons",
+   "section": "of Ice",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Stendarr's Hammer": {
    "page": "Skyrim:Stendarr's Hammer",
    "section": "",
    "missing": false,
    "tree": null,
    "origin": "CC:Stendarr's Hammer"
+  },
+  "Stormcloak Cuirass": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Stormcloak Cuirass",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Stormcloak Officer Armor": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Stormcloak Officer Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Studded Armor": {
+   "page": "Skyrim:Animal Hides",
+   "section": "Studded Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Summoner": {
    "page": "Skyrim:Conjuration",
@@ -887,6 +1498,13 @@
    "missing": false,
    "tree": null
   },
+  "Thalmor Robes": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Thalmor Robes",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "The Black Star (item)": {
    "page": "Skyrim:The Black Star (item)",
    "section": "",
@@ -898,6 +1516,20 @@
    "section": "",
    "missing": false,
    "tree": null
+  },
+  "The Scorched Hammer": {
+   "page": "Skyrim:The Scorched Hammer",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Thieves Guild Armor": {
+   "page": "Skyrim:Thieves Guild Armor",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   },
   "Totem of Ice Brothers": {
    "page": "Skyrim:Lycanthropy",
@@ -924,11 +1556,39 @@
    "tree": null,
    "origin": "CC:Ghosts of the Tribunal"
   },
+  "Tsun's Armor": {
+   "page": "Skyrim:Unobtainable Items",
+   "section": "Tsun's Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Tsun's Battle Axe": {
+   "page": "Skyrim:Tsun's Battle Axe",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Turn Undead": {
    "page": "Skyrim:Turn Undead",
    "section": "",
    "missing": false,
    "tree": null
+  },
+  "Vampire Armor": {
+   "page": "Skyrim:Vampire Equipment",
+   "section": "Vampire Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "DG"
+  },
+  "Vampire Royal Armor": {
+   "page": "Skyrim:Vampire Equipment",
+   "section": "Vampire Royal Armor",
+   "missing": false,
+   "tree": null,
+   "origin": "DG"
   },
   "Vegetable Soup": {
    "page": "Skyrim:Food",
@@ -964,7 +1624,8 @@
    "page": "Skyrim:Specialty Gear",
    "section": "Companions Equipment",
    "missing": false,
-   "tree": null
+   "tree": null,
+   "origin": "base"
   },
   "Woodcutter's Axe": {
    "page": "Skyrim:Specialty Gear",

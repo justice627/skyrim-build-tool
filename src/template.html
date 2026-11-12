@@ -78,6 +78,9 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.gear{margin-top:-4px}
+.pill.gsig{background:var(--surface);border:1px solid var(--line);font-weight:600}
+.worn{display:grid;gap:3px;font-size:12.5px;padding-top:10px;border-top:1px solid var(--line)}
 .play{font-size:12.5px;background:var(--chip);border-radius:6px;padding:8px 10px}
 .play b{font-weight:600}
 .frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
@@ -167,6 +170,7 @@ details.more>summary{font-size:12.5px}
   <div>Community builds have no NPC class in the game. Their skill weights are set by hand from the community sources in the research ledger, on the same 1 to 4 scale, and every perk, item or spell they name was checked against UESP.</div>
   <div>Lore and community picks come from the project's research ledger. They describe how other players or the lore shape a build, so they are leads, not game data. Where a picked character's own UESP class sits in another build, the pick says so.</div>
   <div>Perks on class builds are the ones UESP lists for named NPCs of that class, filtered to the skills on the card. Perks UESP marks as NPC-only are left out. Many classes have no named NPC with a perk list, and those cards say so instead of guessing.</div>
+  <div>The Gear line names a build's own set where its group has one (Imperial armor, Shrouded Armor, Stormcloak armor), checked on UESP, then the armor and weapons its skills suggest. "As worn by" lists what the build's example characters wear on their UESP pages.</div>
   <div>Gear kits come from the research ledger; every item was checked on UESP, and the CC tag names the Creation UESP lists it under. Creations are paid add-ons, all included in Anniversary Edition. Challenge runs are restrictions that work on any build.</div>
   <div>Example NPCs are characters whose UESP page lists that exact class, read through UESP's wiki API. Each is one of several NPCs who share the class, not the only one.</div>
   <div>Class weights: <a href="https://en.uesp.net/wiki/Skyrim:Classes">UESP, Skyrim:Classes</a>, from your saved PDF and screenshot. Creatures, undead, Daedra, Falmer, giants and werewolf beast forms are left out. Race skill bonuses are the vanilla values; race attribute plans are recommendations.</div>
@@ -206,12 +210,23 @@ function modCard(m){
   <div class="chal">${m.pairs.length?`Pairs well with: ${m.pairs.map(n=>`<button type="button" class="pair" data-build="${esc(n)}">${esc(n)}</button>`).join(' ')}`:'Works with any build.'}</div></article>`;
 }
 const modHead='<div class="famhead"><h2>Challenge runs</h2><p>Restrictions you can add to any build. The pairings are the ones community sources suggest.</p></div>';
+// Gear: signature sets (sourced, DLC/CC tagged), then the loadout (suggested). "As worn by" sits under More.
+const gtag=t=>t?` <b>${esc(t)}</b>`:'';
+function gearLine(b){
+  const g=b.gear, sig=g.sig.map(x=>`<span class="pill gsig"${x.cc?` title="Creation: ${esc(x.cc)}"`:''}>${esc(x.n)}${gtag(x.tag)}</span>`).join('');
+  const lo=[g.armor,...g.hands].map(x=>`<span class="pill">${esc(x)}</span>`).join('');
+  return `<div class="tier gear"><span>Gear</span><div class="sk">${sig}${lo}<span class="sug">suggested</span></div></div>`;
+}
+function wornBlock(b){
+  if(!b.gear.worn.length)return '';
+  return `<div class="worn"><div class="plab">As worn by</div>${b.gear.worn.map(w=>`<div><b>${esc(w.npc)}</b>: ${w.items.map(i=>esc(i.n)+(i.tag?` <span class="req">${esc(i.tag)}</span>`:'')).join(', ')}</div>`).join('')}<div class="psrc">From their UESP pages.</div></div>`;
+}
 function card(b,open){
   const eidline=b.hand?`<div class="eid note">No class file. Weights set by hand from ledger ${esc(b.ref)}.</div>`:`<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div>`;
   const plural=(n,w)=>`${n} ${w}${n>1?'s':''}`;
   const lore=b.lore.filter(x=>!st.base||!x.req.length);
-  const vars=b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b>${x.npcs.length?`<span>Examples: ${x.npcs.map(esc).join(', ')}</span><br>`:''}<span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span>${x.perks.length?`<span class="vperks">Perks: ${x.perks.map(g=>g.perks.map(p=>esc(p.n)).join(', ')).join(' · ')}</span>`:''}</div>`).join('');
-  const lores=lore.map(x=>`<div class="v"><b>${esc(x.n)}</b>${x.req.map(r=>` <span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')} ${tagEv(x.ev)}<span class="chg">${esc(x.changes)}</span>${x.where?`<span class="where">In the game, ${esc(x.npc)} uses a class from the ${esc(x.where)} build.</span>`:''}<span class="ref">Ledger ${esc(x.ref)}</span></div>`).join('');
+  const vars=b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b>${x.npcs.length?`<span>Examples: ${x.npcs.map(esc).join(', ')}</span><br>`:''}<span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span>${x.sig.length?`<span class="vperks">Wears: ${x.sig.map(i=>esc(i.n)+gtag(i.tag)).join(', ')}</span>`:''}${x.perks.length?`<span class="vperks">Perks: ${x.perks.map(g=>g.perks.map(p=>esc(p.n)).join(', ')).join(' · ')}</span>`:''}</div>`).join('');
+  const lores=lore.map(x=>`<div class="v"><b>${esc(x.n)}</b>${x.req.map(r=>` <span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')} ${tagEv(x.ev)}<span class="chg">${esc(x.changes)}</span>${x.sig.length?`<span class="vperks">Wears: ${x.sig.map(i=>esc(i.n)+(i.tag?` (${esc(i.tag)})`:'')).join(', ')}</span>`:''}${x.where?`<span class="where">In the game, ${esc(x.npc)} uses a class from the ${esc(x.where)} build.</span>`:''}<span class="ref">Ledger ${esc(x.ref)}</span></div>`).join('');
   const st0=b.stone;
   const stone=`<span class="pill" title="${esc(st0.early_fx)}">${esc(st0.early)}</span>${st0.final?`<span class="arrow">→</span><span class="pill" title="${esc(st0.final_fx)}">${esc(st0.final)}</span>`:''}`;
   const shouts=b.shouts.list.map(x=>`<span class="pill" title="${esc(x.fx)}">${esc(x.n)}${x.req!=='vanilla'?` <b>${esc(x.req)}</b>`:''}</span>`).join('');
@@ -221,6 +236,7 @@ function card(b,open){
   return `<article class="card" id="b-${esc(b.id)}"><div><div class="ttl"><h3>${esc(b.name)}</h3>${b.req.map(r=>`<span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')}<a class="lnk" href="#${esc(b.id)}" data-id="${esc(b.id)}" aria-label="Link to ${esc(b.name)}" title="Copy a link to this build">Link</a></div>${b.aka.length?`<div class="aka">Also known as <b>${b.aka.map(esc).join('</b>, <b>')}</b></div>`:''}<div class="insp">Inspired by: ${esc(b.insp)}</div>${b.npcs.length?`<div class="npcs">Examples: <b>${b.npcs.map(esc).join('</b>, <b>')}</b></div>`:''}</div>
   <p class="desc">${esc(b.desc)}</p>
   ${b.hand?'<div class="hand">Hand-set weights</div>':''}<div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}</div>
+  ${gearLine(b)}
   ${b.play?`<div class="play"><b>In play</b> ${esc(b.play)} <span class="sug">suggested</span></div>`:''}
   <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
   <details class="more"${open?' open':''}><summary>More: ${esc(label)}</summary><div class="morebody">
@@ -228,7 +244,7 @@ function card(b,open){
   <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${tagEv(b.shouts.ev)}</div></div>${b.beast?`
   <div class="tier pick"><span>Beast form</span><div class="sk"><span class="pill">${esc(b.beast)}</span></div></div>`:''}${b.book?`
   <div class="tier pick"><span>Black Book</span><div class="sk"><span class="pill" title="${esc(b.book.fx)}">${esc(b.book.book)}: ${esc(b.book.power)} <b>DB</b></span>${tagEv(b.book.ev)}</div></div>`:''}</div>
-  ${perkBlock(b)}${kitBlock(b,kits)}
+  ${perkBlock(b)}${wornBlock(b)}${kitBlock(b,kits)}
   ${b.variants.length?`<div class="vhead">Variants</div><div class="vlist">${vars}</div>`:''}${lore.length?`<div class="vhead">Lore and community picks</div><div class="vlist">${lores}</div>`:''}${eidline}</div></details></article>`;
 }
 function raceCard(r){
@@ -237,7 +253,7 @@ function raceCard(r){
   <div class="tiers"><div class="tier"><span>Starts 25</span><div class="sk">${pill(r.sig)}</div></div><div class="tier"><span>Starts 20</span><div class="sk">${r.plus5.map(s=>pill(s)).join('')}</div></div></div>
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
-function hay(b){return [b.name,b.play,...b.kits.flatMap(k=>[k.n,...k.items,...k.cc]),...b.mods,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function hay(b){return [b.name,...b.gear.sig.map(x=>x.n),...b.gear.worn.flatMap(w=>w.items.map(i=>i.n)),...b.variants.flatMap(v=>v.sig.map(x=>x.n)),...b.lore.flatMap(l=>l.sig.map(x=>x.n)),b.play,...b.kits.flatMap(k=>[k.n,...k.items,...k.cc]),...b.mods,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
 function strong(b,q){return [b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].some(t=>t&&t.toLowerCase().includes(q))}
 function raceHay(r){return [r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase()}
 const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div>';

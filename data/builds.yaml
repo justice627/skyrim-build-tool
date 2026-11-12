@@ -113,8 +113,8 @@ builds:
     changes: "A Dunmer Ashlander warrior in heavy armor. Swaps the sword for a war axe, after the tribe's glass war axe."
   - name: "House Redoran"
     ref: G59
+    signature: ["Bonemold Armor"]  # Lore:House Redoran
     evidence: partly-sourced
-    mentions: ["Bonemold"]
     changes: "A Dunmer house warrior who wears bonemold armor. Fights with a broad sword and parries with the blade."
 - id: greatsword-mercenary
   family: steel
@@ -144,6 +144,7 @@ builds:
     changes: "Lord Stone. Two-Handed, Block, Alteration and Restoration. Redoran Watchman's Helmet, an Ebony Greatsword, and Slow Time."
   - name: "Kodlak"
     ref: C27
+    signature: ["Wolf Armor"]  # Skyrim:Specialty Gear, Companions Equipment
     evidence: derived
     npc: "Kodlak Whitemane"
     changes: "A Skyforge Steel greatsword. A werewolf who wants to be cured, so his soul goes to Sovngarde."
@@ -248,6 +249,7 @@ builds:
   name: Hold guard
   inspired_by: Imperial-aligned city guards
   evidence: sourced
+  loadout: {armor: light, hands: [one-handed, shield, bow]}  # guard armor is light
   play: "Hold guards wear light guard armor, so build Light Armor and treat the class file's Heavy Armor as optional. Sneak works fine in light armor."
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, call-of-valor], evidence: derived}
@@ -255,6 +257,7 @@ builds:
   - GuardImperial
   variants:
   - label: 'Stormcloak guard: two-hander instead of one-hander, Magicka instead of Stamina'
+    signature: ["Stormcloak Cuirass"]  # Skyrim:Specialty Gear: the cuirass is "also worn by guards"
     examples: ["Gunjar"]
     classes:
     - GuardSonsSkyrim
@@ -267,6 +270,8 @@ builds:
   inspired_by: Imperial soldiers, Stormcloak soldiers and Civil War soldiers
   aliases: [Imperial Legion]
   evidence: sourced
+  loadout: {armor: light, hands: [one-handed, shield, bow]}  # Imperial soldiers start in light armor with sword and shield
+  signature: ["Imperial Armor", "Imperial Light Armor"]  # Skyrim:Imperial Soldier: 'wear a full set of Imperial armor'
   play: "Imperial soldiers fight with a sword and shield and start in light Imperial armor; some later wear heavy Imperial armor. Stormcloaks wear light Stormcloak armor. So the kit for either side is a sword, a shield and light armor, with heavy armor as the Imperial upgrade. Keep Archery as a backup."
   stone: {early: warrior, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, marked-for-death], evidence: derived}
@@ -275,6 +280,7 @@ builds:
   - SoldierImperialNotGuard
   variants:
   - label: 'Stormcloak soldier: same skills, Health and Magicka 1:1 instead of Stamina'
+    signature: ["Stormcloak Cuirass"]  # Skyrim:Stormcloak Soldier: "wear Stormcloak armor"
     classes:
     - SoldierSonsSkyrimNotGuard
   - label: 'Civil War soldier: lighter skill spread, Stamina 7'
@@ -322,10 +328,12 @@ builds:
     changes: "Melee instead of the bow: One-Handed, Block, Light Armor, Alchemy and Smithing."
   - name: "Ashlander"
     ref: G9
+    signature: ["Chitin Armor"]  # Lore:Ashlanders
     evidence: partly-sourced
     changes: "A Dunmer hunter in chitin light armor with a shortbow and a one-handed kris or mace. Adds Alchemy and Enchanting, the crafts the tribes are known for."
   - name: "Skaal hunter"
     ref: G114
+    signature: ["Stalhrim Armor"]  # Lore:Skaal
     evidence: partly-sourced
     mentions: ["Stalhrim"]
     changes: "Adds Smithing: a Nord of Solstheim who hunts only for need and forges Stalhrim."
@@ -372,6 +380,7 @@ builds:
   name: Thalmor archer
   inspired_by: Thalmor archers escorting Justiciars
   evidence: sourced
+  signature: ["Elven Light Armor"]  # Skyrim:Elven: 'a variant worn by the Thalmor'
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [aura-whisper, slow-time, whirlwind-sprint], evidence: derived}
   classes:
@@ -384,6 +393,7 @@ builds:
   name: Forsworn hunter
   inspired_by: Forsworn archers in the Reach
   evidence: sourced
+  signature: ["Forsworn Armor"]  # Skyrim:Forsworn Equipment
   stone: {early: thief, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, aura-whisper, whirlwind-sprint], evidence: derived}
   examples: ["Daenella"]
@@ -398,6 +408,7 @@ builds:
   inspired_by: Combat thieves and the Thieves Guild trainers
   aliases: [Cutpurse, Thieves Guild]
   evidence: sourced
+  signature: ["Thieves Guild Armor"]  # Skyrim:Thieves Guild Armor
   stone: {early: thief, final: tower, evidence: derived, ref: F1}
   shouts: {ids: [throw-voice, whirlwind-sprint, become-ethereal], evidence: derived}
   examples: ["Brynjolf", "Karliah", "Delvin Mallory"]
@@ -494,6 +505,8 @@ builds:
   inspired_by: The Blades
   aliases: [The Blades]
   evidence: sourced
+  play: "Blades armor is heavy armor. Wear it for open fights, or stay in light armor to sneak, as the class file suggests."
+  signature: ["Blades Armor", "Blades Sword"]  # Skyrim:Specialty Gear, Blades Armor
   stone: {early: thief, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [dragonrend, whirlwind-sprint, aura-whisper], evidence: derived}
   examples: ["Delphine"]
@@ -518,6 +531,7 @@ builds:
   inspired_by: Combat assassins and two master trainers
   aliases: [Assassins League, Dark Brotherhood]
   evidence: sourced
+  signature: ["Shrouded Armor"]  # Skyrim:Shrouded Armor: 'used by the Dark Brotherhood'
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [aura-whisper, throw-voice, slow-time], evidence: derived}
   examples: ["Astrid", "Cicero", "Veezara"]
@@ -556,6 +570,7 @@ builds:
     changes: "A cultist of Mehrunes Dagon who poses as an ordinary townsperson."
   - name: "Morag Tong"
     ref: G84
+    signature: ["Morag Tong Armor"]  # Skyrim:Specialty Gear, Morag Tong Equipment
     evidence: partly-sourced
     changes: "A Dunmer assassin who kills by legal writ in Mephala's name. Wears chitin armor."
 - id: nightingale
@@ -563,6 +578,7 @@ builds:
   name: Nightingale
   inspired_by: The Nightingale combat style
   evidence: sourced
+  signature: ["Nightingale Armor"]  # Skyrim:Nightingale Armor
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [aura-whisper, throw-voice, become-ethereal], evidence: derived}
   classes:
@@ -606,6 +622,7 @@ builds:
   name: Vampire
   inspired_by: Vampire NPCs
   evidence: sourced
+  signature: ["Vampire Armor"]  # Skyrim:Vampire Equipment
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [soul-tear, aura-whisper, marked-for-death], evidence: derived}
   beast_form: vampire-lord
@@ -618,12 +635,14 @@ builds:
   lore:
   - name: "Serana"
     ref: C28
+    signature: ["Vampire Royal Armor"]  # Skyrim:Vampire Equipment
     evidence: derived
     requires: [DG]
     npc: "Serana"
     changes: "Pureblood necromancer. Conjuration, frost Destruction and a dagger. Vampire Royal Armor."
   - name: "Harkon"
     ref: C28
+    signature: ["Vampire Royal Armor"]  # Skyrim:Vampire Equipment
     evidence: derived
     requires: [DG]
     npc: "Lord Harkon"
@@ -721,6 +740,7 @@ builds:
   name: Court sorcerer
   inspired_by: Combat sorcerers and two master trainers
   evidence: sourced
+  loadout: {armor: robes, hands: [spells, one-handed]}  # court wizards wear robes
   mentions: ["Mage Armor"]
   play: "Wear robes like the court wizards do. Put the class file's Heavy Armor points into Alteration's armor spells instead: its Mage Armor perk makes them stronger when you wear no armor."
   stone: {early: mage, final: atronach, evidence: derived}
@@ -750,6 +770,8 @@ builds:
   name: Penitus Oculatus agent
   inspired_by: The Emperor's guard
   evidence: sourced
+  loadout: {armor: light, hands: [one-handed, shield, spells]}  # Penitus Oculatus armor is light
+  signature: ["Penitus Oculatus Armor"]  # Skyrim:Specialty Gear, Imperial Soldier Armor
   play: "Penitus Oculatus armor is light armor. Train Light Armor in place of the class file's Heavy Armor if you want to look and play the part."
   stone: {early: warrior, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [aura-whisper, unrelenting-force, slow-time], evidence: derived}
@@ -788,6 +810,7 @@ builds:
   inspired_by: Forsworn warriors in the Reach
   aliases: [Reachfolk]
   evidence: sourced
+  signature: ["Forsworn Armor"]  # Skyrim:Forsworn Equipment
   stone: {early: mage, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, frost-breath, whirlwind-sprint], evidence: derived}
   examples: ["Crowstooth"]
@@ -801,6 +824,7 @@ builds:
   name: Thalmor warrior
   inspired_by: Thalmor soldiers
   evidence: sourced
+  signature: ["Elven Light Armor"]  # Skyrim:Elven: 'a variant worn by the Thalmor'
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, marked-for-death], evidence: derived}
   examples: ["Captain Valmir"]
@@ -967,6 +991,7 @@ builds:
   name: Thalmor wizard
   inspired_by: Thalmor wizards
   evidence: sourced
+  signature: ["Thalmor Robes"]  # Skyrim:Specialty Gear, Thalmor Robes
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [fire-breath, unrelenting-force, become-ethereal], evidence: derived}
   examples: ["Ancarion"]
@@ -1101,6 +1126,7 @@ builds:
   inspired_by: The Vigilants
   aliases: [Paladin, Vigil of Stendarr]
   evidence: sourced
+  loadout: {armor: robes-heavy, hands: [one-handed, spells]}  # robes with steel boots and gauntlets; never a shield
   play: "Vigilants never carry shields, so Block is for blocking with your weapon. Their boots and gauntlets are steel, so keep Heavy Armor and let Light Armor go."
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, become-ethereal], evidence: derived}
@@ -1122,6 +1148,7 @@ builds:
     changes: "One-Handed, Heavy Armor, Restoration, Smithing and Enchanting. Health first, then Magicka, then Stamina. Dawnbreaker, Bolar's Oathblade and the Amulet of Arkay. Avoids Daedric gear."
   - name: "Isran"
     ref: C13
+    signature: ["Dawnguard Armor"]  # Skyrim:Dawnguard Equipment
     evidence: derived
     requires: [DG]
     changes: "Two-Handed 3, Heavy Armor 3, Restoration 2, plus a crossbow. Dawnguard heavy armor and rune weapons."
@@ -1135,6 +1162,7 @@ builds:
     changes: "A Redguard exile who hunts the undead in the desert and purifies their tombs."
   - name: "Ordinator"
     ref: G94
+    signature: ["Indoril Armor"]  # Skyrim:Chitin, Indoril Armor: includes the Ordinator shield
     evidence: partly-sourced
     changes: "A Dunmer holy guard of the Tribunal Temple, in Indoril armor with its golden face mask."
   - name: "Knight of the Silver Rose"
@@ -1331,6 +1359,7 @@ builds:
   name: Ebony Warrior
   inspired_by: The Ebony Warrior (Dragonborn)
   evidence: sourced
+  signature: ["Ebony Armor"]  # Skyrim:Ebony Warrior: wears an enchanted ebony set
   play: "Build the core: Heavy Armor, One-Handed, Block and Archery, with Conjuration and Restoration as support. The class file raises nine skills at once, which a player cannot match. Heavy armor is loud, so take Muffled Movement if you sneak."
   mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
@@ -1353,6 +1382,8 @@ builds:
   name: Miraak
   inspired_by: Miraak (Dragonborn)
   evidence: sourced
+  loadout: {armor: robes, hands: [spells, one-handed, staff]}  # robes; Destruction and shouts, sword and staff
+  signature: ["Miraak's Robes", "Miraak's Staff"]  # Skyrim:Miraak (person): robes, sword and staff
   play: "Miraak wears robes and fights mainly with Destruction and shouts, with a sword and a staff as backup. Lead with Destruction; the class file's Heavy Armor is optional."
   playstyles: [c, m]  # Speech has no effect on shouts (UESP Dragon Shouts); he fights with blade and magic
   stone: {early: mage, final: atronach, evidence: derived}
@@ -1372,6 +1403,7 @@ builds:
     changes: "Modeled on Wulfharth. Two-Handed 3, Heavy Armor 3, Speech 2, fire Destruction 2. Fire Breath and Dragon Aspect."
   - name: "Dragon Priest"
     ref: G33
+    signature: ["Dragon Priest Masks"]  # Lore:Dragon Cult
     evidence: partly-sourced
     changes: "A dragon priest: a powerful mage with the Thu'um who wears an enchanted mask and armor of dragon scale and bone."
 - id: ancient-dragonborn
@@ -1405,6 +1437,9 @@ builds:
   name: Frea
   inspired_by: Frea (Dragonborn)
   evidence: sourced
+  play: "Frea wears heavy Nordic carved armor, though her class file trains Light Armor. Train Heavy Armor if you want to match her."
+  loadout: {armor: heavy, hands: [one-handed, spells]}  # she wears heavy Nordic carved armor (Skyrim:Frea, Skyrim:Nordic)
+  signature: ["Nordic Carved Armor", "Stalhrim War Axe"]  # Skyrim:Frea: her gear
   stone: {early: mage, final: lady, evidence: derived}
   shouts: {ids: [cyclone, animal-allegiance, unrelenting-force], evidence: derived}
   examples: ["Frea"]
@@ -1451,6 +1486,7 @@ builds:
   aliases: [Unarmed, Brawler]
   weights: {HVA: 3, ENC: 3, SMI: 2, Hea: 2, Mag: 0, Sta: 1}  # Smithing added: tempered gauntlets raise Fists of Steel damage
   evidence: derived
+  loadout: {armor: heavy, hands: [fists]}  # Fists of Steel needs heavy gauntlets
   play: "The Atronach Stone still helps without spells: it absorbs half of incoming spells, and its slower Magicka regeneration does not matter to you. Smithing tempers your gauntlets, which raises Fists of Steel's damage."
   playstyles: [c]  # Enchanting serves the gauntlets
   ref: A1
@@ -1563,6 +1599,7 @@ builds:
   inspired_by: Community dual-wield builds (TheGamer)
   weights: {1HD: 3, LTA: 3, SMI: 2, SNK: 2, Hea: 1, Mag: 0, Sta: 2}  # Smithing and Sneak added for tempered blades and opening hits
   evidence: derived
+  loadout: {armor: light, hands: [dual]}  # the build is dual wielding
   ref: A14
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [elemental-fury, whirlwind-sprint, marked-for-death], evidence: partly-sourced, ref: A14}
@@ -1619,6 +1656,8 @@ builds:
   inspired_by: Community Dawnguard builds (GamersDecide)
   weights: {ARC: 3, 1HD: 3, ENC: 2, RES: 2, LTA: 2, Hea: 2, Mag: 1, Sta: 2}
   evidence: partly-sourced
+  play: "Dawnguard armor comes in light and heavy sets. A full set of either cuts damage from vampires by 25%, but mixing the two loses the bonus."
+  signature: ["Dawnguard Armor"]  # Skyrim:Dawnguard Equipment
   ref: A9
   requires: [DG]
   stone: {early: warrior, final: lady, evidence: derived}

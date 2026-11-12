@@ -9,8 +9,8 @@ import re
 
 import json as _json
 
-from common import (ATTRS, BEAST_FORMS, ROOT, SCHOOL, SKILLS, by_id, card_weights, load, load_lookup, npc_classes,
-                    playstyles, uesp_terms, weights)
+from common import (ARMOR, ATTRS, BEAST_FORMS, HANDS, ROOT, SCHOOL, SKILLS, by_id, card_weights, load, load_lookup,
+                    loadout, npc_classes, playstyles, uesp_terms, weights)
 
 SPELL_SCHOOLS = ("ALT", "CON", "DES", "ILU", "RES")
 LEVELS = 49  # level-ups from level 2 to 50
@@ -77,18 +77,23 @@ def render_picks(b, stones, shouts, books):
     }
 
 
+def skills_of(b, classes):
+    return {k: v for k, v in card_weights(b, classes).items() if k in SKILLS}
+
+
 def npc_name(page_name):
     """'Miraak (person)' -> 'Miraak': UESP disambiguates pages, the page shows the character's name."""
     return re.sub(r"\s*\([^)]*\)$", "", page_name)
 
 
-def render_lore(b, build_of_npc):
+def render_lore(b, build_of_npc, terms):
     """Ledger C picks. `where` names the build the NPC's own UESP class sits in, when that is another build."""
     out = []
     for e in b.get("lore", []):
         home = build_of_npc.get(e.get("npc"))
         out.append({"n": e["name"], "ref": e["ref"], "changes": e["changes"], "ev": e["evidence"],
                     "req": e.get("requires", []), "npc": npc_name(e["npc"]) if "npc" in e else "",
+                    "sig": [{"n": i, "tag": gear_tag(i, terms)} for i in e.get("signature", [])],
                     "where": home if home and home != b["name"] else ""})
     return out
 
@@ -138,7 +143,26 @@ def hand_perks(b, w, terms):
     return group_perks(takers, w)
 
 
-def render_build(b, classes, stones, shouts, books, homes, npcs, terms):
+def gear_tag(item, terms):
+    o = terms[item].get("origin", "base")
+    return "" if o == "base" else (o if not o.startswith("CC:") else "CC")
+
+
+def render_gear(b, skills, terms, worn):
+    """Gear line: signature sets (sourced, with DLC/CC tags), then the loadout (suggested)."""
+    lo = loadout(skills, b.get("loadout"))
+    sig = [{"n": i, "tag": gear_tag(i, terms), "cc": terms[i].get("origin", "")[3:] if terms[i].get("origin", "").startswith("CC:") else ""}
+           for i in b.get("signature", [])]
+    people = b.get("examples", []) + [n for v in b.get("variants", []) for n in v.get("examples", [])]
+    seen = []
+    for n in people:
+        items = [i for i in worn.get(n, []) if i in terms and not terms[i]["missing"]]
+        if items and len(seen) < 3:
+            seen.append({"npc": npc_name(n), "items": [{"n": i, "tag": gear_tag(i, terms)} for i in items[:3]]})
+    return {"armor": ARMOR[lo["armor"]], "hands": [HANDS[h] for h in lo["hands"]], "sig": sig, "worn": seen}
+
+
+def render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn):
     w = card_weights(b, classes)
     hand = "weights" in b
     # A hand-set ratio is already a player recommendation, so plan() does not adjust it.
@@ -149,17 +173,19 @@ def render_build(b, classes, stones, shouts, books, homes, npcs, terms):
         vw = weights(classes, v["classes"][0])
         vskills = {k: x for k, x in vw.items() if k in SKILLS}
         variants.append({"label": v["label"], "eids": v["classes"], "skills": skill_line(vw),
+                         "sig": [{"n": i, "tag": gear_tag(i, terms)} for i in v.get("signature", [])],
                          "perks": class_perks(v["classes"], vskills, npcs, terms),
                          "npcs": [npc_name(n) for n in v.get("examples", [])],
                          "attr": [vw.get(a, 0) for a in ATTRS]})
     return {
         "id": b["id"], "styles": b.get("playstyles") or playstyles(skills), "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
-        "hand": hand, "ref": b.get("ref", ""), "play": b.get("play", ""), "mentions": b.get("mentions", []),
+        "hand": hand, "ref": b.get("ref", ""), "play": b.get("play", ""),
+        "gear": render_gear(b, skills_of(b, classes), terms, worn), "mentions": b.get("mentions", []),
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
         "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []),
-        "lore": render_lore(b, homes),
+        "lore": render_lore(b, homes, terms),
         "perks": hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms),
         "perk_ev": b["perks"]["evidence"] if hand and b.get("perks") else ("sourced" if not hand else ""),
         "perk_ref": b["perks"].get("ref", "") if hand and b.get("perks") else "", "ev": b["evidence"], **render_picks(b, stones, shouts, books),
@@ -203,9 +229,10 @@ def page_data():
     books = by_id(load_lookup("black_books"))
     npcs = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())["classes"]
     terms = uesp_terms()
+    worn = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-gear.json").read_text())["npcs"]
     return {
         "fams": doc["families"],
-        "builds": [dict(render_build(b, classes, stones, shouts, books, homes, npcs, terms),
+        "builds": [dict(render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn),
                         kits=kits_by_build.get(b["id"], []),
                         mods=[m["name"] for m in mods if b["id"] in m["pairs"]]) for b in doc["builds"]],
         "mods": [{"n": m["name"], "rule": m["rule"], "ref": m["ref"], "ev": m["evidence"],

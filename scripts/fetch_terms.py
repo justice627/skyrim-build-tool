@@ -33,6 +33,7 @@ def mentions(doc):
         out.update(k["items"])
     for m in yaml.safe_load((DATA / "modifiers.yaml").read_text())["modifiers"]:
         out.update(m.get("mentions", []))
+    out.update(gear_items(doc))
     return sorted(out)
 
 
@@ -52,6 +53,45 @@ def origin(text):
         if f"Category:Skyrim-{dlc}" in text[:3000]:
             return tag
     return "base"
+
+
+def gear_items(doc):
+    """Signature gear on builds, variants and lore picks, plus what Example characters wear."""
+    out = set()
+    for b in doc["builds"]:
+        out.update(b.get("signature", []))
+        for v in b.get("variants", []) + b.get("lore", []):
+            out.update(v.get("signature", []))
+    worn = ROOT / "docs" / "sources" / "uesp-npc-gear.json"
+    if worn.exists():
+        out.update(i for items in json.loads(worn.read_text())["npcs"].values() for i in items)
+    return out
+
+
+def section_origin(text, anchor):
+    """Origin of an item that is one row of a shared page (Indoril Armor on Skyrim:Chitin), read from the
+    row's name cell only: notes columns mention Creation locations that say nothing about the item."""
+    head = re.search(r"\n=+\s*" + re.escape(anchor) + r"([^\n]*?)=+\s*\n", text)
+    if head:  # a section of its own, e.g. ===Indoril Armor{{CC|Ghosts of the Tribunal}}===
+        cc = re.search(r"\{\{CC\|([^}|]+)", head.group(1))
+        if cc:
+            return DLC.get(cc.group(1).strip(), "CC:" + cc.group(1).strip())
+        for dlc, tag in DLC.items():
+            if "{{" + tag + "}}" in head.group(1):
+                return tag
+    i = text.find("Anchor|" + anchor)
+    if i < 0:
+        return None
+    start = text.rfind("\n|", 0, i)
+    end = min(x for x in (text.find("||", i), text.find("\n", i)) if x > 0)
+    cell = text[start if start >= 0 else i:end]
+    cc = re.search(r"\{\{CC\|([^}|]+)", cell)
+    if cc:
+        return DLC.get(cc.group(1).strip(), "CC:" + cc.group(1).strip())
+    for dlc, tag in DLC.items():
+        if "{{" + tag + "}}" in cell:
+            return tag
+    return None
 
 
 def kit_items():
@@ -87,15 +127,17 @@ def main():
                 result[t]["perk_page"] = target
     for t, r in result.items():
         r["tree"] = tree_of_page(r.get("perk_page") or r["page"])
-    # Origins for kit items, from each item's own page header.
-    items = kit_items()
+    # Origins for kit and gear items, from each item's own page header, or its own row on a shared page.
+    items = sorted(set(kit_items()) | {t for t in gear_items(doc) if t in result and not result[t]["missing"]})
     for i in range(0, len(items), 50):
         batch = items[i:i + 50]
         d = get(action="query", prop="revisions", rvprop="content", rvslots="main",
                 titles="|".join(result[t]["page"] for t in batch))["query"]["pages"]
         text = {p["title"]: p["revisions"][0]["slots"]["main"]["*"] for p in d.values() if "revisions" in p}
         for t in batch:
-            result[t]["origin"] = origin(text.get(result[t]["page"], ""))
+            page_text = text.get(result[t]["page"], "")
+            section = result[t]["section"]
+            result[t]["origin"] = (section and section_origin(page_text, section)) or origin(page_text)
     OUT.write_text(json.dumps({"retrieved": datetime.date.today().isoformat(), "source": API,
                                "terms": result}, indent=1, ensure_ascii=False) + "\n")
     named = {t for b in doc["builds"] for t in b.get("mentions", []) + [m for e in b.get("lore", []) for m in e.get("mentions", [])]}
