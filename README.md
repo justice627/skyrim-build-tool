@@ -1,8 +1,13 @@
 # Skyrim Build Tool
 
-A one-page reference of Skyrim character builds. Every playable humanoid NPC class from UESP is turned into a player build (skills by weight, a level 50 attribute plan, and a playstyle), grouped into 12 families with trainer and vendor variants folded in. Ten pure race builds close the page.
+A one-page reference of Skyrim character builds: https://justice627.github.io/skyrim-build-tool/
 
-Current contents: 119 NPC class files, 56 builds, 10 races.
+- **56 class builds**: every playable humanoid NPC class from UESP turned into a player build (skills by weight, a level 50 attribute plan, a playstyle), grouped into families, with trainer and vendor variants folded in.
+- **14 community builds**: playstyles no class file can express (Pugilist, Tongue, Werewolf, Poisoner and more), with hand-set weights from the research ledger.
+- **10 pure race builds** and **16 challenge runs**.
+- Per build: example NPCs, stone and shouts, perks named NPCs of the class take, gear kits, and lore picks.
+
+Every NPC, perk, item and requirement tag is checked against UESP through its wiki API. Anything worked out for the page, not read from a source, is marked "suggested". The page has playstyle and base-game filters, search, and a shareable link per build (`#thief`).
 
 ## Run it
 
@@ -29,7 +34,7 @@ gh repo create skyrim-build-tool --public --source . --push   # or create it on 
 claude                                                        # open the folder in Claude Code
 ```
 
-To publish with GitHub Pages: in the repo's Settings > Pages, set Source to "GitHub Actions". The included workflow validates, builds and deploys on every push to `main`.
+GitHub Pages is set up: the workflow validates, builds and deploys on every push to `main`.
 
 ## Where things are
 

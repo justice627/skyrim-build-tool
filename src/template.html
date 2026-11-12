@@ -1,4 +1,4 @@
-<title>Skyrim Class Builds</title>
+<title>Skyrim Builds</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
@@ -34,7 +34,7 @@ header{display:grid;gap:14px}
 .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
 .controls{display:grid;gap:10px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.controls input{font:inherit;font-size:16px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
+.controls input[type=search]{font:inherit;font-size:16px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
 .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
 .chips.more{-webkit-mask-image:linear-gradient(to right,#000 82%,transparent);mask-image:linear-gradient(to right,#000 82%,transparent)}
 .chips button{flex:none;font:600 12px/1 var(--f-body);padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
@@ -78,6 +78,20 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.seg{display:flex;gap:4px}
+.seg button{font:600 11.5px/1 var(--f-body);padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.seg .sw{width:7px;height:7px;border-radius:50%}
+.seg .sc-c{background:var(--c-combat)} .seg .sc-m{background:var(--c-magic)} .seg .sc-s{background:var(--c-stealth)}
+.base input{margin:0;width:14px;height:14px}
+.base{white-space:nowrap;font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;cursor:pointer}
+.frow .count{margin-left:auto}
+.lnk{margin-left:auto;font:600 11px/1 var(--f-body);color:var(--accent);text-decoration:none;padding:4px 6px;border-radius:4px}
+.lnk:hover{background:var(--chip)}
+details.more>summary{font-size:12.5px}
+.morebody{display:grid;gap:12px;margin-top:10px}
+.card.hl{outline:2px solid var(--accent);outline-offset:2px}
 .kit{font-size:12.5px;display:grid;gap:2px}
 .khead{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
 .kit .knote{color:var(--muted);font-size:12px}
@@ -103,7 +117,9 @@ footer a{color:var(--accent)}
   header{gap:10px}
   .legend{font-size:11.5px;gap:4px 12px}
   .controls{gap:6px;padding-block:6px}
-  .controls input{padding:6px 10px}
+  .controls input[type=search]{padding:6px 10px}
+  .seg button{padding:5px 8px}
+  .frow{gap:6px 10px}
   .chips button{padding:6px 10px}
   .count{font-size:11.5px}
 }
@@ -122,9 +138,9 @@ footer a{color:var(--accent)}
 
 <div class="wrap">
 <header>
-  <h1>Skyrim Class Builds</h1>
-  <p class="lede">The game's playable humanoid NPC classes, read from UESP and turned into player builds you can borrow. Similar classes are grouped into families; near-identical trainer and vendor variants sit inside their parent build. The ten pure race builds close the page.</p>
-  <details class="howto" open><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk.</details>
+  <h1>Skyrim Builds</h1>
+  <p class="lede">Character builds for Skyrim. Most come from the game's own NPC classes on UESP; community builds and challenge runs cover the rest. Everything named here is checked against UESP, and anything worked out for this page is marked suggested.</p>
+  <details class="howto" open><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk. <b>More</b> on each card opens its stone, shouts, perks, gear and variants. Perks on class builds are the ones named NPCs of that class take, read from UESP: hover a perk to see who, and ×2 means two NPCs take it.</details>
   <div class="legend">
     <span><i class="sw" style="background:var(--c-combat)"></i>Combat skill</span>
     <span><i class="sw" style="background:var(--c-magic)"></i>Magic skill</span>
@@ -138,7 +154,7 @@ footer a{color:var(--accent)}
 <div class="controls">
   <input id="q" type="search" placeholder="Search builds, skills or NPCs" aria-label="Search builds">
   <div class="chips" id="fams" role="group" aria-label="Filter by family"></div>
-  <div class="count" id="cnt"></div>
+  <div class="frow"><div class="seg" id="style" role="group" aria-label="Filter by playstyle"></div><label class="base"><input type="checkbox" id="base"> Base game only</label><span class="count" id="cnt"></span></div>
 </div>
 
 <div id="out" style="display:grid;gap:36px"></div>
@@ -165,21 +181,20 @@ const bar=a=>{const t=a[0]+a[1]+a[2]||1;return `<div class="bar">${['hp','mp','s
 const lv=a=>`<div class="lv"><span class="lab">Level 50</span>${a[0]?`<span class="h">Health ×${a[0]}</span>`:''}${a[1]?`<span class="m">Magicka ×${a[1]}</span>`:''}${a[2]?`<span class="s">Stamina ×${a[2]}</span>`:''}</div>`;
 const REQ={DG:'Dawnguard',HF:'Hearthfire',DB:'Dragonborn',CC:'a paid Creation',AE:'Anniversary Edition'};
 const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'},{id:'mods',title:'Challenge runs'}];
-let st={f:'all',q:''};
+let st={f:'all',q:'',style:'',base:false};
 
 // Perks: grouped by skill, each chip colored by school. Hover shows which named NPCs take it.
 const perkGroups=gs=>gs.map(g=>`<div class="pg"><span class="pgs sc-${g.sc}"><i></i>${esc(g.s)}</span>${g.perks.map(p=>`<span class="pill pk"${p.by.length?` title="Taken by ${esc(p.by.join(', '))}"`:''}>${esc(p.n)}${p.by.length>1?` <b>×${p.by.length}</b>`:''}</span>`).join('')}</div>`).join('');
 function perkBlock(b){
   if(b.perks.length){
-    const src=b.hand?`Key perks named by community sources (ledger ${esc(b.perk_ref)}). <span class="sug">partly sourced</span>`
-      :'Perks that named NPCs of this class take, read from UESP. Hover a perk to see who; ×2 means two NPCs take it.';
-    return `<div class="perks"><div class="plab">Perks</div>${perkGroups(b.perks)}<div class="psrc">${src}</div></div>`;
+    const src=b.hand?`<div class="psrc">Named by community sources (ledger ${esc(b.perk_ref)}). <span class="sug">partly sourced</span></div>`:'';
+    return `<div class="perks"><div class="plab">Perks</div>${perkGroups(b.perks)}${src}</div>`;
   }
   return `<div class="perks"><div class="plab">Perks</div><div class="psrc">${b.hand?'The community sources name no perks for this build.':'No NPC of this class has perks listed on UESP.'}</div></div>`;
 }
 // Gear kits: requirement tags come from UESP (CC plus the Creation's name, or DLC).
-function kitBlock(b){
-  const kits=b.kits.map(k=>`<div class="kit"><div class="khead"><b>${esc(k.n)}</b>${k.dlc.map(d=>`<span class="req" title="Needs ${esc(REQ[d]||d)}">${esc(d)}</span>`).join('')}${k.cc.map(c=>`<span class="cc" title="A paid Creation, included in Anniversary Edition">CC: ${esc(c)}</span>`).join('')}${tagEv(k.ev)}</div><span class="knote">${esc(k.note)}</span>${k.cc.length&&k.base.length?`<span class="knote">Base game: ${k.base.map(esc).join(', ')}.</span>`:''}</div>`).join('');
+function kitBlock(b,list){
+  const kits=list.map(k=>`<div class="kit"><div class="khead"><b>${esc(k.n)}</b>${k.dlc.map(d=>`<span class="req" title="Needs ${esc(REQ[d]||d)}">${esc(d)}</span>`).join('')}${k.cc.map(c=>`<span class="cc" title="A paid Creation, included in Anniversary Edition">CC: ${esc(c)}</span>`).join('')}${tagEv(k.ev)}</div><span class="knote">${esc(k.note)}</span>${k.cc.length&&k.base.length?`<span class="knote">Base game: ${k.base.map(esc).join(', ')}.</span>`:''}</div>`).join('');
   const mods=b.mods.length?`<div class="chal">Challenge runs that suit it: ${b.mods.map(m=>`<button type="button" class="pair" data-mod="${esc(m)}">${esc(m)}</button>`).join(' ')}</div>`:'';
   return (kits?`<div class="perks"><div class="plab">Gear kits</div>${kits}</div>`:'')+mods;
 }
@@ -189,27 +204,29 @@ function modCard(m){
   <div class="chal">${m.pairs.length?`Pairs well with: ${m.pairs.map(n=>`<button type="button" class="pair" data-build="${esc(n)}">${esc(n)}</button>`).join(' ')}`:'Works with any build.'}</div></article>`;
 }
 const modHead='<div class="famhead"><h2>Challenge runs</h2><p>Restrictions you can add to any build. The pairings are the ones community sources suggest.</p></div>';
-function card(b){
+function card(b,open){
   const eidline=b.hand?`<div class="eid note">No class file. Weights set by hand from ledger ${esc(b.ref)}.</div>`:`<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div>`;
-  const nv=b.variants.length, nl=b.lore.length, plural=(n,w)=>`${n} ${w}${n>1?'s':''}`;
-  const tag=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
+  const plural=(n,w)=>`${n} ${w}${n>1?'s':''}`;
+  const lore=b.lore.filter(x=>!st.base||!x.req.length);
   const vars=b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b>${x.npcs.length?`<span>Examples: ${x.npcs.map(esc).join(', ')}</span><br>`:''}<span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span>${x.perks.length?`<span class="vperks">Perks: ${x.perks.map(g=>g.perks.map(p=>esc(p.n)).join(', ')).join(' · ')}</span>`:''}</div>`).join('');
-  const lore=b.lore.map(x=>`<div class="v"><b>${esc(x.n)}</b>${x.req.map(r=>` <span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')} ${tag(x.ev)}<span class="chg">${esc(x.changes)}</span>${x.where?`<span class="where">In the game, ${esc(x.npc)} uses a class from the ${esc(x.where)} build.</span>`:''}<span class="ref">Ledger ${esc(x.ref)}</span></div>`).join('');
-  const v=(nv||nl)?`<details><summary>${[nv?plural(nv,'variant'):'',nl?plural(nl,'lore pick'):''].filter(Boolean).join(' · ')}</summary>${nv?`<div class="vlist">${vars}</div>`:''}${nl?`<div class="vhead">Lore and community picks</div><div class="vlist">${lore}</div>`:''}${eidline}</details>`
-    :eidline;
-  const st=b.stone, sug=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
-  const stone=`<span class="pill" title="${esc(st.early_fx)}">${esc(st.early)}</span>${st.final?`<span class="arrow">→</span><span class="pill" title="${esc(st.final_fx)}">${esc(st.final)}</span>`:''}`;
+  const lores=lore.map(x=>`<div class="v"><b>${esc(x.n)}</b>${x.req.map(r=>` <span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')} ${tagEv(x.ev)}<span class="chg">${esc(x.changes)}</span>${x.where?`<span class="where">In the game, ${esc(x.npc)} uses a class from the ${esc(x.where)} build.</span>`:''}<span class="ref">Ledger ${esc(x.ref)}</span></div>`).join('');
+  const st0=b.stone;
+  const stone=`<span class="pill" title="${esc(st0.early_fx)}">${esc(st0.early)}</span>${st0.final?`<span class="arrow">→</span><span class="pill" title="${esc(st0.final_fx)}">${esc(st0.final)}</span>`:''}`;
   const shouts=b.shouts.list.map(x=>`<span class="pill" title="${esc(x.fx)}">${esc(x.n)}${x.req!=='vanilla'?` <b>${esc(x.req)}</b>`:''}</span>`).join('');
-  return `<article class="card"><div><div class="ttl"><h3>${esc(b.name)}</h3>${b.req.map(r=>`<span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')}</div>${b.aka.length?`<div class="aka">Also known as <b>${b.aka.map(esc).join('</b>, <b>')}</b></div>`:''}<div class="insp">Inspired by: ${esc(b.insp)}</div>${b.npcs.length?`<div class="npcs">Examples: <b>${b.npcs.map(esc).join('</b>, <b>')}</b></div>`:''}</div>
+  const kits=b.kits.filter(k=>!st.base||(!k.cc.length&&!k.dlc.length));
+  const parts=['stone','shouts',b.perks.length?'perks':'',kits.length?'gear':'',b.variants.length?plural(b.variants.length,'variant'):'',lore.length?plural(lore.length,'lore pick'):''].filter(Boolean);
+  const label=parts.length>2?parts.slice(0,-1).join(', ')+' and '+parts.at(-1):parts.join(' and ');
+  return `<article class="card" id="b-${esc(b.id)}"><div><div class="ttl"><h3>${esc(b.name)}</h3>${b.req.map(r=>`<span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')}<a class="lnk" href="#${esc(b.id)}" data-id="${esc(b.id)}" aria-label="Link to ${esc(b.name)}" title="Copy a link to this build">Link</a></div>${b.aka.length?`<div class="aka">Also known as <b>${b.aka.map(esc).join('</b>, <b>')}</b></div>`:''}<div class="insp">Inspired by: ${esc(b.insp)}</div>${b.npcs.length?`<div class="npcs">Examples: <b>${b.npcs.map(esc).join('</b>, <b>')}</b></div>`:''}</div>
   <p class="desc">${esc(b.desc)}</p>
-  ${b.hand?'<div class="hand">Hand-set weights</div>':''}<div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}
-  <div class="tier pick"><span>Stone</span><div class="sk">${stone}${sug(st.ev)}</div></div>
-  <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${sug(b.shouts.ev)}</div></div>${b.beast?`
-  <div class="tier pick"><span>Beast form</span><div class="sk"><span class="pill">${esc(b.beast)}</span></div></div>`:''}${b.book?`
-  <div class="tier pick"><span>Black Book</span><div class="sk"><span class="pill" title="${esc(b.book.fx)}">${esc(b.book.book)}: ${esc(b.book.power)} <b>DB</b></span>${sug(b.book.ev)}</div></div>`:''}</div>
-  ${perkBlock(b)}${kitBlock(b)}
+  ${b.hand?'<div class="hand">Hand-set weights</div>':''}<div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}</div>
   <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
-  ${v}</article>`;
+  <details class="more"${open?' open':''}><summary>More: ${esc(label)}</summary><div class="morebody">
+  <div class="tiers"><div class="tier pick"><span>Stone</span><div class="sk">${stone}${tagEv(st0.ev)}</div></div>
+  <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${tagEv(b.shouts.ev)}</div></div>${b.beast?`
+  <div class="tier pick"><span>Beast form</span><div class="sk"><span class="pill">${esc(b.beast)}</span></div></div>`:''}${b.book?`
+  <div class="tier pick"><span>Black Book</span><div class="sk"><span class="pill" title="${esc(b.book.fx)}">${esc(b.book.book)}: ${esc(b.book.power)} <b>DB</b></span>${tagEv(b.book.ev)}</div></div>`:''}</div>
+  ${perkBlock(b)}${kitBlock(b,kits)}
+  ${b.variants.length?`<div class="vhead">Variants</div><div class="vlist">${vars}</div>`:''}${lore.length?`<div class="vhead">Lore and community picks</div><div class="vlist">${lores}</div>`:''}${eidline}</div></details></article>`;
 }
 function raceCard(r){
   return `<article class="card"><div><h3>${esc(r.race)}</h3><div class="insp">Racial power: ${esc(r.power)}</div></div>
@@ -221,27 +238,33 @@ function hay(b){return [b.name,...b.kits.flatMap(k=>[k.n,...k.items,...k.cc]),..
 function strong(b,q){return [b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].some(t=>t&&t.toLowerCase().includes(q))}
 function raceHay(r){return [r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase()}
 const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div>';
+// Filters: playstyle = a skill school among the build's primary skills; base game only hides builds,
+// kits and lore picks that need DLC or a Creation.
+const SCHOOLS={c:'Combat',m:'Magic',s:'Stealth'};
+function keep(b){return (!st.style||b.p.some(x=>x.sc===st.style))&&(!st.base||!b.req.length)}
+function keepRace(r){return !st.style||SC[r.sig]===st.style}
 function render(){
   const q=st.q.trim().toLowerCase();let n=0,html='';
   const famOk=b=>st.f==='all'||st.f===b.fam, raceOk=st.f==='all'||st.f==='race', modsOk=st.f==='all'||st.f==='mods';
   if(!q){
     for(const f of DATA.fams){
       if(st.f!=='all'&&st.f!==f.id)continue;
-      const bs=DATA.builds.filter(b=>b.fam===f.id);
+      const bs=DATA.builds.filter(b=>b.fam===f.id&&keep(b));
       if(!bs.length)continue;n+=bs.length;
-      html+=`<section class="fam"><div class="famhead"><h2>${esc(f.title)}</h2><p>${esc(f.blurb)}</p></div><div class="grid">${bs.map(card).join('')}</div></section>`;
+      html+=`<section class="fam"><div class="famhead"><h2>${esc(f.title)}</h2><p>${esc(f.blurb)}</p></div><div class="grid">${bs.map(b=>card(b,false)).join('')}</div></section>`;
     }
-    if(raceOk){n+=DATA.races.length;html+=`<section class="fam">${raceHead}<div class="grid">${DATA.races.map(raceCard).join('')}</div></section>`}
+    const races=DATA.races.filter(keepRace);
+    if(raceOk&&races.length){n+=races.length;html+=`<section class="fam">${raceHead}<div class="grid">${races.map(raceCard).join('')}</div></section>`}
     if(modsOk)html+=`<section class="fam">${modHead}<div class="grid">${DATA.mods.map(modCard).join('')}</div></section>`;
     document.getElementById('cnt').textContent=st.f==='mods'?`${DATA.mods.length} challenge runs`:`${n} build${n===1?'':'s'}`;
   }else{
     // Search: builds whose name, alias or a named character matches come first; builds that only
     // mention the words in their text follow in a folded list.
-    const hits=DATA.builds.filter(b=>famOk(b)&&hay(b).includes(q));
+    const hits=DATA.builds.filter(b=>famOk(b)&&keep(b)&&hay(b).includes(q));
     const best=hits.filter(b=>strong(b,q)), rest=hits.filter(b=>!strong(b,q));
-    const rs=raceOk?DATA.races.filter(r=>raceHay(r).includes(q)):[];
+    const rs=raceOk?DATA.races.filter(r=>keepRace(r)&&raceHay(r).includes(q)):[];
     const bestR=rs.filter(r=>r.race.toLowerCase().includes(q)), restR=rs.filter(r=>!r.race.toLowerCase().includes(q));
-    const cards=(bs,races)=>bs.map(card).join('')+races.map(raceCard).join('');
+    const cards=(bs,races)=>bs.map(b=>card(b,true)).join('')+races.map(raceCard).join('');
     const nb=best.length+bestR.length, nr=rest.length+restR.length;
     if(nb)html+=`<section class="fam"><div class="famhead"><h2>Best matches</h2><p>Name, alias, primary skill or a named character matches.</p></div><div class="grid">${cards(best,bestR)}</div></section>`;
     if(nr){
@@ -278,5 +301,25 @@ qi.addEventListener('input',e=>{st.q=e.target.value;render()});
 qi.addEventListener('keydown',e=>{if(e.key==='Enter'){qi.blur();toResults()}});
 qi.addEventListener('search',()=>{if(qi.value)toResults()});
 if(matchMedia('(max-width:640px)').matches)document.querySelector('.howto').removeAttribute('open');
-chips();render();fade();
+const se=document.getElementById('style');
+function seg(){se.innerHTML=[['','Any'],...Object.entries(SCHOOLS)].map(([k,t])=>`<button type="button" aria-pressed="${st.style===k}" data-s="${k}">${k?`<i class="sw sc-${k}"></i>`:''}${t}</button>`).join('')}
+se.onclick=e=>{const b=e.target.closest('button');if(!b)return;st.style=b.dataset.s;seg();render()};
+document.getElementById('base').onchange=e=>{st.base=e.target.checked;render()};
+// Links: #<build id> opens that build. The Link button also copies the full URL.
+function openHash(){
+  const id=decodeURIComponent(location.hash.slice(1));if(!id||!DATA.builds.some(b=>b.id===id))return;
+  st.f='all';st.q='';st.style='';st.base=false;qi.value='';document.getElementById('base').checked=false;chips();seg();render();
+  const el=document.getElementById('b-'+id);if(!el)return;
+  el.querySelector('details.more').open=true;el.classList.add('hl');
+  const bar=document.querySelector('.controls');
+  scrollTo({top:el.getBoundingClientRect().top+scrollY-bar.offsetHeight-8});
+  setTimeout(()=>el.classList.remove('hl'),2000);
+}
+document.getElementById('out').addEventListener('click',e=>{
+  const a=e.target.closest('.lnk');if(!a)return;
+  const url=location.href.split('#')[0]+'#'+a.dataset.id;
+  try{navigator.clipboard&&navigator.clipboard.writeText(url).then(()=>{a.textContent='Copied';setTimeout(()=>a.textContent='Link',1500)},()=>{})}catch(err){}
+});
+addEventListener('hashchange',openHash);
+chips();seg();render();fade();openHash();
 </script>
