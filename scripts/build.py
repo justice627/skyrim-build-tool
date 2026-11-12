@@ -153,7 +153,7 @@ def render_build(b, classes, stones, shouts, books, homes, npcs, terms):
                          "npcs": [npc_name(n) for n in v.get("examples", [])],
                          "attr": [vw.get(a, 0) for a in ATTRS]})
     return {
-        "id": b["id"], "styles": playstyles(skills), "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
+        "id": b["id"], "styles": b.get("playstyles") or playstyles(skills), "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
         "hand": hand, "ref": b.get("ref", ""), "mentions": b.get("mentions", []),
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,

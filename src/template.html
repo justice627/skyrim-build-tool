@@ -83,7 +83,7 @@ footer a{color:var(--accent)}
 .seg button{font:600 11.5px/1 var(--f-body);padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:5px}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .seg .sw{width:7px;height:7px;border-radius:50%}
-.seg .sc-c{background:var(--c-combat)} .seg .sc-m{background:var(--c-magic)} .seg .sc-s{background:var(--c-stealth)}
+.seg .sc-c{background:var(--c-combat)} .seg .sc-m{background:var(--c-magic)} .seg .sc-s{background:var(--c-stealth)} .seg .sc-k{background:var(--muted)}
 .base input{margin:0;width:14px;height:14px}
 .base{white-space:nowrap;font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;cursor:pointer}
 .frow .count{margin-left:auto}
@@ -140,7 +140,7 @@ details.more>summary{font-size:12.5px}
 <header>
   <h1>Skyrim Builds</h1>
   <p class="lede">Character builds for Skyrim. Most come from the game's own NPC classes on UESP; community builds and challenge runs cover the rest. Everything named here is checked against UESP, and anything worked out for this page is marked suggested.</p>
-  <details class="howto" open><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk. <b>More</b> on each card opens its stone, shouts, perks, gear and variants. The <b>Combat</b>, <b>Magic</b> and <b>Stealth</b> filters look at the skills that decide how a build fights: weapons and heavy armor, the spell schools, and sneaking. Crafting, Speech and Light Armor support any style and do not count. Perks on class builds are the ones named NPCs of that class take, read from UESP: hover a perk to see who, and ×2 means two NPCs take it.</details>
+  <details class="howto" open><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk. <b>More</b> on each card opens its stone, shouts, perks, gear and variants. The <b>Combat</b>, <b>Magic</b> and <b>Stealth</b> filters look at the skills that decide how a build fights: weapons and heavy armor, the spell schools, and sneaking. Light Armor supports any style and does not count. <b>Craft</b> marks builds led by Smithing, Enchanting, Alchemy and Speech, such as smiths, merchants and townsfolk. Perks on class builds are the ones named NPCs of that class take, read from UESP: hover a perk to see who, and ×2 means two NPCs take it.</details>
   <div class="legend">
     <span><i class="sw" style="background:var(--c-combat)"></i>Combat skill</span>
     <span><i class="sw" style="background:var(--c-magic)"></i>Magic skill</span>
@@ -154,7 +154,7 @@ details.more>summary{font-size:12.5px}
 <div class="controls">
   <input id="q" type="search" placeholder="Search builds, skills or NPCs" aria-label="Search builds">
   <div class="chips" id="fams" role="group" aria-label="Filter by family"></div>
-  <div class="frow"><div class="seg" id="style" role="group" aria-label="Filter by playstyle" title="Playstyle comes from weapon, armor, spell and sneaking skills. Crafting and Speech do not count."></div><label class="base"><input type="checkbox" id="base"> Base game only</label><span class="count" id="cnt"></span></div>
+  <div class="frow"><div class="seg" id="style" role="group" aria-label="Filter by playstyle" title="Combat, Magic and Stealth come from weapon, armor, spell and sneaking skills. Craft means Smithing, Enchanting, Alchemy and Speech lead the build."></div><label class="base"><input type="checkbox" id="base"> Base game only</label><span class="count" id="cnt"></span></div>
 </div>
 
 <div id="out" style="display:grid;gap:36px"></div>
@@ -241,12 +241,12 @@ const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a rac
 // Filters: playstyle = build.py's playstyles() (weapons/armor, spell schools, sneaking; crafting and
 // Speech left out); base game only hides builds,
 // kits and lore picks that need DLC or a Creation.
-const SCHOOLS={c:'Combat',m:'Magic',s:'Stealth'};
+const SCHOOLS={c:'Combat',m:'Magic',s:'Stealth',k:'Craft'};
 function keep(b){return (!st.style||b.styles.includes(st.style))&&(!st.base||!b.req.length)}
 function keepRace(r){return !st.style||r.styles.includes(st.style)}
 function render(){
   const q=st.q.trim().toLowerCase();let n=0,html='';
-  const famOk=b=>st.f==='all'||st.f===b.fam, raceOk=st.f==='all'||st.f==='race', modsOk=st.f==='all'||st.f==='mods';
+  const famOk=b=>st.f==='all'||st.f===b.fam, raceOk=st.f==='all'||st.f==='race', modsOk=(st.f==='all'&&!st.style)||st.f==='mods';
   if(!q){
     for(const f of DATA.fams){
       if(st.f!=='all'&&st.f!==f.id)continue;

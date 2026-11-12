@@ -10,6 +10,7 @@
 #             variants can have their own examples
 #   lore      optional ledger C picks: {name, ref, evidence, changes, requires (optional), npc (optional,
 #             must be in the UESP NPC data)}. Text is condensed from the ledger row, nothing added.
+#   playstyles optional override of the filter tags (c, m, s, k); only where the skill rule misreads a build
 #   requires  optional list of extra requirements beyond the shouts (DG, HF, DB, CC, AE)
 families:
 - id: steel
@@ -1061,6 +1062,7 @@ builds:
   name: Trader
   inspired_by: Pawnbrokers, tailors and food vendors
   evidence: sourced
+  playstyles: [s, k]  # a pawnbroker: trade is the point
   stone: {early: thief, final: steed, evidence: derived}
   shouts: {ids: [throw-voice, whirlwind-sprint, kynes-peace], evidence: derived}
   examples: ["Brand-Shei", "Fralia Gray-Mane", "Camilla Valerius"]
@@ -1163,6 +1165,7 @@ builds:
   name: Miraak
   inspired_by: Miraak (Dragonborn)
   evidence: sourced
+  playstyles: [c, m]  # Speech 8 stands in for his Thu'um, not trade
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [bend-will, dragon-aspect, cyclone, unrelenting-force], evidence: derived}
   examples: ["Miraak (person)"]
@@ -1248,6 +1251,7 @@ builds:
   aliases: [Unarmed, Brawler]
   weights: {HVA: 3, ENC: 3, Hea: 2, Mag: 0, Sta: 1}
   evidence: partly-sourced
+  playstyles: [c]  # Enchanting serves the gauntlets
   ref: A1
   stone: {early: warrior, final: atronach, evidence: partly-sourced, ref: A1}
   shouts: {ids: [marked-for-death, unrelenting-force, whirlwind-sprint], evidence: partly-sourced, ref: A1}

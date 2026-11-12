@@ -23,8 +23,8 @@ import re
 import sys
 from collections import Counter
 
-from common import (ATTRS, BEAST_FORMS, EVIDENCE, REQUIRES, SKILLS, UNUSABLE_PAGES, by_id, card_weights, load,
-                    load_lookup, npc_classes, skills_in_text, uesp_terms, weights)
+from common import (ATTRS, BEAST_FORMS, EVIDENCE, REQUIRES, SKILLS, STYLE_CODES, UNUSABLE_PAGES, by_id, card_weights,
+                    load, load_lookup, npc_classes, skills_in_text, uesp_terms, weights)
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
 
@@ -237,6 +237,9 @@ def main():
             check_lore_fit(name, b, classes, errors)
         check_extras(name, b, books, errors)
         check_perks(name, b, terms, errors)
+        bad = [s for s in b.get("playstyles", []) if s not in STYLE_CODES]
+        if bad or ("playstyles" in b and not b["playstyles"]):
+            errors.append(f"{name}: playstyles override must list codes from {STYLE_CODES}")
         check_mentions(name, b.get("mentions", []), terms, errors)
         if ("classes" in b) == ("weights" in b):
             errors.append(f"{name}: needs either classes or hand-set weights, not both or neither")

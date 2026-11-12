@@ -69,14 +69,21 @@ def tree_of_page(page):
 # (the game files Light Armor under thief skills, which made a Barbarian read as stealth).
 PLAYSTYLE = {"c": ("1HD", "2HD", "BLO", "HVA", "ARC"), "m": ("ALT", "CON", "DES", "ILU", "RES"),
              "s": ("SNK", "PIC", "LOC")}
+CRAFT = ("SMI", "ENC", "ALC", "SPE")  # "Craft & trade": tagged only when it outweighs every fighting style
+STYLE_CODES = ("c", "m", "s", "k")
 
 
 def playstyles(w, min_weight=2, share=0.3):
-    """Styles a build plays as: each style whose skills (weight 2 or more) hold at least 30% of the
-    total. Builds made only of support skills (Crafter) get none."""
+    """Styles a build plays as: combat, magic or stealth when that style's skills (weight 2 or more) hold
+    at least 30% of the fighting total; "k" (craft and trade) when Smithing, Enchanting, Alchemy and Speech
+    weigh at least as much as the biggest fighting style. builds.yaml may override with `playstyles`."""
     sums = {st: sum(v for k, v in w.items() if k in ks and v >= min_weight) for st, ks in PLAYSTYLE.items()}
     total = sum(sums.values())
-    return [st for st, v in sums.items() if total and v / total >= share]
+    out = [st for st, v in sums.items() if total and v / total >= share]
+    craft = sum(v for k, v in w.items() if k in CRAFT and v >= min_weight)
+    if craft and craft >= max(sums.values()):
+        out.append("k")
+    return out
 
 
 def card_weights(b, classes):
