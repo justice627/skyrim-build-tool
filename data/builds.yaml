@@ -143,7 +143,7 @@ builds:
   name: Orc stronghold guard
   inspired_by: Orc warriors guarding the strongholds
   evidence: sourced
-  play: "In play, heavy armor makes noise. Take Sneak's Muffled Movement perk, or treat Sneak as a minor skill."
+  play: "Heavy armor makes noise. Take Sneak's Muffled Movement perk, or treat Sneak as a minor skill."
   mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, marked-for-death], evidence: derived}
@@ -164,7 +164,7 @@ builds:
   name: Shieldmaster
   inspired_by: The Block master and expert trainers
   evidence: sourced
-  play: "In play, heavy armor makes noise. Take Sneak's Muffled Movement perk, or treat Sneak as a minor skill."
+  play: "Heavy armor makes noise. Take Sneak's Muffled Movement perk, or treat Sneak as a minor skill."
   mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, become-ethereal], evidence: derived}
@@ -200,7 +200,7 @@ builds:
   name: Bandit raider
   inspired_by: Bandit melee and Alik'r warriors (identical files)
   evidence: sourced
-  play: "In play, pick one weapon style, one-handed or two-handed. Their perk trees do not overlap."
+  play: "Pick one weapon style, one-handed or two-handed. Their perk trees do not overlap."
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [elemental-fury, whirlwind-sprint, dismay], evidence: derived}
   examples: ["Kematu", "Rochelle the Red"]
@@ -215,7 +215,7 @@ builds:
   name: Hold guard
   inspired_by: Imperial-aligned city guards
   evidence: sourced
-  play: "In play, pick one armor, heavy or light. If you keep heavy armor and Sneak, take Sneak's Muffled Movement perk."
+  play: "Pick one armor, heavy or light. If you keep heavy armor and Sneak, take Sneak's Muffled Movement perk."
   mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, call-of-valor], evidence: derived}
@@ -234,7 +234,7 @@ builds:
   name: Legionnaire
   inspired_by: Imperial soldiers, Stormcloak soldiers and Civil War soldiers
   evidence: sourced
-  play: "In play, pick one kit: a shield, a one-handed weapon and heavy armor, or a two-handed weapon and light armor. Keep Archery as a backup. The class raises all of it, but your perk points will not stretch that far."
+  play: "Pick one kit: a shield, a one-handed weapon and heavy armor, or a two-handed weapon and light armor. Keep Archery as a backup. The class raises all of it, but your perk points will not stretch that far."
   stone: {early: warrior, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, marked-for-death], evidence: derived}
   examples: ["Legate Rikke", "General Tullius"]
@@ -944,7 +944,7 @@ builds:
   inspired_by: The Vigilants
   aliases: [Paladin]
   evidence: sourced
-  play: "In play, pick one armor: heavy for the shield and the front line, light for a roaming hunter."
+  play: "Pick one armor: heavy for the shield and the front line, light for a roaming hunter."
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, become-ethereal], evidence: derived}
   examples: ["Vigilant Tolan", "Keeper Carcette"]
@@ -1100,7 +1100,7 @@ builds:
   name: Laborer
   inspired_by: Farmers, miners and lumberjacks (identical files)
   evidence: sourced
-  play: "In play, pick one weapon style, one-handed or two-handed. The crafting skills are the point of this build."
+  play: "Pick one weapon style, one-handed or two-handed. The crafting skills are the point of this build."
   stone: {early: lover, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, whirlwind-sprint], evidence: derived}
   examples: ["Gerdur", "Sven", "Roggi Knot-Beard"]
@@ -1156,7 +1156,7 @@ builds:
   name: Ebony Warrior
   inspired_by: The Ebony Warrior (Dragonborn)
   evidence: sourced
-  play: "In play, build the core: Heavy Armor, One-Handed, Block and Archery, with Conjuration and Restoration as support. The class file raises nine skills at once, which a player cannot match. Heavy armor is loud, so take Muffled Movement if you sneak."
+  play: "Build the core: Heavy Armor, One-Handed, Block and Archery, with Conjuration and Restoration as support. The class file raises nine skills at once, which a player cannot match. Heavy armor is loud, so take Muffled Movement if you sneak."
   mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [dragonrend, unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
@@ -1199,7 +1199,7 @@ builds:
   name: Ancient Dragonborn
   inspired_by: The ancient Dragonborn class (Dragonborn DLC)
   evidence: sourced
-  play: "In play, Conjuration is the core. Pick one weapon style to back it up, one-handed or two-handed, not both."
+  play: "Conjuration is the core. Pick one weapon style to back it up, one-handed or two-handed, not both."
   stone: {early: mage, final: ritual, evidence: derived}
   shouts: {ids: [dragonrend, fire-breath, unrelenting-force, call-dragon], evidence: derived}
   classes:
