@@ -26,6 +26,14 @@ Read through UESP's wiki API (`action=query&prop=revisions`). Each row is a clai
 | Gloves of the Pugilist add unarmed damage | Skyrim:Gloves of the Pugilist | Confirmed: +10 unarmed damage |
 | Werewolf perk tree comes with Dawnguard | Skyrim:Lycanthropy | Confirmed |
 | Speech strengthens shouts (Miraak, Tongue) | Skyrim:Dragon Shouts, Skyrim:Speech | Corrected: shouts are "not restricted by any stats or skills"; Speech is barter and persuasion only. Miraak's Speech 8 is his class file's number and stays |
+| Imperial soldiers' gear | Skyrim:Imperial Soldier, Skyrim:Hadvar, Skyrim:Specialty Gear | Confirmed: "a full set of Imperial armor" (light or heavy sets exist); Hadvar starts in Imperial light armor with a sword and shield and later wears heavy |
+| Stormcloak soldiers' gear | Skyrim:Stormcloak Soldier, Skyrim:Specialty Gear | Confirmed: Stormcloak armor; the Stormcloak Cuirass is Light Armor |
+| Hold guards' armor | Skyrim:Specialty Gear | Corrected: guard armor (e.g. Whiterun Guard's Armor) is Light Armor, not mixed |
+| Penitus Oculatus armor | Skyrim:Specialty Gear | Corrected: listed in the Imperial Light table, so light, not heavy |
+| Vigilants wear heavy armor with a shield | Skyrim:Vigilant of Stendarr | Corrected: robes, a hood, steel boots and gauntlets; "they never carry shields" |
+| Court sorcerers wear plate | Skyrim:J'zargo, Onmund, Enthir, Farengar Secret-Fire, Wuunferth the Unliving | Corrected: they wear robes |
+| Miraak's fighting style | Skyrim:Miraak (person) | Confirmed: robes, "primarily utilizes destruction magic and dragon shouts", a sword and a staff |
+| Thalmor archers' armor | Skyrim:Thalmor Soldier | Confirmed: light elven or glass armor |
 | Chrysamere, Sunder, Wraithguard: mod or AE? | Skyrim:Chrysamere, Skyrim:Sunder, Skyrim:Wraithguard | Settled: official Creations (CC); Keening is base game |
 
 Not checkable from here: YouTube is blocked, so the FudgeMuppet builds (Sabre Cat, Preserver, Mechanist, Madman, Champion's "The Master") rest on the ledger's secondary write-ups. See docs/roadmap.md, Phase 6.

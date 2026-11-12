@@ -215,8 +215,7 @@ builds:
   name: Hold guard
   inspired_by: Imperial-aligned city guards
   evidence: sourced
-  play: "Pick one armor, heavy or light. If you keep heavy armor and Sneak, take Sneak's Muffled Movement perk."
-  mentions: ["Muffled Movement"]
+  play: "Hold guards wear light guard armor, so build Light Armor and treat the class file's Heavy Armor as optional. Sneak works fine in light armor."
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, call-of-valor], evidence: derived}
   classes:
@@ -227,14 +226,14 @@ builds:
     classes:
     - GuardSonsSkyrim
   description: >-
-    Sword and shield, mixed armor, a bow for the walls, a little Sneak for night patrols. Health first.
-    Good for a lawful roleplay where you take bounties and clear the hold's bandit camps.
+    Sword and shield in light guard armor, a bow for the walls, a little Sneak for night patrols. Health
+    first. Good for a lawful roleplay where you take bounties and clear the hold's bandit camps.
 - id: legionnaire
   family: ranks
   name: Legionnaire
   inspired_by: Imperial soldiers, Stormcloak soldiers and Civil War soldiers
   evidence: sourced
-  play: "Pick one kit: a shield, a one-handed weapon and heavy armor, or a two-handed weapon and light armor. Keep Archery as a backup. The class raises all of it, but your perk points will not stretch that far."
+  play: "Imperial soldiers fight with a sword and shield and start in light Imperial armor; some later wear heavy Imperial armor. Stormcloaks wear light Stormcloak armor. So the kit for either side is a sword, a shield and light armor, with heavy armor as the Imperial upgrade. Keep Archery as a backup."
   stone: {early: warrior, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, marked-for-death], evidence: derived}
   examples: ["Legate Rikke", "General Tullius"]
@@ -604,6 +603,8 @@ builds:
   name: Court sorcerer
   inspired_by: Combat sorcerers and two master trainers
   evidence: sourced
+  mentions: ["Mage Armor"]
+  play: "Wear robes like the court wizards do. Put the class file's Heavy Armor points into Alteration's armor spells instead: its Mage Armor perk makes them stronger when you wear no armor."
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [unrelenting-force, fire-breath, slow-time], evidence: derived}
   examples: ["J'zargo", "Onmund", "Enthir"]
@@ -619,8 +620,8 @@ builds:
     classes:
     - TrainerDestructionMaster
   description: >-
-    A mage who wears plate. Destruction and Illusion lead, heavy armor and a sword back them up. Magicka
-    first, but enough Health to survive melee.
+    Destruction and Illusion lead, with a sword as backup. Magicka first, but enough Health to survive
+    melee. The class file adds Heavy Armor, but the court wizards who use it wear robes.
   lore:
   - name: "Jagar Tharn"
     ref: C35
@@ -631,14 +632,15 @@ builds:
   name: Penitus Oculatus agent
   inspired_by: The Emperor's guard
   evidence: sourced
+  play: "Penitus Oculatus armor is light armor. Train Light Armor in place of the class file's Heavy Armor if you want to look and play the part."
   stone: {early: warrior, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [aura-whisper, unrelenting-force, slow-time], evidence: derived}
   examples: ["Captain Avidius"]
   classes:
   - EncClassPenitusOculatus
   description: >-
-    One-hander and heavy armor with Destruction backup and a shield. Even attribute split. A bodyguard
-    who fights in formation and burns what the sword misses.
+    One-hander with Destruction backup and a shield. Even attribute split. A bodyguard who fights in
+    formation and burns what the sword misses.
 - id: bandit-chief
   family: battle
   name: Bandit chief
@@ -944,7 +946,7 @@ builds:
   inspired_by: The Vigilants
   aliases: [Paladin]
   evidence: sourced
-  play: "Pick one armor: heavy for the shield and the front line, light for a roaming hunter."
+  play: "Vigilants never carry shields, so Block is for blocking with your weapon. Their boots and gauntlets are steel, so keep Heavy Armor and let Light Armor go."
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, become-ethereal], evidence: derived}
   examples: ["Vigilant Tolan", "Keeper Carcette"]
@@ -955,8 +957,9 @@ builds:
     classes:
     - Vigilant2hMeleeClass
   description: >-
-    Paladin: sword and shield in heavy armor, Restoration for Sun damage against undead and vampires,
-    Alteration for wards. Health-first. Built for a Dawnguard run.
+    Robes with steel boots and gauntlets, a one-handed weapon, and no shield: Vigilants never carry one.
+    Restoration for Sun damage against undead and vampires, Alteration for wards. Health first. Built
+    for a Dawnguard run.
   lore:
   - name: "Paladin"
     ref: C12
@@ -1178,6 +1181,7 @@ builds:
   name: Miraak
   inspired_by: Miraak (Dragonborn)
   evidence: sourced
+  play: "Miraak wears robes and fights mainly with Destruction and shouts, with a sword and a staff as backup. Lead with Destruction; the class file's Heavy Armor is optional."
   playstyles: [c, m]  # Speech has no effect on shouts (UESP Dragon Shouts); he fights with blade and magic
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [bend-will, dragon-aspect, cyclone, unrelenting-force], evidence: derived}
@@ -1185,9 +1189,9 @@ builds:
   classes:
   - DLC2EncClassMiraak
   description: >-
-    His class file weights Speech 8, but Speech does nothing for shouts: it only helps trade and persuasion.
-    Shouts get stronger with words of power and dragon souls. As a player, put the points into his armor,
-    blade and four magic schools. Health and Magicka over Stamina.
+    His class file weights Speech 8, but Speech does nothing for shouts: it only helps trade and
+    persuasion. Shouts get stronger with words of power and dragon souls. As a player, put the points
+    into Destruction first, then his blade and the other magic schools. Health and Magicka over Stamina.
   lore:
   - name: "Ash-King"
     ref: C3
