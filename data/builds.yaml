@@ -1277,8 +1277,8 @@ builds:
   name: Tongue
   inspired_by: The Greybeards and community Dragonborn builds
   aliases: [The Dragonborn, Thu'um]
-  weights: {SPE: 3, RES: 3, ALT: 2, Hea: 2, Mag: 2, Sta: 1}
-  evidence: partly-sourced
+  weights: {RES: 3, ALT: 3, SPE: 1, Hea: 2, Mag: 2, Sta: 1}  # A2's Greybeard version had Speech 3; lowered because Speech does nothing for shouts
+  evidence: derived
   ref: A2
   stone: {early: lord, evidence: partly-sourced, ref: A2}
   shouts: {ids: [unrelenting-force, become-ethereal, kynes-peace, clear-skies], evidence: partly-sourced, ref: A2}
