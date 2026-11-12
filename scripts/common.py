@@ -124,6 +124,33 @@ def loadout(w, override=None):
     return {"armor": armor, "hands": hands}
 
 
+def race_fit(w, races):
+    """Races whose starting skill bonuses best match a build: score = sum of skill weight x race bonus over the
+    build's skills weighted 2 or more (+10 signature, +5 others; UESP Skyrim:Races). Top two, or three on a tie.
+    Returns [{"race", "boosts": [skill names]}]. Racial powers and attributes are not counted."""
+    code = {n: c for c, n in SKILLS.items()}
+    scored = []
+    for r in races:
+        bonus = {code[r["signature"]]: 10} | {code[s]: 5 for s in r["plus5"]}
+        hits = [(k, v * bonus[k]) for k, v in w.items() if v >= 2 and k in bonus]
+        score = sum(x for _, x in hits)
+        if score:
+            boosts = [SKILLS[k] for k, _ in sorted(hits, key=lambda h: -h[1])]
+            scored.append((score, r["race"], boosts))
+    scored.sort(key=lambda s: (-s[0], s[1]))
+    if not scored:
+        return []
+    cut = scored[1][0] if len(scored) > 1 else scored[0][0]
+    top = [s for s in scored if s[0] >= cut][:3]
+    return [{"race": r, "boosts": b[:3]} for _, r, b in top]
+
+
+def early_perks(trees, code, have, limit=4, max_level=30):
+    """The first perks of a skill tree (needing skill 30 or less), skipping ones the card already shows."""
+    out = [p for p in trees.get(code, []) if p["levels"][0] <= max_level and p["name"] not in have]
+    return [{"n": p["name"], "lvl": p["levels"][0], "fx": p["effect"]} for p in out[:limit]]
+
+
 def card_weights(b, classes):
     """The weights a build's card shows: hand-set `weights`, or its first class file's."""
     return b["weights"] if "weights" in b else classes[b["classes"][0]]["weights"]

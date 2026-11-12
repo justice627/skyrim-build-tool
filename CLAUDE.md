@@ -6,6 +6,7 @@ A static reference page of Skyrim character builds. NPC class weights from UESP 
 
 ```bash
 pip install -r requirements.txt     # PyYAML only
+python scripts/refresh.py           # refresh data from UESP, then validate and build (--offline: validate and build only)
 python scripts/validate.py          # must pass before every commit
 python scripts/build.py             # writes dist/index.html and dist/artifact.html
 python -m http.server -d dist 8000  # preview at http://localhost:8000
@@ -26,6 +27,8 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `data/kits.yaml`, `data/modifiers.yaml`: gear kits (ledger D) and challenge runs (ledger F1).
 - `data/black_books.yaml`: the Dragonborn Black Books and their powers (sourced from UESP).
 - `scripts/fetch_terms.py`: checks every `mentions` term against UESP and saves `docs/sources/uesp-terms.json`. Run it after adding or renaming a mention, before `validate.py`.
+- `scripts/refresh.py`: runs fetch_npcs, fetch_gear, fetch_skill_perks, fetch_terms, validate and build in that order, stopping at the first failure. Use it instead of running the fetch scripts by hand.
+- `scripts/fetch_skill_perks.py`: all 18 skill trees from UESP's skill pages (`docs/sources/uesp-skill-perks.json`): each perk's ranks, required levels and effect.
 - `scripts/fetch_gear.py`: what each build's Example characters wear, from their UESP pages (`docs/sources/uesp-npc-gear.json`). Run before `fetch_terms.py`.
 - `scripts/fetch_npcs.py`: refreshes `uesp-npc-classes.json` from UESP's wiki API. UESP's normal pages are blocked from cloud sessions, but `https://en.uesp.net/w/api.php` works.
 
@@ -56,5 +59,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Playstyle filter tags come from `playstyles()` in `scripts/common.py`: weapon, armor and Block skills are combat, the five spell schools magic, Sneak, Pickpocket and Lockpicking stealth; Light Armor does not count. A style is tagged when its skills (weight 2 or more) hold 30% of the fighting total. "k" (Craft) is added when Smithing, Enchanting, Alchemy and Speech weigh at least as much as the biggest fighting style. A build's `playstyles` field overrides the rule; keep overrides rare and give the reason in a comment.
 - Optional `play`: one or two sentences on how to actually play a build where its data misleads (too many primaries, both armors or both weapon styles, Sneak in heavy armor). Shown as "In play", always suggested. Perks or items it names go in `mentions`.
 - Gear: every card shows a Gear line. `signature` (on builds, variants and lore picks) lists a group's own set as UESP titles, with a comment naming the UESP page that ties group and gear; `fetch_terms.py` checks each item and records its origin from the item's own row or section. `loadout` comes from `loadout()` in `common.py` (armor from the armor skills, hands from weapon, Block and spell skills); a `loadout: {armor, hands}` override is allowed where the characters or the In play line say otherwise, with the reason in a comment. "As worn by" comes from `scripts/fetch_gear.py` (`docs/sources/uesp-npc-gear.json`).
+- Race fit: `race_fit()` in `common.py` scores each race by skill weight x race bonus (+10 signature, +5 others) over the build's skills weighted 2 or more, and shows the top two (three on a tie). It ignores racial powers and attributes; the page says so.
+- Early perks: for each primary skill the card shows no perk for, `early_perks()` lists that tree's perks needing skill 30 or less (at most 4), from `uesp-skill-perks.json`.
 - Optional `beast_form` (`werewolf`, `vampire-lord`) and `black_book` (`{book, power, evidence, ref}`).
 - Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json`.

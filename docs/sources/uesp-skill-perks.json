@@ -1,0 +1,1553 @@
+{
+ "retrieved": "2026-11-12",
+ "source": "https://en.uesp.net/w/api.php",
+ "trees": {
+  "ARC": [
+   {
+    "name": "Overdraw",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Archery is 20/40/60/80/twice as effective."
+   },
+   {
+    "name": "Critical Shot",
+    "ranks": 3,
+    "levels": [
+     30,
+     60,
+     90
+    ],
+    "effect": "Rank 1 has a 10% chance of doing a critical hit. Rank 2 has a 15% chance of doing a critical hit for 25% more critical damage. Rank 3 has a 20% chance of doing a critical hit that does 50% more critical damage."
+   },
+   {
+    "name": "Eagle Eye",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Pressing Block while aiming will zoom in your view."
+   },
+   {
+    "name": "Steady Hand",
+    "ranks": 2,
+    "levels": [
+     40,
+     60
+    ],
+    "effect": "Zooming in with a bow slows time by 25%. The second rank doubles the effect."
+   },
+   {
+    "name": "Hunter's Discipline",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Recover twice as many arrows from dead bodies."
+   },
+   {
+    "name": "Power Shot",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Arrows stagger all but the largest opponents 50% of the time"
+   },
+   {
+    "name": "Ranger",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Able to move faster with a drawn bow."
+   },
+   {
+    "name": "Quick Shot",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Can draw a bow 30% faster."
+   },
+   {
+    "name": "Bullseye",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "15% chance of paralyzing the target for a few seconds."
+   }
+  ],
+  "BLO": [
+   {
+    "name": "Shield Wall",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Blocking is 20/25/30/35/40% more effective."
+   },
+   {
+    "name": "Deflect Arrows",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Arrows that hit the shield do no damage."
+   },
+   {
+    "name": "Power Bash",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Able to do a power bash."
+   },
+   {
+    "name": "Quick Reflexes",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Time slows down if you are blocking during an enemy's power attack."
+   },
+   {
+    "name": "Deadly Bash",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Bashing does five times more damage."
+   },
+   {
+    "name": "Elemental Protection",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Reduce fire, frost and shock damage 50%."
+   },
+   {
+    "name": "Bash Disarm",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Chance to disarm when power bashing."
+   },
+   {
+    "name": "Block Runner",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Able to move faster with a shield or weapon raised."
+   },
+   {
+    "name": "Shield Charge",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Sprinting with a shield raised knocks down most targets."
+   }
+  ],
+  "HVA": [
+   {
+    "name": "Juggernaut",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Increases armor rating for Heavy Armor by 20/40/60/80/100%."
+   },
+   {
+    "name": "Fists of Steel",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Unarmed attacks with Heavy Armor gauntlets do their armor rating in extra damage."
+   },
+   {
+    "name": "Well Fitted",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "25% Armor bonus if wearing all Heavy Armor: head, chest, hands, feet."
+   },
+   {
+    "name": "Cushioned",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Half damage from falling if wearing all Heavy Armor: head, chest, hands, feet."
+   },
+   {
+    "name": "Tower of Strength",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "50% less stagger when wearing only Heavy Armor."
+   },
+   {
+    "name": "Conditioning",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Heavy Armor weighs nothing and doesn't slow you down when worn."
+   },
+   {
+    "name": "Matching Set",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Additional 25% Armor bonus if wearing a matched set of Heavy Armor."
+   },
+   {
+    "name": "Reflect Blows",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "10% chance to reflect melee damage back to the enemy while wearing all Heavy Armor: head, chest, hands, feet."
+   }
+  ],
+  "1HD": [
+   {
+    "name": "Armsman",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "One-Handed weapons do 20/40/60/80/100% more damage."
+   },
+   {
+    "name": "Fighting Stance",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Power attacks with one-handed weapons cost 25% less stamina."
+   },
+   {
+    "name": "Bladesman",
+    "ranks": 3,
+    "levels": [
+     30,
+     60,
+     90
+    ],
+    "effect": "Attacks with swords have a 10/15/20% chance of doing critical damage."
+   },
+   {
+    "name": "Bone Breaker",
+    "ranks": 3,
+    "levels": [
+     30,
+     60,
+     90
+    ],
+    "effect": "Attacks with maces ignore 25/50/75% of armor."
+   },
+   {
+    "name": "Dual Flurry",
+    "ranks": 2,
+    "levels": [
+     30,
+     50
+    ],
+    "effect": "Dual wielding attacks are 20/35% faster."
+   },
+   {
+    "name": "Hack and Slash",
+    "ranks": 3,
+    "levels": [
+     30,
+     60,
+     90
+    ],
+    "effect": "Attacks with war axes cause extra/more/even more bleeding damage."
+   },
+   {
+    "name": "Critical Charge",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Can do a one-handed power attack while sprinting that does double critical damage."
+   },
+   {
+    "name": "Savage Strike",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Standing power attacks do 25% bonus damage with a chance to decapitate your enemies."
+   },
+   {
+    "name": "Dual Savagery",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Dual wielding power attacks do 50% bonus damage."
+   },
+   {
+    "name": "Paralyzing Strike",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Backwards power attack has a 25% chance to paralyze the target."
+   }
+  ],
+  "SMI": [
+   {
+    "name": "Steel Smithing",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Create Steel armor and weapons at forges."
+   },
+   {
+    "name": "Dwarven Smithing",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Create Dwarven armor and weapons at forges."
+   },
+   {
+    "name": "Elven Smithing",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Create Elven armor and weapons at forges."
+   },
+   {
+    "name": "Advanced Armors",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Create scaled and plate armor at forges."
+   },
+   {
+    "name": "Orcish Smithing",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Create Orcish armor and weapons at forges."
+   },
+   {
+    "name": "Arcane Blacksmith",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Improve magical weapons and armor."
+   },
+   {
+    "name": "Glass Smithing",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Create Glass armor and weapons at forges."
+   },
+   {
+    "name": "Ebony Smithing",
+    "ranks": 1,
+    "levels": [
+     80
+    ],
+    "effect": "Create Ebony armor and weapons at forges."
+   },
+   {
+    "name": "Daedric Smithing",
+    "ranks": 1,
+    "levels": [
+     90
+    ],
+    "effect": "Create Daedric armor and weapons at forges."
+   },
+   {
+    "name": "Dragon Armor",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Create Dragon armor at forges."
+   }
+  ],
+  "2HD": [
+   {
+    "name": "Barbarian",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Two-handed weapons do 20/40/60/80/100% more damage."
+   },
+   {
+    "name": "Champion's Stance",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Power attacks cost 25% less stamina."
+   },
+   {
+    "name": "Deep Wounds",
+    "ranks": 3,
+    "levels": [
+     30,
+     60,
+     90
+    ],
+    "effect": "Attacks with greatswords have a 10/15/20% chance of doing critical damage."
+   },
+   {
+    "name": "Limbsplitter",
+    "ranks": 3,
+    "levels": [
+     30,
+     60,
+     90
+    ],
+    "effect": "Attacks with battleaxes do extra/more/even more bleeding damage."
+   },
+   {
+    "name": "Skullcrusher",
+    "ranks": 3,
+    "levels": [
+     30,
+     60,
+     90
+    ],
+    "effect": "Attacks with warhammers ignore 25/50/75% of the target's armor rating."
+   },
+   {
+    "name": "Devastating Blow",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Standing power attacks do 25% bonus damage. It may also decapitate an enemy."
+   },
+   {
+    "name": "Great Critical Charge",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Sprinting power attacks do double critical damage."
+   },
+   {
+    "name": "Sweep",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Sideways power attacks hit all nearby targets."
+   },
+   {
+    "name": "Warmaster",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Backwards power attacks have 25% chance of causing paralysis."
+   }
+  ],
+  "ALT": [
+   {
+    "name": "Novice Alteration",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Cast Novice level Alteration spells for half magicka."
+   },
+   {
+    "name": "Alteration Dual Casting",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Dual casting an Alteration spell overcharges the effects into an even more powerful version."
+   },
+   {
+    "name": "Apprentice Alteration",
+    "ranks": 1,
+    "levels": [
+     25
+    ],
+    "effect": "Cast Apprentice level Alteration spells for half magicka."
+   },
+   {
+    "name": "Mage Armor",
+    "ranks": 3,
+    "levels": [
+     30,
+     50,
+     70
+    ],
+    "effect": "Protection spells like ''Stoneflesh'' are 2/2.5/3 times as strong if not wearing armor."
+   },
+   {
+    "name": "Magic Resistance",
+    "ranks": 3,
+    "levels": [
+     30,
+     50,
+     70
+    ],
+    "effect": "Blocks 10/20/30% of a spell's effects."
+   },
+   {
+    "name": "Adept Alteration",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Cast Adept level Alteration spells for half magicka."
+   },
+   {
+    "name": "Stability",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Alteration spells have greater duration."
+   },
+   {
+    "name": "Expert Alteration",
+    "ranks": 1,
+    "levels": [
+     75
+    ],
+    "effect": "Cast Expert level Alteration spells for half magicka."
+   },
+   {
+    "name": "Atronach",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Absorb 30% of the magicka of any spells that hit you including from your own conjuration spells."
+   },
+   {
+    "name": "Master Alteration",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Cast Master level Alteration spells for half magicka."
+   }
+  ],
+  "CON": [
+   {
+    "name": "Conjuration",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Dual Casting: 20 Conjuration. Dual casting a Conjuration spell overcharges the spell, allowing it to last longer."
+   },
+   {
+    "name": "Novice Conjuration",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Cast Novice level Conjuration spells for half magicka."
+   },
+   {
+    "name": "Mystic Binding",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Bound weapons do more damage."
+   },
+   {
+    "name": "Apprentice Conjuration",
+    "ranks": 1,
+    "levels": [
+     25
+    ],
+    "effect": "Cast Apprentice level Conjuration spells for half magicka."
+   },
+   {
+    "name": "Soul Stealer",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Bound weapons cast Soul Trap on targets."
+   },
+   {
+    "name": "Summoner",
+    "ranks": 2,
+    "levels": [
+     30,
+     70
+    ],
+    "effect": "Can summon atronachs or raise undead twice/three times as far away."
+   },
+   {
+    "name": "Atromancy",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Double duration for conjured Atronachs."
+   },
+   {
+    "name": "Necromancy",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Greater duration for reanimated undead."
+   },
+   {
+    "name": "Adept Conjuration",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Cast Adept level Conjuration spells for half magicka."
+   },
+   {
+    "name": "Oblivion Binding",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Bound weapons will banish summoned creatures and turn raised ones."
+   },
+   {
+    "name": "Dark Souls",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Reanimated undead have 100 points more health."
+   },
+   {
+    "name": "Expert Conjuration",
+    "ranks": 1,
+    "levels": [
+     75
+    ],
+    "effect": "Cast Expert level Conjuration spells for half magicka."
+   },
+   {
+    "name": "Elemental Potency",
+    "ranks": 1,
+    "levels": [
+     80
+    ],
+    "effect": "Conjured Atronachs are 50% more powerful."
+   },
+   {
+    "name": "Master Conjuration",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Cast Master level Conjuration spells for half magicka."
+   },
+   {
+    "name": "Twin Souls",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "You can have two atronachs or reanimated zombies."
+   }
+  ],
+  "DES": [
+   {
+    "name": "Novice Destruction",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Cast Novice level Destruction spells for half magicka."
+   },
+   {
+    "name": "Destruction Dual Casting",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Dual casting a Destruction spell overcharges the effects into an even more powerful version."
+   },
+   {
+    "name": "Apprentice Destruction",
+    "ranks": 1,
+    "levels": [
+     25
+    ],
+    "effect": "Cast Apprentice level Destruction spells for half magicka."
+   },
+   {
+    "name": "Augmented Flames",
+    "ranks": 2,
+    "levels": [
+     30,
+     60
+    ],
+    "effect": "Fire spells do 25/50% more damage."
+   },
+   {
+    "name": "Augmented Frost",
+    "ranks": 2,
+    "levels": [
+     30,
+     60
+    ],
+    "effect": "Frost spells do 25/50% more damage."
+   },
+   {
+    "name": "Augmented Shock",
+    "ranks": 2,
+    "levels": [
+     30,
+     60
+    ],
+    "effect": "Shock spells do 25/50% more damage."
+   },
+   {
+    "name": "Impact",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Most destruction spells will stagger an opponent when dual cast."
+   },
+   {
+    "name": "Rune Master",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Can place runes five times farther away."
+   },
+   {
+    "name": "Adept Destruction",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Cast Adept level Destruction spells for half magicka."
+   },
+   {
+    "name": "Intense Flames",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Fire damage causes targets to flee if their health is low."
+   },
+   {
+    "name": "Deep Freeze",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Frost damage paralyzes targets if their health is low."
+   },
+   {
+    "name": "Disintegrate",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Shock damage disintegrates targets if their health is low."
+   },
+   {
+    "name": "Expert Destruction",
+    "ranks": 1,
+    "levels": [
+     75
+    ],
+    "effect": "Cast Expert level Destruction spells for half magicka."
+   },
+   {
+    "name": "Master Destruction",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Cast Master level Destruction spells for half magicka."
+   }
+  ],
+  "ENC": [
+   {
+    "name": "Enchanter",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "New enchantments are 20/40/60/80/100% stronger."
+   },
+   {
+    "name": "Soul Squeezer",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Soul gems provide extra magicka when recharging."
+   },
+   {
+    "name": "Fire Enchanter",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Fire enchantments on weapons and armor are 25% stronger."
+   },
+   {
+    "name": "Frost Enchanter",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Frost enchantments on weapons and armor are 25% stronger."
+   },
+   {
+    "name": "Soul Siphon",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Death blows to creatures, but not people, trap 5% of the victim's soul, recharging the weapon."
+   },
+   {
+    "name": "Insightful Enchanter",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Skill enchantments on armor are 25% stronger."
+   },
+   {
+    "name": "Storm Enchanter",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Shock enchantments on weapons and armor are 25% stronger."
+   },
+   {
+    "name": "Corpus Enchanter",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Health, magicka, and stamina enchantments on armor are stronger."
+   },
+   {
+    "name": "Extra Effect",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Can put two enchantments on the same item."
+   }
+  ],
+  "ILU": [
+   {
+    "name": "Novice Illusion",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Cast Novice level Illusion spells for half magicka."
+   },
+   {
+    "name": "Animage",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Illusion spells now work on higher level animals."
+   },
+   {
+    "name": "Illusion Dual Casting",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Dual casting an Illusion spell overcharges the effects into an even more powerful version."
+   },
+   {
+    "name": "Apprentice Illusion",
+    "ranks": 1,
+    "levels": [
+     25
+    ],
+    "effect": "Cast Apprentice level Illusion spells for half magicka."
+   },
+   {
+    "name": "Hypnotic Gaze",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Calm spells now work on higher level opponents. Cumulative with Kindred Mage and Animage."
+   },
+   {
+    "name": "Kindred Mage",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "All Illusion spells work on higher level people."
+   },
+   {
+    "name": "Adept Illusion",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Cast Adept level Illusion spells for half magicka."
+   },
+   {
+    "name": "Aspect of Terror",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Fear spells work on higher level opponents. Cumulative with Kindred Mage and Animage."
+   },
+   {
+    "name": "Quiet Casting",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "All spells you cast from any school of magic are silent to others."
+   },
+   {
+    "name": "Rage",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Frenzy spells work on higher level opponents. Cumulative with Kindred Mage and Animage."
+   },
+   {
+    "name": "Expert Illusion",
+    "ranks": 1,
+    "levels": [
+     75
+    ],
+    "effect": "Cast Expert level Illusion spells for half magicka."
+   },
+   {
+    "name": "Master of the Mind",
+    "ranks": 1,
+    "levels": [
+     90
+    ],
+    "effect": "Illusion spells work on undead, daedra and automatons."
+   },
+   {
+    "name": "Master Illusion",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Cast Master level Illusion spells for half magicka."
+   }
+  ],
+  "RES": [
+   {
+    "name": "Novice Restoration",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Cast Novice level Restoration spells for half magicka."
+   },
+   {
+    "name": "Regeneration",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Healing spells cure 50% more."
+   },
+   {
+    "name": "Restoration Dual Casting",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Dual casting a Restoration spell overcharges the effects into an even more powerful version."
+   },
+   {
+    "name": "Apprentice Restoration",
+    "ranks": 1,
+    "levels": [
+     25
+    ],
+    "effect": "Cast Apprentice level Restoration spells for half magicka."
+   },
+   {
+    "name": "Recovery",
+    "ranks": 2,
+    "levels": [
+     30,
+     60
+    ],
+    "effect": "Magicka regenerates 25/50% faster."
+   },
+   {
+    "name": "Respite",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Healing spells also restore Stamina."
+   },
+   {
+    "name": "Adept Restoration",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Cast Adept level Restoration spells for half magicka."
+   },
+   {
+    "name": "Ward Absorb",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Wards recharge your magicka when hit with spells."
+   },
+   {
+    "name": "Necromage",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "All spells are more effective against undead."
+   },
+   {
+    "name": "Expert Restoration",
+    "ranks": 1,
+    "levels": [
+     75
+    ],
+    "effect": "Cast Expert level Restoration spells for half magicka."
+   },
+   {
+    "name": "Avoid Death",
+    "ranks": 1,
+    "levels": [
+     90
+    ],
+    "effect": "Once a day, heals 250 points automatically if you fall below 10% health."
+   },
+   {
+    "name": "Master Restoration",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Cast Master level Restoration spells for half magicka."
+   }
+  ],
+  "ALC": [
+   {
+    "name": "Alchemist",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Potions and poisons you make are 20/40/60/80/100% stronger."
+   },
+   {
+    "name": "Physician",
+    "ranks": 1,
+    "levels": [
+     20
+    ],
+    "effect": "Potions you mix that restore Health, Magicka or Stamina are 25% more powerful."
+   },
+   {
+    "name": "Benefactor",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Potions you mix with beneficial effects have an additional 25% greater magnitude."
+   },
+   {
+    "name": "Poisoner",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Poisons you mix are 25% more effective."
+   },
+   {
+    "name": "Experimenter",
+    "ranks": 3,
+    "levels": [
+     50,
+     70,
+     90
+    ],
+    "effect": "Eating an ingredient reveals first two/first three/all its effects."
+   },
+   {
+    "name": "Concentrated Poison",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Poisons applied to weapons last for twice as many hits."
+   },
+   {
+    "name": "Green Thumb",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Two ingredients are gathered from plants."
+   },
+   {
+    "name": "Snakeblood",
+    "ranks": 1,
+    "levels": [
+     80
+    ],
+    "effect": "50% resistance to all poisons."
+   },
+   {
+    "name": "Purity",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "All negative effects are removed from created potions, and all positive effects are removed from created poisons."
+   }
+  ],
+  "LTA": [
+   {
+    "name": "Agile Defender",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Increase armor rating for Light armor by 20/40/60/80/100%."
+   },
+   {
+    "name": "Custom Fit",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "25% Armor bonus if wearing all Light Armor: head, chest, hands, feet."
+   },
+   {
+    "name": "Unhindered",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Light Armor weighs nothing and doesn't slow you down when worn."
+   },
+   {
+    "name": "Wind Walker",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Stamina regenerates 50% faster in all Light Armor: head, chest, hands, feet."
+   },
+   {
+    "name": "Matching Set",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Additional 25% Armor bonus if wearing a matched set of Light Armor."
+   },
+   {
+    "name": "Deft Movement",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "10% chance of avoiding all damage from a melee attack while wearing all Light Armor: head, chest, hands, feet."
+   }
+  ],
+  "LOC": [
+   {
+    "name": "Novice Locks",
+    "ranks": 1,
+    "levels": [
+     0
+    ],
+    "effect": "Novice locks are much easier to pick."
+   },
+   {
+    "name": "Apprentice Locks",
+    "ranks": 1,
+    "levels": [
+     25
+    ],
+    "effect": "Apprentice locks are much easier to pick."
+   },
+   {
+    "name": "Quick Hands",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Able to pick locks without being noticed."
+   },
+   {
+    "name": "Adept Locks",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Adept locks are much easier to pick."
+   },
+   {
+    "name": "Wax Key",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Automatically gives you a copy of a picked lock's key if it has one."
+   },
+   {
+    "name": "Golden Touch",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Find more gold in chests."
+   },
+   {
+    "name": "Treasure Hunter",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "50% greater chance of finding special treasure."
+   },
+   {
+    "name": "Expert Locks",
+    "ranks": 1,
+    "levels": [
+     75
+    ],
+    "effect": "Expert locks are much easier to pick."
+   },
+   {
+    "name": "Locksmith",
+    "ranks": 1,
+    "levels": [
+     80
+    ],
+    "effect": "Pick starts close to the lock opening position."
+   },
+   {
+    "name": "Master Locks",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Master locks are much easier to pick."
+   },
+   {
+    "name": "Unbreakable",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Lockpicks never break."
+   }
+  ],
+  "PIC": [
+   {
+    "name": "Light Fingers",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Pickpocketing bonus of 20/40/60/80/100%. Item weight and value reduce pickpocketing odds."
+   },
+   {
+    "name": "Night Thief",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "+25% chance to pickpocket if the target is asleep."
+   },
+   {
+    "name": "Cutpurse",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Pickpocketing gold is 50% easier."
+   },
+   {
+    "name": "Poisoned",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Silently harm enemies by placing poisons in their pockets."
+   },
+   {
+    "name": "Extra Pockets",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Carrying capacity is increased by 100."
+   },
+   {
+    "name": "Keymaster",
+    "ranks": 1,
+    "levels": [
+     60
+    ],
+    "effect": "Pickpocketing keys almost always works."
+   },
+   {
+    "name": "Misdirection",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Can pickpocket equipped weapons."
+   },
+   {
+    "name": "Perfect Touch",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Can pickpocket equipped items."
+   }
+  ],
+  "SNK": [
+   {
+    "name": "Stealth",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "You are 20/25/30/35/40% harder to detect when sneaking."
+   },
+   {
+    "name": "Backstab",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Sneak attacks with one-handed weapons now do six times damage."
+   },
+   {
+    "name": "Muffled Movement",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Noise from armor is reduced 50%."
+   },
+   {
+    "name": "Deadly Aim",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "Sneak attacks with bows now do three times damage."
+   },
+   {
+    "name": "Light Foot",
+    "ranks": 1,
+    "levels": [
+     40
+    ],
+    "effect": "You won't trigger pressure plates."
+   },
+   {
+    "name": "Assassin's Blade",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Sneak attacks with daggers now do a total of fifteen times normal damage."
+   },
+   {
+    "name": "Silent Roll",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Sprinting while sneaking executes a silent forward roll."
+   },
+   {
+    "name": "Silence",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Walking and running does not affect detection."
+   },
+   {
+    "name": "Shadow Warrior",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Crouching stops combat for a moment and forces distant opponents to search for a target."
+   }
+  ],
+  "SPE": [
+   {
+    "name": "Haggling",
+    "ranks": 5,
+    "levels": [
+     0,
+     20,
+     40,
+     60,
+     80
+    ],
+    "effect": "Buying and selling prices are 10/15/20/25/30% better."
+   },
+   {
+    "name": "Allure",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "10% better prices with the opposite sex."
+   },
+   {
+    "name": "Bribery",
+    "ranks": 1,
+    "levels": [
+     30
+    ],
+    "effect": "Can bribe guards to ignore crimes."
+   },
+   {
+    "name": "Merchant",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Can sell any type of item to any kind of merchant."
+   },
+   {
+    "name": "Persuasion",
+    "ranks": 1,
+    "levels": [
+     50
+    ],
+    "effect": "Persuasion attempts are 30% easier."
+   },
+   {
+    "name": "Intimidation",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Intimidation is twice as successful."
+   },
+   {
+    "name": "Investor",
+    "ranks": 1,
+    "levels": [
+     70
+    ],
+    "effect": "Can invest 500 gold with a shopkeeper to increase his available gold permanently."
+   },
+   {
+    "name": "Fence",
+    "ranks": 1,
+    "levels": [
+     90
+    ],
+    "effect": "Can barter stolen goods with any merchant you have invested in."
+   },
+   {
+    "name": "Master Trader",
+    "ranks": 1,
+    "levels": [
+     100
+    ],
+    "effect": "Every merchant in the world gains 1000 gold for bartering."
+   }
+  ]
+ }
+}

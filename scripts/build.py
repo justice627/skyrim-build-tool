@@ -9,8 +9,8 @@ import re
 
 import json as _json
 
-from common import (ARMOR, ATTRS, BEAST_FORMS, HANDS, ROOT, SCHOOL, SKILLS, by_id, card_weights, load, load_lookup,
-                    loadout, npc_classes, playstyles, uesp_terms, weights)
+from common import (ARMOR, ATTRS, BEAST_FORMS, HANDS, ROOT, SCHOOL, SKILLS, by_id, card_weights, early_perks, load,
+                    load_lookup, loadout, npc_classes, playstyles, race_fit, uesp_terms, weights)
 
 SPELL_SCHOOLS = ("ALT", "CON", "DES", "ILU", "RES")
 LEVELS = 49  # level-ups from level 2 to 50
@@ -162,7 +162,20 @@ def render_gear(b, skills, terms, worn):
     return {"armor": ARMOR[lo["armor"]], "hands": [HANDS[h] for h in lo["hands"]], "sig": sig, "worn": seen}
 
 
-def render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn):
+def tree_perks(skills, shown, trees):
+    """Early skill-tree perks for each primary skill the card shows no perk for (NPC or ledger perks)."""
+    covered = {g["s"] for g in shown}
+    have = {p["n"] for g in shown for p in g["perks"]}
+    out = []
+    for k, v in sorted(skills.items(), key=lambda kv: -kv[1]):
+        if v >= 3 and SKILLS[k] not in covered:
+            ps = early_perks(trees, k, have)
+            if ps:
+                out.append({"s": SKILLS[k], "sc": SCHOOL[k], "perks": ps})
+    return out
+
+
+def render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn, races=None, trees=None):
     w = card_weights(b, classes)
     hand = "weights" in b
     # A hand-set ratio is already a player recommendation, so plan() does not adjust it.
@@ -180,13 +193,15 @@ def render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn):
     return {
         "id": b["id"], "styles": b.get("playstyles") or playstyles(skills), "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
         "hand": hand, "ref": b.get("ref", ""), "play": b.get("play", ""),
-        "gear": render_gear(b, skills_of(b, classes), terms, worn), "mentions": b.get("mentions", []),
+        "gear": render_gear(b, skills_of(b, classes), terms, worn),
+        "races": race_fit(skills_of(b, classes), races or []), "mentions": b.get("mentions", []),
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
         "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []),
         "lore": render_lore(b, homes, terms),
         "perks": hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms),
+        "tree": tree_perks(skills, hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms), trees or {}),
         "perk_ev": b["perks"]["evidence"] if hand and b.get("perks") else ("sourced" if not hand else ""),
         "perk_ref": b["perks"].get("ref", "") if hand and b.get("perks") else "", "ev": b["evidence"], **render_picks(b, stones, shouts, books),
     }
@@ -230,9 +245,10 @@ def page_data():
     npcs = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())["classes"]
     terms = uesp_terms()
     worn = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-gear.json").read_text())["npcs"]
+    trees = _json.loads((ROOT / "docs" / "sources" / "uesp-skill-perks.json").read_text())["trees"]
     return {
         "fams": doc["families"],
-        "builds": [dict(render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn),
+        "builds": [dict(render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn, races, trees),
                         kits=kits_by_build.get(b["id"], []),
                         mods=[m["name"] for m in mods if b["id"] in m["pairs"]]) for b in doc["builds"]],
         "mods": [{"n": m["name"], "rule": m["rule"], "ref": m["ref"], "ev": m["evidence"],

@@ -108,6 +108,12 @@ Every UESP lore faction checked for how it fights (ledger G, `docs/research/lore
 
 Every card has a Gear line: the group's own set where it has one (Imperial, Stormcloak, Thieves Guild, Shrouded, Nightingale, Blades, Penitus Oculatus, Thalmor, Forsworn, Vampire, Dawnguard, plus character sets such as Miraak's and Frea's), checked on UESP with DLC and Creation tags, then the suggested loadout. "As worn by" under More lists what Example characters wear (83 characters). Lore picks show their gear too (Indoril, bonemold, chitin, Stalhrim, Morag Tong). The check found three mismatches between a card and its gear, now noted: Blades armor and Frea's Nordic carved armor are heavy, and Dawnguard armor comes in light and heavy sets that must not be mixed.
 
+## Race fit, early perks, refresh (2026-11-12)
+
+- Every card has a Race line: the races whose starting skill bonuses best match the build (rule in `race_fit()`). Tapping a race shows it and the builds it fits.
+- Primary skills with no perk on the card now show that tree's early perks with required levels (180 perks from UESP's 18 skill pages). Only 2 builds still show no perks at all.
+- `scripts/refresh.py` runs the whole data chain in order. Search now matches from the start of a word ("orc" no longer finds sorcerers).
+
 ## Out of scope
 
 Mod-only builds (Requiem templates, the Ordinator Dragonborn, FudgeMuppet's modded Sand Demon, Celestial and King), ESO class conversions, and full perk templates for all 18 trees.

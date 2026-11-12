@@ -69,6 +69,14 @@ sources:
     notes: >-
       The loadout (armor type and weapons) is derived from the card's skills and marked suggested.
       Signature sets are tied to their group by a UESP page named in a comment in builds.yaml.
+  - id: uesp-skill-perks
+    title: UESP skill pages, perk trees (wiki API)
+    url: https://en.uesp.net/w/api.php
+    used_for: Early perks on cards (docs/sources/uesp-skill-perks.json)
+    evidence: sourced
+    notes: >-
+      180 perks with ranks, required levels and effects. Race fit uses the race bonuses already in
+      data/races.yaml; the ranking rule is this tool's (derived).
   - id: uesp-black-books
     title: UESP, Skyrim:Powers (Black Book section)
     url: https://en.uesp.net/w/api.php

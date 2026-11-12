@@ -16,15 +16,17 @@ Rules:
 - community `perks` are UESP player perks in the build's skills (or the werewolf tree), named in mentions
 - gear kits and challenge runs have ledger refs, known builds, and items/mentions that exist on UESP
 - loadout overrides use known values; signature gear exists on UESP and is not unobtainable
+- every skill tree in uesp-skill-perks.json has a level-0 perk and complete entries
 - every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
 """
+import json
 import re
 import sys
 from collections import Counter
 
-from common import (ARMOR, ATTRS, BEAST_FORMS, EVIDENCE, HANDS, REQUIRES, SKILLS, STYLE_CODES, UNUSABLE_PAGES, by_id,
+from common import (ROOT, ARMOR, ATTRS, BEAST_FORMS, EVIDENCE, HANDS, REQUIRES, SKILLS, STYLE_CODES, UNUSABLE_PAGES, by_id,
                     card_weights, load, load_lookup, npc_classes, skills_in_text, uesp_terms, weights)
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
@@ -281,6 +283,14 @@ def main():
             used += eids
 
     n_kits, n_mods = check_layers({b["id"] for b in doc["builds"]}, terms, errors)
+    trees = json.loads((ROOT / "docs" / "sources" / "uesp-skill-perks.json").read_text())["trees"]
+    for code in SKILLS:
+        tree = trees.get(code, [])
+        if not any(p["levels"][0] == 0 for p in tree):
+            errors.append(f"skill tree {SKILLS[code]}: no perk at level 0 parsed; run scripts/fetch_skill_perks.py")
+        for p in tree:
+            if not p["name"] or not p["levels"] or not p["effect"]:
+                errors.append(f"skill tree {SKILLS[code]}: perk entry incomplete {p}")
 
     counts = Counter(used)
     errors += [f"class {e} is used {n} times" for e, n in counts.items() if n > 1]
