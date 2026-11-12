@@ -1165,15 +1165,16 @@ builds:
   name: Miraak
   inspired_by: Miraak (Dragonborn)
   evidence: sourced
-  playstyles: [c, m]  # Speech 8 stands in for his Thu'um, not trade
+  playstyles: [c, m]  # Speech has no effect on shouts (UESP Dragon Shouts); he fights with blade and magic
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [bend-will, dragon-aspect, cyclone, unrelenting-force], evidence: derived}
   examples: ["Miraak (person)"]
   classes:
   - DLC2EncClassMiraak
   description: >-
-    Speech 8 for the Thu'um, then a broad spread of armor, blade and four magic schools. Health and Magicka
-    over Stamina. A Dragonborn who rules through the Voice.
+    His class file weights Speech 8, but Speech does nothing for shouts: it only helps trade and persuasion.
+    Shouts get stronger with words of power and dragon souls. As a player, put the points into his armor,
+    blade and four magic schools. Health and Magicka over Stamina.
   lore:
   - name: "Ash-King"
     ref: C3
@@ -1284,9 +1285,10 @@ builds:
   black_book: {book: epistolary-acumen, power: "Dragonborn Force", evidence: partly-sourced, ref: A2}
   mentions: ["Amulet of Talos", "Black Book: Epistolary Acumen"]
   description: >-
-    Shouts are the main weapon. Skills only support the Voice: Speech, Restoration and Alteration, as a
-    Greybeard would train. The Amulet of Talos shortens shout cooldowns. The Black Book Epistolary Acumen
-    upgrades a shout. No weapon skill at all, so this is a hard but very different run.
+    Shouts are the main weapon. No skill makes them stronger: their power comes from words of power and
+    dragon souls. The Amulet of Talos shortens the wait between shouts, and the Black Book Epistolary Acumen
+    upgrades one. Restoration and Alteration keep you alive between shouts. Speech is there for the
+    Greybeard role, not for the Voice. No weapon skill at all, so this is a hard but very different run.
 - id: werewolf
   family: beyond
   name: Werewolf

@@ -25,6 +25,7 @@ Read through UESP's wiki API (`action=query&prop=revisions`). Each row is a clai
 | Spellbreaker wards while blocking | Skyrim:Spellbreaker | Confirmed: 50 pt ward while blocking |
 | Gloves of the Pugilist add unarmed damage | Skyrim:Gloves of the Pugilist | Confirmed: +10 unarmed damage |
 | Werewolf perk tree comes with Dawnguard | Skyrim:Lycanthropy | Confirmed |
+| Speech strengthens shouts (Miraak, Tongue) | Skyrim:Dragon Shouts, Skyrim:Speech | Corrected: shouts are "not restricted by any stats or skills"; Speech is barter and persuasion only. Miraak's Speech 8 is his class file's number and stays |
 | Chrysamere, Sunder, Wraithguard: mod or AE? | Skyrim:Chrysamere, Skyrim:Sunder, Skyrim:Wraithguard | Settled: official Creations (CC); Keening is base game |
 
 Not checkable from here: YouTube is blocked, so the FudgeMuppet builds (Sabre Cat, Preserver, Mechanist, Madman, Champion's "The Master") rest on the ledger's secondary write-ups. See docs/roadmap.md, Phase 6.
