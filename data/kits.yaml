@@ -37,7 +37,7 @@ kits:
   items: ["Stendarr's Hammer", "Light of Day"]
   fits: [vampire-slayer, vigilant-of-stendarr]
   evidence: partly-sourced
-  note: "Stendarr's Hammer smites and drains Stamina. Light of Day deals triple damage to the undead."
+  note: "Stendarr's Hammer hits hard but costs you 20 Stamina per hit. Light of Day deals triple damage to the undead."
 - id: bow-of-shadows
   name: Shadow archer
   ref: D6
@@ -72,7 +72,7 @@ kits:
   items: ["Wuuthrad", "Shield of Ysgramor"]
   fits: [greatsword-mercenary]
   evidence: derived
-  note: "Wuuthrad or the Shield of Ysgramor, for the Ysgramor pick. They cannot be used together."
+  note: "Wuuthrad or the Shield of Ysgramor, for the Ysgramor pick. Wuuthrad is a two-handed battleaxe, so you carry one or the other."
 - id: college-regalia
   name: College regalia
   ref: D11

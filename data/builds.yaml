@@ -131,7 +131,7 @@ builds:
     ref: C27
     evidence: derived
     npc: "Kodlak Whitemane"
-    changes: "A Skyforge Steel greatsword, and no beast blood."
+    changes: "A Skyforge Steel greatsword. A werewolf who wants to be cured, so his soul goes to Sovngarde."
   - name: "Ysgramor"
     ref: C27
     evidence: derived
@@ -615,7 +615,7 @@ builds:
   - name: "Jagar Tharn"
     ref: C35
     evidence: derived
-    changes: "Illusion 3, Destruction 3. A courtly impostor."
+    changes: "Illusion 3, Destruction 3. The Imperial Battlemage who ruled as Emperor in Uriel VII's place."
 - id: penitus-oculatus-agent
   family: battle
   name: Penitus Oculatus agent
@@ -1470,7 +1470,7 @@ builds:
   shouts: {ids: [become-ethereal, slow-time, unrelenting-force], evidence: derived}
   mentions: ["Guild Master's Hood", "Wolf Armor", "Dragonbone Sword", "The Black Star (item)", "Pacify", "Invisibility", "Muffle"]
   description: >-
-    The hero who led every guild. A Dragonbone Sword, Wolf Armor and the Guild Master's Hood, with
+    The Oblivion hero: Fighters Guild Master, Arena Grand Champion and the Dark Brotherhood's Listener. A Dragonbone Sword, Wolf Armor and the Guild Master's Hood, with
     atronachs from Conjuration. Illusion handles the rest: Muffle, Invisibility and Pacify. The Black Star
     keeps the enchantments charged.
 - id: arcanist

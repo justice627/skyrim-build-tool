@@ -83,11 +83,22 @@ Status: done (2026-11-12).
 - `data/modifiers.yaml`: 16 challenge runs (M1 to M14, with M5 split into stolen, purchased and crafted). Shown as their own section and chip, and as a line on the builds they pair with.
 - Left out: D14 relic stand-ins (derived, for held builds) and D15 Black Book powers (already a field).
 
-## Phase 6: verification, alongside the rest
+## Phase 6: verification
 
-Done early: stones, shouts and race skill bonuses checked against UESP (2026-11-11). Settled in Phase 5: Chrysamere, Sunder and Wraithguard are official Creations (CC), Keening is base game, so Divine Crusader (A19) can come back as a CC build. Spot-check the lore claims marked unverified in the ledger. Watch the FudgeMuppet videos for Sabre Cat, Preserver, Mechanist and Ronin.
+Status: done for everything checkable from a cloud session (2026-11-12). Record: `docs/sources/uesp-lore-checks.md`.
 
-- Done when no row is still tagged unverified.
+- Stones, shouts, race bonuses, Black Books, perks, kit items and their Creations: checked against UESP in earlier phases.
+- Lore and item claims on the page: 22 checked. 16 confirmed, 4 reworded to what UESP says (Jagar Tharn, Hero of Kvatch, Wuuthrad, Champion of Cyrodiil), 2 corrected (Kodlak is a werewolf seeking a cure; Stendarr's Hammer drains the wielder's Stamina).
+- Chrysamere, Sunder and Wraithguard are official Creations, Keening is base game. Divine Crusader (A19) can come back as a CC build.
+
+Left for a person, because YouTube is blocked here. Watch and note anything that contradicts the page:
+
+| Video | Build on the page | What to check |
+|---|---|---|
+| FudgeMuppet, The Sabre Cat | Pugilist (lore pick) | Race, the skills it adds (Conjuration, Restoration, Smithing), and which DLC spells it uses |
+| FudgeMuppet, The Preserver | The Preserver | Skill order (Conjuration and Archery first?), Ritual Stone, the gear list |
+| FudgeMuppet, The Mechanist | Spellsword (lore pick) and the Nerevarine relics kit | Stones (Lover, then Atronach), Block, Visage of Mzund, Keening |
+| FudgeMuppet, The Ronin | Not on the page | Whether it is worth adding at all |
 
 ## Out of scope
 
