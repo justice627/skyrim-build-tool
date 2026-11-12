@@ -1287,8 +1287,8 @@ builds:
   description: >-
     Shouts are the main weapon. No skill makes them stronger: their power comes from words of power and
     dragon souls. The Amulet of Talos shortens the wait between shouts, and the Black Book Epistolary Acumen
-    upgrades one. Restoration and Alteration keep you alive between shouts. Speech is there for the
-    Greybeard role, not for the Voice. No weapon skill at all, so this is a hard but very different run.
+    upgrades one. Restoration heals and Alteration armors you while you wait to shout again. A little
+    Speech is there for the Greybeard role. No weapon skill at all, so this is a hard but very different run.
 - id: werewolf
   family: beyond
   name: Werewolf

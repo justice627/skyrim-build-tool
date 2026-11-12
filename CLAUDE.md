@@ -36,6 +36,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 4. One roadmap phase per branch. Each phase ends with a working page. When the work on a branch is done and `validate.py` passes, merge it into `main` (fast-forward when possible), push `main`, then delete the branch locally and on GitHub. No pull requests unless asked; pushing `main` triggers the Pages deploy.
 5. Keep it small: no framework, no bundler, no database. The page stays one self-contained HTML file.
 6. Write player-facing text plainly: American English, short sentences, no em dashes.
+7. Utility over strict accuracy in recommendations. Game data (class weights, examples, perks, items) stays as UESP gives it. Recommendations (descriptions, attribute plans, picks, hand-set weights) aim at how the game is actually played, even where that departs from its design, and are tagged derived when they are this tool's call. The attribute planner moving unused Magicka is the model.
 
 ## Data conventions
 
@@ -46,7 +47,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Every build has `evidence` (grade of its skills), a `stone` (`early`, optional `final`) and 2 to 4 `shouts`, each block with its own `evidence` and an optional ledger `ref` such as `B7`. Optional: `lore` (ledger C picks: `name`, `ref` such as `C12`, `changes`, `evidence`, optional `requires` and `npc`), `aliases`, `requires`, `examples` (up to 3 named NPCs; the validator checks each against `uesp-npc-classes.json`).
 - Evidence grades: `sourced`, `partly-sourced`, `derived`. Requirement tags: `vanilla`, `DG`, `HF`, `DB`, `CC`, `AE`. Mod-only content is out of scope, so there is no `Mod` tag.
 - Hand-set builds (family `beyond`) have `weights` instead of `classes`, plus a ledger A `ref`. Skills 1 to 4, all of Hea, Mag and Sta. Never graded `sourced`. No class variants or examples; use `lore` picks (refs may be A or C rows).
-- Hand-set weights: skills a ledger row calls core get 3, secondary 2. When a row lists skills without tiers, the first two listed get 3 and the rest 2.
+- Hand-set weights: skills a ledger row calls core get 3, secondary 2. When a row lists skills without tiers, the first two listed get 3 and the rest 2. Where that would recommend a skill that does nothing for the playstyle (Speech on a shout build), adjust it, grade the build `derived` and give the reason in a comment.
 - A lore pick sits under the build it plays like. If its `changes` names 3 or more skills, at least half must be the build's primary or secondary skills, unless the text says "Adds" or "replaces". The validator enforces this. Theme alone (shouts, werewolf) is not enough.
 - `mentions` (on builds and lore picks) lists every perk, item, spell or power the text names, spelled as the UESP page title. The validator rejects terms with no UESP page or that UESP lists as unobtainable. Text must not name anything that is not in `mentions`.
 - Perks: class builds and variants get them automatically from `uesp-npc-classes.json` (every named NPC of the class), filtered to the card's skills. A perk is a player perk when `uesp-terms.json` gives it a `tree` (its UESP page is a skill page or Lycanthropy). Community builds may list `perks: {names, evidence, ref}`; names must be player perks in the build's skills (or the werewolf tree) and also appear in `mentions`.
