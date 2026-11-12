@@ -42,7 +42,7 @@ def check_lookup(kind, entries, errors):
             errors.append(f"{kind} {e.get('id')}: unknown evidence {e.get('evidence')!r}")
 
 
-LORE_REF = re.compile(r"[AC]\d+")
+LORE_REF = re.compile(r"[ACG]\d+")  # G = lore groups ledger (docs/research/lore-groups.md)
 HAND_REF = re.compile(r"A\d+")
 
 
@@ -160,7 +160,7 @@ def check_lore(name, b, known_npcs, terms, errors):
         if not str(e.get("name", "")).strip() or not str(e.get("changes", "")).strip():
             errors.append(f"{label}: needs a name and changes")
         if not LORE_REF.fullmatch(str(e.get("ref", ""))):
-            errors.append(f"{label}: ref {e.get('ref')!r} is not a ledger C row")
+            errors.append(f"{label}: ref {e.get('ref')!r} is not a ledger A, C or G row")
         if e.get("evidence") not in EVIDENCE:
             errors.append(f"{label}: unknown evidence {e.get('evidence')!r}")
         errors += [f"{label}: unknown requires {r!r}" for r in e.get("requires", []) if r not in REQUIRES]

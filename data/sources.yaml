@@ -66,6 +66,14 @@ sources:
     url: https://en.uesp.net/w/api.php
     used_for: data/black_books.yaml (docs/sources/uesp-powers.wiki)
     evidence: sourced
+  - id: uesp-lore-factions
+    title: UESP Lore pages in Category:Lore-Factions (wiki API)
+    url: https://en.uesp.net/wiki/Category:Lore-Factions
+    used_for: Lore group aliases and lore picks (ledger G, docs/research/lore-groups.md)
+    evidence: partly-sourced
+    notes: >-
+      What each group wears and how it fights is quoted from its UESP Lore page. Mapping that to
+      Skyrim skills is inferred, so lore picks from ledger G are graded partly-sourced.
   - id: build-text
     title: Build names, groupings, attribute plans and playstyle descriptions
     used_for: data/builds.yaml and the plan logic in scripts/build.py

@@ -58,7 +58,7 @@ builds:
   family: steel
   name: Warrior
   inspired_by: Generic warriors, mercenaries and the one-handed trainers
-  aliases: [Housecarl]
+  aliases: [Housecarl, Fighters Guild]
   evidence: sourced
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
@@ -103,6 +103,19 @@ builds:
     evidence: derived
     npc: "Ulfric Stormcloak"
     changes: "Modeled on Ulfric. One-Handed 3, Heavy Armor 2, Block 2, Speech 2. Unrelenting Force."
+  - name: "Knight of the Nine"
+    ref: G75
+    evidence: partly-sourced
+    changes: "A knight of the Nine Divines in a heavy cuirass, with a sword or mace and a shield."
+  - name: "Erabenimsun warrior"
+    ref: G39
+    evidence: partly-sourced
+    changes: "A Dunmer Ashlander warrior in heavy armor. Swaps the sword for a war axe, after the tribe's glass war axe."
+  - name: "House Redoran"
+    ref: G59
+    evidence: partly-sourced
+    mentions: ["Bonemold"]
+    changes: "A Dunmer house warrior who wears bonemold armor. Fights with a broad sword and parries with the blade."
 - id: greatsword-mercenary
   family: steel
   name: Greatsword mercenary
@@ -138,6 +151,10 @@ builds:
     ref: C27
     evidence: derived
     changes: "Wuuthrad, which cannot be used with the Shield of Ysgramor. Battle Fury, if you have Dragonborn."
+  - name: "Blackwood Company"
+    ref: G15
+    evidence: partly-sourced
+    changes: "A Khajiit or Argonian mercenary in heavy armor who takes any contract. The page names no weapon type."
 - id: orc-stronghold-guard
   family: steel
   name: Orc stronghold guard
@@ -159,6 +176,11 @@ builds:
     Heavy armor, one weapon, a bow for walls and gates. The NPC file feeds Magicka it never uses, so your
     plan moves those points into Stamina. Pairs naturally with the Orc race for Berserker Rage and a free
     Heavy Armor head start.
+  lore:
+  - name: "Iron Orc"
+    ref: G70
+    evidence: partly-sourced
+    changes: "Adds Smithing and Alchemy: an Orc of iron arms and iron armor who brews potions."
 - id: shieldmaster
   family: steel
   name: Shieldmaster
@@ -180,6 +202,11 @@ builds:
     Block is the build. Shield up, perfect the timing, bash to stagger, then strike. Heavy armor and a
     one-hander do the rest. The NPC weights waste points on Magicka; the plan below puts them into Stamina
     for more bashes.
+  lore:
+  - name: "Hel Netu"
+    ref: G48
+    evidence: partly-sourced
+    changes: "A Redguard warrior monk in cloth and chainmail instead of heavy plate, so Light Armor replaces Heavy Armor. Keeps the round shield and Sneak."
 - id: barbarian
   family: north
   name: Barbarian
@@ -199,6 +226,7 @@ builds:
   family: north
   name: Bandit raider
   inspired_by: Bandit melee and Alik'r warriors (identical files)
+  aliases: [Crimson Dirks]
   evidence: sourced
   play: "Pick one weapon style, one-handed or two-handed. Their perk trees do not overlap."
   stone: {early: warrior, final: lady, evidence: derived}
@@ -210,6 +238,11 @@ builds:
   description: >-
     One-hander or two-hander, whichever you loot first, plus a shield when it fits. Light armor with a
     scrap of heavy. A scrappy, gear-agnostic fighter for a run where you take what you find on the road.
+  lore:
+  - name: "Xit-Xaht raider"
+    ref: G134
+    evidence: partly-sourced
+    changes: "An Argonian slave raider with a sword, bone shield and bone armor."
 - id: hold-guard
   family: ranks
   name: Hold guard
@@ -232,6 +265,7 @@ builds:
   family: ranks
   name: Legionnaire
   inspired_by: Imperial soldiers, Stormcloak soldiers and Civil War soldiers
+  aliases: [Imperial Legion]
   evidence: sourced
   play: "Imperial soldiers fight with a sword and shield and start in light Imperial armor; some later wear heavy Imperial armor. Stormcloaks wear light Stormcloak armor. So the kit for either side is a sword, a shield and light armor, with heavy armor as the Imperial upgrade. Keep Archery as a backup."
   stone: {early: warrior, final: steed, evidence: derived}
@@ -250,6 +284,11 @@ builds:
     Every weapon and armor skill trained evenly. The Imperial file weights Stamina at 7, the highest in
     the game, so you sprint, power attack and bash all day. The Stormcloak file swaps that Stamina for
     unused Magicka; the plan below follows the Imperial version.
+  lore:
+  - name: "Shield of Senchal"
+    ref: G111
+    evidence: partly-sourced
+    changes: "A Legion soldier posted to Elsweyr's heat: light leather armor only, with the shield as the centerpiece."
 - id: jailor
   family: ranks
   name: Jailor
@@ -281,10 +320,24 @@ builds:
     ref: C37
     evidence: partly-sourced
     changes: "Melee instead of the bow: One-Handed, Block, Light Armor, Alchemy and Smithing."
+  - name: "Ashlander"
+    ref: G9
+    evidence: partly-sourced
+    changes: "A Dunmer hunter in chitin light armor with a shortbow and a one-handed kris or mace. Adds Alchemy and Enchanting, the crafts the tribes are known for."
+  - name: "Skaal hunter"
+    ref: G114
+    evidence: partly-sourced
+    mentions: ["Stalhrim"]
+    changes: "Adds Smithing: a Nord of Solstheim who hunts only for need and forges Stalhrim."
+  - name: "Jaqspur"
+    ref: G71
+    evidence: partly-sourced
+    changes: "A Bosmer long-range archer in leather and bone. Serves as scout, tracker and guard."
 - id: highwayman
   family: bow
   name: Highwayman
   inspired_by: Bandit archers and Alik'r archers (identical files)
+  aliases: [Band of the Three]
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [throw-voice, disarm, whirlwind-sprint], evidence: derived}
@@ -343,7 +396,7 @@ builds:
   family: shadow
   name: Thief
   inspired_by: Combat thieves and the Thieves Guild trainers
-  aliases: [Cutpurse]
+  aliases: [Cutpurse, Thieves Guild]
   evidence: sourced
   stone: {early: thief, final: tower, evidence: derived, ref: F1}
   shouts: {ids: [throw-voice, whirlwind-sprint, become-ethereal], evidence: derived}
@@ -395,6 +448,10 @@ builds:
     requires: [DG]
     npc: "Aela the Huntress"
     changes: "Archery 3, Light Armor 3, Sneak 2, One-Handed 2. A werewolf huntress."
+  - name: "House Hlaalu"
+    ref: G54
+    evidence: partly-sourced
+    changes: "A Dunmer trader-thief. Adds Speech for fast talking and trade on top of light armor, short blades, bows and Sneak."
 - id: rogue
   family: shadow
   name: Rogue
@@ -423,10 +480,19 @@ builds:
     evidence: partly-sourced
     requires: [DG, DB]
     changes: "Imperial vampire. Lady Stone. Block, One-Handed, Illusion and Sneak. Penitus Oculatus armor, the Blades Sword and Harkon's Sword."
+  - name: "Camonna Tong"
+    ref: G20
+    evidence: partly-sourced
+    changes: "A Dunmer criminal who works with a poisoned blade. Adds Alchemy for the poison."
+  - name: "East Empire Company agent"
+    ref: G37
+    evidence: partly-sourced
+    changes: "Swaps Sneak for Speech: a Company agent who barters shrewdly and guards cargo with a long blade."
 - id: blades-agent
   family: shadow
   name: Blades agent
   inspired_by: The Blades
+  aliases: [The Blades]
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [dragonrend, whirlwind-sprint, aura-whisper], evidence: derived}
@@ -442,10 +508,15 @@ builds:
     evidence: derived
     npc: "Delphine"
     changes: "Blades armor and a Blades sword."
+  - name: "Akaviri Dragonguard"
+    ref: G2
+    evidence: partly-sourced
+    changes: "The older Akaviri order hunted dragons in the open as the Emperor's honor guard, not as spies. It also used dragon parts for alchemy, so Alchemy replaces Sneak."
 - id: assassin
   family: assassin
   name: Assassin
   inspired_by: Combat assassins and two master trainers
+  aliases: [Assassins League, Dark Brotherhood]
   evidence: sourced
   stone: {early: thief, final: shadow, evidence: derived}
   shouts: {ids: [aura-whisper, throw-voice, slow-time], evidence: derived}
@@ -470,6 +541,23 @@ builds:
     evidence: derived
     npc: "Astrid"
     changes: "Dagger and Alchemy. Blade of Woe, Ancient Shrouded Armor and Shadowmere."
+  - name: "Shadowscale"
+    ref: G109
+    evidence: partly-sourced
+    npc: "Veezara"
+    changes: "An Argonian assassin born under the Shadow, so take the Shadow Stone. Veezara is one."
+  - name: "Veiled Heritance"
+    ref: G127
+    evidence: partly-sourced
+    changes: "An Altmer supremacist assassin who targets the queen and her non-Altmer allies."
+  - name: "Mythic Dawn cultist"
+    ref: G87
+    evidence: partly-sourced
+    changes: "A cultist of Mehrunes Dagon who poses as an ordinary townsperson."
+  - name: "Morag Tong"
+    ref: G84
+    evidence: partly-sourced
+    changes: "A Dunmer assassin who kills by legal writ in Mephala's name. Wears chitin armor."
 - id: nightingale
   family: assassin
   name: Nightingale
@@ -493,6 +581,7 @@ builds:
   family: assassin
   name: Nightblade
   inspired_by: Combat nightblades
+  aliases: [Nightblades]
   evidence: sourced
   stone: {early: mage, final: shadow, evidence: derived, ref: F1}
   shouts: {ids: [aura-whisper, throw-voice, slow-time], evidence: derived}
@@ -508,6 +597,10 @@ builds:
     ref: C24
     evidence: partly-sourced
     changes: "Altmer. Illusion replaces Destruction. Bound Dagger, Frenzy and Invisibility, with Aura Whisper."
+  - name: "House Dres"
+    ref: G51
+    evidence: partly-sourced
+    changes: "A Dunmer of a slaver house who floods foes with destructive spells and works as a spy."
 - id: vampire
   family: assassin
   name: Vampire
@@ -535,6 +628,14 @@ builds:
     requires: [DG]
     npc: "Lord Harkon"
     changes: "Plays as a Vampire Lord, with its perk tree."
+  - name: "Berne Clan vampire"
+    ref: G14
+    evidence: partly-sourced
+    changes: "An Imperial vampire who fights barehanded from ambush instead of with a blade."
+  - name: "House Ravenwatch"
+    ref: G58
+    evidence: partly-sourced
+    changes: "A vampire who swears off killing and hunts other vampires."
 - id: spellsword
   family: battle
   name: Spellsword
@@ -572,6 +673,14 @@ builds:
     ref: A13
     evidence: derived
     changes: "The lore version of the Champion of Cyrodiil. One-Handed 3, Heavy Armor 3, Restoration 2, Destruction 2, Sneak 2."
+  - name: "Battle College graduate"
+    ref: G64
+    evidence: partly-sourced
+    changes: "Adds Conjuration and Sneak: a battlemage who summons atronachs and scouts behind enemy lines."
+  - name: "Breton spell-knight"
+    ref: G19
+    evidence: partly-sourced
+    changes: "A Breton spell-knight. Recruits are tested on swordsmanship, archery and healing, so Archery joins the sword and Restoration."
 - id: battle-archer
   family: battle
   name: Battle archer
@@ -584,6 +693,15 @@ builds:
   description: >-
     Bow, Destruction and Restoration with a one-hander and a shield in reserve. A ranged hybrid: shoot,
     burn, heal. No armor skill, so lean on distance or Alteration if you add it.
+  lore:
+  - name: "Akatosh Chantry"
+    ref: G1
+    evidence: partly-sourced
+    changes: "A soldier-priest of Akatosh. Adds Alteration and Sneak, the other skills Daggerfall's chantry trains besides long blade, archery and destruction."
+  - name: "Kynareth's follower"
+    ref: G121
+    evidence: partly-sourced
+    changes: "A follower of Kynareth who heals and fights with bow and destruction magic. Adds Illusion and Sneak from the temple's rank skills."
 - id: witchblade
   family: battle
   name: Witchblade
@@ -668,6 +786,7 @@ builds:
   family: battle
   name: Forsworn briarheart
   inspired_by: Forsworn warriors in the Reach
+  aliases: [Reachfolk]
   evidence: sourced
   stone: {early: mage, final: lady, evidence: derived}
   shouts: {ids: [animal-allegiance, frost-breath, whirlwind-sprint], evidence: derived}
@@ -707,7 +826,7 @@ builds:
   family: robe
   name: True Mage
   inspired_by: Combat destruction and elemental mages, and Neloth
-  aliases: [Destruction mage, Mage]
+  aliases: [Destruction mage, Mage, Mages Guild, College of Winterhold]
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived, ref: F1}
   shouts: {ids: [fire-breath, frost-breath, become-ethereal], evidence: derived}
@@ -728,10 +847,16 @@ builds:
   description: >-
     Robes, Destruction and Restoration, Alteration for armor spells. Magicka 4 to Health 2. Keep distance
     and pick the element the enemy is weak to.
+  lore:
+  - name: "Imperial Battlemage"
+    ref: G65
+    evidence: partly-sourced
+    changes: "An Imperial war mage of the Legion. Adds Conjuration for atronachs, which battlemages train in from childhood."
 - id: conjurer
   family: robe
   name: Conjurer
   inspired_by: Combat conjurers, necromancers and the Conjuration trainers
+  aliases: [Order of the Black Worm, Necromancer]
   evidence: sourced
   stone: {early: mage, final: ritual, evidence: derived, ref: F1}
   shouts: {ids: [become-ethereal, unrelenting-force, call-dragon], evidence: derived}
@@ -773,10 +898,27 @@ builds:
     ref: C9
     evidence: derived
     changes: "Taken from ESO's Warden. Frost Destruction, Restoration and Conjuration for a familiar, in light armor."
+  - name: "Icereach witch"
+    ref: G62
+    evidence: partly-sourced
+    changes: "A Reach witch who raises the dead and calls storms. Wears hide and bone instead of robes."
+  - name: "Corelanya necromancer"
+    ref: G25
+    evidence: partly-sourced
+    changes: "An Altmer necromancer who raises the dead and calls Daedra, from a house that has since turned peaceful."
+  - name: "Sixth House priest"
+    ref: G49
+    evidence: partly-sourced
+    changes: "A Sixth House priest of Dagoth Ur who commands Ash Zombies."
+  - name: "Bloodthorn Cult"
+    ref: G17
+    evidence: partly-sourced
+    changes: "A Breton or Reachman necromancer who serves Molag Bal and raises the dead."
 - id: mystic
   family: robe
   name: Mystic
   inspired_by: Combat mystics
+  aliases: [Psijic Order]
   evidence: sourced
   stone: {early: mage, final: atronach, evidence: derived}
   shouts: {ids: [aura-whisper, slow-time, clear-skies], evidence: derived}
@@ -792,6 +934,10 @@ builds:
     evidence: partly-sourced
     mentions: ["Dead Thrall", "Call to Arms", "Fury", "Frenzy"]
     changes: "Illusion and Conjuration core, Speech and armor secondary. Ritual Stone. Dead Thrall and Call to Arms, with Fury and Frenzy turning enemies on each other."
+  - name: "House Telvanni"
+    ref: G60
+    evidence: partly-sourced
+    changes: "A Dunmer wizard-lord of House Telvanni. Leans on Alteration, the school of levitation and shaping, and settles disputes by magic."
 - id: illusionist
   family: robe
   name: Illusionist
@@ -839,6 +985,7 @@ builds:
   family: robe
   name: Hedge wizard
   inspired_by: Bandit wizards, Alik'r wizards and Forsworn shamans
+  aliases: [Reachman Shaman]
   evidence: sourced
   stone: {early: mage, final: apprentice, evidence: derived}
   shouts: {ids: [frost-breath, become-ethereal, whirlwind-sprint], evidence: derived}
@@ -922,6 +1069,14 @@ builds:
     ref: C16
     evidence: derived
     changes: "Modeled on Martin Septim. Restoration 3, Speech 3, Conjuration 2. Amulet of Akatosh."
+  - name: "Imperial Cult priest"
+    ref: G66
+    evidence: partly-sourced
+    changes: "Adds a mace or other blunt weapon for One-Handed, and Enchanting, the skills the Cult values."
+  - name: "Resolution of Z'en"
+    ref: G102
+    evidence: partly-sourced
+    changes: "A priest of Zenithar who favors Speech and trade over charity; its Knights of Iron fight to protect working folk."
 - id: monk
   family: holy
   name: Monk
@@ -944,7 +1099,7 @@ builds:
   family: holy
   name: Vigilant of Stendarr
   inspired_by: The Vigilants
-  aliases: [Paladin]
+  aliases: [Paladin, Vigil of Stendarr]
   evidence: sourced
   play: "Vigilants never carry shields, so Block is for blocking with your weapon. Their boots and gauntlets are steel, so keep Heavy Armor and let Light Armor go."
   stone: {early: warrior, final: lord, evidence: derived}
@@ -974,6 +1129,18 @@ builds:
     ref: C14
     evidence: partly-sourced
     changes: "Lord Stone. Restoration, One-Handed, Alteration, Block and Enchanting. A mace, the amulet of one chosen Divine, and Banish Daedra."
+  - name: "Ash'abah"
+    ref: G7
+    evidence: partly-sourced
+    changes: "A Redguard exile who hunts the undead in the desert and purifies their tombs."
+  - name: "Ordinator"
+    ref: G94
+    evidence: partly-sourced
+    changes: "A Dunmer holy guard of the Tribunal Temple, in Indoril armor with its golden face mask."
+  - name: "Knight of the Silver Rose"
+    ref: G76
+    evidence: partly-sourced
+    changes: "A Breton knight who hunts Daedra and fights with the Daedric artifacts the order seized."
 - id: blacksmith
   family: craft
   name: Blacksmith
@@ -1054,6 +1221,7 @@ builds:
   family: craft
   name: Bard
   inspired_by: Bards and the Speech expert trainer
+  aliases: [Bards College]
   evidence: sourced
   stone: {early: lover, evidence: derived, ref: F1}
   shouts: {ids: [kynes-peace, throw-voice, call-of-valor], evidence: derived}
@@ -1098,6 +1266,10 @@ builds:
     ref: A15
     evidence: partly-sourced
     changes: "The Agent class from Morrowind and Oblivion: an infiltrator and talker. Illusion, Speech, Sneak, Lockpicking and Pickpocket, with Archery as the weapon. Dress to blend in."
+  - name: "Khajiit caravan"
+    ref: G72
+    evidence: partly-sourced
+    changes: "A Khajiit caravan merchant who trades rare goods and skooma outside the city walls."
 - id: laborer
   family: folk
   name: Laborer
@@ -1198,6 +1370,10 @@ builds:
     evidence: derived
     requires: [DB]
     changes: "Modeled on Wulfharth. Two-Handed 3, Heavy Armor 3, Speech 2, fire Destruction 2. Fire Breath and Dragon Aspect."
+  - name: "Dragon Priest"
+    ref: G33
+    evidence: partly-sourced
+    changes: "A dragon priest: a powerful mage with the Thu'um who wears an enchanted mask and armor of dragon scale and bone."
 - id: ancient-dragonborn
   family: legend
   name: Ancient Dragonborn
@@ -1263,6 +1439,11 @@ builds:
   description: >-
     One-hander and Conjuration at 3: bound weapons and summons. Destruction and Sneak at 2, light armor
     at 1. Even attributes. A conjured-steel duelist.
+  lore:
+  - name: "Sword-singer"
+    ref: G119
+    evidence: partly-sourced
+    changes: "A Redguard who fights only with swords. Masters call a spirit sword from their own soul."
 - id: pugilist
   family: beyond
   name: Pugilist
@@ -1371,6 +1552,11 @@ builds:
     requires: [DG]
     mentions: ["Dwarven Crossbow"]
     changes: "Khajiit. Thief Stone, then Atronach. A no-magic crossbow sniper with a Dwarven Crossbow and explosive bolts."
+  - name: "Doomfang poisoner"
+    ref: G32
+    evidence: partly-sourced
+    mentions: ["Deathbell", "Falmer Ear", "Nirnroot", "Red Mountain Flower"]
+    changes: "A Reachman poisoner. The clan's recipe used deathbell, Falmer ear, nirnroot and red mountain flower."
 - id: dual-wielder
   family: beyond
   name: Dual-wielder
@@ -1442,6 +1628,11 @@ builds:
     Join the Dawnguard and hunt vampires. A crossbow does the long work, a one-handed weapon the short
     work: Dawnbreaker or a Dawnguard Rune Axe. Restoration covers healing and harms the undead. Enchanting
     keeps the kit sharp.
+  lore:
+  - name: "Wayward Guardian"
+    ref: G132
+    evidence: partly-sourced
+    changes: "A Reachman vampire hunter. Uses silver blades and forges much of their own gear, so Smithing can replace Enchanting."
 - id: druid
   family: beyond
   name: Druid
@@ -1455,6 +1646,11 @@ builds:
     A nature keeper who never kills wildlife. Alteration and Illusion do most of the work, with a staff or
     a light one-handed weapon and Alchemy from what you gather. Animal Allegiance and Kyne's Peace turn the
     wild into allies. An animal companion fits the theme.
+  lore:
+  - name: "Glenmoril Wyrd"
+    ref: G44
+    evidence: partly-sourced
+    changes: "A Wyrd witch who draws magicka from nature and takes beast forms from Hircine's mysteries."
 - id: preserver
   family: beyond
   name: The Preserver
@@ -1500,11 +1696,16 @@ builds:
     The Oblivion hero: Fighters Guild Master, Arena Grand Champion and the Dark Brotherhood's Listener. A Dragonbone Sword, Wolf Armor and the Guild Master's Hood, with
     atronachs from Conjuration. Illusion handles the rest: Muffle, Invisibility and Pacify. The Black Star
     keeps the enchantments charged.
+  lore:
+  - name: "Direnni"
+    ref: G31
+    evidence: partly-sourced
+    changes: "An Altmer who adds Alchemy to Enchanting and Conjuration and calls Flame Atronachs."
 - id: arcanist
   family: beyond
   name: Arcanist
   inspired_by: TheGamer's Spider Mastermind, a rune trapper
-  aliases: [Spider Mastermind]
+  aliases: [Spider Mastermind, Arcanists]
   weights: {DES: 3, ALT: 3, ENC: 2, RES: 2, Hea: 1, Mag: 3, Sta: 1}  # Enchanting (cheaper spells) and Restoration added
   evidence: derived
   ref: A18

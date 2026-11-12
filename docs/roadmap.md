@@ -100,6 +100,10 @@ Left for a person, because YouTube is blocked here. Watch and note anything that
 | FudgeMuppet, The Mechanist | Spellsword (lore pick) and the Nerevarine relics kit | Stones (Lover, then Atronach), Block, Visage of Mzund, Keening |
 | FudgeMuppet, The Ronin | Not on the page | Whether it is worth adding at all |
 
+## Lore groups (2026-11-12)
+
+Every UESP lore faction checked for how it fights (ledger G, `docs/research/lore-groups.md`). 616 groups: 134 described well enough to read in full, 324 too thin (listed as gaps), 158 that do not fight. No group needed a new build. 19 became aliases and 44 became lore picks under the build they play like. Not yet done: the 324 gap groups, and gear for lore picks (to look at with the gear review).
+
 ## Out of scope
 
 Mod-only builds (Requiem templates, the Ordinator Dragonborn, FudgeMuppet's modded Sand Demon, Celestial and King), ESO class conversions, and full perk templates for all 18 trees.

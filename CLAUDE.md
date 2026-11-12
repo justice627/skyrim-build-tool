@@ -21,7 +21,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `scripts/`: `common.py` (loading, skill codes), `validate.py`, `build.py`.
 - `src/template.html`: the page. `__DATA__` is replaced with the built JSON. It is a fragment because claude.ai artifacts supply their own skeleton; `build.py` wraps it into a full document for `index.html`.
 - `docs/roadmap.md`: the phased plan. Work in phase order.
-- `docs/research/`: the community and lore build ledger and the research notes behind it. These are leads, not verified data.
+- `docs/research/`: the community and lore build ledger and the research notes behind it. These are leads, not verified data. `lore-groups.md` is ledger G: every UESP lore faction, how it fights, and whether it became an alias, a lore pick or a gap.
 - `docs/sources/`: the saved UESP class table (PDF plus a screenshot of the rows the PDF dropped), `uesp-npc-classes.json` (which named NPCs use each class), and the raw UESP text behind `stones.yaml`, `shouts.yaml` and the race bonuses.
 - `data/kits.yaml`, `data/modifiers.yaml`: gear kits (ledger D) and challenge runs (ledger F1).
 - `data/black_books.yaml`: the Dragonborn Black Books and their powers (sourced from UESP).
@@ -44,7 +44,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Weight tiers on the page: primary is 3 or more, secondary 2, minor 1.
 - A build's first class decides the weights its card shows. Classes grouped in one build or one variant must have identical weights; the validator enforces this.
 - Every class in `classes.json` is used exactly once across all builds.
-- Every build has `evidence` (grade of its skills), a `stone` (`early`, optional `final`) and 2 to 4 `shouts`, each block with its own `evidence` and an optional ledger `ref` such as `B7`. Optional: `lore` (ledger C picks: `name`, `ref` such as `C12`, `changes`, `evidence`, optional `requires` and `npc`), `aliases`, `requires`, `examples` (up to 3 named NPCs; the validator checks each against `uesp-npc-classes.json`).
+- Every build has `evidence` (grade of its skills), a `stone` (`early`, optional `final`) and 2 to 4 `shouts`, each block with its own `evidence` and an optional ledger `ref` such as `B7`. Optional: `lore` (ledger A, C or G picks: `name`, `ref` such as `C12` or `G40`, `changes`, `evidence`, optional `requires` and `npc`), `aliases`, `requires`, `examples` (up to 3 named NPCs; the validator checks each against `uesp-npc-classes.json`).
 - Evidence grades: `sourced`, `partly-sourced`, `derived`. Requirement tags: `vanilla`, `DG`, `HF`, `DB`, `CC`, `AE`. Mod-only content is out of scope, so there is no `Mod` tag.
 - Hand-set builds (family `beyond`) have `weights` instead of `classes`, plus a ledger A `ref`. Skills 1 to 4, all of Hea, Mag and Sta. Never graded `sourced`. No class variants or examples; use `lore` picks (refs may be A or C rows).
 - Hand-set weights: skills a ledger row calls core get 3, secondary 2. When a row lists skills without tiers, the first two listed get 3 and the rest 2. Where that would recommend a skill that does nothing for the playstyle (Speech on a shout build), adjust it, grade the build `derived` and give the reason in a comment.

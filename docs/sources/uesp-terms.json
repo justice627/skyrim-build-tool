@@ -127,6 +127,12 @@
    "tree": null,
    "origin": "CC:Necromantic Grimoire"
   },
+  "Bonemold": {
+   "page": "Skyrim:Bonemold",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Bound Bow": {
    "page": "Skyrim:Bound Weapon",
    "section": "Bound Bow",
@@ -222,6 +228,12 @@
   },
   "Dead Thrall": {
    "page": "Skyrim:Dead Thrall",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Deathbell": {
+   "page": "Skyrim:Deathbell",
    "section": "",
    "missing": false,
    "tree": null
@@ -337,6 +349,12 @@
   "Extra Damage 2": {
    "page": "Skyrim:Damage",
    "section": "NPC-Only",
+   "missing": false,
+   "tree": null
+  },
+  "Falmer Ear": {
+   "page": "Skyrim:Falmer Ear",
+   "section": "",
    "missing": false,
    "tree": null
   },
@@ -593,6 +611,12 @@
    "tree": null,
    "origin": "CC:Necromantic Grimoire"
   },
+  "Nirnroot": {
+   "page": "Skyrim:Nirnroot",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Novice Conjuration": {
    "page": "Skyrim:Conjuration",
    "section": "Novice Conjuration",
@@ -669,6 +693,12 @@
   "Red Eagle's Fury": {
    "page": "Skyrim:Quest Items",
    "section": "Red Eagle's Fury",
+   "missing": false,
+   "tree": null
+  },
+  "Red Mountain Flower": {
+   "page": "Skyrim:Red Mountain Flower",
+   "section": "",
    "missing": false,
    "tree": null
   },
