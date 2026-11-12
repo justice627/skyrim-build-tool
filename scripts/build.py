@@ -10,7 +10,7 @@ import re
 import json as _json
 
 from common import (ATTRS, BEAST_FORMS, ROOT, SCHOOL, SKILLS, by_id, card_weights, load, load_lookup, npc_classes,
-                    uesp_terms, weights)
+                    playstyles, uesp_terms, weights)
 
 SPELL_SCHOOLS = ("ALT", "CON", "DES", "ILU", "RES")
 LEVELS = 49  # level-ups from level 2 to 50
@@ -153,7 +153,7 @@ def render_build(b, classes, stones, shouts, books, homes, npcs, terms):
                          "npcs": [npc_name(n) for n in v.get("examples", [])],
                          "attr": [vw.get(a, 0) for a in ATTRS]})
     return {
-        "id": b["id"], "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
+        "id": b["id"], "styles": playstyles(skills), "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
         "hand": hand, "ref": b.get("ref", ""), "mentions": b.get("mentions", []),
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
@@ -187,7 +187,9 @@ def render_kits(kits, terms):
 
 
 def render_race(r):
-    return {"race": r["race"], "sig": r["signature"], "plus5": r["plus5"], "attr": r["attributes"],
+    code = {n: c for c, n in SKILLS.items()}
+    w = {code[s]: 1 for s in r["plus5"]} | {code[r["signature"]]: 2}
+    return {"styles": playstyles(w, min_weight=1), "race": r["race"], "sig": r["signature"], "plus5": r["plus5"], "attr": r["attributes"],
             "lv50": split(r["attributes"]), "note": r["note"], "power": r["power"]}
 
 
