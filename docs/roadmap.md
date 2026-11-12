@@ -63,12 +63,16 @@ Status: done (2026-11-11). Eight more builds in "Community builds" (first named 
 - Lore picks placed by skill fit, not by the ledger's parent: C8 Arcane Beastmaster under Spellshield, C9 Warden under Conjurer (neither fits Druid), A13's lore version Hero of Kvatch under Spellsword, A15 Agent under Trader, A16 Pilgrim under Blacksmith, A17 Battlemage under Bandit chief.
 - Left out: Witchhunter's Purifier and Requiem template (mods). Held: Divine Crusader (A19, AE-or-mod question unresolved) and Warrior-Poet (A20, derived, spear is a mod).
 
-## Phase 4: perks, together with the user
+## Phase 4: perks from UESP
 
-For each build, the user picks one named NPC as its perk source and supplies UESP screenshots of that NPC's perks. Add key-perk chips where the research names them (Fists of Steel for Pugilist, Poisoned for Poisoner).
+Status: done (2026-11-12). The planned method (the user picks an NPC per build and supplies screenshots) was replaced: UESP NPC infoboxes have a `perks=` field the wiki API returns.
 
-- New file: `data/perks.yaml`.
-- Done when every primary skill on every build shows at least one sourced perk.
+- Class builds and variants show the combined perks of every named NPC of their class, filtered to the skills on the card, grouped by skill, most-taken first. Tagged sourced.
+- A perk counts as a player perk when its UESP page is a skill page (or Lycanthropy). Ambiguous titles (Barbarian, Ranger, Stealth, Necromage) resolve through UESP's "<name> (perk)" redirects. NPC-only perks (Extra Damage, MS02IncreaseDamage, IrilethVsDragons) are dropped.
+- Coverage: 22 of 56 class builds and 9 variants. The rest have no named NPC with a perk list and say so on the card.
+- Community builds show the key perks their ledger row names: Fists of Steel (Pugilist), Poisoned (Poisoner), Dual Flurry (Dual-wielder) and the werewolf tree (Werewolf). Partly sourced.
+- Done criterion changed: every perk shown is sourced or marked, and gaps are visible. "Every primary skill shows a perk" is not reachable without guessing.
+- Planner fix: Enchanting no longer counts as a spell school. Temple priest loses a wrong Magicka shift; Laborer, Citizen and Crafter now move their unused Magicka to Stamina.
 
 ## Phase 5: gear kits and challenge modifiers
 

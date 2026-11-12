@@ -1,6 +1,8 @@
-"""Check every perk, item, spell or power named in builds.yaml `mentions` against UESP.
+"""Check every perk, item, spell or power named in builds.yaml (and every NPC perk) against UESP.
 
 Writes docs/sources/uesp-terms.json: {"retrieved", "source", "terms": {term: {"page", "section", "missing"}}}.
+Each term also gets "tree": the skill code (or "werewolf") of the perk tree its page belongs to,
+or null when it is not a player perk (items, spells, NPC-only perks).
 A term resolves when Skyrim:<term> exists on UESP, directly or through a redirect (perks usually redirect
 to their skill page, e.g. Fists of Steel -> Skyrim:Heavy Armor#Fists of Steel). validate.py reads this file;
 run this script again after adding or renaming a mention.
@@ -10,16 +12,20 @@ import json
 
 import yaml
 
-from common import DATA, ROOT
+from common import DATA, ROOT, tree_of_page
 from fetch_npcs import API, get
 
 OUT = ROOT / "docs" / "sources" / "uesp-terms.json"
 
 
 def mentions(doc):
+    """Every term to check: build and lore `mentions`, community `perks`, and every perk an NPC takes."""
     out = set()
+    npcs = json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())["classes"]
+    out.update(p["name"] for v in npcs.values() for n in v for p in n.get("perks", []))
     for b in doc["builds"]:
         out.update(b.get("mentions", []))
+        out.update(b.get("perks", {}).get("names", []))
         for e in b.get("lore", []):
             out.update(e.get("mentions", []))
     return sorted(out)
@@ -40,10 +46,26 @@ def main():
             target, section = redir.get(title, (title, ""))
             p = pages.get(target, {"missing": True})
             result[t] = {"page": target, "section": section, "missing": "missing" in p}
+    # Perk trees: a term whose page is a skill (or Lycanthropy) page is a player perk of that tree.
+    # Some perks share a title with another page (Barbarian, Ranger, Stealth, Necromage); UESP keeps
+    # "<name> (perk)" redirects for those, so try that when the plain title is not a skill page.
+    retry = [t for t, r in result.items() if not tree_of_page(r["page"])]
+    for i in range(0, len(retry), 50):
+        batch = retry[i:i + 50]
+        d = get(action="query", titles="|".join(f"Skyrim:{t} (perk)" for t in batch), redirects=1)["query"]
+        redir = {r["from"]: r["to"] for r in d.get("redirects", [])}
+        for t in batch:
+            target = redir.get(f"Skyrim:{t} (perk)")
+            if target and tree_of_page(target):
+                result[t]["perk_page"] = target
+    for t, r in result.items():
+        r["tree"] = tree_of_page(r.get("perk_page") or r["page"])
     OUT.write_text(json.dumps({"retrieved": datetime.date.today().isoformat(), "source": API,
                                "terms": result}, indent=1, ensure_ascii=False) + "\n")
-    bad = [t for t, r in result.items() if r["missing"] or r["page"] == "Skyrim:Unobtainable Items"]
-    print(f"{len(result)} terms, {len(bad)} not usable: {bad}")
+    named = {t for b in doc["builds"] for t in b.get("mentions", []) + [m for e in b.get("lore", []) for m in e.get("mentions", [])]}
+    bad = [t for t in sorted(named) if result[t]["missing"] or result[t]["page"] == "Skyrim:Unobtainable Items"]
+    perks = sum(1 for r in result.values() if r["tree"])
+    print(f"{len(result)} terms ({perks} player perks); build mentions not usable: {bad or 'none'}")
 
 
 if __name__ == "__main__":

@@ -7,9 +7,12 @@ Writes two files to dist/:
 import json
 import re
 
-from common import (ATTRS, BEAST_FORMS, ROOT, SCHOOL, SKILLS, by_id, card_weights, load, load_lookup, npc_classes,
-                    weights)
+import json as _json
 
+from common import (ATTRS, BEAST_FORMS, ROOT, SCHOOL, SKILLS, by_id, card_weights, load, load_lookup, npc_classes,
+                    uesp_terms, weights)
+
+SPELL_SCHOOLS = ("ALT", "CON", "DES", "ILU", "RES")
 LEVELS = 49  # level-ups from level 2 to 50
 
 
@@ -31,7 +34,8 @@ def split(ratio, total=LEVELS):
 def plan(w):
     """The player's attribute plan: the NPC ratio, moved where the NPC file wastes points."""
     h, m, s = (w.get(a, 0) for a in ATTRS)
-    magic = sum(v for k, v in w.items() if k in SKILLS and SCHOOL[k] == "m")
+    # Spell schools only: Enchanting is a magic skill but costs no Magicka to use.
+    magic = sum(v for k, v in w.items() if k in SPELL_SCHOOLS)
     total = sum(v for k, v in w.items() if k in SKILLS) or 1
     if m > 0 and magic == 0:
         return [h, 0, s + m], "Magicka moved to Stamina: this class has no spells."
@@ -98,15 +102,54 @@ def npc_homes(doc):
     return {n: build_of_class[e] for e, names in npc_classes().items() for n in names if e in build_of_class}
 
 
-def render_build(b, classes, stones, shouts, books, homes):
+def class_perks(eids, w, npcs, terms):
+    """Perks that named NPCs of these classes take, kept only when UESP files the perk under a skill
+    on this card. Grouped by skill (highest weight first); within a skill, perks more NPCs take come first."""
+    takers = {}
+    for e in eids:
+        for n in npcs.get(e, []):
+            for p in n.get("perks", []):
+                tree = (terms.get(p["name"]) or {}).get("tree")
+                if tree in w and tree in SKILLS:
+                    takers.setdefault((tree, p["name"]), []).append(npc_name(n["name"]))
+    return group_perks(takers, w)
+
+
+def group_perks(takers, w):
+    order = sorted({t for t, _ in takers}, key=lambda t: (-w.get(t, 0), list(SKILLS).index(t) if t in SKILLS else 99))
+    out = []
+    for t in order:
+        ps = sorted(((n, by) for (tt, n), by in takers.items() if tt == t), key=lambda x: (-len(x[1]), x[0]))
+        out.append({"s": SKILLS.get(t, "Werewolf"), "sc": SCHOOL.get(t, "c"),
+                    "perks": [{"n": n, "by": sorted(set(by))} for n, by in ps]})
+    return out
+
+
+def hand_perks(b, w, terms):
+    """Community builds: the perks their ledger row names, kept when they sit in a card skill or the werewolf tree."""
+    pk = b.get("perks")
+    if not pk:
+        return []
+    takers = {}
+    for n in pk["names"]:
+        tree = terms[n]["tree"]
+        if tree in w or tree == "werewolf":
+            takers[(tree, n)] = []
+    return group_perks(takers, w)
+
+
+def render_build(b, classes, stones, shouts, books, homes, npcs, terms):
     w = card_weights(b, classes)
     hand = "weights" in b
     # A hand-set ratio is already a player recommendation, so plan() does not adjust it.
     attrs, why = ([w[a] for a in ATTRS], "") if hand else plan(w)
+    skills = {k: x for k, x in w.items() if k in SKILLS}
     variants = []
     for v in b.get("variants", []):
         vw = weights(classes, v["classes"][0])
+        vskills = {k: x for k, x in vw.items() if k in SKILLS}
         variants.append({"label": v["label"], "eids": v["classes"], "skills": skill_line(vw),
+                         "perks": class_perks(v["classes"], vskills, npcs, terms),
                          "npcs": [npc_name(n) for n in v.get("examples", [])],
                          "attr": [vw.get(a, 0) for a in ATTRS]})
     return {
@@ -116,7 +159,10 @@ def render_build(b, classes, stones, shouts, books, homes):
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
         "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []),
-        "lore": render_lore(b, homes), "ev": b["evidence"], **render_picks(b, stones, shouts, books),
+        "lore": render_lore(b, homes),
+        "perks": hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms),
+        "perk_ev": b["perks"]["evidence"] if hand and b.get("perks") else ("sourced" if not hand else ""),
+        "perk_ref": b["perks"].get("ref", "") if hand and b.get("perks") else "", "ev": b["evidence"], **render_picks(b, stones, shouts, books),
     }
 
 
@@ -130,9 +176,11 @@ def page_data():
     stones, shouts = by_id(load_lookup("stones")), by_id(load_lookup("shouts"))
     homes = npc_homes(doc)
     books = by_id(load_lookup("black_books"))
+    npcs = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())["classes"]
+    terms = uesp_terms()
     return {
         "fams": doc["families"],
-        "builds": [render_build(b, classes, stones, shouts, books, homes) for b in doc["builds"]],
+        "builds": [render_build(b, classes, stones, shouts, books, homes, npcs, terms) for b in doc["builds"]],
         "races": [render_race(r) for r in races],
     }
 

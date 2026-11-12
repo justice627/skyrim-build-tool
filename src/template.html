@@ -78,6 +78,15 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.perks{display:grid;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
+.plab{font:600 10.5px/1.9 var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.pg{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.pgs{display:inline-flex;align-items:center;gap:5px;font:600 11.5px var(--f-body);min-width:92px;color:var(--ink)}
+.pgs i{width:6px;height:6px;border-radius:50%;display:inline-block}
+.pgs.sc-c i{background:var(--c-combat)} .pgs.sc-m i{background:var(--c-magic)} .pgs.sc-s i{background:var(--c-stealth)}
+.pill.pk{cursor:help;white-space:normal}
+.psrc{font-size:11.5px;color:var(--muted)}
+.v .vperks{display:block;font-size:11.5px}
 .mhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .more-res>summary{font-size:13px;margin-top:4px}
 .more-res[open]>summary{margin-bottom:12px}
@@ -133,6 +142,7 @@ footer a{color:var(--accent)}
   <div>Stones and shouts are suggestions written for this tool unless marked otherwise. "Suggested" means worked out here, not read in a source. "Partly sourced" means a community source names part of the pick. Hover a stone or shout for what it does. DG, HF and DB badges mean the build's picks need Dawnguard, Hearthfire or Dragonborn; no badge means the base game is enough.</div>
   <div>Community builds have no NPC class in the game. Their skill weights are set by hand from the community sources in the research ledger, on the same 1 to 4 scale, and every perk, item or spell they name was checked against UESP.</div>
   <div>Lore and community picks come from the project's research ledger. They describe how other players or the lore shape a build, so they are leads, not game data. Where a picked character's own UESP class sits in another build, the pick says so.</div>
+  <div>Perks on class builds are the ones UESP lists for named NPCs of that class, filtered to the skills on the card. Perks UESP marks as NPC-only are left out. Many classes have no named NPC with a perk list, and those cards say so instead of guessing.</div>
   <div>Example NPCs are characters whose UESP page lists that exact class, read through UESP's wiki API. Each is one of several NPCs who share the class, not the only one.</div>
   <div>Class weights: <a href="https://en.uesp.net/wiki/Skyrim:Classes">UESP, Skyrim:Classes</a>, from your saved PDF and screenshot. Creatures, undead, Daedra, Falmer, giants and werewolf beast forms are left out. Race skill bonuses are the vanilla values; race attribute plans are recommendations.</div>
 </footer>
@@ -150,11 +160,21 @@ const REQ={DG:'Dawnguard',HF:'Hearthfire',DB:'Dragonborn',CC:'a paid Creation',A
 const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'}];
 let st={f:'all',q:''};
 
+// Perks: grouped by skill, each chip colored by school. Hover shows which named NPCs take it.
+const perkGroups=gs=>gs.map(g=>`<div class="pg"><span class="pgs sc-${g.sc}"><i></i>${esc(g.s)}</span>${g.perks.map(p=>`<span class="pill pk"${p.by.length?` title="Taken by ${esc(p.by.join(', '))}"`:''}>${esc(p.n)}${p.by.length>1?` <b>×${p.by.length}</b>`:''}</span>`).join('')}</div>`).join('');
+function perkBlock(b){
+  if(b.perks.length){
+    const src=b.hand?`Key perks named by community sources (ledger ${esc(b.perk_ref)}). <span class="sug">partly sourced</span>`
+      :'Perks that named NPCs of this class take, read from UESP. Hover a perk to see who; ×2 means two NPCs take it.';
+    return `<div class="perks"><div class="plab">Perks</div>${perkGroups(b.perks)}<div class="psrc">${src}</div></div>`;
+  }
+  return `<div class="perks"><div class="plab">Perks</div><div class="psrc">${b.hand?'The community sources name no perks for this build.':'No NPC of this class has perks listed on UESP.'}</div></div>`;
+}
 function card(b){
   const eidline=b.hand?`<div class="eid note">No class file. Weights set by hand from ledger ${esc(b.ref)}.</div>`:`<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div>`;
   const nv=b.variants.length, nl=b.lore.length, plural=(n,w)=>`${n} ${w}${n>1?'s':''}`;
   const tag=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
-  const vars=b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b>${x.npcs.length?`<span>Examples: ${x.npcs.map(esc).join(', ')}</span><br>`:''}<span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span></div>`).join('');
+  const vars=b.variants.map(x=>`<div class="v"><b>${esc(x.label)}</b>${x.npcs.length?`<span>Examples: ${x.npcs.map(esc).join(', ')}</span><br>`:''}<span>${esc(x.skills)} · H ${x.attr[0]} M ${x.attr[1]} S ${x.attr[2]}</span>${x.perks.length?`<span class="vperks">Perks: ${x.perks.map(g=>g.perks.map(p=>esc(p.n)).join(', ')).join(' · ')}</span>`:''}</div>`).join('');
   const lore=b.lore.map(x=>`<div class="v"><b>${esc(x.n)}</b>${x.req.map(r=>` <span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')} ${tag(x.ev)}<span class="chg">${esc(x.changes)}</span>${x.where?`<span class="where">In the game, ${esc(x.npc)} uses a class from the ${esc(x.where)} build.</span>`:''}<span class="ref">Ledger ${esc(x.ref)}</span></div>`).join('');
   const v=(nv||nl)?`<details><summary>${[nv?plural(nv,'variant'):'',nl?plural(nl,'lore pick'):''].filter(Boolean).join(' · ')}</summary>${nv?`<div class="vlist">${vars}</div>`:''}${nl?`<div class="vhead">Lore and community picks</div><div class="vlist">${lore}</div>`:''}${eidline}</details>`
     :eidline;
@@ -168,6 +188,7 @@ function card(b){
   <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${sug(b.shouts.ev)}</div></div>${b.beast?`
   <div class="tier pick"><span>Beast form</span><div class="sk"><span class="pill">${esc(b.beast)}</span></div></div>`:''}${b.book?`
   <div class="tier pick"><span>Black Book</span><div class="sk"><span class="pill" title="${esc(b.book.fx)}">${esc(b.book.book)}: ${esc(b.book.power)} <b>DB</b></span>${sug(b.book.ev)}</div></div>`:''}</div>
+  ${perkBlock(b)}
   <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
   ${v}</article>`;
 }
@@ -177,7 +198,7 @@ function raceCard(r){
   <div class="tiers"><div class="tier"><span>Starts 25</span><div class="sk">${pill(r.sig)}</div></div><div class="tier"><span>Starts 20</span><div class="sk">${r.plus5.map(s=>pill(s)).join('')}</div></div></div>
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
-function hay(b){return [b.name,...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function hay(b){return [b.name,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
 function strong(b,q){return [b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].some(t=>t&&t.toLowerCase().includes(q))}
 function raceHay(r){return [r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase()}
 const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div>';

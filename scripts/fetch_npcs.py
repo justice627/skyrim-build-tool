@@ -5,7 +5,8 @@ Writes docs/sources/uesp-npc-classes.json:
 
 An NPC counts for a class when its NPC Summary infobox has class_details=[[Skyrim:<EditorID>|...]],
 or, without that, a class name that matches exactly one EditorID in the Skyrim:Classes table.
-`size` is the NPC page's length in bytes, used to list better-known NPCs first.
+`perks` is the NPC Summary's perk list as UESP gives it (NPC-only perks included; build.py keeps
+only perks that UESP files under a skill tree). `size` is the NPC page's length in bytes, used to list better-known NPCs first.
 Pages that hold more than one NPC Summary (generic soldiers, unused NPCs) are skipped.
 Run it by hand when the data needs refreshing; build.py and validate.py only read the saved file.
 """
@@ -97,6 +98,20 @@ def summaries(text):
                (link_text(cls.group(1).strip()) if cls else None))
 
 
+def perks_of(text):
+    """Perks from the NPC Summary's perks= field: [{"name", "rank"}]. "None" or empty gives []."""
+    m = SUMMARY.search(text)
+    f = re.search(r"\|\s*perks\s*=([^\n]*)", m.group(1)) if m else None
+    out = []
+    for item in (f.group(1).split(";") if f else []):
+        rank = re.search(r"\((?:rank|Rank)\s*(\d+)\)", item)
+        item = re.sub(r"\((?:rank|Rank)\s*\d+\)", "", item)
+        name = link_text(item.strip()) if "[[" in item else re.sub(r"<[^>]+>|\{\{[^}]*\}\}", "", item).strip()
+        if name and name.lower() != "none":
+            out.append({"name": name, "rank": int(rank.group(1)) if rank else None})
+    return out
+
+
 def main():
     classes = json.loads((DATA / "classes.json").read_text())
     names = class_names()
@@ -118,7 +133,7 @@ def main():
             else:
                 continue
             result[eid].append({"name": name or title.split(":", 1)[1], "page": title, "size": size,
-                                "matched_by": how})
+                                "matched_by": how, "perks": perks_of(text)})
     for found in result.values():
         found.sort(key=lambda n: (-n["size"], n["name"]))
     OUT.write_text(json.dumps({"retrieved": datetime.date.today().isoformat(), "source": API,

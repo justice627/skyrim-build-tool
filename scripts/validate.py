@@ -13,6 +13,7 @@ Rules:
 - hand-set builds (no class file) have weights 1-4, a ledger A ref, and are never graded sourced
 - beast forms and Black Book powers resolve; every `mentions` term exists on UESP and is not unobtainable
 - lore picks that list 3+ skills share at least half of them with their build (unless they say "adds")
+- community `perks` are UESP player perks in the build's skills (or the werewolf tree), named in mentions
 - every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
@@ -73,6 +74,27 @@ def check_hand_set(name, b, errors):
         errors.append(f"{name}: hand-set weights cannot be graded sourced")
     if b.get("variants") or b.get("examples"):
         errors.append(f"{name}: variants and examples need class files; use lore picks instead")
+
+
+def check_perks(name, b, terms, errors):
+    """Community builds may list key perks from their ledger row: each must be a UESP perk in one of the
+    build's skills or the werewolf tree, and also appear in `mentions` (the text names it)."""
+    pk = b.get("perks")
+    if not pk:
+        return
+    if "weights" not in b:
+        errors.append(f"{name}: class builds get perks from UESP NPC data, not a perks field")
+        return
+    if pk.get("evidence") not in EVIDENCE or not HAND_REF.fullmatch(str(pk.get("ref", ""))):
+        errors.append(f"{name}: perks need an evidence grade and a ledger A ref")
+    for n in pk.get("names", []):
+        tree = (terms.get(n) or {}).get("tree")
+        if not tree:
+            errors.append(f"{name}: perk {n!r} is not a player perk on UESP; run scripts/fetch_terms.py")
+        elif tree != "werewolf" and tree not in b["weights"]:
+            errors.append(f"{name}: perk {n!r} is in the {tree} tree, which this build does not use")
+        if n not in b.get("mentions", []):
+            errors.append(f"{name}: perk {n!r} must also be in mentions")
 
 
 def check_extras(name, b, books, errors):
@@ -187,6 +209,7 @@ def main():
         if "classes" in b or "weights" in b:
             check_lore_fit(name, b, classes, errors)
         check_extras(name, b, books, errors)
+        check_perks(name, b, terms, errors)
         check_mentions(name, b.get("mentions", []), terms, errors)
         if ("classes" in b) == ("weights" in b):
             errors.append(f"{name}: needs either classes or hand-set weights, not both or neither")

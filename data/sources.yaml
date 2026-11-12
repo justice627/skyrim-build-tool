@@ -45,6 +45,14 @@ sources:
     notes: >-
       Confirms each term has a UESP page and is not listed as unobtainable. It does not confirm every
       claim a build makes about the term; those keep the build's own evidence grade.
+  - id: uesp-npc-perks
+    title: UESP NPC pages, perks field (wiki API)
+    url: https://en.uesp.net/w/api.php
+    used_for: Perks on class builds and variants (perks in docs/sources/uesp-npc-classes.json)
+    evidence: sourced
+    notes: >-
+      Each perk's skill tree comes from where UESP files the perk (docs/sources/uesp-terms.json).
+      Perks UESP files as NPC-only, or that have no page, are left out.
   - id: uesp-black-books
     title: UESP, Skyrim:Powers (Black Book section)
     url: https://en.uesp.net/w/api.php

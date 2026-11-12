@@ -1252,6 +1252,7 @@ builds:
   stone: {early: warrior, final: atronach, evidence: partly-sourced, ref: A1}
   shouts: {ids: [marked-for-death, unrelenting-force, whirlwind-sprint], evidence: partly-sourced, ref: A1}
   mentions: ["Fists of Steel", "Gloves of the Pugilist", "Daedric Gauntlets", "Fortify Unarmed Damage"]
+  perks: {names: ["Fists of Steel"], evidence: partly-sourced, ref: A1}
   description: >-
     Fight with your fists. Heavy Armor's Fists of Steel perk adds your gauntlets' armor rating to every
     punch, so heavy gauntlets such as Daedric ones hit hard. Enchanting stacks Fortify Unarmed Damage on
@@ -1294,6 +1295,7 @@ builds:
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [unrelenting-force, elemental-fury, marked-for-death], evidence: derived}
   mentions: ["Ring of Hircine", "Savage Feeding", "Totem of Ice Brothers", "Totem of the Moon"]
+  perks: {names: ["Savage Feeding", "Totem of Ice Brothers", "Totem of the Moon"], evidence: partly-sourced, ref: A3}
   description: >-
     Beast form is the main mode. Join the Companions, then take the werewolf perk tree from Dawnguard:
     Savage Feeding, Totem of Ice Brothers and Totem of the Moon. The Ring of Hircine gives extra
@@ -1331,6 +1333,7 @@ builds:
   shouts: {ids: [aura-whisper, throw-voice, marked-for-death], evidence: derived}
   black_book: {book: the-hidden-twilight, power: "Mora's Agony", evidence: partly-sourced, ref: A5}
   mentions: ["Poisoned", "Poison Rune", "Paralysis", "Mora's Agony"]
+  perks: {names: ["Poisoned"], evidence: partly-sourced, ref: A5}
   description: >-
     Brew it, then deliver it. Pickpocket's Poisoned perk lets you plant poisons on people. Paralysis
     poisons and Poison Rune do the rest, with daggers to finish. The Hidden Twilight Black Book adds Mora's
@@ -1352,6 +1355,7 @@ builds:
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [elemental-fury, whirlwind-sprint, marked-for-death], evidence: partly-sourced, ref: A14}
   mentions: ["Windshear", "Dual Flurry"]
+  perks: {names: ["Dual Flurry"], evidence: partly-sourced, ref: A14}
   description: >-
     A one-handed weapon in each hand and light armor. Elemental Fury is the key shout: faster swings mean
     more hits. One-Handed's Dual Flurry perk speeds up dual-wield attacks. Windshear in one hand staggers

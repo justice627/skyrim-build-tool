@@ -1,311 +1,760 @@
 {
- "retrieved": "2026-11-11",
+ "retrieved": "2026-11-12",
  "source": "https://en.uesp.net/w/api.php",
  "terms": {
+  "Adept Conjuration": {
+   "page": "Skyrim:Conjuration",
+   "section": "Adept Conjuration",
+   "missing": false,
+   "tree": "CON"
+  },
+  "Adept Destruction": {
+   "page": "Skyrim:Destruction",
+   "section": "Adept Destruction",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Agile Defender": {
+   "page": "Skyrim:Light Armor",
+   "section": "Agile Defender",
+   "missing": false,
+   "tree": "LTA"
+  },
   "Amulet of Talos": {
    "page": "Skyrim:Amulets of the Divines",
    "section": "Amulet of Talos",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Apprentice Conjuration": {
+   "page": "Skyrim:Conjuration",
+   "section": "Apprentice Conjuration",
+   "missing": false,
+   "tree": "CON"
+  },
+  "Apprentice Destruction": {
+   "page": "Skyrim:Destruction",
+   "section": "Apprentice Destruction",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Armsman": {
+   "page": "Skyrim:One-handed",
+   "section": "Armsman",
+   "missing": false,
+   "tree": "1HD"
+  },
+  "Atromancy": {
+   "page": "Skyrim:Conjuration",
+   "section": "Atromancy",
+   "missing": false,
+   "tree": "CON"
+  },
+  "Augmented Flames": {
+   "page": "Skyrim:Destruction",
+   "section": "Augmented Flames",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Augmented Frost": {
+   "page": "Skyrim:Destruction",
+   "section": "Augmented Frost",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Augmented Shock": {
+   "page": "Skyrim:Destruction",
+   "section": "Augmented Shock",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Barbarian": {
+   "page": "Skyrim:Classes",
+   "section": "Barbarian",
+   "missing": false,
+   "perk_page": "Skyrim:Two-handed",
+   "tree": "2HD"
   },
   "Bend Will": {
    "page": "Skyrim:Bend Will",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Black Book: Epistolary Acumen": {
    "page": "Skyrim:Black Book: Epistolary Acumen",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Bladesman": {
+   "page": "Skyrim:One-handed",
+   "section": "Bladesman",
+   "missing": false,
+   "tree": "1HD"
+  },
+  "Bone Breaker": {
+   "page": "Skyrim:One-handed",
+   "section": "Bone Breaker",
+   "missing": false,
+   "tree": "1HD"
   },
   "Bound Bow": {
    "page": "Skyrim:Bound Weapon",
    "section": "Bound Bow",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Call to Arms": {
    "page": "Skyrim:Call to Arms",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Calm": {
    "page": "Skyrim:Calm",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Chain Lightning": {
    "page": "Skyrim:Chain Lightning",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Champion's Stance": {
+   "page": "Skyrim:Two-handed",
+   "section": "Champion's Stance",
+   "missing": false,
+   "tree": "2HD"
+  },
+  "Critical Shot": {
+   "page": "Skyrim:Archery",
+   "section": "Critical Shot",
+   "missing": false,
+   "tree": "ARC"
   },
   "Crossbow": {
    "page": "Skyrim:Crossbow",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Custom Fit": {
+   "page": "Skyrim:Light Armor",
+   "section": "Custom Fit",
+   "missing": false,
+   "tree": "LTA"
   },
   "Daedric Gauntlets": {
    "page": "Skyrim:Daedric",
    "section": "Daedric Gauntlets",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Dark Souls": {
+   "page": "Skyrim:Conjuration",
+   "section": "Dark Souls",
+   "missing": false,
+   "tree": "CON"
   },
   "Dawnbreaker": {
    "page": "Skyrim:Dawnbreaker",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Dawnguard Rune Axe": {
    "page": "Skyrim:Dawnguard Rune Axe",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Dead Thrall": {
    "page": "Skyrim:Dead Thrall",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Deep Freeze": {
+   "page": "Skyrim:Destruction",
+   "section": "Deep Freeze",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Deep Wounds": {
+   "page": "Skyrim:Two-handed",
+   "section": "Deep Wounds",
+   "missing": false,
+   "tree": "2HD"
+  },
+  "Deflect Arrows": {
+   "page": "Skyrim:Block",
+   "section": "Deflect Arrows",
+   "missing": false,
+   "tree": "BLO"
+  },
+  "Destruction Dual Casting": {
+   "page": "Skyrim:Destruction",
+   "section": "Destruction Dual Casting",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Devastating Blow": {
+   "page": "Skyrim:Two-handed",
+   "section": "Devastating Blow",
+   "missing": false,
+   "tree": "2HD"
   },
   "Dragonbane": {
    "page": "Skyrim:Dragonbane",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Dragonbone Sword": {
    "page": "Skyrim:Dragon Items",
    "section": "Dragonbone Sword",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Dread Zombie": {
    "page": "Skyrim:Reanimate (spells)",
    "section": "Dread Zombie",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Dual Flurry": {
    "page": "Skyrim:One-handed",
    "section": "Dual Flurry",
-   "missing": false
+   "missing": false,
+   "tree": "1HD"
   },
   "Dwarven Crossbow": {
    "page": "Skyrim:Dwarven",
    "section": "Dwarven Crossbow",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Ebony Dagger": {
    "page": "Skyrim:Ebony",
    "section": "Ebony Dagger",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Ebonyflesh": {
    "page": "Skyrim:Armor (spells)",
    "section": "Ebonyflesh",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Elemental Potency": {
+   "page": "Skyrim:Conjuration",
+   "section": "Elemental Potency",
+   "missing": false,
+   "tree": "CON"
+  },
+  "Elemental Protection": {
+   "page": "Skyrim:Block",
+   "section": "Elemental Protection",
+   "missing": false,
+   "tree": "BLO"
+  },
+  "Extra Damage": {
+   "page": "Skyrim:Damage",
+   "section": "NPC-Only",
+   "missing": false,
+   "tree": null
+  },
+  "Extra Damage (CWGuardExtraDamageToPlayer)": {
+   "page": "Skyrim:Extra Damage (CWGuardExtraDamageToPlayer)",
+   "section": "",
+   "missing": true,
+   "tree": null
+  },
+  "Extra Damage (CWSoldierExtraDamageToPlayer)": {
+   "page": "Skyrim:Extra Damage (CWSoldierExtraDamageToPlayer)",
+   "section": "",
+   "missing": true,
+   "tree": null
+  },
+  "Extra Damage 1.5": {
+   "page": "Skyrim:Damage",
+   "section": "NPC-Only",
+   "missing": false,
+   "tree": null
+  },
+  "Extra Damage 2": {
+   "page": "Skyrim:Damage",
+   "section": "NPC-Only",
+   "missing": false,
+   "tree": null
   },
   "Falmer Heavy Armor": {
    "page": "Skyrim:Falmer Equipment",
    "section": "Falmer Heavy Armor",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Falmer War Axe": {
    "page": "Skyrim:Falmer Equipment",
    "section": "Falmer War Axe",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Fear": {
    "page": "Skyrim:Fear",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Fighting Stance": {
+   "page": "Skyrim:One-handed",
+   "section": "Fighting Stance",
+   "missing": false,
+   "tree": "1HD"
   },
   "Fire Rune": {
    "page": "Skyrim:Fire Rune",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Fists of Steel": {
    "page": "Skyrim:Heavy Armor",
    "section": "Fists of Steel",
-   "missing": false
+   "missing": false,
+   "tree": "HVA"
   },
   "Fortify Unarmed Damage": {
    "page": "Skyrim:Fortify Unarmed Damage",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Frenzy": {
    "page": "Skyrim:Frenzy",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Frost Cloak": {
    "page": "Skyrim:Frost Cloak",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Frost Rune": {
    "page": "Skyrim:Frost Rune",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Fury": {
    "page": "Skyrim:Fury",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Ghostblade": {
    "page": "Skyrim:Ghostblade",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Gloves of the Pugilist": {
    "page": "Skyrim:Gloves of the Pugilist",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Great Critical Charge": {
+   "page": "Skyrim:Two-handed",
+   "section": "Great Critical Charge",
+   "missing": false,
+   "tree": "2HD"
   },
   "Greater Ward": {
    "page": "Skyrim:Ward (spells)",
    "section": "Greater Ward",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Guild Master's Hood": {
    "page": "Skyrim:Guild Master's Hood",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Hack and Slash": {
+   "page": "Skyrim:One-handed",
+   "section": "Hack and Slash",
+   "missing": false,
+   "tree": "1HD"
+  },
+  "Impact": {
+   "page": "Skyrim:Destruction",
+   "section": "Impact",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Increase Detection": {
+   "page": "Skyrim:Increase Detection",
+   "section": "",
+   "missing": true,
+   "tree": null
   },
   "Invisibility": {
    "page": "Skyrim:Invisibility",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "IrilethVsDragons": {
+   "page": "Skyrim:IrilethVsDragons",
+   "section": "",
+   "missing": true,
+   "tree": null
   },
   "Jester's Clothes": {
    "page": "Skyrim:Cicero's Clothes",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Light Foot": {
+   "page": "Skyrim:Sneak",
+   "section": "Light Foot",
+   "missing": false,
+   "tree": "SNK"
   },
   "Lightning Rune": {
    "page": "Skyrim:Lightning Rune",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Limbsplitter": {
+   "page": "Skyrim:Two-handed",
+   "section": "Limbsplitter",
+   "missing": false,
+   "tree": "2HD"
+  },
+  "MS02IncreaseDamage": {
+   "page": "Skyrim:Damage",
+   "section": "NPC-Only",
+   "missing": false,
+   "tree": null
+  },
+  "Mage Armor": {
+   "page": "Skyrim:Alteration",
+   "section": "Mage Armor",
+   "missing": false,
+   "tree": "ALT"
+  },
+  "Magic Resistance": {
+   "page": "Skyrim:Alteration",
+   "section": "Magic Resistance",
+   "missing": false,
+   "tree": "ALT"
   },
   "Mora's Agony": {
    "page": "Skyrim:Powers",
    "section": "Mora's Agony",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Muffle": {
    "page": "Skyrim:Muffle",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Muffled Movement": {
+   "page": "Skyrim:Sneak",
+   "section": "Muffled Movement",
+   "missing": false,
+   "tree": "SNK"
+  },
+  "Necromage": {
+   "page": "Skyrim:Necromage",
+   "section": "",
+   "missing": false,
+   "perk_page": "Skyrim:Restoration",
+   "tree": "RES"
+  },
+  "Necromancy": {
+   "page": "Skyrim:Conjuration",
+   "section": "Necromancy",
+   "missing": false,
+   "tree": "CON"
+  },
+  "Novice Conjuration": {
+   "page": "Skyrim:Conjuration",
+   "section": "Novice Conjuration",
+   "missing": false,
+   "tree": "CON"
+  },
+  "Novice Destruction": {
+   "page": "Skyrim:Destruction",
+   "section": "Novice Destruction",
+   "missing": false,
+   "tree": "DES"
+  },
+  "Overdraw": {
+   "page": "Skyrim:Archery",
+   "section": "Overdraw",
+   "missing": false,
+   "tree": "ARC"
   },
   "Pacify": {
    "page": "Skyrim:Pacify",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Paralysis": {
    "page": "Skyrim:Paralyze (effect)",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Poison Rune": {
    "page": "Skyrim:Poison Rune",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Poisoned": {
    "page": "Skyrim:Pickpocket",
    "section": "Poisoned",
-   "missing": false
+   "missing": false,
+   "tree": "PIC"
+  },
+  "Power Shot": {
+   "page": "Skyrim:Archery",
+   "section": "Power Shot",
+   "missing": false,
+   "tree": "ARC"
+  },
+  "Quick Shot": {
+   "page": "Skyrim:Archery",
+   "section": "Quick Shot",
+   "missing": false,
+   "tree": "ARC"
+  },
+  "Ranger": {
+   "page": "Skyrim:Ranger",
+   "section": "",
+   "missing": false,
+   "perk_page": "Skyrim:Archery",
+   "tree": "ARC"
+  },
+  "Recovery": {
+   "page": "Skyrim:Restoration",
+   "section": "Recovery",
+   "missing": false,
+   "tree": "RES"
   },
   "Red Eagle's Fury": {
    "page": "Skyrim:Quest Items",
    "section": "Red Eagle's Fury",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Reduce Attack Damage": {
+   "page": "Skyrim:Damage",
+   "section": "NPC-Only",
+   "missing": false,
+   "tree": null
+  },
+  "Reduce Damage": {
+   "page": "Skyrim:Damage",
+   "section": "NPC-Only",
+   "missing": false,
+   "tree": null
+  },
+  "Reduced Damage 0.5": {
+   "page": "Skyrim:Damage",
+   "section": "NPC-Only",
+   "missing": false,
+   "tree": null
+  },
+  "Regeneration": {
+   "page": "Skyrim:Restoration",
+   "section": "Regeneration",
+   "missing": false,
+   "tree": "RES"
+  },
+  "Respite": {
+   "page": "Skyrim:Restoration",
+   "section": "Respite",
+   "missing": false,
+   "tree": "RES"
   },
   "Revenant": {
    "page": "Skyrim:Reanimate (spells)",
    "section": "Revenant",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Ring of Bloodlust": {
    "page": "Skyrim:Ring of Bloodlust",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Ring of Hircine": {
    "page": "Skyrim:Ring of Hircine",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Ring of Namira": {
    "page": "Skyrim:Ring of Namira",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Savage Feeding": {
    "page": "Skyrim:Lycanthropy",
    "section": "Savage Feeding",
-   "missing": false
+   "missing": false,
+   "tree": "werewolf"
+  },
+  "Savage Strike": {
+   "page": "Skyrim:One-handed",
+   "section": "Savage Strike",
+   "missing": false,
+   "tree": "1HD"
   },
   "Shellbug Helmet": {
    "page": "Skyrim:Animal Parts",
    "section": "Shellbug Helmet",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Skullcrusher": {
+   "page": "Skyrim:Two-handed",
+   "section": "Skullcrusher",
+   "missing": false,
+   "tree": "2HD"
   },
   "Spellbreaker": {
    "page": "Skyrim:Spellbreaker",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Spider Scrolls": {
    "page": "Skyrim:Spider Scrolls",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Stability": {
+   "page": "Skyrim:Alteration",
+   "section": "Stability",
+   "missing": false,
+   "tree": "ALT"
   },
   "Stalhrim": {
    "page": "Skyrim:Stalhrim",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Stealth": {
+   "page": "Skyrim:Stealth",
+   "section": "",
+   "missing": false,
+   "perk_page": "Skyrim:Sneak",
+   "tree": "SNK"
+  },
+  "Summoner": {
+   "page": "Skyrim:Conjuration",
+   "section": "Summoner",
+   "missing": false,
+   "tree": "CON"
+  },
+  "Targe Bashing Bleeding": {
+   "page": "Skyrim:Targe of the Blooded",
+   "section": "",
+   "missing": false,
+   "tree": null
   },
   "Targe of the Blooded": {
    "page": "Skyrim:Targe of the Blooded",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "The Black Star (item)": {
    "page": "Skyrim:The Black Star (item)",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "The Pale Blade": {
    "page": "Skyrim:The Pale Blade",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Totem of Ice Brothers": {
    "page": "Skyrim:Lycanthropy",
    "section": "Totem of Ice Brothers",
-   "missing": false
+   "missing": false,
+   "tree": "werewolf"
   },
   "Totem of the Moon": {
    "page": "Skyrim:Lycanthropy",
    "section": "Totem of the Moon",
-   "missing": false
+   "missing": false,
+   "tree": "werewolf"
+  },
+  "Tower of Strength": {
+   "page": "Skyrim:Heavy Armor",
+   "section": "Tower of Strength",
+   "missing": false,
+   "tree": "HVA"
   },
   "Turn Undead": {
    "page": "Skyrim:Turn Undead",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Wabbajack": {
    "page": "Skyrim:Wabbajack",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
+  },
+  "Ward Absorb": {
+   "page": "Skyrim:Restoration",
+   "section": "Ward Absorb",
+   "missing": false,
+   "tree": "RES"
+  },
+  "Well Fitted": {
+   "page": "Skyrim:Heavy Armor",
+   "section": "Well Fitted",
+   "missing": false,
+   "tree": "HVA"
   },
   "Windshear": {
    "page": "Skyrim:Windshear",
    "section": "",
-   "missing": false
+   "missing": false,
+   "tree": null
   },
   "Wolf Armor": {
    "page": "Skyrim:Specialty Gear",
    "section": "Companions Equipment",
-   "missing": false
+   "missing": false,
+   "tree": null
   }
  }
 }

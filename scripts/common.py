@@ -54,6 +54,15 @@ def skills_in_text(text):
     return {c for c, n in SKILLS.items() if re.search(r"\b" + re.escape(n.lower()) + r"\b", low)}
 
 
+_TREE_PAGES = {f"skyrim:{n.lower()}": c for c, n in SKILLS.items()}
+_TREE_PAGES["skyrim:lycanthropy"] = "werewolf"
+
+
+def tree_of_page(page):
+    """Skill code for a UESP skill page ("Skyrim:One-handed" -> "1HD"), "werewolf" for Lycanthropy, else None."""
+    return _TREE_PAGES.get(page.lower()) if page else None
+
+
 def card_weights(b, classes):
     """The weights a build's card shows: hand-set `weights`, or its first class file's."""
     return b["weights"] if "weights" in b else classes[b["classes"][0]]["weights"]
