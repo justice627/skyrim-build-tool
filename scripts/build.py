@@ -162,13 +162,27 @@ def render_gear(b, skills, terms, worn):
     return {"armor": ARMOR[lo["armor"]], "hands": [HANDS[h] for h in lo["hands"]], "sig": sig, "worn": seen}
 
 
-def tree_perks(skills, shown, trees):
-    """Early skill-tree perks for each primary skill the card shows no perk for (NPC or ledger perks)."""
+def tree_perks(skills, shown, trees, lo=None):
+    """Early skill-tree perks for each primary skill the card shows no perk for (NPC or ledger perks).
+    A build with no primary skill (Monk, Vigilant) falls back to its secondary skills, skipping Block
+    without a shield and armor its loadout does not wear, at most three trees."""
     covered = {g["s"] for g in shown}
     have = {p["n"] for g in shown for p in g["perks"]}
     out = []
-    for k, v in sorted(skills.items(), key=lambda kv: -kv[1]):
-        if v >= 3 and SKILLS[k] not in covered:
+    floor = 3 if any(v >= 3 for v in skills.values()) else 2
+    skip = set()
+    if floor == 2 and lo:
+        if "shield" not in lo["hands"]:
+            skip.add("BLO")
+        if lo["armor"] not in ("light",):
+            skip.add("LTA")
+        if lo["armor"] not in ("heavy", "robes-heavy"):
+            skip.add("HVA")
+    order = sorted(skills.items(), key=lambda kv: (-kv[1], list(SKILLS).index(kv[0])))
+    for k, v in order:
+        if len(out) >= 3 and floor == 2:
+            break
+        if v >= floor and k not in skip and SKILLS[k] not in covered:
             ps = early_perks(trees, k, have)
             if ps:
                 out.append({"s": SKILLS[k], "sc": SCHOOL[k], "perks": ps})
@@ -201,7 +215,8 @@ def render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn, ra
         "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []),
         "lore": render_lore(b, homes, terms),
         "perks": hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms),
-        "tree": tree_perks(skills, hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms), trees or {}),
+        "tree": tree_perks(skills, hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms),
+                           trees or {}, loadout(skills, b.get("loadout"))),
         "perk_ev": b["perks"]["evidence"] if hand and b.get("perks") else ("sourced" if not hand else ""),
         "perk_ref": b["perks"].get("ref", "") if hand and b.get("perks") else "", "ev": b["evidence"], **render_picks(b, stones, shouts, books),
     }
