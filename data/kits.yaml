@@ -1,0 +1,96 @@
+# Gear kits (ledger D): item bundles that fit a build. `items` are UESP page titles, checked by
+# fetch_terms.py. Requirement tags (CC and the Creation's name, or DLC) are not typed here: build.py
+# reads them from each item's UESP page header. `fits` lists build ids, from the ledger's pairing.
+# Evidence grades the pairing; that the items exist is sourced.
+kits:
+- id: spell-knight
+  name: Spell Knight
+  ref: D1
+  items: ["Spell Knight Armor"]
+  fits: [spellsword]
+  evidence: partly-sourced
+  note: "Iron, Steel and Ebony heavy armor sets. The Ebony set adds one-handed damage, cheaper Destruction and more Magicka."
+- id: necromantic-grimoire
+  name: Necromantic Grimoire
+  ref: D2
+  items: ["Necromantic Grimoire", "Bone Colossus"]
+  fits: [conjurer, preserver]
+  evidence: partly-sourced
+  note: "Skeleton minions, a Bone Colossus and new robes. Its strongest enchantment needs the Necromancy and Dark Souls perks."
+- id: arcane-archer
+  name: Arcane Archer
+  ref: D3
+  items: ["Arcane Archer Pack"]
+  fits: [battle-archer, witchhunter]
+  evidence: partly-sourced
+  note: "Elemental, bone and soul-stealing arrows, plus a Bound Quiver."
+- id: tribunal-ordinator
+  name: Tribunal Ordinator
+  ref: D4
+  items: ["Ghosts of the Tribunal", "Magebane", "Cleaver of St. Felms", "Skull Crusher"]
+  fits: [vigilant-of-stendarr, temple-priest]
+  evidence: partly-sourced
+  note: "Ordinator armor and the Masks of the Tribunal, with Magebane, the Cleaver of St. Felms and Skull Crusher."
+- id: holy-hunter
+  name: Holy hunter
+  ref: D5
+  items: ["Stendarr's Hammer", "Light of Day"]
+  fits: [vampire-slayer, vigilant-of-stendarr]
+  evidence: partly-sourced
+  note: "Stendarr's Hammer smites and drains Stamina. Light of Day deals triple damage to the undead."
+- id: bow-of-shadows
+  name: Shadow archer
+  ref: D6
+  items: ["Bow of Shadows"]
+  fits: [scout, assassin]
+  evidence: partly-sourced
+  note: "The Bow of Shadows makes you invisible for 30 seconds when you draw it."
+- id: paired-blades
+  name: Paired blades
+  ref: D7
+  items: ["Trueflame", "Hopesfire", "Dawnfang", "Bloodthirst"]
+  fits: [dual-wielder]
+  evidence: partly-sourced
+  note: "Pick a pair: Trueflame with Hopesfire, Dawnfang with its twin, or Bloodthirst."
+- id: nerevarine-relics
+  name: Nerevarine relics
+  ref: D8
+  items: ["Sunder", "Wraithguard", "Keening"]
+  fits: [spellsword]
+  evidence: partly-sourced
+  note: "The Nerevarine's tools, for the Mechanist pick: Sunder, Wraithguard and Keening."
+- id: mad-staves
+  name: Mad staves
+  ref: D9
+  items: ["Staff of Sheogorath", "Staff of Hasedoki"]
+  fits: [madman, hedge-wizard]
+  evidence: partly-sourced
+  note: "The Staff of Sheogorath staggers and paralyzes. The Staff of Hasedoki traps souls and knocks enemies back."
+- id: companions-relics
+  name: Companions' relics
+  ref: D10
+  items: ["Wuuthrad", "Shield of Ysgramor"]
+  fits: [greatsword-mercenary]
+  evidence: derived
+  note: "Wuuthrad or the Shield of Ysgramor, for the Ysgramor pick. They cannot be used together."
+- id: college-regalia
+  name: College regalia
+  ref: D11
+  items: ["Archmage's Robes", "Savos Aren's Amulet"]
+  fits: [destruction-mage]
+  evidence: partly-sourced
+  note: "The Archmage's Robes and Savos Aren's Amulet."
+- id: spellbreaker
+  name: Spellbreaker
+  ref: D12
+  items: ["Spellbreaker"]
+  fits: [spellshield]
+  evidence: partly-sourced
+  note: "A shield that casts a ward while you block."
+- id: ring-of-namira
+  name: Cannibal
+  ref: D13
+  items: ["Ring of Namira"]
+  fits: [preserver, vampire]
+  evidence: partly-sourced
+  note: "The Ring of Namira, for characters who feed on the dead."

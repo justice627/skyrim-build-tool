@@ -166,6 +166,26 @@ def render_build(b, classes, stones, shouts, books, homes, npcs, terms):
     }
 
 
+def kit_tags(items, terms):
+    """Requirement tags for a kit, read from where UESP says each item comes from."""
+    origins = [terms[i]["origin"] for i in items]
+    dlc = [o for o in ("DG", "DB", "HF") if o in origins]
+    creations = sorted({o[3:] for o in origins if o.startswith("CC:")})
+    return dlc, creations
+
+
+def render_kits(kits, terms):
+    by_build = {}
+    for k in kits:
+        dlc, creations = kit_tags(k["items"], terms)
+        base = [i for i in k["items"] if terms[i]["origin"] == "base"]
+        entry = {"n": k["name"], "ref": k["ref"], "items": k["items"], "note": k["note"], "ev": k["evidence"],
+                 "dlc": dlc, "cc": creations, "base": base}
+        for b in k["fits"]:
+            by_build.setdefault(b, []).append(entry)
+    return by_build
+
+
 def render_race(r):
     return {"race": r["race"], "sig": r["signature"], "plus5": r["plus5"], "attr": r["attributes"],
             "lv50": split(r["attributes"]), "note": r["note"], "power": r["power"]}
@@ -175,12 +195,19 @@ def page_data():
     classes, doc, races = load()
     stones, shouts = by_id(load_lookup("stones")), by_id(load_lookup("shouts"))
     homes = npc_homes(doc)
+    kits_by_build = render_kits(load_lookup("kits"), uesp_terms())
+    mods = load_lookup("modifiers")
+    name_of = {b["id"]: b["name"] for b in doc["builds"]}
     books = by_id(load_lookup("black_books"))
     npcs = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())["classes"]
     terms = uesp_terms()
     return {
         "fams": doc["families"],
-        "builds": [render_build(b, classes, stones, shouts, books, homes, npcs, terms) for b in doc["builds"]],
+        "builds": [dict(render_build(b, classes, stones, shouts, books, homes, npcs, terms),
+                        kits=kits_by_build.get(b["id"], []),
+                        mods=[m["name"] for m in mods if b["id"] in m["pairs"]]) for b in doc["builds"]],
+        "mods": [{"n": m["name"], "rule": m["rule"], "ref": m["ref"], "ev": m["evidence"],
+                  "pairs": [name_of[p] for p in m["pairs"]]} for m in mods],
         "races": [render_race(r) for r in races],
     }
 

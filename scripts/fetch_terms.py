@@ -9,6 +9,7 @@ run this script again after adding or renaming a mention.
 """
 import datetime
 import json
+import re
 
 import yaml
 
@@ -28,7 +29,33 @@ def mentions(doc):
         out.update(b.get("perks", {}).get("names", []))
         for e in b.get("lore", []):
             out.update(e.get("mentions", []))
+    for k in yaml.safe_load((DATA / "kits.yaml").read_text())["kits"]:
+        out.update(k["items"])
+    for m in yaml.safe_load((DATA / "modifiers.yaml").read_text())["modifiers"]:
+        out.update(m.get("mentions", []))
     return sorted(out)
+
+
+DLC = {"Dawnguard": "DG", "Dragonborn": "DB", "Hearthfire": "HF"}
+
+
+def origin(text):
+    """Where an item comes from, read from its UESP page header: "CC:<Creation>", "DG", "DB", "HF" or "base"."""
+    m = re.search(r"\{\{CC Header\|([^}|]*)", text)
+    if m:
+        name = m.group(1).strip()
+        if "=" in name or not name:  # e.g. {{CC Header|shortcut={{CC|Bow of Shadows}}
+            inner = re.search(r"\{\{CC\|([^}|]+)", text)
+            name = inner.group(1).strip() if inner else ""
+        return DLC.get(name, f"CC:{name}")
+    for dlc, tag in DLC.items():
+        if f"Category:Skyrim-{dlc}" in text[:3000]:
+            return tag
+    return "base"
+
+
+def kit_items():
+    return sorted({i for k in yaml.safe_load((DATA / "kits.yaml").read_text())["kits"] for i in k["items"]})
 
 
 def main():
@@ -60,6 +87,15 @@ def main():
                 result[t]["perk_page"] = target
     for t, r in result.items():
         r["tree"] = tree_of_page(r.get("perk_page") or r["page"])
+    # Origins for kit items, from each item's own page header.
+    items = kit_items()
+    for i in range(0, len(items), 50):
+        batch = items[i:i + 50]
+        d = get(action="query", prop="revisions", rvprop="content", rvslots="main",
+                titles="|".join(result[t]["page"] for t in batch))["query"]["pages"]
+        text = {p["title"]: p["revisions"][0]["slots"]["main"]["*"] for p in d.values() if "revisions" in p}
+        for t in batch:
+            result[t]["origin"] = origin(text.get(result[t]["page"], ""))
     OUT.write_text(json.dumps({"retrieved": datetime.date.today().isoformat(), "source": API,
                                "terms": result}, indent=1, ensure_ascii=False) + "\n")
     named = {t for b in doc["builds"] for t in b.get("mentions", []) + [m for e in b.get("lore", []) for m in e.get("mentions", [])]}

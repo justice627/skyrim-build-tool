@@ -78,6 +78,12 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.kit{font-size:12.5px;display:grid;gap:2px}
+.khead{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.kit .knote{color:var(--muted);font-size:12px}
+.cc{font:600 10.5px/1 var(--f-body);padding:3px 6px;border-radius:4px;background:var(--chip);color:var(--ink);white-space:nowrap}
+.chal{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.pair{font:600 11.5px/1 var(--f-body);padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--accent);cursor:pointer}
 .perks{display:grid;gap:6px;padding-top:10px;border-top:1px solid var(--line)}
 .plab{font:600 10.5px/1.9 var(--f-body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .pg{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
@@ -143,6 +149,7 @@ footer a{color:var(--accent)}
   <div>Community builds have no NPC class in the game. Their skill weights are set by hand from the community sources in the research ledger, on the same 1 to 4 scale, and every perk, item or spell they name was checked against UESP.</div>
   <div>Lore and community picks come from the project's research ledger. They describe how other players or the lore shape a build, so they are leads, not game data. Where a picked character's own UESP class sits in another build, the pick says so.</div>
   <div>Perks on class builds are the ones UESP lists for named NPCs of that class, filtered to the skills on the card. Perks UESP marks as NPC-only are left out. Many classes have no named NPC with a perk list, and those cards say so instead of guessing.</div>
+  <div>Gear kits come from the research ledger; every item was checked on UESP, and the CC tag names the Creation UESP lists it under. Creations are paid add-ons, all included in Anniversary Edition. Challenge runs are restrictions that work on any build.</div>
   <div>Example NPCs are characters whose UESP page lists that exact class, read through UESP's wiki API. Each is one of several NPCs who share the class, not the only one.</div>
   <div>Class weights: <a href="https://en.uesp.net/wiki/Skyrim:Classes">UESP, Skyrim:Classes</a>, from your saved PDF and screenshot. Creatures, undead, Daedra, Falmer, giants and werewolf beast forms are left out. Race skill bonuses are the vanilla values; race attribute plans are recommendations.</div>
 </footer>
@@ -157,7 +164,7 @@ const tier=(lab,a)=>a.length?`<div class="tier"><span>${lab}</span><div class="s
 const bar=a=>{const t=a[0]+a[1]+a[2]||1;return `<div class="bar">${['hp','mp','spb'].map((c,i)=>a[i]?`<span class="${c}" style="width:${a[i]/t*100}%"></span>`:'').join('')}</div>`};
 const lv=a=>`<div class="lv"><span class="lab">Level 50</span>${a[0]?`<span class="h">Health ×${a[0]}</span>`:''}${a[1]?`<span class="m">Magicka ×${a[1]}</span>`:''}${a[2]?`<span class="s">Stamina ×${a[2]}</span>`:''}</div>`;
 const REQ={DG:'Dawnguard',HF:'Hearthfire',DB:'Dragonborn',CC:'a paid Creation',AE:'Anniversary Edition'};
-const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'}];
+const fams=[{id:'all',title:'All'},...DATA.fams,{id:'race',title:'Pure races'},{id:'mods',title:'Challenge runs'}];
 let st={f:'all',q:''};
 
 // Perks: grouped by skill, each chip colored by school. Hover shows which named NPCs take it.
@@ -170,6 +177,18 @@ function perkBlock(b){
   }
   return `<div class="perks"><div class="plab">Perks</div><div class="psrc">${b.hand?'The community sources name no perks for this build.':'No NPC of this class has perks listed on UESP.'}</div></div>`;
 }
+// Gear kits: requirement tags come from UESP (CC plus the Creation's name, or DLC).
+function kitBlock(b){
+  const kits=b.kits.map(k=>`<div class="kit"><div class="khead"><b>${esc(k.n)}</b>${k.dlc.map(d=>`<span class="req" title="Needs ${esc(REQ[d]||d)}">${esc(d)}</span>`).join('')}${k.cc.map(c=>`<span class="cc" title="A paid Creation, included in Anniversary Edition">CC: ${esc(c)}</span>`).join('')}${tagEv(k.ev)}</div><span class="knote">${esc(k.note)}</span>${k.cc.length&&k.base.length?`<span class="knote">Base game: ${k.base.map(esc).join(', ')}.</span>`:''}</div>`).join('');
+  const mods=b.mods.length?`<div class="chal">Challenge runs that suit it: ${b.mods.map(m=>`<button type="button" class="pair" data-mod="${esc(m)}">${esc(m)}</button>`).join(' ')}</div>`:'';
+  return (kits?`<div class="perks"><div class="plab">Gear kits</div>${kits}</div>`:'')+mods;
+}
+const tagEv=ev=>ev==='derived'?'<span class="sug">suggested</span>':ev==='partly-sourced'?'<span class="sug">partly sourced</span>':'';
+function modCard(m){
+  return `<article class="card"><div><h3>${esc(m.n)}</h3><div class="insp">Ledger ${esc(m.ref)} ${tagEv(m.ev)}</div></div><p class="desc">${esc(m.rule)}</p>
+  <div class="chal">${m.pairs.length?`Pairs well with: ${m.pairs.map(n=>`<button type="button" class="pair" data-build="${esc(n)}">${esc(n)}</button>`).join(' ')}`:'Works with any build.'}</div></article>`;
+}
+const modHead='<div class="famhead"><h2>Challenge runs</h2><p>Restrictions you can add to any build. The pairings are the ones community sources suggest.</p></div>';
 function card(b){
   const eidline=b.hand?`<div class="eid note">No class file. Weights set by hand from ledger ${esc(b.ref)}.</div>`:`<div class="eid">${b.eids.concat(...b.variants.map(x=>x.eids)).map(esc).join(', ')}</div>`;
   const nv=b.variants.length, nl=b.lore.length, plural=(n,w)=>`${n} ${w}${n>1?'s':''}`;
@@ -188,7 +207,7 @@ function card(b){
   <div class="tier pick"><span>Shouts</span><div class="sk">${shouts}${sug(b.shouts.ev)}</div></div>${b.beast?`
   <div class="tier pick"><span>Beast form</span><div class="sk"><span class="pill">${esc(b.beast)}</span></div></div>`:''}${b.book?`
   <div class="tier pick"><span>Black Book</span><div class="sk"><span class="pill" title="${esc(b.book.fx)}">${esc(b.book.book)}: ${esc(b.book.power)} <b>DB</b></span>${sug(b.book.ev)}</div></div>`:''}</div>
-  ${perkBlock(b)}
+  ${perkBlock(b)}${kitBlock(b)}
   <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
   ${v}</article>`;
 }
@@ -198,13 +217,13 @@ function raceCard(r){
   <div class="tiers"><div class="tier"><span>Starts 25</span><div class="sk">${pill(r.sig)}</div></div><div class="tier"><span>Starts 20</span><div class="sk">${r.plus5.map(s=>pill(s)).join('')}</div></div></div>
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
-function hay(b){return [b.name,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function hay(b){return [b.name,...b.kits.flatMap(k=>[k.n,...k.items,...k.cc]),...b.mods,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
 function strong(b,q){return [b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].some(t=>t&&t.toLowerCase().includes(q))}
 function raceHay(r){return [r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase()}
 const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div>';
 function render(){
   const q=st.q.trim().toLowerCase();let n=0,html='';
-  const famOk=b=>st.f==='all'||st.f===b.fam, raceOk=st.f==='all'||st.f==='race';
+  const famOk=b=>st.f==='all'||st.f===b.fam, raceOk=st.f==='all'||st.f==='race', modsOk=st.f==='all'||st.f==='mods';
   if(!q){
     for(const f of DATA.fams){
       if(st.f!=='all'&&st.f!==f.id)continue;
@@ -213,7 +232,8 @@ function render(){
       html+=`<section class="fam"><div class="famhead"><h2>${esc(f.title)}</h2><p>${esc(f.blurb)}</p></div><div class="grid">${bs.map(card).join('')}</div></section>`;
     }
     if(raceOk){n+=DATA.races.length;html+=`<section class="fam">${raceHead}<div class="grid">${DATA.races.map(raceCard).join('')}</div></section>`}
-    document.getElementById('cnt').textContent=`${n} build${n===1?'':'s'}`;
+    if(modsOk)html+=`<section class="fam">${modHead}<div class="grid">${DATA.mods.map(modCard).join('')}</div></section>`;
+    document.getElementById('cnt').textContent=st.f==='mods'?`${DATA.mods.length} challenge runs`:`${n} build${n===1?'':'s'}`;
   }else{
     // Search: builds whose name, alias or a named character matches come first; builds that only
     // mention the words in their text follow in a folded list.
@@ -230,10 +250,18 @@ function render(){
               :`<section class="fam"><div class="famhead"><h2>Mentions</h2><p>These builds mention it in their text.</p></div>${inner}</section>`;
     }
     n=nb+nr;
-    document.getElementById('cnt').textContent=nb&&nr?`${nb} best match${nb===1?'':'es'} · ${nr} more mention it`:`${n} build${n===1?'':'s'}`;
+    const ms=modsOk?DATA.mods.filter(m=>[m.n,m.rule,...m.pairs].join(' ').toLowerCase().includes(q)):[];
+    if(ms.length)html+=`<section class="fam">${modHead}<div class="grid">${ms.map(modCard).join('')}</div></section>`;
+    const cm=ms.length?` · ${ms.length} challenge run${ms.length===1?'':'s'}`:'';
+    document.getElementById('cnt').textContent=(nb&&nr?`${nb} best match${nb===1?'':'es'} · ${nr} more mention it`:`${n} build${n===1?'':'s'}`)+cm;
   }
   document.getElementById('out').innerHTML=html||'<p class="empty">No builds match that search.</p>';
 }
+// Pairing buttons: a challenge's build chip searches for that build; a build's challenge chip shows that challenge.
+document.getElementById('out').addEventListener('click',e=>{
+  const t=e.target.closest('.pair');if(!t)return;
+  const q=t.dataset.build||t.dataset.mod;st.q=q;document.getElementById('q').value=q;st.f='all';chips();render();toResults();
+});
 function toResults(){
   const out=document.getElementById('out'), bar=document.querySelector('.controls');
   const y=out.getBoundingClientRect().top+scrollY-bar.offsetHeight-8;

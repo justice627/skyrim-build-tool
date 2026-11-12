@@ -53,6 +53,14 @@ sources:
     notes: >-
       Each perk's skill tree comes from where UESP files the perk (docs/sources/uesp-terms.json).
       Perks UESP files as NPC-only, or that have no page, are left out.
+  - id: uesp-creations
+    title: UESP item pages, CC Header and DLC categories (wiki API)
+    url: https://en.uesp.net/w/api.php
+    used_for: Gear kit items and their requirement tags (origin in docs/sources/uesp-terms.json)
+    evidence: sourced
+    notes: >-
+      Which builds a kit fits, and the challenge-run pairings, come from the research ledger and keep
+      its grade (partly-sourced, or derived for D10 and M14).
   - id: uesp-black-books
     title: UESP, Skyrim:Powers (Black Book section)
     url: https://en.uesp.net/w/api.php

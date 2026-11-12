@@ -23,6 +23,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `docs/roadmap.md`: the phased plan. Work in phase order.
 - `docs/research/`: the community and lore build ledger and the research notes behind it. These are leads, not verified data.
 - `docs/sources/`: the saved UESP class table (PDF plus a screenshot of the rows the PDF dropped), `uesp-npc-classes.json` (which named NPCs use each class), and the raw UESP text behind `stones.yaml`, `shouts.yaml` and the race bonuses.
+- `data/kits.yaml`, `data/modifiers.yaml`: gear kits (ledger D) and challenge runs (ledger F1).
 - `data/black_books.yaml`: the Dragonborn Black Books and their powers (sourced from UESP).
 - `scripts/fetch_terms.py`: checks every `mentions` term against UESP and saves `docs/sources/uesp-terms.json`. Run it after adding or renaming a mention, before `validate.py`.
 - `scripts/fetch_npcs.py`: refreshes `uesp-npc-classes.json` from UESP's wiki API. UESP's normal pages are blocked from cloud sessions, but `https://en.uesp.net/w/api.php` works.
@@ -49,5 +50,6 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - A lore pick sits under the build it plays like. If its `changes` names 3 or more skills, at least half must be the build's primary or secondary skills, unless the text says "Adds" or "replaces". The validator enforces this. Theme alone (shouts, werewolf) is not enough.
 - `mentions` (on builds and lore picks) lists every perk, item, spell or power the text names, spelled as the UESP page title. The validator rejects terms with no UESP page or that UESP lists as unobtainable. Text must not name anything that is not in `mentions`.
 - Perks: class builds and variants get them automatically from `uesp-npc-classes.json` (every named NPC of the class), filtered to the card's skills. A perk is a player perk when `uesp-terms.json` gives it a `tree` (its UESP page is a skill page or Lycanthropy). Community builds may list `perks: {names, evidence, ref}`; names must be player perks in the build's skills (or the werewolf tree) and also appear in `mentions`.
+- Gear kits (`data/kits.yaml`) list UESP item titles and the build ids they fit. Do not type requirement tags for kits: `build.py` reads them from each item's UESP origin (`fetch_terms.py` records `CC:<Creation>`, `DG`, `DB`, `HF` or `base`). Challenge runs (`data/modifiers.yaml`) have a rule, ledger M ref and natural `pairs`; items a rule names go in `mentions`.
 - Optional `beast_form` (`werewolf`, `vampire-lord`) and `black_book` (`{book, power, evidence, ref}`).
 - Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json`.

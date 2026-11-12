@@ -74,16 +74,18 @@ Status: done (2026-11-12). The planned method (the user picks an NPC per build a
 - Done criterion changed: every perk shown is sourced or marked, and gaps are visible. "Every primary skill shows a perk" is not reachable without guessing.
 - Planner fix: Enchanting no longer counts as a spell school. Temple priest loses a wrong Magicka shift; Laborer, Citizen and Crafter now move their unused Magicka to Stamina.
 
-## Phase 5: gear kits and challenge modifiers
+## Phase 5: gear kits and challenge runs
 
-Attach gear kits to builds (Spell Knight Armor to Spellsword, Necromantic Grimoire to the Necromancer variant, Arcane Archer Pack to Battle archer). Add a separate picker for restriction runs (stolen items only, level 1) that pairs with any build.
+Status: done (2026-11-12).
 
-- New files: `data/gear.yaml`, `data/modifiers.yaml`.
-- Done when kits show on their builds and any build can be paired with a modifier.
+- `data/kits.yaml`: 13 kits (ledger D1 to D13) attached to builds. Every item is checked on UESP. Requirement tags are read from each item's UESP page header (`{{CC Header|<Creation>}}` or a DLC category), never typed by hand. Paid Creations show as "CC: <Creation>"; all of them ship in the Anniversary Edition bundle, so the ledger's CC versus AE split is dropped.
+- The UESP check regrouped the ledger: Light of Day, Trueflame, Hopesfire, Magebane, Cleaver of St. Felms and Skull Crusher are all *Ghosts of the Tribunal*; Bloodthirst is *Dawnfang & Duskfang*; Sunder and Wraithguard are one Creation; Keening, Wuuthrad, Spellbreaker and Ring of Namira are base game.
+- `data/modifiers.yaml`: 16 challenge runs (M1 to M14, with M5 split into stolen, purchased and crafted). Shown as their own section and chip, and as a line on the builds they pair with.
+- Left out: D14 relic stand-ins (derived, for held builds) and D15 Black Book powers (already a field).
 
 ## Phase 6: verification, alongside the rest
 
-Done early: stones, shouts and race skill bonuses checked against UESP (2026-11-11). Still open: settle whether Chrysamere, Keening and Sunder need AE or mods. Spot-check the lore claims marked unverified in the ledger. Watch the FudgeMuppet videos for Sabre Cat, Preserver, Mechanist and Ronin.
+Done early: stones, shouts and race skill bonuses checked against UESP (2026-11-11). Settled in Phase 5: Chrysamere, Sunder and Wraithguard are official Creations (CC), Keening is base game, so Divine Crusader (A19) can come back as a CC build. Spot-check the lore claims marked unverified in the ledger. Watch the FudgeMuppet videos for Sabre Cat, Preserver, Mechanist and Ronin.
 
 - Done when no row is still tagged unverified.
 

@@ -38,6 +38,20 @@
    "missing": false,
    "tree": "DES"
   },
+  "Arcane Archer Pack": {
+   "page": "Skyrim:Arcane Archer Pack",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Arcane Archer Pack"
+  },
+  "Archmage's Robes": {
+   "page": "Skyrim:Archmage's Robes",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Armsman": {
    "page": "Skyrim:One-handed",
    "section": "Armsman",
@@ -93,17 +107,38 @@
    "missing": false,
    "tree": "1HD"
   },
+  "Bloodthirst": {
+   "page": "Skyrim:Bloodthirst",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Dawnfang & Duskfang"
+  },
   "Bone Breaker": {
    "page": "Skyrim:One-handed",
    "section": "Bone Breaker",
    "missing": false,
    "tree": "1HD"
   },
+  "Bone Colossus": {
+   "page": "Skyrim:Bone Colossus",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Necromantic Grimoire"
+  },
   "Bound Bow": {
    "page": "Skyrim:Bound Weapon",
    "section": "Bound Bow",
    "missing": false,
    "tree": null
+  },
+  "Bow of Shadows": {
+   "page": "Skyrim:Bow of Shadows",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Bow of Shadows"
   },
   "Call to Arms": {
    "page": "Skyrim:Call to Arms",
@@ -128,6 +163,13 @@
    "section": "Champion's Stance",
    "missing": false,
    "tree": "2HD"
+  },
+  "Cleaver of St. Felms": {
+   "page": "Skyrim:Cleaver of St. Felms",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
   },
   "Critical Shot": {
    "page": "Skyrim:Archery",
@@ -164,6 +206,13 @@
    "section": "",
    "missing": false,
    "tree": null
+  },
+  "Dawnfang": {
+   "page": "Skyrim:Dawnfang",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Dawnfang & Duskfang"
   },
   "Dawnguard Rune Axe": {
    "page": "Skyrim:Dawnguard Rune Axe",
@@ -327,6 +376,18 @@
    "missing": false,
    "tree": "HVA"
   },
+  "Flames": {
+   "page": "Skyrim:Flames",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Fork": {
+   "page": "Skyrim:Fork",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Fortify Unarmed Damage": {
    "page": "Skyrim:Fortify Unarmed Damage",
    "section": "",
@@ -363,6 +424,13 @@
    "missing": false,
    "tree": null
   },
+  "Ghosts of the Tribunal": {
+   "page": "Skyrim:Ghosts of the Tribunal",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
+  },
   "Gloves of the Pugilist": {
    "page": "Skyrim:Gloves of the Pugilist",
    "section": "",
@@ -392,6 +460,13 @@
    "section": "Hack and Slash",
    "missing": false,
    "tree": "1HD"
+  },
+  "Hopesfire": {
+   "page": "Skyrim:Hopesfire",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
   },
   "Impact": {
    "page": "Skyrim:Destruction",
@@ -423,11 +498,25 @@
    "missing": false,
    "tree": null
   },
+  "Keening": {
+   "page": "Skyrim:Keening",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Light Foot": {
    "page": "Skyrim:Sneak",
    "section": "Light Foot",
    "missing": false,
    "tree": "SNK"
+  },
+  "Light of Day": {
+   "page": "Skyrim:Light of Day",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
   },
   "Lightning Rune": {
    "page": "Skyrim:Lightning Rune",
@@ -452,6 +541,13 @@
    "section": "Mage Armor",
    "missing": false,
    "tree": "ALT"
+  },
+  "Magebane": {
+   "page": "Skyrim:Magebane",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
   },
   "Magic Resistance": {
    "page": "Skyrim:Alteration",
@@ -490,6 +586,13 @@
    "missing": false,
    "tree": "CON"
   },
+  "Necromantic Grimoire": {
+   "page": "Skyrim:Necromantic Grimoire",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Necromantic Grimoire"
+  },
   "Novice Conjuration": {
    "page": "Skyrim:Conjuration",
    "section": "Novice Conjuration",
@@ -517,6 +620,12 @@
   "Paralysis": {
    "page": "Skyrim:Paralyze (effect)",
    "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Pickaxe": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Pickaxe",
    "missing": false,
    "tree": null
   },
@@ -615,7 +724,8 @@
    "page": "Skyrim:Ring of Namira",
    "section": "",
    "missing": false,
-   "tree": null
+   "tree": null,
+   "origin": "base"
   },
   "Savage Feeding": {
    "page": "Skyrim:Lycanthropy",
@@ -629,11 +739,32 @@
    "missing": false,
    "tree": "1HD"
   },
+  "Savos Aren's Amulet": {
+   "page": "Skyrim:Savos Aren's Amulet",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
   "Shellbug Helmet": {
    "page": "Skyrim:Animal Parts",
    "section": "Shellbug Helmet",
    "missing": false,
    "tree": null
+  },
+  "Shield of Ysgramor": {
+   "page": "Skyrim:Shield of Ysgramor",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
+  },
+  "Skull Crusher": {
+   "page": "Skyrim:Skull Crusher",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
   },
   "Skullcrusher": {
    "page": "Skyrim:Two-handed",
@@ -641,11 +772,19 @@
    "missing": false,
    "tree": "2HD"
   },
+  "Spell Knight Armor": {
+   "page": "Skyrim:Spell Knight Armor",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Spell Knight Armor"
+  },
   "Spellbreaker": {
    "page": "Skyrim:Spellbreaker",
    "section": "",
    "missing": false,
-   "tree": null
+   "tree": null,
+   "origin": "base"
   },
   "Spider Scrolls": {
    "page": "Skyrim:Spider Scrolls",
@@ -658,6 +797,20 @@
    "section": "Stability",
    "missing": false,
    "tree": "ALT"
+  },
+  "Staff of Hasedoki": {
+   "page": "Skyrim:Staff of Hasedoki",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Staff of Hasedoki"
+  },
+  "Staff of Sheogorath": {
+   "page": "Skyrim:Staff of Sheogorath",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Staff of Sheogorath"
   },
   "Stalhrim": {
    "page": "Skyrim:Stalhrim",
@@ -672,11 +825,25 @@
    "perk_page": "Skyrim:Sneak",
    "tree": "SNK"
   },
+  "Stendarr's Hammer": {
+   "page": "Skyrim:Stendarr's Hammer",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Stendarr's Hammer"
+  },
   "Summoner": {
    "page": "Skyrim:Conjuration",
    "section": "Summoner",
    "missing": false,
    "tree": "CON"
+  },
+  "Sunder": {
+   "page": "Skyrim:Sunder",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Sunder & Wraithguard"
   },
   "Targe Bashing Bleeding": {
    "page": "Skyrim:Targe of the Blooded",
@@ -720,9 +887,22 @@
    "missing": false,
    "tree": "HVA"
   },
+  "Trueflame": {
+   "page": "Skyrim:Trueflame",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Ghosts of the Tribunal"
+  },
   "Turn Undead": {
    "page": "Skyrim:Turn Undead",
    "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Vegetable Soup": {
+   "page": "Skyrim:Food",
+   "section": "Vegetable Soup",
    "missing": false,
    "tree": null
   },
@@ -755,6 +935,32 @@
    "section": "Companions Equipment",
    "missing": false,
    "tree": null
+  },
+  "Woodcutter's Axe": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Woodcutter's Axe",
+   "missing": false,
+   "tree": null
+  },
+  "Wooden Sword": {
+   "page": "Skyrim:Specialty Gear",
+   "section": "Wooden Sword",
+   "missing": false,
+   "tree": null
+  },
+  "Wraithguard": {
+   "page": "Skyrim:Wraithguard",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "CC:Sunder & Wraithguard"
+  },
+  "Wuuthrad": {
+   "page": "Skyrim:Wuuthrad",
+   "section": "",
+   "missing": false,
+   "tree": null,
+   "origin": "base"
   }
  }
 }

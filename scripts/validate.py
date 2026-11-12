@@ -14,6 +14,7 @@ Rules:
 - beast forms and Black Book powers resolve; every `mentions` term exists on UESP and is not unobtainable
 - lore picks that list 3+ skills share at least half of them with their build (unless they say "adds")
 - community `perks` are UESP player perks in the build's skills (or the werewolf tree), named in mentions
+- gear kits and challenge runs have ledger refs, known builds, and items/mentions that exist on UESP
 - every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
@@ -95,6 +96,32 @@ def check_perks(name, b, terms, errors):
             errors.append(f"{name}: perk {n!r} is in the {tree} tree, which this build does not use")
         if n not in b.get("mentions", []):
             errors.append(f"{name}: perk {n!r} must also be in mentions")
+
+
+def check_layers(build_ids, terms, errors):
+    """Gear kits (ledger D) and challenge runs (ledger F1)."""
+    kits, mods = load_lookup("kits"), load_lookup("modifiers")
+    for kind, entries, ref_re, link in (("kit", kits, r"D\d+", "fits"), ("modifier", mods, r"M\d+", "pairs")):
+        ids = Counter(e.get("id") for e in entries)
+        errors += [f"{kind} id {i} is used {n} times" for i, n in ids.items() if n > 1]
+        for e in entries:
+            label = f"{kind} {e.get('id')}"
+            for f in ("name", "note" if kind == "kit" else "rule"):
+                if not str(e.get(f, "")).strip():
+                    errors.append(f"{label}: missing {f}")
+            if not re.fullmatch(ref_re, str(e.get("ref", ""))):
+                errors.append(f"{label}: ref {e.get('ref')!r} is not a ledger row")
+            if e.get("evidence") not in EVIDENCE:
+                errors.append(f"{label}: unknown evidence {e.get('evidence')!r}")
+            errors += [f"{label}: unknown build {b!r} in {link}" for b in e.get(link, []) if b not in build_ids]
+            check_mentions(label, e.get("items", []) + e.get("mentions", []), terms, errors)
+            for i in e.get("items", []):
+                if i in terms and "origin" not in terms[i]:
+                    errors.append(f"{label}: no origin recorded for {i!r}; run scripts/fetch_terms.py")
+        if kind == "kit":
+            errors += [f"{label}: a kit needs at least one build in fits" for e in entries if not e.get("fits")
+                       for label in [f"kit {e.get('id')}"]]
+    return len(kits), len(mods)
 
 
 def check_extras(name, b, books, errors):
@@ -242,6 +269,8 @@ def main():
                 errors.append(f"{name} [{label}]: grouped classes have different weights {present}")
             used += eids
 
+    n_kits, n_mods = check_layers({b["id"] for b in doc["builds"]}, terms, errors)
+
     counts = Counter(used)
     errors += [f"class {e} is used {n} times" for e, n in counts.items() if n > 1]
     errors += [f"class {e} is not used by any build" for e in classes if e not in counts]
@@ -262,7 +291,8 @@ def main():
         print("\n".join(f"  - {e}" for e in errors))
         return 1
     print(f"OK: {len(classes)} classes, {len(doc['builds'])} builds, {len(races)} races, "
-          f"{len(stones)} stones, {len(shouts)} shouts, {len(books)} Black Books, {len(terms)} checked terms")
+          f"{len(stones)} stones, {len(shouts)} shouts, {len(books)} Black Books, "
+          f"{n_kits} kits, {n_mods} challenges, {len(terms)} checked terms")
     return 0
 
 
