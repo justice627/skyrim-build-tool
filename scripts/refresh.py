@@ -3,7 +3,7 @@
     python scripts/refresh.py            fetch from UESP, then validate and build
     python scripts/refresh.py --offline  validate and build only (UESP unreachable, or nothing to fetch)
 
-Order matters: NPC classes and perks feed the gear fetch; NPC perks, gear and skill trees feed the term
+Order matters: class weights come first; NPC classes and perks feed the gear fetch; NPC perks, gear and skill trees feed the term
 check; the validator reads every cache; the build reads everything.
 """
 import subprocess
@@ -11,7 +11,7 @@ import sys
 
 from common import ROOT
 
-FETCH = ["fetch_npcs.py", "fetch_gear.py", "fetch_skill_perks.py", "fetch_terms.py"]
+FETCH = ["fetch_classes.py", "fetch_npcs.py", "fetch_gear.py", "fetch_skill_perks.py", "fetch_terms.py"]
 CHECK = ["validate.py", "build.py"]
 
 

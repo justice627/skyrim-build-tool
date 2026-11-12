@@ -96,7 +96,7 @@ builds:
   - name: "Stormcrown"
     ref: C1
     evidence: derived
-    mentions: ["Dragonbane"]
+    mentions: ["Dragonbane", "Amulet of Talos"]
     changes: "Modeled on Talos. One-Handed 3, Block 3, Heavy Armor 3, Speech 2, Restoration 2. Storm Call and Call Dragon. Amulet of Talos and Dragonbane."
   - name: "Jarl of the Voice"
     ref: C2
@@ -138,17 +138,20 @@ builds:
     resource, so keep a few potions for long fights.
   lore:
   - name: "Redoran Swordmaster"
+    mentions: ["Ebony Greatsword", "Redoran Watchman's Helmet"]
     ref: C26
     evidence: partly-sourced
     requires: [DB]
     changes: "Lord Stone. Two-Handed, Block, Alteration and Restoration. Redoran Watchman's Helmet, an Ebony Greatsword, and Slow Time."
   - name: "Kodlak"
+    mentions: ["Skyforge Steel Greatsword"]
     ref: C27
     signature: ["Wolf Armor"]  # Skyrim:Specialty Gear, Companions Equipment
     evidence: derived
     npc: "Kodlak Whitemane"
-    changes: "A Skyforge Steel greatsword. A werewolf who wants to be cured, so his soul goes to Sovngarde."
+    changes: "A Skyforge Steel Greatsword. A werewolf who wants to be cured, so his soul goes to Sovngarde."
   - name: "Ysgramor"
+    mentions: ["Shield of Ysgramor"]
     ref: C27
     evidence: derived
     changes: "Wuuthrad, which cannot be used with the Shield of Ysgramor. Battle Fury, if you have Dragonborn."
@@ -162,7 +165,7 @@ builds:
   inspired_by: Orc warriors guarding the strongholds
   evidence: sourced
   play: "Heavy armor makes noise. Take Sneak's Muffled Movement perk, or treat Sneak as a minor skill."
-  mentions: ["Muffled Movement"]
+  mentions: ["Muffled Movement", "Berserker Rage"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, marked-for-death], evidence: derived}
   examples: ["Borgakh the Steel Heart", "Chief Yamarz"]
@@ -391,6 +394,7 @@ builds:
 - id: forsworn-hunter
   family: bow
   name: Forsworn hunter
+  mentions: ["Oakflesh"]
   inspired_by: Forsworn archers in the Reach
   evidence: sourced
   signature: ["Forsworn Armor"]  # Skyrim:Forsworn Equipment
@@ -446,6 +450,7 @@ builds:
     npc: "Brynjolf"
     changes: "Guild fixer. Speech 3, Pickpocket 3."
   - name: "Barenziah"
+    mentions: ["Crown of Barenziah"]
     ref: C33
     evidence: derived
     changes: "Noble thief. Dunmer, with the Crown of Barenziah."
@@ -478,6 +483,7 @@ builds:
     the ones that go loud. Equal Health and Stamina.
   lore:
   - name: "Mercer Frey"
+    mentions: ["Invisibility"]
     ref: C31
     evidence: derived
     npc: "Mercer Frey"
@@ -487,6 +493,7 @@ builds:
     evidence: partly-sourced
     changes: "Oblivion's Rogue. Adds Illusion, Alchemy and Speech."
   - name: "The Imperial Spectre"
+    mentions: ["Blades Sword", "Harkon's Sword"]
     ref: C25
     evidence: partly-sourced
     requires: [DG, DB]
@@ -551,6 +558,7 @@ builds:
     by contract, and never be in the fight for long.
   lore:
   - name: "Astrid or the Listener"
+    mentions: ["Ancient Shrouded Armor", "Blade of Woe"]
     ref: C29
     evidence: derived
     npc: "Astrid"
@@ -596,6 +604,7 @@ builds:
 - id: nightblade
   family: assassin
   name: Nightblade
+  mentions: ["Quiet Casting"]
   inspired_by: Combat nightblades
   aliases: [Nightblades]
   evidence: sourced
@@ -610,8 +619,10 @@ builds:
     the Destruction head start.
   lore:
   - name: "Illusion Assassin"
+    mentions: ["Bound Dagger", "Frenzy", "Invisibility"]
     ref: C24
     evidence: partly-sourced
+    requires: [DB]  # Bound Dagger is a Dragonborn spell (UESP Skyrim:Conjuration Spells)
     changes: "Altmer. Illusion replaces Destruction. Bound Dagger, Frenzy and Invisibility, with Aura Whisper."
   - name: "House Dres"
     ref: G51
@@ -620,6 +631,7 @@ builds:
 - id: vampire
   family: assassin
   name: Vampire
+  mentions: ["Vampiric Drain", "Vampire's Sight"]
   inspired_by: Vampire NPCs
   evidence: sourced
   signature: ["Vampire Armor"]  # Skyrim:Vampire Equipment
@@ -631,7 +643,7 @@ builds:
   - EncClassVampire
   description: >-
     Sneak first, then a blade, Conjuration and Destruction for thralls and drains, light armor. Plays
-    from the night. Pair with Vampire Lord or the vanilla vampire stages for Drain Life and Night Eye.
+    from the night. Pair with Vampire Lord or the vanilla vampire stages for Vampiric Drain and Vampire's Sight.
   lore:
   - name: "Serana"
     ref: C28
@@ -680,6 +692,7 @@ builds:
     The classic hybrid: never the best at anything, almost never in trouble.
   lore:
   - name: "The Mechanist"
+    mentions: ["Aetherial Staff", "Keening", "Spellbreaker", "Visage of Mzund"]
     ref: C18
     evidence: partly-sourced
     requires: [DG, DB]
@@ -906,6 +919,7 @@ builds:
     evidence: derived
     changes: "A lore hook for the necromancer variant."
   - name: "Sorcerer"
+    mentions: ["Dremora Lord", "Sanguine Rose"]
     ref: C21
     evidence: partly-sourced
     changes: "Adds Heavy Armor, like Oblivion's Sorcerer. The tank version is a Breton in Daedric armor with a shield, the Sanguine Rose and two Dremora Lords."
@@ -931,6 +945,7 @@ builds:
     evidence: partly-sourced
     changes: "An Altmer necromancer who raises the dead and calls Daedra, from a house that has since turned peaceful."
   - name: "Sixth House priest"
+    mentions: ["Ash Zombie"]
     ref: G49
     evidence: partly-sourced
     changes: "A Sixth House priest of Dagoth Ur who commands Ash Zombies."
@@ -982,6 +997,7 @@ builds:
     for quiet casting. A dagger as a last resort.
   lore:
   - name: "The Desert Magician"
+    mentions: ["Hysteria", "Mayhem"]
     ref: C23
     evidence: partly-sourced
     requires: [DG, DB]
@@ -1030,6 +1046,7 @@ builds:
     glass than a College mage. Good fit for an outlaw or nomad roleplay.
   lore:
   - name: "Staff Wizard"
+    mentions: ["Soul Trap"]
     ref: C39
     evidence: partly-sourced
     requires: [DB]
@@ -1037,6 +1054,7 @@ builds:
 - id: spell-merchant
   family: robe
   name: Spell merchant
+  mentions: ["Detect Life", "Telekinesis"]
   inspired_by: Court wizards and spell vendors
   evidence: sourced
   stone: {early: mage, final: apprentice, evidence: derived}
@@ -1091,6 +1109,7 @@ builds:
     evidence: partly-sourced
     changes: "Adds Alteration, Illusion and Alchemy, with light Destruction. Mage or Apprentice Stone."
   - name: "Priest of Akatosh"
+    mentions: ["Amulet of Akatosh"]
     ref: C16
     evidence: derived
     changes: "Modeled on Martin Septim. Restoration 3, Speech 3, Conjuration 2. Amulet of Akatosh."
@@ -1143,6 +1162,7 @@ builds:
     for a Dawnguard run.
   lore:
   - name: "Paladin"
+    mentions: ["Amulet of Arkay", "Bolar's Oathblade"]
     ref: C12
     evidence: partly-sourced
     changes: "One-Handed, Heavy Armor, Restoration, Smithing and Enchanting. Health first, then Magicka, then Stamina. Dawnbreaker, Bolar's Oathblade and the Amulet of Arkay. Avoids Daedric gear."
@@ -1153,6 +1173,7 @@ builds:
     requires: [DG]
     changes: "Two-Handed 3, Heavy Armor 3, Restoration 2, plus a crossbow. Dawnguard heavy armor and rune weapons."
   - name: "Cleric"
+    mentions: ["Banish Daedra"]
     ref: C14
     evidence: partly-sourced
     changes: "Lord Stone. Restoration, One-Handed, Alteration, Block and Enchanting. A mace, the amulet of one chosen Divine, and Banish Daedra."
@@ -1248,6 +1269,7 @@ builds:
 - id: bard
   family: craft
   name: Bard
+  mentions: ["Calm", "Courage"]
   inspired_by: Bards and the Speech expert trainer
   aliases: [Bards College]
   evidence: sourced
@@ -1262,6 +1284,7 @@ builds:
     and bow you barely use. Talk your way through, starting at the Bards College in Solitude.
   lore:
   - name: "Battle Bard"
+    mentions: ["Grand Healing", "Pacify", "Rally"]
     ref: C17
     evidence: partly-sourced
     requires: [DG, DB]
@@ -1737,6 +1760,7 @@ builds:
     keeps the enchantments charged.
   lore:
   - name: "Direnni"
+    mentions: ["Flame Atronach"]
     ref: G31
     evidence: partly-sourced
     changes: "An Altmer who adds Alchemy to Enchanting and Conjuration and calls Flame Atronachs."

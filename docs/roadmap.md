@@ -114,6 +114,13 @@ Every card has a Gear line: the group's own set where it has one (Imperial, Stor
 - Primary skills with no perk on the card now show that tree's early perks with required levels (180 perks from UESP's 18 skill pages). Only 2 builds still show no perks at all.
 - `scripts/refresh.py` runs the whole data chain in order. Search now matches from the start of a word ("orc" no longer finds sorcerers).
 
+## Review fixes (2026-11-12)
+
+- `validate.py`: a malformed Black Book now reports instead of crashing; community builds get the alias, family, description and name checks they were skipping.
+- The "text names nothing outside `mentions`" rule is now enforced. The first run found 31 text blocks naming unlisted things; all are listed and checked on UESP (282 terms). Two had no UESP page and were corrected: Kodlak's "Skyforge Steel greatsword" is the Skyforge Steel Greatsword, and the Vampire's "Drain Life and Night Eye" are Vampiric Drain and Vampire's Sight. Illusion Assassin gained a DB tag: Bound Dagger is a Dragonborn spell.
+- `scripts/fetch_classes.py` reads `classes.json` from the Skyrim:Classes table through the API. All 119 classes matched the PDF and screenshot read. `data/excluded_classes.yaml` lists the 40 rows left out.
+- Search matches every word in any order and treats hyphens as spaces ("two handed", "heavy armor mage"). "How to read a build" starts closed.
+
 ## Out of scope
 
 Mod-only builds (Requiem templates, the Ordinator Dragonborn, FudgeMuppet's modded Sand Demon, Celestial and King), ESO class conversions, and full perk templates for all 18 trees.

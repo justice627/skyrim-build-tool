@@ -1,0 +1,46 @@
+# Classes on UESP's Skyrim:Classes table that are deliberately not in classes.json.
+# scripts/fetch_classes.py stops if the table has a class that is in neither file, so nothing is dropped silently.
+excluded:
+  creatures:  # animals, automatons, atronachs and other beings a player cannot be
+  - DLC1EncClassDeathhound
+  - DLC1EncClassGargoyle
+  - DLC1_EncClassChaurusFlyer
+  - DLC2EncClassAshGuardian
+  - DLC2EncClassAshHopper
+  - DLC2EncClassLurker
+  - DLC2EncClassRiekling
+  - EncClassAnimalPredator
+  - EncClassAnimalPrey
+  - EncClassAtronachFlame
+  - EncClassAtronachFrost
+  - EncClassAtronachStorm
+  - EncClassBear
+  - EncClassChaurus
+  - EncClassDragon
+  - EncClassDwarvenCenturion
+  - EncClassDwarvenSphere
+  - EncClassDwarvenSpider
+  - EncClassFrostbiteSpider
+  - EncClassGiant
+  - EncClassHorker
+  - EncClassHorse
+  - EncClassIceWraith
+  - EncClassMammoth
+  - EncClassMudCrab
+  non_playable:  # Draugr, Falmer, Daedra, hagravens, dragon priests, werewolf beast forms, unique bosses
+  - DLC1CClassVyrthur
+  - DLC2dunHaknirClass
+  - DLC2dunKarstaagClass
+  - EncClassDragonPriest
+  - EncClassDraugrMagic
+  - EncClassDraugrMelee
+  - EncClassDraugrMissile
+  - EncClassDremoraMelee
+  - EncClassFalmer
+  - EncClassFalmerShaman
+  - EncClassHagraven
+  - EncClassWerewolf
+  - EncClassWerewolfBoss
+  - EncClassWerewolfMage
+  other:  # not a build
+  - Child

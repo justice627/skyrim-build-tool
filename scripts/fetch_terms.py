@@ -31,6 +31,7 @@ def mentions(doc):
             out.update(e.get("mentions", []))
     for k in yaml.safe_load((DATA / "kits.yaml").read_text())["kits"]:
         out.update(k["items"])
+        out.update(k.get("mentions", []))
     for m in yaml.safe_load((DATA / "modifiers.yaml").read_text())["modifiers"]:
         out.update(m.get("mentions", []))
     out.update(gear_items(doc))

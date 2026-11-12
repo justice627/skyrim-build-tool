@@ -1,6 +1,6 @@
 {
  "AAAPlayerSpellswordClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 1,
@@ -13,7 +13,7 @@
   }
  },
  "BYOHHousecarlHjaalmarchClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "HVA": 2,
    "1HD": 2,
@@ -26,7 +26,7 @@
   }
  },
  "Bard": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "1HD": 1,
@@ -40,7 +40,7 @@
   }
  },
  "Beggar": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "BLO": 1,
@@ -59,7 +59,7 @@
   }
  },
  "Blade": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 2,
@@ -71,7 +71,7 @@
   }
  },
  "CWSoldierClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -84,7 +84,7 @@
   }
  },
  "Citizen": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 2,
@@ -100,7 +100,7 @@
   }
  },
  "CombatAssassin": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 3,
@@ -113,7 +113,7 @@
   }
  },
  "CombatBarbarian": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -125,7 +125,7 @@
   }
  },
  "CombatMageConjurer": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ALT": 2,
    "CON": 3,
@@ -137,7 +137,7 @@
   }
  },
  "CombatMageDestruction": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 2,
    "CON": 1,
@@ -149,7 +149,7 @@
   }
  },
  "CombatMageElemental": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 2,
    "CON": 2,
@@ -161,7 +161,7 @@
   }
  },
  "CombatMageNecro": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "1HD": 2,
    "ALT": 2,
@@ -173,7 +173,7 @@
   }
  },
  "CombatMonk": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 2,
@@ -187,7 +187,7 @@
   }
  },
  "CombatMystic": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 3,
    "CON": 2,
@@ -200,7 +200,7 @@
   }
  },
  "CombatNightblade": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 2,
    "ALT": 2,
@@ -213,7 +213,7 @@
   }
  },
  "CombatNightingale": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "1HD": 3,
@@ -225,7 +225,7 @@
   }
  },
  "CombatRanger": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 2,
@@ -237,7 +237,7 @@
   }
  },
  "CombatRogue": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "BLO": 2,
@@ -249,7 +249,7 @@
   }
  },
  "CombatScout": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "ALT": 1,
@@ -262,7 +262,7 @@
   }
  },
  "CombatSorcerer": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "HVA": 2,
    "1HD": 2,
@@ -275,7 +275,7 @@
   }
  },
  "CombatSpellsword": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "HVA": 3,
    "1HD": 3,
@@ -287,7 +287,7 @@
   }
  },
  "CombatThief": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -299,7 +299,7 @@
   }
  },
  "CombatWarrior1H": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -311,7 +311,7 @@
   }
  },
  "CombatWarrior2H": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -323,7 +323,7 @@
   }
  },
  "CombatWitchblade": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "1HD": 3,
@@ -335,7 +335,7 @@
   }
  },
  "DLC1EncClassKatria": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 1,
@@ -349,7 +349,7 @@
   }
  },
  "DLC2EbonyWarriorClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 9,
    "BLO": 9,
@@ -365,7 +365,7 @@
   }
  },
  "DLC2EncClassBanditBoss": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "HVA": 2,
    "1HD": 3,
@@ -378,7 +378,7 @@
   }
  },
  "DLC2EncClassMiraak": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 1,
    "HVA": 2,
@@ -393,7 +393,7 @@
   }
  },
  "DLC2NPCClassTeldryn": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 3,
    "CON": 2,
@@ -406,7 +406,7 @@
   }
  },
  "DLC2NelothClassTrainer": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 2,
    "CON": 2,
@@ -418,7 +418,7 @@
   }
  },
  "DLC2csFrea": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "1HD": 3,
@@ -431,7 +431,7 @@
   }
  },
  "DLC2dunKolbjornRalisClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "1HD": 3,
@@ -443,7 +443,7 @@
   }
  },
  "EncClassAlikrMelee": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "HVA": 1,
@@ -455,7 +455,7 @@
   }
  },
  "EncClassAlikrMissile": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 1,
@@ -468,7 +468,7 @@
   }
  },
  "EncClassAlikrWizard": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "CON": 2,
    "DES": 3,
@@ -481,7 +481,7 @@
   }
  },
  "EncClassBanditMelee": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "HVA": 1,
@@ -493,7 +493,7 @@
   }
  },
  "EncClassBanditMissile": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 1,
@@ -506,7 +506,7 @@
   }
  },
  "EncClassBanditWizard": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "1HD": 1,
    "ALT": 2,
@@ -519,7 +519,7 @@
   }
  },
  "EncClassForsworn": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 3,
    "ALT": 1,
@@ -533,7 +533,7 @@
   }
  },
  "EncClassForswornMissile": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "1HD": 1,
@@ -547,7 +547,7 @@
   }
  },
  "EncClassForswornShaman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 1,
    "CON": 2,
@@ -560,7 +560,7 @@
   }
  },
  "EncClassPenitusOculatus": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 1,
    "HVA": 2,
@@ -573,7 +573,7 @@
   }
  },
  "EncClassThalmorMelee": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "1HD": 3,
@@ -586,7 +586,7 @@
   }
  },
  "EncClassThalmorMissile": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "1HD": 1,
@@ -599,7 +599,7 @@
   }
  },
  "EncClassThalmorWizard": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 1,
    "CON": 3,
@@ -611,7 +611,7 @@
   }
  },
  "EncClassVampire": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 2,
    "ALT": 1,
@@ -625,7 +625,7 @@
   }
  },
  "Farmer": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 2,
@@ -642,7 +642,7 @@
   }
  },
  "GuardImperial": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "BLO": 2,
@@ -655,7 +655,7 @@
   }
  },
  "GuardOrc1H": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -667,7 +667,7 @@
   }
  },
  "GuardOrc2H": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -679,7 +679,7 @@
   }
  },
  "GuardSonsSkyrim": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "BLO": 2,
@@ -692,7 +692,7 @@
   }
  },
  "Jailor": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "1HD": 3,
@@ -705,7 +705,7 @@
   }
  },
  "Lumberjack": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 2,
@@ -722,7 +722,7 @@
   }
  },
  "MQAncientNord": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -734,7 +734,7 @@
   }
  },
  "Miner": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 2,
@@ -751,7 +751,7 @@
   }
  },
  "NPCclassBelrand": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 3,
    "DES": 3,
@@ -763,7 +763,7 @@
   }
  },
  "Priest": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "SMI": 2,
    "CON": 2,
@@ -776,7 +776,7 @@
   }
  },
  "Prisoner": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 1,
    "SMI": 3,
@@ -792,7 +792,7 @@
   }
  },
  "SoldierImperialNotGuard": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 3,
@@ -805,7 +805,7 @@
   }
  },
  "SoldierSonsSkyrimNotGuard": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "BLO": 3,
@@ -818,7 +818,7 @@
   }
  },
  "TrainerAlchemyExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 1,
    "ALC": 4,
@@ -831,7 +831,7 @@
   }
  },
  "TrainerAlchemyJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 1,
    "ALC": 3,
@@ -844,7 +844,7 @@
   }
  },
  "TrainerAlchemyMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 4,
    "1HD": 3,
@@ -857,7 +857,7 @@
   }
  },
  "TrainerAlterationExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 4,
    "CON": 3,
@@ -869,7 +869,7 @@
   }
  },
  "TrainerAlterationMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 4,
    "DES": 1,
@@ -883,7 +883,7 @@
   }
  },
  "TrainerBlockExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 3,
    "1HD": 3,
@@ -897,7 +897,7 @@
   }
  },
  "TrainerBlockMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "BLO": 3,
@@ -910,7 +910,7 @@
   }
  },
  "TrainerConjurationExpert": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ALT": 2,
    "CON": 3,
@@ -922,7 +922,7 @@
   }
  },
  "TrainerConjurationJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "SMI": 2,
    "CON": 4,
@@ -936,7 +936,7 @@
   }
  },
  "TrainerConjurationMaster": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ALT": 2,
    "CON": 4,
@@ -948,7 +948,7 @@
   }
  },
  "TrainerDestructionExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 2,
    "CON": 1,
@@ -960,7 +960,7 @@
   }
  },
  "TrainerDestructionJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 1,
    "CON": 1,
@@ -974,7 +974,7 @@
   }
  },
  "TrainerDestructionMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "HVA": 2,
    "1HD": 2,
@@ -986,7 +986,7 @@
   }
  },
  "TrainerEnchantingExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 3,
    "DES": 1,
@@ -1001,7 +1001,7 @@
   }
  },
  "TrainerEnchantingMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "SMI": 2,
    "DES": 2,
@@ -1014,7 +1014,7 @@
   }
  },
  "TrainerHeavyArmorExpert": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 3,
@@ -1027,7 +1027,7 @@
   }
  },
  "TrainerHeavyArmorMaster": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "1HD": 2,
    "SMI": 3,
@@ -1039,7 +1039,7 @@
   }
  },
  "TrainerIllusionExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 1,
    "ALT": 2,
@@ -1052,7 +1052,7 @@
   }
  },
  "TrainerIllusionMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "HVA": 2,
    "1HD": 2,
@@ -1065,7 +1065,7 @@
   }
  },
  "TrainerLightArmorExpert": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 2,
@@ -1080,7 +1080,7 @@
   }
  },
  "TrainerLightArmorJourneyman": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 2,
@@ -1095,7 +1095,7 @@
   }
  },
  "TrainerLightArmorMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "1HD": 3,
@@ -1108,7 +1108,7 @@
   }
  },
  "TrainerLockpickExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -1121,7 +1121,7 @@
   }
  },
  "TrainerLockpickMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -1134,7 +1134,7 @@
   }
  },
  "TrainerMarksmanExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 4,
    "BLO": 1,
@@ -1147,7 +1147,7 @@
   }
  },
  "TrainerMarksmanJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 4,
    "BLO": 1,
@@ -1160,7 +1160,7 @@
   }
  },
  "TrainerMarksmanMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 4,
    "BLO": 1,
@@ -1173,7 +1173,7 @@
   }
  },
  "TrainerOneHandedExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -1185,7 +1185,7 @@
   }
  },
  "TrainerOneHandedJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -1197,7 +1197,7 @@
   }
  },
  "TrainerOneHandedMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "HVA": 3,
@@ -1209,7 +1209,7 @@
   }
  },
  "TrainerPickpocketExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -1222,7 +1222,7 @@
   }
  },
  "TrainerPickpocketMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -1234,7 +1234,7 @@
   }
  },
  "TrainerRestorationExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 3,
    "CON": 1,
@@ -1246,7 +1246,7 @@
   }
  },
  "TrainerRestorationJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "SMI": 2,
    "ENC": 2,
@@ -1259,7 +1259,7 @@
   }
  },
  "TrainerRestorationMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "SMI": 2,
    "ENC": 2,
@@ -1272,7 +1272,7 @@
   }
  },
  "TrainerSmithingExpert": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "1HD": 2,
    "SMI": 3,
@@ -1285,7 +1285,7 @@
   }
  },
  "TrainerSmithingJourneyman": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "1HD": 2,
    "SMI": 3,
@@ -1298,7 +1298,7 @@
   }
  },
  "TrainerSmithingMaster": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "1HD": 2,
    "SMI": 4,
@@ -1311,7 +1311,7 @@
   }
  },
  "TrainerSneakExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "ALT": 1,
@@ -1324,7 +1324,7 @@
   }
  },
  "TrainerSneakJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -1337,7 +1337,7 @@
   }
  },
  "TrainerSneakMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -1349,7 +1349,7 @@
   }
  },
  "TrainerSpeechcraftExpert": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "ARC": 1,
    "1HD": 1,
@@ -1363,7 +1363,7 @@
   }
  },
  "TrainerSpeechcraftJourneyman": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -1376,7 +1376,7 @@
   }
  },
  "TrainerSpeechcraftMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 1,
@@ -1389,7 +1389,7 @@
   }
  },
  "TrainerTwoHandedExpert": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -1401,7 +1401,7 @@
   }
  },
  "TrainerTwoHandedMaster": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 2,
    "BLO": 2,
@@ -1413,7 +1413,7 @@
   }
  },
  "VendorApothecary": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 1,
    "ALC": 3,
@@ -1426,7 +1426,7 @@
   }
  },
  "VendorBlacksmith": {
-  "source": "uesp-screenshot",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "1HD": 2,
@@ -1439,7 +1439,7 @@
   }
  },
  "VendorFletcher": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ARC": 3,
    "SMI": 2,
@@ -1452,7 +1452,7 @@
   }
  },
  "VendorFood": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 1,
    "1HD": 2,
@@ -1465,7 +1465,7 @@
   }
  },
  "VendorPawnbroker": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 1,
    "LOC": 2,
@@ -1478,7 +1478,7 @@
   }
  },
  "VendorSpells": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "ALT": 3,
    "DES": 1,
@@ -1492,7 +1492,7 @@
   }
  },
  "VendorTailor": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "SMI": 2,
    "LTA": 1,
@@ -1505,7 +1505,7 @@
   }
  },
  "Vigilant1hMeleeClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "HVA": 2,
@@ -1520,7 +1520,7 @@
   }
  },
  "Vigilant2hMeleeClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 3,
    "HVA": 3,
@@ -1534,7 +1534,7 @@
   }
  },
  "ccASVSSE001_BladeBinder": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "1HD": 3,
    "CON": 3,
@@ -1547,7 +1547,7 @@
   }
  },
  "dlc2DBAncientDragonbornClass": {
-  "source": "uesp-pdf",
+  "source": "uesp",
   "weights": {
    "BLO": 2,
    "HVA": 3,

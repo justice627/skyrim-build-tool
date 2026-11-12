@@ -35,6 +35,12 @@
    "tree": null,
    "origin": "base"
   },
+  "Aetherial Staff": {
+   "page": "Skyrim:Aetherial Staff",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Agile Defender": {
    "page": "Skyrim:Light Armor",
    "section": "Agile Defender",
@@ -48,6 +54,18 @@
    "tree": null,
    "origin": "DG"
   },
+  "Amulet of Akatosh": {
+   "page": "Skyrim:Amulets of the Divines",
+   "section": "Amulet of Akatosh",
+   "missing": false,
+   "tree": null
+  },
+  "Amulet of Arkay": {
+   "page": "Skyrim:Amulets of the Divines",
+   "section": "Amulet of Arkay",
+   "missing": false,
+   "tree": null
+  },
   "Amulet of Talos": {
    "page": "Skyrim:Amulets of the Divines",
    "section": "Amulet of Talos",
@@ -60,6 +78,12 @@
    "missing": false,
    "tree": null,
    "origin": "base"
+  },
+  "Ancient Shrouded Armor": {
+   "page": "Skyrim:Ancient Shrouded Armor",
+   "section": "",
+   "missing": false,
+   "tree": null
   },
   "Apprentice Conjuration": {
    "page": "Skyrim:Conjuration",
@@ -100,6 +124,12 @@
    "missing": false,
    "tree": "1HD"
   },
+  "Ash Zombie": {
+   "page": "Skyrim:Ash Zombie",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Atromancy": {
    "page": "Skyrim:Conjuration",
    "section": "Atromancy",
@@ -138,6 +168,12 @@
    "tree": null,
    "origin": "base"
   },
+  "Banish Daedra": {
+   "page": "Skyrim:Banish Daedra",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Barbarian": {
    "page": "Skyrim:Classes",
    "section": "Barbarian",
@@ -148,6 +184,12 @@
   "Bend Will": {
    "page": "Skyrim:Bend Will",
    "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Berserker Rage": {
+   "page": "Skyrim:Orc",
+   "section": "Berserker Rage",
    "missing": false,
    "tree": null
   },
@@ -205,6 +247,12 @@
    "tree": null,
    "origin": "base"
   },
+  "Bolar's Oathblade": {
+   "page": "Skyrim:Bolar's Oathblade",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Bone Breaker": {
    "page": "Skyrim:One-handed",
    "section": "Bone Breaker",
@@ -228,6 +276,12 @@
   "Bound Bow": {
    "page": "Skyrim:Bound Weapon",
    "section": "Bound Bow",
+   "missing": false,
+   "tree": null
+  },
+  "Bound Dagger": {
+   "page": "Skyrim:Spells",
+   "section": "Bound Dagger",
    "missing": false,
    "tree": null
   },
@@ -276,6 +330,12 @@
    "tree": null,
    "origin": "CC:Ghosts of the Tribunal"
   },
+  "Courage": {
+   "page": "Skyrim:Courage",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Critical Shot": {
    "page": "Skyrim:Archery",
    "section": "Critical Shot",
@@ -285,6 +345,12 @@
   "Crossbow": {
    "page": "Skyrim:Crossbow",
    "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Crown of Barenziah": {
+   "page": "Skyrim:Quest Items",
+   "section": "Crown of Barenziah",
    "missing": false,
    "tree": null
   },
@@ -368,6 +434,12 @@
    "missing": false,
    "tree": "DES"
   },
+  "Detect Life": {
+   "page": "Skyrim:Detect Life",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Devastating Blow": {
    "page": "Skyrim:Two-handed",
    "section": "Devastating Blow",
@@ -396,6 +468,12 @@
   "Dread Zombie": {
    "page": "Skyrim:Reanimate (spells)",
    "section": "Dread Zombie",
+   "missing": false,
+   "tree": null
+  },
+  "Dremora Lord": {
+   "page": "Skyrim:Dremora",
+   "section": "Dremora Lord",
    "missing": false,
    "tree": null
   },
@@ -435,6 +513,12 @@
   "Ebony Dagger": {
    "page": "Skyrim:Ebony",
    "section": "Ebony Dagger",
+   "missing": false,
+   "tree": null
+  },
+  "Ebony Greatsword": {
+   "page": "Skyrim:Ebony",
+   "section": "Ebony Greatsword",
    "missing": false,
    "tree": null
   },
@@ -563,6 +647,12 @@
    "missing": false,
    "tree": "HVA"
   },
+  "Flame Atronach": {
+   "page": "Skyrim:Daedra",
+   "section": "Flame Atronach",
+   "missing": false,
+   "tree": null
+  },
   "Flames": {
    "page": "Skyrim:Flames",
    "section": "",
@@ -659,6 +749,12 @@
    "missing": false,
    "tree": null
   },
+  "Grand Healing": {
+   "page": "Skyrim:Grand Healing",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Great Critical Charge": {
    "page": "Skyrim:Two-handed",
    "section": "Great Critical Charge",
@@ -731,6 +827,12 @@
    "missing": false,
    "tree": null,
    "origin": "base"
+  },
+  "Hysteria": {
+   "page": "Skyrim:Hysteria",
+   "section": "",
+   "missing": false,
+   "tree": null
   },
   "Impact": {
    "page": "Skyrim:Destruction",
@@ -938,6 +1040,12 @@
    "tree": null,
    "origin": "base"
   },
+  "Mayhem": {
+   "page": "Skyrim:Mayhem",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Miraak's Robes": {
    "page": "Skyrim:Miraak's Robes",
    "section": "",
@@ -1078,6 +1186,12 @@
    "tree": null,
    "origin": "base"
   },
+  "Oakflesh": {
+   "page": "Skyrim:Armor (spells)",
+   "section": "Oakflesh",
+   "missing": false,
+   "tree": null
+  },
   "Orcish Bow": {
    "page": "Skyrim:Orcish",
    "section": "Orcish Bow",
@@ -1148,12 +1262,24 @@
    "missing": false,
    "tree": "ARC"
   },
+  "Quiet Casting": {
+   "page": "Skyrim:Illusion",
+   "section": "Quiet Casting",
+   "missing": false,
+   "tree": "ILU"
+  },
   "Ragged Robes": {
    "page": "Skyrim:Clothing",
    "section": "00013105",
    "missing": false,
    "tree": null,
    "origin": "base"
+  },
+  "Rally": {
+   "page": "Skyrim:Rally",
+   "section": "",
+   "missing": false,
+   "tree": null
   },
   "Ranger": {
    "page": "Skyrim:Ranger",
@@ -1177,6 +1303,12 @@
   "Red Mountain Flower": {
    "page": "Skyrim:Red Mountain Flower",
    "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Redoran Watchman's Helmet": {
+   "page": "Skyrim:Chitin",
+   "section": "Redoran Watchman's Helmet",
    "missing": false,
    "tree": null
   },
@@ -1234,6 +1366,12 @@
    "missing": false,
    "tree": null,
    "origin": "base"
+  },
+  "Sanguine Rose": {
+   "page": "Skyrim:Sanguine Rose",
+   "section": "",
+   "missing": false,
+   "tree": null
   },
   "Savage Feeding": {
    "page": "Skyrim:Lycanthropy",
@@ -1314,6 +1452,12 @@
    "missing": false,
    "tree": null,
    "origin": "base"
+  },
+  "Soul Trap": {
+   "page": "Skyrim:Soul Trap",
+   "section": "",
+   "missing": false,
+   "tree": null
   },
   "Spell Knight Armor": {
    "page": "Skyrim:Spell Knight Armor",
@@ -1498,6 +1642,12 @@
    "missing": false,
    "tree": null
   },
+  "Telekinesis": {
+   "page": "Skyrim:Telekinesis",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Thalmor Robes": {
    "page": "Skyrim:Specialty Gear",
    "section": "Thalmor Robes",
@@ -1590,9 +1740,27 @@
    "tree": null,
    "origin": "DG"
   },
+  "Vampire's Sight": {
+   "page": "Skyrim:Night Eye (power)",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
+  "Vampiric Drain": {
+   "page": "Skyrim:Vampiric Drain",
+   "section": "",
+   "missing": false,
+   "tree": null
+  },
   "Vegetable Soup": {
    "page": "Skyrim:Food",
    "section": "Vegetable Soup",
+   "missing": false,
+   "tree": null
+  },
+  "Visage of Mzund": {
+   "page": "Skyrim:Visage of Mzund",
+   "section": "",
    "missing": false,
    "tree": null
   },

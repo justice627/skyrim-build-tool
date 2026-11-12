@@ -5,13 +5,15 @@ Rules:
 - every build names a known family, a description and an inspiration
 - every class a build or variant references exists
 - classes grouped in one build (or one variant) have identical weights, so merging them hides nothing
-- every class in classes.json is used exactly once across all builds
+- every class in classes.json is used exactly once across all builds, and none is in excluded_classes.yaml
 - races use real skill names and a three-part attribute ratio
 - stones.yaml and shouts.yaml entries have unique ids, a name, an effect, a known requirement and evidence grade
 - every lore pick (ledger C) has a name, a C-row ref, changes text, a known evidence grade and requirements,
   and any npc it names exists in the saved UESP NPC data
 - hand-set builds (no class file) have weights 1-4, a ledger A ref, and are never graded sourced
 - beast forms and Black Book powers resolve; every `mentions` term exists on UESP and is not unobtainable
+- text names nothing outside its `mentions`: every UESP-checked term, and anything shaped like an item name,
+  that a description, In play line, lore pick, kit note or challenge rule uses must be listed by that block
 - lore picks that list 3+ skills share at least half of them with their build (unless they say "adds")
 - community `perks` are UESP player perks in the build's skills (or the werewolf tree), named in mentions
 - gear kits and challenge runs have ledger refs, known builds, and items/mentions that exist on UESP
@@ -27,7 +29,8 @@ import sys
 from collections import Counter
 
 from common import (ROOT, ARMOR, ATTRS, BEAST_FORMS, EVIDENCE, HANDS, REQUIRES, SKILLS, STYLE_CODES, UNUSABLE_PAGES, by_id,
-                    card_weights, load, load_lookup, npc_classes, skills_in_text, uesp_terms, weights)
+                    card_weights, load, load_lookup, npc_classes, plain_names, skills_in_text, text_holders, unlisted,
+                    uesp_terms, weights)
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
 
@@ -205,22 +208,27 @@ def main():
     terms = uesp_terms()
     book_list = load_lookup("black_books")
     books = by_id(book_list)
+    errors = []
     for bk in book_list:
         if bk.get("requires") not in REQUIRES or bk.get("evidence") not in EVIDENCE or len(bk.get("powers", [])) != 3:
             errors.append(f"black book {bk.get('id')}: needs requires, evidence and three powers")
-    errors = []
     check_lookup("stone", stone_list, errors)
     check_lookup("shout", shout_list, errors)
     known = set(SKILLS) | set(ATTRS)
 
     for eid, c in classes.items():
-        if c.get("source") not in ("uesp-pdf", "uesp-screenshot", "uesp"):
+        if c.get("source") != "uesp":
             errors.append(f"class {eid}: unknown source {c.get('source')!r}")
         for k, v in c["weights"].items():
             if k not in known:
                 errors.append(f"class {eid}: unknown code {k}")
             if not isinstance(v, int) or not 1 <= v <= 9:
                 errors.append(f"class {eid}: weight {k}={v!r} is not 1-9")
+
+    import yaml
+    left_out = yaml.safe_load((ROOT / "data" / "excluded_classes.yaml").read_text())["excluded"]
+    errors += [f"class {e} is in both classes.json and excluded_classes.yaml"
+               for ids in left_out.values() for e in ids if e in classes]
 
     families = {f["id"] for f in doc["families"]}
     ids = Counter(b["id"] for b in doc["builds"])
@@ -254,19 +262,21 @@ def main():
         if ("classes" in b) == ("weights" in b):
             errors.append(f"{name}: needs either classes or hand-set weights, not both or neither")
             continue
-        if "weights" in b:
-            check_hand_set(name, b, errors)
-            continue
         for a in b.get("aliases", []):
             if not isinstance(a, str) or not a.strip():
                 errors.append(f"{name}: empty alias")
             elif names[a.lower()] > 1:
                 errors.append(f"{name}: alias {a!r} repeats another build name or alias")
-        if b["family"] not in families:
-            errors.append(f"{name}: unknown family {b['family']}")
-        for field in ("description", "inspired_by"):
+        if names[str(b.get("name", "")).lower()] > 1:
+            errors.append(f"{name}: name repeats another build name or alias")
+        if b.get("family") not in families:
+            errors.append(f"{name}: unknown family {b.get('family')}")
+        for field in ("name", "description", "inspired_by"):
             if not str(b.get(field, "")).strip():
                 errors.append(f"{name}: missing {field}")
+        if "weights" in b:
+            check_hand_set(name, b, errors)
+            continue
         groups = [("main", b["classes"], b.get("examples", []))]
         groups += [(v["label"], v["classes"], v.get("examples", [])) for v in b.get("variants", [])]
         for label, eids, examples in groups:
@@ -283,6 +293,10 @@ def main():
             used += eids
 
     n_kits, n_mods = check_layers({b["id"] for b in doc["builds"]}, terms, errors)
+    known = {t for t, r in terms.items() if not r["missing"]}
+    plain = plain_names(stone_list, shout_list, book_list)
+    for label, text, own in text_holders(doc, load_lookup("kits"), load_lookup("modifiers")):
+        errors += [f"{label}: text names {n!r}, which is not in its mentions" for n in unlisted(text, own, known, plain)]
     trees = json.loads((ROOT / "docs" / "sources" / "uesp-skill-perks.json").read_text())["trees"]
     for code in SKILLS:
         tree = trees.get(code, [])

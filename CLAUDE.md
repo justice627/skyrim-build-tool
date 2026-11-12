@@ -14,7 +14,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 
 ## Layout
 
-- `data/classes.json`: raw UESP skill and attribute weights per NPC class EditorID. Source data; do not edit by hand.
+- `data/classes.json`: raw UESP skill and attribute weights per NPC class EditorID. Written by `scripts/fetch_classes.py` from the Skyrim:Classes table; do not edit by hand. `data/excluded_classes.yaml` lists the table rows left out; the fetch stops on a class that is in neither file.
 - `data/builds.yaml`: families and builds. Each build points at the class files it comes from, plus variants, inspiration and playstyle text.
 - `data/races.yaml`: pure race builds. Attribute ratios here are recommendations, not game data.
 - `data/stones.yaml`, `data/shouts.yaml`: lookup lists that builds reference by id.
@@ -27,7 +27,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `data/kits.yaml`, `data/modifiers.yaml`: gear kits (ledger D) and challenge runs (ledger F1).
 - `data/black_books.yaml`: the Dragonborn Black Books and their powers (sourced from UESP).
 - `scripts/fetch_terms.py`: checks every `mentions` term against UESP and saves `docs/sources/uesp-terms.json`. Run it after adding or renaming a mention, before `validate.py`.
-- `scripts/refresh.py`: runs fetch_npcs, fetch_gear, fetch_skill_perks, fetch_terms, validate and build in that order, stopping at the first failure. Use it instead of running the fetch scripts by hand.
+- `scripts/refresh.py`: runs fetch_classes, fetch_npcs, fetch_gear, fetch_skill_perks, fetch_terms, validate and build in that order, stopping at the first failure. Use it instead of running the fetch scripts by hand.
 - `scripts/fetch_skill_perks.py`: all 18 skill trees from UESP's skill pages (`docs/sources/uesp-skill-perks.json`): each perk's ranks, required levels and effect.
 - `scripts/fetch_gear.py`: what each build's Example characters wear, from their UESP pages (`docs/sources/uesp-npc-gear.json`). Run before `fetch_terms.py`.
 - `scripts/fetch_npcs.py`: refreshes `uesp-npc-classes.json` from UESP's wiki API. UESP's normal pages are blocked from cloud sessions, but `https://en.uesp.net/w/api.php` works.
@@ -53,7 +53,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Hand-set builds (family `beyond`) have `weights` instead of `classes`, plus a ledger A `ref`. Skills 1 to 4, all of Hea, Mag and Sta. Never graded `sourced`. No class variants or examples; use `lore` picks (refs may be A or C rows).
 - Hand-set weights: skills a ledger row calls core get 3, secondary 2. When a row lists skills without tiers, the first two listed get 3 and the rest 2. Where that would recommend a skill that does nothing for the playstyle (Speech on a shout build), adjust it, grade the build `derived` and give the reason in a comment.
 - A lore pick sits under the build it plays like. If its `changes` names 3 or more skills, at least half must be the build's primary or secondary skills, unless the text says "Adds" or "replaces". The validator enforces this. Theme alone (shouts, werewolf) is not enough.
-- `mentions` (on builds and lore picks) lists every perk, item, spell or power the text names, spelled as the UESP page title. The validator rejects terms with no UESP page or that UESP lists as unobtainable. Text must not name anything that is not in `mentions`.
+- `mentions` (on builds and lore picks) lists every perk, item, spell or power the text names, spelled as the UESP page title. The validator rejects terms with no UESP page or that UESP lists as unobtainable. Text must not name anything that is not in `mentions`: the validator checks every description, In play line, lore pick, kit note and challenge rule for UESP-checked terms and item-shaped names (`named_in_text()` in `common.py`). Skills, stones, shouts, Black Books and beast forms need no entry. A title may differ from the text by a leading "The" or a "(item)" suffix. A spell or power no block has listed yet is not caught, so list new ones when writing text.
 - Perks: class builds and variants get them automatically from `uesp-npc-classes.json` (every named NPC of the class), filtered to the card's skills. A perk is a player perk when `uesp-terms.json` gives it a `tree` (its UESP page is a skill page or Lycanthropy). Community builds may list `perks: {names, evidence, ref}`; names must be player perks in the build's skills (or the werewolf tree) and also appear in `mentions`.
 - Gear kits (`data/kits.yaml`) list UESP item titles and the build ids they fit. Do not type requirement tags for kits: `build.py` reads them from each item's UESP origin (`fetch_terms.py` records `CC:<Creation>`, `DG`, `DB`, `HF` or `base`). Challenge runs (`data/modifiers.yaml`) have a rule, ledger M ref and natural `pairs`; items a rule names go in `mentions`.
 - Playstyle filter tags come from `playstyles()` in `scripts/common.py`: weapon, armor and Block skills are combat, the five spell schools magic, Sneak, Pickpocket and Lockpicking stealth; Light Armor does not count. A style is tagged when its skills (weight 2 or more) hold 30% of the fighting total. "k" (Craft) is added when Smithing, Enchanting, Alchemy and Speech weigh at least as much as the biggest fighting style. A build's `playstyles` field overrides the rule; keep overrides rare and give the reason in a comment.
@@ -63,4 +63,4 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Early perks: for each primary skill the card shows no perk for, `early_perks()` lists that tree's perks needing skill 30 or less (at most 4), from `uesp-skill-perks.json`. Builds with no primary skill fall back to their secondary skills (at most three trees, skipping Block without a shield and armor the loadout does not wear).
 - Phone view: under 640px, Gear, Race and In play fold into a `details.fit` row ("Gear, race and how to play it"). It opens during a search and from a `#<id>` link.
 - Optional `beast_form` (`werewolf`, `vampire-lord`) and `black_book` (`{book, power, evidence, ref}`).
-- Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json`.
+- Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json` and listed in `data/excluded_classes.yaml`.

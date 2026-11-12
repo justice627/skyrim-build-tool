@@ -42,4 +42,4 @@ See `CLAUDE.md` for the layout and house rules, and `docs/roadmap.md` for what c
 
 ## Sources
 
-Class weights come from [UESP's Skyrim:Classes page](https://en.uesp.net/wiki/Skyrim:Classes). The saved copy used to read them is in `docs/sources/`. See `data/sources.yaml` for what is sourced and what is derived.
+Class weights come from [UESP's Skyrim:Classes page](https://en.uesp.net/wiki/Skyrim:Classes), read through the wiki API by `scripts/fetch_classes.py`. See `data/sources.yaml` for what is sourced and what is derived.

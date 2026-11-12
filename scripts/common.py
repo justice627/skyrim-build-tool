@@ -1,5 +1,6 @@
 """Shared loading and game constants for validate.py and build.py."""
 import json
+import re
 from pathlib import Path
 
 import yaml
@@ -49,7 +50,6 @@ def npc_classes():
 
 def skills_in_text(text):
     """Skill codes named in free text such as a lore pick's `changes` ("fire Destruction" counts)."""
-    import re
     low = text.lower()
     return {c for c, n in SKILLS.items() if re.search(r"\b" + re.escape(n.lower()) + r"\b", low)}
 
@@ -167,3 +167,77 @@ def by_id(entries):
 
 def weights(classes, editor_id):
     return classes[editor_id]["weights"]
+
+
+# --- Text check: everything a card's text names must be in `mentions` (CLAUDE.md, data conventions) ---
+_ITEM_NOUN = (r"Sword|Greatsword|Dagger|Blade|Oathblade|Axe|Battleaxe|Mace|Warhammer|Hammer|Bow|Crossbow|Staff|"
+              r"Shield|Armor|Cuirass|Helmet|Helm|Mask|Robes|Gauntlets|Boots|Amulet|Ring|Crown|Circlet|Necklace")
+_CAP = r"[A-Z][\w'’-]*"
+# A capitalized name ending in an item word ("Ebony Greatsword"), or an item word plus "of ..." ("Amulet of Talos").
+ITEM_SHAPED = re.compile(rf"\b(?:{_CAP} )*(?:{_ITEM_NOUN}) of (?:the )?{_CAP}(?: {_CAP})*|\b(?:{_CAP} )+(?:{_ITEM_NOUN})\b")
+_LEAD = re.compile(r"^(?:The|A|An|Adds|Swaps|Keep|Train|Take|Use|Wear|Wears|With|And|Or|Its|His|Her|Their|Your|No|Some|Two) ")
+
+
+def plain_form(title):
+    """A UESP title as text writes it: "The Black Star (item)" -> "Black Star"."""
+    return re.sub(r"^The ", "", re.sub(r"\s*\([^)]*\)$", "", title))
+
+
+def named_in_text(text, known, plain=()):
+    """Names a text uses that need a `mentions` entry: every term in `known` (UESP-checked terms, matched by
+    case as whole words, longest first) plus anything shaped like an item name. `plain` holds names that need
+    no entry: skills, and stone, shout and Black Book names, which their own lookup files check.
+    A one-word term at the start of a sentence is skipped: "Fear works on..." may be the plain word."""
+    found, spans = set(), []
+    known = {plain_form(t): t for t in known}
+    for name in plain:
+        spans += [m.span() for m in re.finditer(re.escape(name), text)]
+    hit = lambda a, b: any(a < y and b > x for x, y in spans)
+    shaped = []
+    for m in ITEM_SHAPED.finditer(text):
+        raw = m.group(0)
+        while _LEAD.match(raw):
+            raw = _LEAD.sub("", raw, count=1)
+        if " " in raw and raw not in plain and not hit(m.end() - len(raw), m.end()):
+            shaped.append((m.end() - len(raw), m.end(), raw))
+    for t in sorted(known, key=len, reverse=True):
+        for m in re.finditer(r"(?<![\w'’-])" + re.escape(t) + r"s?(?![\w-])", text):
+            if hit(*m.span()):
+                continue
+            spans.append(m.span())
+            # "Ancient Shrouded Armor" is its own item, not the known "Shrouded Armor".
+            if any(a <= m.start() and m.end() <= b and b - a > m.end() - m.start() for a, b, _ in shaped):
+                continue
+            start = m.start() == 0 or text[:m.start()].rstrip()[-1:] in ".:!?"
+            if not (" " not in t and start):
+                found.add(known[t])
+            shaped = [x for x in shaped if not (m.start() <= x[0] and x[1] <= m.end())]
+    return found | {raw for _, _, raw in shaped}
+
+
+def unlisted(text, own, known, plain):
+    """Names in `text` that its holder's `mentions` (or signature, perks, items) do not cover."""
+    have = {plain_form(t) for t in own}
+    return sorted(n for n in named_in_text(text, known, plain) if plain_form(n) not in have)
+
+
+def text_holders(doc, kits, mods):
+    """(label, text, names its text may use) for every block of player-facing text that can name game things."""
+    for b in doc["builds"]:
+        own = set(b.get("mentions", [])) | set(b.get("signature", [])) | set(b.get("perks", {}).get("names", []))
+        yield b.get("name", b["id"]), " ".join(str(b.get(f, "")) for f in ("description", "play")), own
+        for e in b.get("lore", []):
+            yield (f"{b.get('name', b['id'])} [lore {e.get('name')!r}]", str(e.get("changes", "")),
+                   set(e.get("mentions", [])) | set(e.get("signature", [])))
+    for k in kits:
+        yield f"kit {k.get('id')}", str(k.get("note", "")), set(k.get("items", [])) | set(k.get("mentions", []))
+    for m in mods:
+        yield f"modifier {m.get('id')}", str(m.get("rule", "")), set(m.get("mentions", []))
+
+
+def plain_names(stones, shouts, books):
+    """Names text may use without a `mentions` entry: skills, and the lookup lists validated on their own."""
+    out = set(SKILLS.values()) | {s["name"] for s in shouts} | {b["name"] for b in books}
+    out |= {p["name"] for b in books for p in b["powers"]}
+    out |= {name for name, _ in BEAST_FORMS.values()}
+    return out | {s["name"] for s in stones} | {f"{s['name']} Stone" for s in stones}

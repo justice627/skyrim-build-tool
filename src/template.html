@@ -153,8 +153,8 @@ details.more>summary{font-size:12.5px}
 <div class="wrap">
 <header>
   <h1>Skyrim Builds</h1>
-  <p class="lede">Character builds for Skyrim. Most come from the game's own NPC classes on UESP; community builds and challenge runs cover the rest. Everything named here is checked against UESP, and anything worked out for this page is marked suggested.</p>
-  <details class="howto" open><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk. <b>More</b> on each card opens its stone, shouts, perks, gear and variants. The <b>Combat</b>, <b>Magic</b> and <b>Stealth</b> filters look at the skills that decide how a build fights: weapons and heavy armor, the spell schools, and sneaking. Light Armor supports any style and does not count. <b>Craft</b> marks builds led by Smithing, Enchanting, Alchemy and Speech, such as smiths, merchants and townsfolk. Perks on class builds are the ones named NPCs of that class take, read from UESP: hover a perk to see who, and ×2 means two NPCs take it.</details>
+  <p class="lede">Character builds for Skyrim. Most come from the game's own NPC classes on UESP; community builds and challenge runs cover the rest. Every perk, item, spell, shout and character named here is checked against UESP, and anything worked out for this page is marked suggested.</p>
+  <details class="howto"><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk. <b>More</b> on each card opens its stone, shouts, perks, gear and variants. The <b>Combat</b>, <b>Magic</b> and <b>Stealth</b> filters look at the skills that decide how a build fights: weapons and heavy armor, the spell schools, and sneaking. Light Armor supports any style and does not count. <b>Craft</b> marks builds led by Smithing, Enchanting, Alchemy and Speech, such as smiths, merchants and townsfolk. Perks on class builds are the ones named NPCs of that class take, read from UESP: hover a perk to see who, and ×2 means two NPCs take it.</details>
   <div class="legend">
     <span><i class="sw" style="background:var(--c-combat)"></i>Combat skill</span>
     <span><i class="sw" style="background:var(--c-magic)"></i>Magic skill</span>
@@ -276,7 +276,7 @@ function raceCard(r){
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
 function hay(b){return [b.name,...b.races.map(r=>r.race),...b.tree.flatMap(g=>g.perks.map(p=>p.n)),...b.gear.sig.map(x=>x.n),...b.gear.worn.flatMap(w=>w.items.map(i=>i.n)),...b.variants.flatMap(v=>v.sig.map(x=>x.n)),...b.lore.flatMap(l=>l.sig.map(x=>x.n)),b.play,...b.kits.flatMap(k=>[k.n,...k.items,...k.cc]),...b.mods,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
-function strong(b,qre){return [b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].some(t=>t&&t.toLowerCase().match(qre))}
+function strong(b,has){return has([b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].join(' | '))}
 function raceHay(r){return [r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase()}
 const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div>';
 // Filters: playstyle = build.py's playstyles() (weapons/armor, spell schools, sneaking; crafting and
@@ -287,8 +287,11 @@ function keep(b){return (!st.style||b.styles.includes(st.style))&&(!st.base||!b.
 function keepRace(r){return !st.style||r.styles.includes(st.style)}
 function render(){
   const q=st.q.trim().toLowerCase();
-  // Match from the start of a word, so "orc" finds Orc but not sorcerer, and "mage" not damage.
-  const qre=new RegExp('(^|[^a-z0-9])'+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));let n=0,html='';
+  // Every word of the search must match, each from the start of a word, in any order: "orc" finds Orc but
+  // not sorcerer, "two handed" finds Two-Handed, and "heavy armor mage" finds builds with all three.
+  const norm=t=>t.toLowerCase().replace(/[-\u2010-\u2015]/g,' ');
+  const res=norm(q).split(/\s+/).filter(Boolean).map(w=>new RegExp('(^|[^a-z0-9])'+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+  const has=t=>{const x=norm(t);return res.every(r=>r.test(x))};let n=0,html='';
   const famOk=b=>st.f==='all'||st.f===b.fam, raceOk=st.f==='all'||st.f==='race', modsOk=(st.f==='all'&&!st.style)||st.f==='mods';
   if(!q){
     for(const f of DATA.fams){
@@ -304,10 +307,10 @@ function render(){
   }else{
     // Search: builds whose name, alias or a named character matches come first; builds that only
     // mention the words in their text follow in a folded list.
-    const hits=DATA.builds.filter(b=>famOk(b)&&keep(b)&&qre.test(hay(b)));
-    const best=hits.filter(b=>strong(b,qre)), rest=hits.filter(b=>!strong(b,qre));
-    const rs=raceOk?DATA.races.filter(r=>keepRace(r)&&qre.test(raceHay(r))):[];
-    const bestR=rs.filter(r=>r.race.toLowerCase().match(qre)), restR=rs.filter(r=>!r.race.toLowerCase().match(qre));
+    const hits=DATA.builds.filter(b=>famOk(b)&&keep(b)&&has(hay(b)));
+    const best=hits.filter(b=>strong(b,has)), rest=hits.filter(b=>!strong(b,has));
+    const rs=raceOk?DATA.races.filter(r=>keepRace(r)&&has(raceHay(r))):[];
+    const bestR=rs.filter(r=>has(r.race)), restR=rs.filter(r=>!has(r.race));
     const cards=(bs,races)=>bs.map(b=>card(b,true)).join('')+races.map(raceCard).join('');
     const nb=best.length+bestR.length, nr=rest.length+restR.length;
     if(nb)html+=`<section class="fam"><div class="famhead"><h2>Best matches</h2><p>Name, alias, primary skill or a named character matches.</p></div><div class="grid">${cards(best,bestR)}</div></section>`;
@@ -317,7 +320,7 @@ function render(){
               :`<section class="fam"><div class="famhead"><h2>Mentions</h2><p>These builds mention it in their text.</p></div>${inner}</section>`;
     }
     n=nb+nr;
-    const ms=modsOk?DATA.mods.filter(m=>[m.n,m.rule,...m.pairs].join(' ').toLowerCase().match(qre)):[];
+    const ms=modsOk?DATA.mods.filter(m=>has([m.n,m.rule,...m.pairs].join(' '))):[];
     if(ms.length)html+=`<section class="fam">${modHead}<div class="grid">${ms.map(modCard).join('')}</div></section>`;
     const cm=ms.length?` · ${ms.length} challenge run${ms.length===1?'':'s'}`:'';
     document.getElementById('cnt').textContent=(nb&&nr?`${nb} best match${nb===1?'':'es'} · ${nr} more mention it`:`${n} build${n===1?'':'s'}`)+cm;

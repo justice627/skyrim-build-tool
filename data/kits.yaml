@@ -14,6 +14,7 @@ kits:
   name: Necromantic Grimoire
   ref: D2
   items: ["Necromantic Grimoire", "Bone Colossus"]
+  mentions: ["Necromancy", "Dark Souls"]
   fits: [conjurer, preserver]
   evidence: partly-sourced
   note: "Skeleton minions, a Bone Colossus and new robes. Its strongest enchantment needs the Necromancy and Dark Souls perks."

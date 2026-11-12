@@ -7,9 +7,9 @@ sources:
     used_for: Skill and attribute weights in data/classes.json
     evidence: sourced
     notes: >-
-      Read from a saved PDF of the page (docs/sources/uesp-skyrim-classes.pdf) using cell positions.
-      The PDF dropped the rows from Bandit Wizard to Conjurer; those 19 classes come from a screenshot
-      (docs/sources/uesp-classes-missing-rows.png) and are marked source: uesp-screenshot.
+      Read from the page's table through the wiki API by scripts/fetch_classes.py (2026-11-12). The file
+      was first read from a saved PDF and a screenshot (docs/sources/); the API read matched all 119
+      classes with no weight changed. The 40 table rows left out are listed in data/excluded_classes.yaml.
   - id: uesp-races
     title: UESP, Skyrim:Races
     url: https://en.uesp.net/wiki/Skyrim:Races
