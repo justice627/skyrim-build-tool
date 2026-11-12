@@ -10,6 +10,7 @@
 #             variants can have their own examples
 #   lore      optional ledger C picks: {name, ref, evidence, changes, requires (optional), npc (optional,
 #             must be in the UESP NPC data)}. Text is condensed from the ledger row, nothing added.
+#   play      optional "In play" line: how to actually play the build where its data misleads (derived)
 #   playstyles optional override of the filter tags (c, m, s, k); only where the skill rule misreads a build
 #   requires  optional list of extra requirements beyond the shouts (DG, HF, DB, CC, AE)
 families:
@@ -142,6 +143,8 @@ builds:
   name: Orc stronghold guard
   inspired_by: Orc warriors guarding the strongholds
   evidence: sourced
+  play: "In play, heavy armor makes noise. Take Sneak's Muffled Movement perk, or treat Sneak as a minor skill."
+  mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, marked-for-death], evidence: derived}
   examples: ["Borgakh the Steel Heart", "Chief Yamarz"]
@@ -161,6 +164,8 @@ builds:
   name: Shieldmaster
   inspired_by: The Block master and expert trainers
   evidence: sourced
+  play: "In play, heavy armor makes noise. Take Sneak's Muffled Movement perk, or treat Sneak as a minor skill."
+  mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, become-ethereal], evidence: derived}
   examples: ["Chief Larak"]
@@ -195,6 +200,7 @@ builds:
   name: Bandit raider
   inspired_by: Bandit melee and Alik'r warriors (identical files)
   evidence: sourced
+  play: "In play, pick one weapon style, one-handed or two-handed. Their perk trees do not overlap."
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [elemental-fury, whirlwind-sprint, dismay], evidence: derived}
   examples: ["Kematu", "Rochelle the Red"]
@@ -209,6 +215,8 @@ builds:
   name: Hold guard
   inspired_by: Imperial-aligned city guards
   evidence: sourced
+  play: "In play, pick one armor, heavy or light. If you keep heavy armor and Sneak, take Sneak's Muffled Movement perk."
+  mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, disarm, call-of-valor], evidence: derived}
   classes:
@@ -226,6 +234,7 @@ builds:
   name: Legionnaire
   inspired_by: Imperial soldiers, Stormcloak soldiers and Civil War soldiers
   evidence: sourced
+  play: "In play, pick one kit: a shield, a one-handed weapon and heavy armor, or a two-handed weapon and light armor. Keep Archery as a backup. The class raises all of it, but your perk points will not stretch that far."
   stone: {early: warrior, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, marked-for-death], evidence: derived}
   examples: ["Legate Rikke", "General Tullius"]
@@ -935,6 +944,7 @@ builds:
   inspired_by: The Vigilants
   aliases: [Paladin]
   evidence: sourced
+  play: "In play, pick one armor: heavy for the shield and the front line, light for a roaming hunter."
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [unrelenting-force, call-of-valor, become-ethereal], evidence: derived}
   examples: ["Vigilant Tolan", "Keeper Carcette"]
@@ -1090,6 +1100,7 @@ builds:
   name: Laborer
   inspired_by: Farmers, miners and lumberjacks (identical files)
   evidence: sourced
+  play: "In play, pick one weapon style, one-handed or two-handed. The crafting skills are the point of this build."
   stone: {early: lover, final: steed, evidence: derived}
   shouts: {ids: [unrelenting-force, whirlwind-sprint], evidence: derived}
   examples: ["Gerdur", "Sven", "Roggi Knot-Beard"]
@@ -1145,6 +1156,8 @@ builds:
   name: Ebony Warrior
   inspired_by: The Ebony Warrior (Dragonborn)
   evidence: sourced
+  play: "In play, build the core: Heavy Armor, One-Handed, Block and Archery, with Conjuration and Restoration as support. The class file raises nine skills at once, which a player cannot match. Heavy armor is loud, so take Muffled Movement if you sneak."
+  mentions: ["Muffled Movement"]
   stone: {early: warrior, final: lord, evidence: derived}
   shouts: {ids: [dragonrend, unrelenting-force, elemental-fury, become-ethereal], evidence: derived}
   examples: ["Ebony Warrior"]
@@ -1186,6 +1199,7 @@ builds:
   name: Ancient Dragonborn
   inspired_by: The ancient Dragonborn class (Dragonborn DLC)
   evidence: sourced
+  play: "In play, Conjuration is the core. Pick one weapon style to back it up, one-handed or two-handed, not both."
   stone: {early: mage, final: ritual, evidence: derived}
   shouts: {ids: [dragonrend, fire-breath, unrelenting-force, call-dragon], evidence: derived}
   classes:
@@ -1250,8 +1264,9 @@ builds:
   name: Pugilist
   inspired_by: Community unarmed builds (TheGamer, GamersDecide, FudgeMuppet's Sabre Cat)
   aliases: [Unarmed, Brawler]
-  weights: {HVA: 3, ENC: 3, Hea: 2, Mag: 0, Sta: 1}
-  evidence: partly-sourced
+  weights: {HVA: 3, ENC: 3, SMI: 2, Hea: 2, Mag: 0, Sta: 1}  # Smithing added: tempered gauntlets raise Fists of Steel damage
+  evidence: derived
+  play: "The Atronach Stone still helps without spells: it absorbs half of incoming spells, and its slower Magicka regeneration does not matter to you. Smithing tempers your gauntlets, which raises Fists of Steel's damage."
   playstyles: [c]  # Enchanting serves the gauntlets
   ref: A1
   stone: {early: warrior, final: atronach, evidence: partly-sourced, ref: A1}
@@ -1279,11 +1294,12 @@ builds:
   aliases: [The Dragonborn, Thu'um]
   weights: {RES: 3, ALT: 3, SPE: 1, Hea: 2, Mag: 2, Sta: 1}  # A2's Greybeard version had Speech 3; lowered because Speech does nothing for shouts
   evidence: derived
+  play: "Wear robes, not armor: Alteration's Mage Armor perk makes armor spells up to three times as strong when you wear none."
   ref: A2
   stone: {early: lord, evidence: partly-sourced, ref: A2}
   shouts: {ids: [unrelenting-force, become-ethereal, kynes-peace, clear-skies], evidence: partly-sourced, ref: A2}
   black_book: {book: epistolary-acumen, power: "Dragonborn Force", evidence: partly-sourced, ref: A2}
-  mentions: ["Amulet of Talos", "Black Book: Epistolary Acumen"]
+  mentions: ["Amulet of Talos", "Black Book: Epistolary Acumen", "Mage Armor"]
   description: >-
     Shouts are the main weapon. No skill makes them stronger: their power comes from words of power and
     dragon souls. The Amulet of Talos shortens the wait between shouts, and the Black Book Epistolary Acumen
@@ -1293,8 +1309,8 @@ builds:
   family: beyond
   name: Werewolf
   inspired_by: Community werewolf builds and the Companions questline
-  weights: {2HD: 3, Hea: 2, Mag: 0, Sta: 2}
-  evidence: partly-sourced
+  weights: {2HD: 3, HVA: 2, SMI: 2, Hea: 2, Mag: 0, Sta: 2}  # A3 names only two-handed; Heavy Armor and Smithing added for the human-form fighter
+  evidence: derived
   ref: A3
   beast_form: werewolf
   requires: [DG]
@@ -1355,8 +1371,8 @@ builds:
   family: beyond
   name: Dual-wielder
   inspired_by: Community dual-wield builds (TheGamer)
-  weights: {1HD: 3, LTA: 3, Hea: 1, Mag: 0, Sta: 2}
-  evidence: partly-sourced
+  weights: {1HD: 3, LTA: 3, SMI: 2, SNK: 2, Hea: 1, Mag: 0, Sta: 2}  # Smithing and Sneak added for tempered blades and opening hits
+  evidence: derived
   ref: A14
   stone: {early: warrior, final: lady, evidence: derived}
   shouts: {ids: [elemental-fury, whirlwind-sprint, marked-for-death], evidence: partly-sourced, ref: A14}
@@ -1456,6 +1472,7 @@ builds:
   inspired_by: FudgeMuppet's Madman, a Sheogorath jester
   weights: {1HD: 3, SNK: 3, ENC: 2, ALC: 2, SPE: 2, Hea: 2, Mag: 1, Sta: 1}
   evidence: partly-sourced
+  play: "The Atronach Stone still helps without spells: it absorbs half of incoming spells. The Wabbajack is a staff, so it runs on charges, not Magicka."
   ref: A12
   stone: {early: lover, final: atronach, evidence: partly-sourced, ref: A12}
   shouts: {ids: [unrelenting-force, ice-form, storm-call], evidence: partly-sourced, ref: A12}
@@ -1484,8 +1501,8 @@ builds:
   name: Arcanist
   inspired_by: TheGamer's Spider Mastermind, a rune trapper
   aliases: [Spider Mastermind]
-  weights: {DES: 3, ALT: 3, Hea: 1, Mag: 3, Sta: 1}
-  evidence: partly-sourced
+  weights: {DES: 3, ALT: 3, ENC: 2, RES: 2, Hea: 1, Mag: 3, Sta: 1}  # Enchanting (cheaper spells) and Restoration added
+  evidence: derived
   ref: A18
   requires: [DB]
   stone: {early: mage, final: atronach, evidence: derived}

@@ -237,6 +237,8 @@ def main():
             check_lore_fit(name, b, classes, errors)
         check_extras(name, b, books, errors)
         check_perks(name, b, terms, errors)
+        if "play" in b and not (isinstance(b["play"], str) and b["play"].strip()):
+            errors.append(f"{name}: play must be a non-empty line")
         bad = [s for s in b.get("playstyles", []) if s not in STYLE_CODES]
         if bad or ("playstyles" in b and not b["playstyles"]):
             errors.append(f"{name}: playstyles override must list codes from {STYLE_CODES}")

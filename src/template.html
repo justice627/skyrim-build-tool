@@ -78,6 +78,8 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 footer{font-size:12.5px;color:var(--muted);display:grid;gap:6px;max-width:80ch}
 footer a{color:var(--accent)}
 .empty{color:var(--muted)}
+.play{font-size:12.5px;background:var(--chip);border-radius:6px;padding:8px 10px}
+.play b{font-weight:600}
 .frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
 .seg{display:flex;gap:4px}
 .seg button{font:600 11.5px/1 var(--f-body);padding:5px 9px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:5px}
@@ -219,6 +221,7 @@ function card(b,open){
   return `<article class="card" id="b-${esc(b.id)}"><div><div class="ttl"><h3>${esc(b.name)}</h3>${b.req.map(r=>`<span class="req" title="Needs ${esc(REQ[r]||r)}">${esc(r)}</span>`).join('')}<a class="lnk" href="#${esc(b.id)}" data-id="${esc(b.id)}" aria-label="Link to ${esc(b.name)}" title="Copy a link to this build">Link</a></div>${b.aka.length?`<div class="aka">Also known as <b>${b.aka.map(esc).join('</b>, <b>')}</b></div>`:''}<div class="insp">Inspired by: ${esc(b.insp)}</div>${b.npcs.length?`<div class="npcs">Examples: <b>${b.npcs.map(esc).join('</b>, <b>')}</b></div>`:''}</div>
   <p class="desc">${esc(b.desc)}</p>
   ${b.hand?'<div class="hand">Hand-set weights</div>':''}<div class="tiers">${tier('Primary',b.p)}${tier('Secondary',b.s)}${tier('Minor',b.m)}</div>
+  ${b.play?`<div class="play"><b>In play</b> ${esc(b.play)} <span class="sug">suggested</span></div>`:''}
   <div class="attr">${bar(b.plan)}${lv(b.lv50)}${b.why?`<div class="why">NPC weights H ${b.npc[0]} · M ${b.npc[1]} · S ${b.npc[2]}. ${esc(b.why)}</div>`:''}</div>
   <details class="more"${open?' open':''}><summary>More: ${esc(label)}</summary><div class="morebody">
   <div class="tiers"><div class="tier pick"><span>Stone</span><div class="sk">${stone}${tagEv(st0.ev)}</div></div>
@@ -234,7 +237,7 @@ function raceCard(r){
   <div class="tiers"><div class="tier"><span>Starts 25</span><div class="sk">${pill(r.sig)}</div></div><div class="tier"><span>Starts 20</span><div class="sk">${r.plus5.map(s=>pill(s)).join('')}</div></div></div>
   <div class="attr">${bar(r.attr)}${lv(r.lv50)}</div></article>`;
 }
-function hay(b){return [b.name,...b.kits.flatMap(k=>[k.n,...k.items,...k.cc]),...b.mods,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
+function hay(b){return [b.name,b.play,...b.kits.flatMap(k=>[k.n,...k.items,...k.cc]),...b.mods,...b.perks.flatMap(g=>g.perks.map(p=>p.n)),...b.variants.flatMap(x=>x.perks.flatMap(g=>g.perks.map(p=>p.n))),...b.mentions,b.beast||'',b.book?b.book.book+' '+b.book.power:'',...b.aka,...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc,x.changes]),b.insp,b.desc,b.stone.early,b.stone.final||'',...b.shouts.list.map(x=>x.n),...b.req,...b.eids,...b.p.map(x=>x.s),...b.s.map(x=>x.s),...b.m.map(x=>x.s),...b.variants.map(x=>x.label+' '+x.skills+' '+x.eids.join(' '))].join(' ').toLowerCase()}
 function strong(b,q){return [b.name,...b.aka,...b.p.map(x=>x.s),...b.npcs,...b.variants.flatMap(x=>x.npcs),...b.lore.flatMap(x=>[x.n,x.npc])].some(t=>t&&t.toLowerCase().includes(q))}
 function raceHay(r){return [r.race,r.sig,...r.plus5,r.note,r.power].join(' ').toLowerCase()}
 const raceHead='<div class="famhead"><h2>Pure races</h2><p>Only the skills a race starts with a bonus in. The +10 skill starts at 25, each +5 skill at 20.</p></div>';
