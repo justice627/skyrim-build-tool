@@ -166,6 +166,20 @@ Decision for the owner: whether to add one Playwright smoke test in CI (page loa
 
 ## Phase 8: page shell, links, accessibility
 
+Status: done (2026-11-13).
+
+- Links: the six stale ids are renamed (`warrior`, `stealth-archer`, `thief`, `true-mage`, `crafter`, `bound-warrior`); the old ids are `link_aliases` and still open the card. The validator requires an id to be the slug of its name.
+- Head: `index.html` has its title, description, Open Graph tags and canonical link in `<head>`. No preview image; one can be added to `SKELETON` later.
+- Fonts: kept. Every font variable already had a system fallback; the README and CLAUDE.md no longer say "self-contained".
+- Accessibility. The review's "21 buttons with no label" was a counting error: those buttons sit inside closed `details`, where a browser reports no visible text. Every control has a name, and the smoke test now checks that. What was really wrong:
+  - Stone, shout and perk explanations were hover-only, so phones and keyboards could not reach them. They are now buttons that print the text under the row.
+  - Rebuilding the filter rows dropped keyboard focus. It now stays on the pressed button.
+  - The Stamina label in light mode was 4.26:1 against the card; it is now 5.06:1. Every other text color already passed 4.5:1 in both themes.
+  - The result count is announced (`aria-live`), the results are a `main` landmark, and the attribute bar has a text label.
+- Search: results where the words appear together come first. `data/search_terms.yaml` maps nine player words to skills (tank, sword and board, 2h, 1h, healer, summoner, nuker, sniper, caster). Search also covers the family title and the loadout ("shield", "robes").
+- Template: split into `src/head.html`, `page.css`, `page.html` and `page.js`; `card()` is seven named parts. The built page is still one file. Stale footer text ("from your saved PDF and screenshot") corrected.
+- Not done: "`index.html` validates as HTML" was checked by the smoke test (title in head, no head tags in body), not by a validator service.
+
 Why: small defects a visitor meets before reading any build.
 
 - Broken links: the README advertises `#thief`, but the build's id is still `cutpurse`, so the link does nothing. Six renamed builds have stale ids (`housecarl`, `scout`, `cutpurse`, `destruction-mage`, `prisoner`, `blade-binder`). Rename the ids to match the names and keep the old ids as `link_aliases` that `openHash()` resolves, so shared links keep working. Update `kits.yaml` and `modifiers.yaml` references. Validator: an id must be the slug of the name, or say why not.

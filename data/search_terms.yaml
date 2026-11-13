@@ -1,0 +1,13 @@
+# Words players search for that the data never uses. `say` is what is typed (lower case); it also matches a
+# build when every word of any `means` phrase matches it. These are this tool's reading of player slang
+# (evidence: derived). Keep the list short: add a word only when a real search came back empty.
+search_terms:
+- {say: tank, means: ["heavy armor block"], evidence: derived}
+- {say: sword and board, means: ["one handed block"], evidence: derived}
+- {say: 2h, means: ["two handed"], evidence: derived}
+- {say: 1h, means: ["one handed"], evidence: derived}
+- {say: healer, means: ["restoration"], evidence: derived}
+- {say: summoner, means: ["conjuration"], evidence: derived}
+- {say: nuker, means: ["destruction"], evidence: derived}
+- {say: sniper, means: ["archery sneak"], evidence: derived}
+- {say: caster, means: ["destruction", "conjuration", "illusion", "alteration", "restoration"], evidence: derived}

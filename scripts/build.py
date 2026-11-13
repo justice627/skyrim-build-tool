@@ -3,6 +3,7 @@
 Writes two files to dist/:
 - index.html     a full HTML document for GitHub Pages or opening locally
 - artifact.html  the same page without the document skeleton, for publishing as a claude.ai artifact
+The page's source is four files in src/ (head.html, page.css, page.html, page.js), inlined into one file.
 """
 import json
 import re
@@ -218,7 +219,7 @@ def render_build(b, src):
     perks = hand_perks(b, skills, src.terms) if hand else class_perks(b["classes"], skills, src.npcs, src.terms)
     own = b.get("perks") if hand else None
     return {
-        "id": b["id"], "styles": b.get("playstyles") or playstyles(skills), "fam": b["family"], "name": b["name"],
+        "id": b["id"], "old": b.get("link_aliases", []), "styles": b.get("playstyles") or playstyles(skills), "fam": b["family"], "name": b["name"],
         "insp": b["inspired_by"], "eids": b.get("classes", []),
         "hand": hand, "ref": b.get("ref", ""), "play": b.get("play", ""),
         "gear": render_gear(b, skills, src.terms, src.worn),
@@ -278,21 +279,46 @@ def page_data():
         "mods": [{"n": m["name"], "rule": m["rule"], "ref": m["ref"], "ev": m["evidence"],
                   "pairs": [name_of[p] for p in m["pairs"]]} for m in mods],
         "races": [render_race(r) for r in races],
+        "say": [{"say": t["say"], "means": t["means"]} for t in load_lookup("search_terms")],
     }
 
 
+SRC = ROOT / "src"
+SITE = "https://justice627.github.io/skyrim-build-tool/"
+DESCRIPTION = ("Skyrim character builds from the game's own NPC classes: skills, attributes, gear, perks, "
+               "stones and shouts, each checked against UESP.")
+
+# index.html: a full document. The head lines come from src/head.html, plus what a shared link shows.
 SKELETON = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{head}<meta name="description" content="{description}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skyrim Builds">
+<meta property="og:description" content="{description}">
+<meta property="og:url" content="{site}">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="{site}">
 <style>:root{{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
-</head>
+{body}</head>
 <body>
-{page}
-</body>
-</html>
 """
+
+
+def assemble(data):
+    """(index.html, artifact.html) from the four source files in src/ and the page data.
+
+    artifact.html is a fragment, head lines first: claude.ai artifacts supply their own document skeleton.
+    index.html is the same page as a full document, with the head lines in <head>."""
+    head = (SRC / "head.html").read_text()
+    style = f"<style>\n{(SRC / 'page.css').read_text()}</style>\n"
+    script = (SRC / "page.js").read_text().replace("__DATA__", json.dumps(data, ensure_ascii=False))
+    body = f"{(SRC / 'page.html').read_text()}\n<script>\n{script}</script>\n"
+    index = SKELETON.format(head=head, description=DESCRIPTION, site=SITE, body=style).replace(
+        "</head>\n<body>\n", "</head>\n<body>\n" + body + "</body>\n</html>\n")
+    return index, head + style + "\n" + body
 
 
 DATA_LINE = re.compile(r"^const DATA = (.*);$", re.M)
@@ -321,13 +347,12 @@ def self_check(html, data):
 
 
 def main():
-    template = (ROOT / "src" / "template.html").read_text()
     built = page_data()
-    page = template.replace("__DATA__", json.dumps(built, ensure_ascii=False))
+    index, artifact = assemble(built)
     out = ROOT / "dist"
     out.mkdir(exist_ok=True)
-    (out / "artifact.html").write_text(page)
-    (out / "index.html").write_text(SKELETON.format(page=page))
+    (out / "index.html").write_text(index)
+    (out / "artifact.html").write_text(artifact)
     problems = [f"{name}: {p}" for name in ("index.html", "artifact.html")
                 for p in self_check((out / name).read_text(), built)]
     if problems:

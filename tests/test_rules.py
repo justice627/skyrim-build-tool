@@ -9,7 +9,7 @@ from tests import helpers  # noqa: F401  (import path)
 
 import build
 from common import (SKILLS, cache, card_weights, early_perks, load, loadout, named_in_text, plain_form, playstyles,
-                    race_fit, skills_in_text, tree_of_page, unlisted)
+                    race_fit, skills_in_text, slug, tree_of_page, unlisted)
 
 CLASSES, DOC, RACES = load()
 BUILDS = {b["name"]: b for b in DOC["builds"]}
@@ -161,6 +161,18 @@ class TextNames(unittest.TestCase):
         self.assertEqual(tree_of_page("Skyrim:Lycanthropy"), "werewolf")
         self.assertIsNone(tree_of_page("Skyrim:Dawnbreaker"))
         self.assertIsNone(tree_of_page(""))
+
+
+class Ids(unittest.TestCase):
+    def test_slug(self):
+        self.assertEqual(slug("True Mage"), "true-mage")
+        self.assertEqual(slug("The Preserver"), "preserver")
+        self.assertEqual(slug("Dual-wielder"), "dual-wielder")
+        self.assertEqual(slug("Vigilant of Stendarr"), "vigilant-of-stendarr")
+
+    def test_every_build_id_is_its_slug(self):
+        for b in DOC["builds"]:
+            self.assertEqual(b["id"], slug(b["name"]))
 
 
 if __name__ == "__main__":

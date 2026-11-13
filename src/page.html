@@ -1,0 +1,36 @@
+<div class="wrap">
+<header>
+  <h1>Skyrim Builds</h1>
+  <p class="lede">Character builds for Skyrim. Most come from the game's own NPC classes on UESP; community builds and challenge runs cover the rest. Every perk, item, spell, shout and character named here is checked against UESP, and anything worked out for this page is marked suggested.</p>
+  <details class="howto"><summary><b>How to read a build</b></summary> Each number is the class's skill weight: its share of the skill points an NPC of that class gains every level. A weight of 4 grows twice as fast as a 2. <b>Primary</b> skills have a weight of 3 or more and are the ones to train first and spend most perks on. <b>Secondary</b> skills (weight 2) round the build out. <b>Minor</b> skills (weight 1) are a light touch, often just a few points or a single perk. <b>More</b> on each card opens its stone, shouts, perks, gear and variants. The <b>Combat</b>, <b>Magic</b> and <b>Stealth</b> filters look at the skills that decide how a build fights: weapons and heavy armor, the spell schools, and sneaking. Light Armor supports any style and does not count. <b>Craft</b> marks builds led by Smithing, Enchanting, Alchemy and Speech, such as smiths, merchants and townsfolk. Perks on class builds are the ones named NPCs of that class take, read from UESP: press a perk to see who, and ×2 means two NPCs take it.</details>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--c-combat)"></i>Combat skill</span>
+    <span><i class="sw" style="background:var(--c-magic)"></i>Magic skill</span>
+    <span><i class="sw" style="background:var(--c-stealth)"></i>Stealth skill</span>
+    <span><i class="sw hp"></i>Health</span>
+    <span><i class="sw mp"></i>Magicka</span>
+    <span><i class="sw spb"></i>Stamina</span>
+  </div>
+</header>
+
+<div class="controls">
+  <input id="q" type="search" placeholder="Search builds, skills or NPCs" aria-label="Search builds">
+  <div class="chips" id="fams" role="group" aria-label="Filter by family"></div>
+  <div class="frow"><div class="seg" id="style" role="group" aria-label="Filter by playstyle" title="Combat, Magic and Stealth come from weapon, armor, spell and sneaking skills. Craft means Smithing, Enchanting, Alchemy and Speech lead the build."></div><label class="base"><input type="checkbox" id="base"> Base game only</label><span class="count" id="cnt" role="status" aria-live="polite"></span></div>
+</div>
+
+<main id="out" style="display:grid;gap:36px"></main>
+
+<footer>
+  <div>Skill tiers: primary is a class weight of 3 or more, secondary 2, minor 1. The level 50 split divides 49 level-ups by the attribute weights. Where an NPC file grows Magicka with no spells (or the reverse), the plan moves those points and says so.</div>
+  <div>Stones and shouts are suggestions written for this tool unless marked otherwise. "Suggested" means worked out here, not read in a source. "Partly sourced" means a community source names part of the pick. Press a stone, shout or perk for what it does. DG, HF and DB badges mean the build's picks need Dawnguard, Hearthfire or Dragonborn; no badge means the base game is enough.</div>
+  <div>Community builds have no NPC class in the game. Their skill weights are set by hand from the community sources in the research ledger, on the same 1 to 4 scale, and every perk, item or spell they name was checked against UESP.</div>
+  <div>Lore and community picks come from the project's research ledger. They describe how other players or the lore shape a build, so they are leads, not game data. Where a picked character's own UESP class sits in another build, the pick says so.</div>
+  <div>Perks on class builds are the ones UESP lists for named NPCs of that class, filtered to the skills on the card. Perks UESP marks as NPC-only are left out. Many classes have no named NPC with a perk list, and those cards say so instead of guessing.</div>
+  <div>Race suggests the races whose starting skill bonuses best match the build's main skills, from UESP's race table. It does not weigh racial powers or starting attributes.</div>
+  <div>The Gear line names a build's own set where its group has one (Imperial armor, Shrouded Armor, Stormcloak armor), checked on UESP, then the armor and weapons its skills suggest. "As worn by" lists what the build's example characters wear on their UESP pages.</div>
+  <div>Gear kits come from the research ledger; every item was checked on UESP, and the CC tag names the Creation UESP lists it under. Creations are paid add-ons, all included in Anniversary Edition. Challenge runs are restrictions that work on any build.</div>
+  <div>Example NPCs are characters whose UESP page lists that exact class, read through UESP's wiki API. Each is one of several NPCs who share the class, not the only one.</div>
+  <div>Class weights: <a href="https://en.uesp.net/wiki/Skyrim:Classes">UESP, Skyrim:Classes</a>, read through UESP's wiki API. Creatures, undead, Daedra, Falmer, giants and werewolf beast forms are left out. Race skill bonuses are the vanilla values; race attribute plans are recommendations.</div>
+</footer>
+</div>

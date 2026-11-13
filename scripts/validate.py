@@ -21,6 +21,8 @@ Rules:
 - loadout overrides use known values; signature gear exists on UESP and is not unobtainable
 - every skill tree in uesp-skill-perks.json has a level-0 perk and complete entries
 - every example NPC on a build or variant uses one of that group's classes, per the saved UESP NPC data
+- a build's id is the slug of its name; ids it used to have are link_aliases that clash with nothing
+- search_terms.yaml entries have a lower-case `say`, at least one `means` phrase, and evidence derived
 - every build has a skill evidence grade, a stone (early, optional final) and 2 to 4 shouts that resolve,
   known evidence grades and requirements, and aliases that clash with no build name or other alias
 """
@@ -32,7 +34,7 @@ from collections import Counter
 import yaml
 
 from common import (ROOT, ARMOR, cache, ATTRS, BEAST_FORMS, EVIDENCE, HANDS, REQUIRES, SKILLS, STYLE_CODES, UNUSABLE_PAGES, by_id,
-                    card_weights, ledger_refs, ledger_rows, load, load_lookup, npc_classes, plain_names, skills_in_text, text_holders, unlisted,
+                    card_weights, ledger_refs, ledger_rows, load, load_lookup, npc_classes, plain_names, skills_in_text, slug, text_holders, unlisted,
                     uesp_terms, weights)
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
@@ -131,6 +133,20 @@ def check_layers(build_ids, terms, errors):
             errors += [f"{label}: a kit needs at least one build in fits" for e in entries if not e.get("fits")
                        for label in [f"kit {e.get('id')}"]]
     return len(kits), len(mods)
+
+
+def check_search_terms(entries, errors):
+    """data/search_terms.yaml: player words mapped to phrases the data uses. Always this tool's reading."""
+    said = Counter(e.get("say") for e in entries)
+    errors += [f"search term {w!r} is listed {n} times" for w, n in said.items() if n > 1]
+    for e in entries:
+        say, means = e.get("say"), e.get("means")
+        if not isinstance(say, str) or not say or say != " ".join(say.lower().split()):
+            errors.append(f"search term {say!r}: say must be lower case words with single spaces")
+        if not isinstance(means, list) or not means or not all(isinstance(m, str) and m.strip() for m in means):
+            errors.append(f"search term {say!r}: means must list at least one phrase")
+        if e.get("evidence") != "derived":
+            errors.append(f"search term {say!r}: evidence must be derived")
 
 
 def check_extras(name, b, books, errors):
@@ -235,6 +251,16 @@ def main():
     families = {f["id"] for f in doc["families"]}
     ids = Counter(b["id"] for b in doc["builds"])
     errors += [f"build id {i} is used {n} times" for i, n in ids.items() if n > 1]
+
+    old_ids = Counter(a for b in doc["builds"] for a in b.get("link_aliases", []))
+    for b in doc["builds"]:
+        if b["id"] != slug(str(b.get("name", ""))):
+            errors.append(f"build {b['id']}: id should be {slug(str(b.get('name', '')))!r}, from its name; "
+                          f"keep the old id in link_aliases")
+        for a in b.get("link_aliases", []):
+            if a in ids or old_ids[a] > 1:
+                errors.append(f"build {b['id']}: link alias {a!r} is another build's id or alias")
+    check_search_terms(load_lookup("search_terms"), errors)
 
     used = []
     names = Counter()

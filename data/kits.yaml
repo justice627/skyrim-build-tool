@@ -43,7 +43,7 @@ kits:
   name: Shadow archer
   ref: D6
   items: ["Bow of Shadows"]
-  fits: [scout, assassin]
+  fits: [stealth-archer, assassin]
   evidence: partly-sourced
   note: "The Bow of Shadows makes you invisible for 30 seconds when you draw it."
 - id: paired-blades
@@ -78,7 +78,7 @@ kits:
   name: College regalia
   ref: D11
   items: ["Archmage's Robes", "Savos Aren's Amulet"]
-  fits: [destruction-mage]
+  fits: [true-mage]
   evidence: partly-sourced
   note: "The Archmage's Robes and Savos Aren's Amulet."
 - id: spellbreaker

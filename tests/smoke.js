@@ -1,5 +1,5 @@
-// One browser check of the built page: it loads, search finds a build by its community name, and a
-// build link opens its card. Run after build.py:  node tests/smoke.js
+// One browser check of the built page: it loads, search works, build links open their card, tips can be
+// pressed, and every control has a name. Run after build.py:  node tests/smoke.js
 const path = require('path');
 const { chromium } = require('playwright');
 
@@ -23,8 +23,28 @@ const { chromium } = require('playwright');
   await page.fill('#q', 'zzzz');
   check(await page.locator('.empty').count() === 1, 'a search with no match should say so');
 
-  await page.goto(url + '#scout');
-  check(await page.locator('#b-scout details.more').evaluate(d => d.open), '#scout should open the Stealth Archer card');
+  await page.fill('#q', 'tank');
+  check(await page.locator('article.card').count() > 0, '"tank" should find builds through search_terms.yaml');
+
+  // A build link opens its card, and so does the id the build had before it was renamed.
+  for (const hash of ['#thief', '#cutpurse']) {
+    await page.goto(url + hash);
+    await page.reload();
+    check(await page.locator('#b-thief details.more').evaluate(d => d.open), `${hash} should open the Thief card`);
+  }
+
+  // Pressing a stone prints what it does under the row (phones and keyboards cannot hover).
+  const stone = page.locator('#b-thief .pick .tip').first();
+  await stone.focus();
+  await page.keyboard.press('Enter');
+  check(await page.locator('#b-thief .tipline').count() === 1, 'pressing a stone should show its effect');
+  check(await stone.getAttribute('aria-expanded') === 'true', 'a pressed tip should say it is expanded');
+
+  check(await page.evaluate(() => document.head.querySelector('title')?.textContent) === 'Skyrim Builds', 'the title belongs in <head>');
+  check(await page.evaluate(() => !document.body.querySelector('title, meta, link')), 'no head tags in <body>');
+  const unnamed = await page.evaluate(() => [...document.querySelectorAll('button, a, input')]
+    .filter(el => !(el.textContent.trim() || el.getAttribute('aria-label') || el.labels?.length)).length);
+  check(unnamed === 0, `${unnamed} controls have no accessible name`);
 
   await browser.close();
   if (errors.length) { console.error(errors.join('\n')); process.exit(1); }

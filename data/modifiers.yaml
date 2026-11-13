@@ -3,17 +3,17 @@
 modifiers:
 - {id: fists-only, name: Fists Only, ref: M1, evidence: partly-sourced, pairs: [pugilist], rule: "Fight unarmed, and skip gauntlets that add damage."}
 - {id: illusion-only, name: Illusion Only, ref: M2, evidence: partly-sourced, pairs: [pacifist, mystic], mentions: ["Fury"], rule: "Cast only Illusion spells. Start with Fury."}
-- {id: conjured-only, name: Conjured Equipment Only, ref: M3, evidence: partly-sourced, pairs: [blade-binder, witchhunter], rule: "Use only bound weapons and summoned help."}
-- {id: flames-only, name: Flames Only, ref: M4, evidence: partly-sourced, pairs: [destruction-mage], mentions: ["Flames"], rule: "The only spell you may cast is Flames."}
-- {id: stolen-only, name: Stolen Items Only, ref: M5, evidence: partly-sourced, pairs: [cutpurse], rule: "Wear and use only what you steal."}
+- {id: conjured-only, name: Conjured Equipment Only, ref: M3, evidence: partly-sourced, pairs: [bound-warrior, witchhunter], rule: "Use only bound weapons and summoned help."}
+- {id: flames-only, name: Flames Only, ref: M4, evidence: partly-sourced, pairs: [true-mage], mentions: ["Flames"], rule: "The only spell you may cast is Flames."}
+- {id: stolen-only, name: Stolen Items Only, ref: M5, evidence: partly-sourced, pairs: [thief], rule: "Wear and use only what you steal."}
 - {id: purchased-only, name: Purchased Items Only, ref: M5, evidence: partly-sourced, pairs: [trader], rule: "Wear and use only what you buy."}
-- {id: crafted-only, name: Crafted Items Only, ref: M5, evidence: partly-sourced, pairs: [prisoner], rule: "Wear and use only what you make yourself."}
-- {id: pure-combat, name: Pure Combat, ref: M6, evidence: partly-sourced, pairs: [housecarl], rule: "No crafting and no buying. Use only what you loot, on Legendary difficulty."}
+- {id: crafted-only, name: Crafted Items Only, ref: M5, evidence: partly-sourced, pairs: [crafter], rule: "Wear and use only what you make yourself."}
+- {id: pure-combat, name: Pure Combat, ref: M6, evidence: partly-sourced, pairs: [warrior], rule: "No crafting and no buying. Use only what you loot, on Legendary difficulty."}
 - {id: tools-only, name: Tools Only, ref: M7, evidence: partly-sourced, pairs: [laborer], mentions: ["Woodcutter's Axe", "Pickaxe"], rule: "Fight only with a Woodcutter's Axe and a Pickaxe."}
 - {id: level-1, name: Level 1, ref: M8, evidence: partly-sourced, pairs: [], rule: "Never raise a skill, so you never level up."}
 - {id: no-kill, name: No-Kill, ref: M9, evidence: partly-sourced, pairs: [pacifist], rule: "Never strike anyone yourself. Followers and summons may."}
 - {id: staves-scrolls, name: Staves and Scrolls Only, ref: M10, evidence: partly-sourced, pairs: [hedge-wizard], rule: "Never cast from your own Magicka. Use staves and scrolls."}
-- {id: wooden-sword, name: Legendary Wooden Sword, ref: M11, evidence: partly-sourced, pairs: [prisoner, blacksmith], mentions: ["Wooden Sword"], rule: "Temper and enchant a Wooden Sword until it is your best weapon."}
+- {id: wooden-sword, name: Legendary Wooden Sword, ref: M11, evidence: partly-sourced, pairs: [crafter, blacksmith], mentions: ["Wooden Sword"], rule: "Temper and enchant a Wooden Sword until it is your best weapon."}
 - {id: melee-chef, name: Melee Chef, ref: M12, evidence: partly-sourced, pairs: [poisoner, madman], mentions: ["Fork", "Vegetable Soup", "Ring of Namira"], rule: "Fight with a Fork and a knife, paralysis poisons, Vegetable Soup and the Ring of Namira."}
 - {id: righteous, name: Righteous, ref: M13, evidence: partly-sourced, pairs: [vigilant-of-stendarr], rule: "No Daedric or Ebony gear and no evil factions. Meridia is the one exception."}
 - {id: purity-of-spirit, name: Purity of Spirit, ref: M14, evidence: derived, pairs: [vigilant-of-stendarr, greatsword-mercenary, witchblade], rule: "Refuse both lycanthropy and vampirism."}

@@ -7,7 +7,7 @@ A one-page reference of Skyrim character builds: https://justice627.github.io/sk
 - **10 pure race builds** and **16 challenge runs**.
 - Per build: example NPCs, stone and shouts, perks named NPCs of the class take, gear kits, and lore picks.
 
-Every NPC, perk, item and requirement tag is checked against UESP through its wiki API. Anything worked out for the page, not read from a source, is marked "suggested". The page has playstyle and base-game filters, search, and a shareable link per build (`#thief`).
+Every NPC, perk, item and requirement tag is checked against UESP through its wiki API. Anything worked out for the page, not read from a source, is marked "suggested". The page has playstyle and base-game filters, search, and a shareable link per build (`#thief`), and a tap on any stone, shout or perk shows what it does.
 
 ## Run it
 
@@ -21,7 +21,7 @@ python scripts/build.py
 python -m http.server -d dist 8000   # then open http://localhost:8000
 ```
 
-`dist/index.html` is self-contained, so opening it directly in a browser also works.
+`dist/index.html` carries its data, styles and script, so opening it directly in a browser also works. It loads three webfonts from Google Fonts and falls back to system fonts offline.
 
 ## First-time setup
 

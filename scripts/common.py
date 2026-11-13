@@ -280,3 +280,8 @@ def ledger_refs(doc, kits, mods):
         for e in entries:
             if e.get("ref"):
                 yield f"{kind} {e.get('id')}", str(e["ref"])
+
+
+def slug(name):
+    """The id a build of this name should have: "The Preserver" -> "preserver", "True Mage" -> "true-mage"."""
+    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"^the ", "", name.lower())).strip("-")

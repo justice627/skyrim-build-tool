@@ -12,6 +12,7 @@
 #             must be in the UESP NPC data)}. Text is condensed from the ledger row, nothing added.
 #   play      optional "In play" line: how to actually play the build where its data misleads (derived)
 #   playstyles optional override of the filter tags (c, m, s, k); only where the skill rule misreads a build
+#   link_aliases optional ids the build used to have, so shared #links keep working
 #   requires  optional list of extra requirements beyond the shouts (DG, HF, DB, CC, AE)
 families:
 - id: steel
@@ -54,7 +55,8 @@ families:
   title: Community builds
   blurb: Playstyles no NPC class can express. Their skill weights are set by hand from community sources, not read from the game.
 builds:
-- id: housecarl
+- id: warrior
+  link_aliases: [housecarl]  # the id before the build was renamed; old #links still open it
   family: steel
   name: Warrior
   inspired_by: Generic warriors, mercenaries and the one-handed trainers
@@ -359,7 +361,8 @@ builds:
   description: >-
     Archery leads, with a backup one-hander and whatever armor fits. Some Sneak for ambushes on the road.
     A tougher, less stealthy archer than the Bosmer classic.
-- id: scout
+- id: stealth-archer
+  link_aliases: [scout]  # the id before the build was renamed; old #links still open it
   family: bow
   name: Stealth Archer
   inspired_by: Combat scouts and the Sneak expert trainer
@@ -406,7 +409,8 @@ builds:
   description: >-
     Bow from the rocks, Alteration for Oakflesh, Restoration to heal, hide armor. A Reach native who fights
     for the land. Natural fit for a Breton.
-- id: cutpurse
+- id: thief
+  link_aliases: [cutpurse]  # the id before the build was renamed; old #links still open it
   family: shadow
   name: Thief
   inspired_by: Combat thieves and the Thieves Guild trainers
@@ -859,7 +863,8 @@ builds:
   description: >-
     Everything at 2: heavy armor, one-hander, Alteration, Destruction, Restoration, with an even attribute
     split. The most balanced file in the game. A good base for a no-specialty roleplay.
-- id: destruction-mage
+- id: true-mage
+  link_aliases: [destruction-mage]  # the id before the build was renamed; old #links still open it
   family: robe
   name: True Mage
   inspired_by: Combat destruction and elemental mages, and Neloth
@@ -1363,7 +1368,8 @@ builds:
   description: >-
     Speech 4 and Pickpocket 3 lead, everything else at 1. Start with nothing and live off charity and
     theft. A hard challenge run with no real combat skill.
-- id: prisoner
+- id: crafter
+  link_aliases: [prisoner]  # the id before the build was renamed; old #links still open it
   family: folk
   name: Crafter
   inspired_by: Prisoners (the class is pure Smithing, Enchanting and Alchemy)
@@ -1484,7 +1490,8 @@ builds:
   description: >-
     One-hander and light armor at 3, Block and Sneak at 2. A treasure hunter who digs too deep. The NPC
     file wastes points on Magicka; the plan moves them into Stamina.
-- id: blade-binder
+- id: bound-warrior
+  link_aliases: [blade-binder]  # the id before the build was renamed; old #links still open it
   family: legend
   name: Bound Warrior
   inspired_by: Creation Club class

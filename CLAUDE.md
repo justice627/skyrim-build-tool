@@ -1,6 +1,6 @@
 # Skyrim Build Tool
 
-A static reference page of Skyrim character builds. NPC class weights from UESP become player builds, grouped into families, plus ten pure race builds. Python turns YAML/JSON data into one self-contained HTML page.
+A static reference page of Skyrim character builds. NPC class weights from UESP become player builds, grouped into families, plus ten pure race builds. Python turns YAML/JSON data into one HTML page with its data, styles and script inline. The only outside request is three webfonts from Google Fonts; system fonts stand in when offline.
 
 ## Commands
 
@@ -24,7 +24,8 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `scripts/`: `common.py` (loading, skill codes, the card rules), `validate.py`, `build.py`, `uesp.py` (the wiki API: `get`, `batches`, `wikitext`; every fetch script uses it).
 - `data/uesp/`: caches the fetch scripts write and the build reads (`uesp-npc-classes.json`, `uesp-terms.json`, `uesp-npc-gear.json`, `uesp-skill-perks.json`). Read them with `cache("terms")`, write with `write_cache()`. Do not edit by hand.
 - `tests/`: `test_rules.py` (the `common.py` rules and the attribute plan, against real builds), `test_parsers.py` (the fetch scripts' wikitext parsers, against text copied from UESP), `smoke.js` (one Playwright check of the built page). Standard library `unittest`; no new Python dependency.
-- `src/template.html`: the page. `__DATA__` is replaced with the built JSON. It is a fragment because claude.ai artifacts supply their own skeleton; `build.py` wraps it into a full document for `index.html`.
+- `src/`: the page, as four files `build.py` inlines into one: `head.html` (title, font link), `page.css`, `page.html` (markup and footer notes) and `page.js` (`__DATA__` is replaced with the built JSON; sections: helpers, card parts, cards, search, render, controls, links). `artifact.html` is a fragment because claude.ai artifacts supply their own skeleton; `index.html` is a full document with the head lines, description and share tags in `<head>`.
+- `data/search_terms.yaml`: player words the data never uses ("tank", "2h"), each mapped to phrases it stands for. Always derived. Add a word only when a real search came back empty.
 - `docs/roadmap.md`: the phased plan. Work in phase order.
 - `docs/research/`: the community and lore build ledger and the research notes behind it. These are leads, not verified data. `lore-groups.md` is ledger G: every UESP lore faction, how it fights, and whether it became an alias, a lore pick or a gap.
 - `docs/sources/`: reference copies nothing reads at build time: the first saved class table (PDF and screenshot), the raw UESP text behind `stones.yaml`, `shouts.yaml` and the race bonuses, and check records (`uesp-lore-checks.md`, `uesp-gear-spot-check.md`).
@@ -42,7 +43,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 2. Never invent perks, items, weights, NPC facts or sources. Anything not read from a source is tagged `evidence: derived` and shown as such on the page.
 3. `classes.json` holds UESP numbers only. Interpretation (names, groupings, attribute plans, playstyle text) goes in `builds.yaml` or `build.py`.
 4. One roadmap phase per branch. Each phase ends with a working page. When the work on a branch is done and `validate.py` passes, merge it into `main` (fast-forward when possible), push `main`, then delete the branch locally and on GitHub. No pull requests unless asked; pushing `main` triggers the Pages deploy.
-5. Keep it small: no framework, no bundler, no database. The page stays one self-contained HTML file.
+5. Keep it small: no framework, no bundler, no database. The page stays one HTML file.
 6. Write player-facing text plainly: American English, short sentences, no em dashes.
 7. Utility over strict accuracy in recommendations. Game data (class weights, examples, perks, items) stays as UESP gives it. Recommendations (descriptions, attribute plans, picks, hand-set weights) aim at how the game is actually played, even where that departs from its design, and are tagged derived when they are this tool's call. The attribute planner moving unused Magicka is the model.
 
@@ -66,5 +67,8 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Race fit: `race_fit()` in `common.py` scores each race by skill weight x race bonus (+10 signature, +5 others) over the build's skills weighted 2 or more, and shows the top two (three on a tie). It ignores racial powers and attributes; the page says so.
 - Early perks: for each primary skill the card shows no perk for, `early_perks()` lists that tree's perks needing skill 30 or less (at most 4), from `uesp-skill-perks.json`. Builds with no primary skill fall back to their secondary skills (at most three trees, skipping Block without a shield and armor the loadout does not wear).
 - Phone view: under 640px, Gear, Race and In play fold into a `details.fit` row ("Gear, race and how to play it"). It opens during a search and from a `#<id>` link.
+- Ids and links: a build's `id` is the slug of its name (`slug()` in `common.py`; a leading "The" is dropped). When a build is renamed, rename the id and add the old one to `link_aliases` so shared `#links` keep working. The validator enforces both.
+- Tips: anything explained by a tooltip (stone, shout and perk effects, who takes a perk) is a `tipPill()` button in `page.js`. Pressing it prints the text under the row, so phones and keyboards get it. Do not add information that only a hover reveals.
+- Search: every word must match from the start of a word, in any order, hyphens as spaces. Strong matches (name, alias, primary skill, named character) come first, and results where the words appear together come before the rest.
 - Optional `beast_form` (`werewolf`, `vampire-lord`) and `black_book` (`{book, power, evidence, ref}`).
 - Creatures and non-playable beings (Draugr, Falmer, Daedra, giants, werewolf beast forms) are deliberately left out of `classes.json` and listed in `data/excluded_classes.yaml`.
