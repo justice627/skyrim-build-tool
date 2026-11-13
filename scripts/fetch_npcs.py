@@ -1,6 +1,6 @@
 """Fetch which named NPCs use each class in data/classes.json, from UESP's MediaWiki API.
 
-Writes docs/sources/uesp-npc-classes.json:
+Writes data/uesp/uesp-npc-classes.json:
   {"retrieved": date, "source": api url, "classes": {EditorID: [{"name", "page", "size"}, ...]}}
 
 An NPC counts for a class when its NPC Summary infobox has class_details=[[Skyrim:<EditorID>|...]],
@@ -10,33 +10,13 @@ only perks that UESP files under a skill tree). `size` is the NPC page's length 
 Pages that hold more than one NPC Summary (generic soldiers, unused NPCs) are skipped.
 Run it by hand when the data needs refreshing; build.py and validate.py only read the saved file.
 """
-import datetime
 import json
 import re
-import time
-import urllib.parse
-import urllib.request
 
-from common import DATA, ROOT
+from common import DATA, cache_path, write_cache
+from uesp import API, batches, get, page_text
 
-API = "https://en.uesp.net/w/api.php"
-UA = "skyrim-build-tool/1.0 (static reference page; low request rate)"
-OUT = ROOT / "docs" / "sources" / "uesp-npc-classes.json"
 SKYRIM_NS = 134
-
-
-def get(**params):
-    params["format"] = "json"
-    url = API + "?" + urllib.parse.urlencode(params)
-    for attempt in range(4):
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
-            with urllib.request.urlopen(req, timeout=30) as r:
-                time.sleep(0.3)
-                return json.load(r)
-        except Exception:
-            time.sleep(2 ** (attempt + 1))
-    raise RuntimeError(f"failed: {url}")
 
 
 def npc_pages():
@@ -53,9 +33,12 @@ def npc_pages():
 
 def class_names():
     """Class display name -> EditorIDs, read from the class table on Skyrim:Classes."""
-    d = get(action="parse", page="Skyrim:Classes", prop="wikitext")
+    return class_names_in(page_text("Skyrim:Classes"))
+
+
+def class_names_in(wikitext):
     names = {}
-    for row in d["parse"]["wikitext"]["*"].split("\n|-"):
+    for row in wikitext.split("\n|-"):
         cells = [c.strip() for c in row.strip().split("\n") if c.startswith("|")]
         if len(cells) < 2:
             continue
@@ -68,9 +51,8 @@ def class_names():
 def pages(titles):
     """Wikitext and length for up to 50 titles at a time."""
     out = {}
-    for i in range(0, len(titles), 50):
-        d = get(action="query", prop="revisions|info", rvprop="content", rvslots="main",
-                titles="|".join(titles[i:i + 50]))
+    for batch in batches(titles):
+        d = get(action="query", prop="revisions|info", rvprop="content", rvslots="main", titles="|".join(batch))
         for p in d["query"]["pages"].values():
             if "revisions" in p:
                 out[p["title"]] = (p["revisions"][0]["slots"]["main"]["*"], p.get("length", 0))
@@ -136,10 +118,9 @@ def main():
                                 "matched_by": how, "perks": perks_of(text)})
     for found in result.values():
         found.sort(key=lambda n: (-n["size"], n["name"]))
-    OUT.write_text(json.dumps({"retrieved": datetime.date.today().isoformat(), "source": API,
-                               "classes": result}, indent=1, ensure_ascii=False) + "\n")
+    write_cache("npc-classes", API, classes=result)
     print("\n".join(f"{e}: {len(v)} {[n['name'] for n in v[:4]]}" for e, v in result.items()))
-    print(f"Wrote {OUT}")
+    print(f"Wrote {cache_path('npc-classes')}")
 
 
 if __name__ == "__main__":

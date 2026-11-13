@@ -139,6 +139,14 @@ Each phase is one branch and ends with a working page (CLAUDE.md rule 4). Rule 5
 
 ## Phase 7: tests and pipeline cleanup
 
+Status: done (2026-11-13). 62 unit tests and one browser smoke test run in CI before the deploy. The page output did not change, apart from two gear fixes below.
+
+- All items below landed as written. The caches are in `data/uesp/`; `scripts/uesp.py` holds the API code; `build.py` renders from one `Sources` object and checks the pages it writes.
+- The refactored fetch scripts were run against UESP and reproduced every cache.
+- Gear spot check (`docs/sources/uesp-gear-spot-check.md`): 2 of 11 characters held something wrong. Balimund's "gear" was his shop, The Scorched Hammer, and Farkas's Wolf Armor came from a bug note. Both causes are fixed in `fetch_gear.py`; the card now says "Not a full inventory".
+- Owner's decision: the Playwright smoke test is in (`tests/smoke.js`, CI-only dependency).
+- Found, not changed: Temple priest has Restoration 3 and Conjuration 2 but a plan of zero Magicka. Its NPC file has no Magicka weight and its spell share (5 of 13) is under `plan()`'s 40% line. Rule 7 suggests a caster should get Magicka; decide in Phase 11 with the other picks.
+
 Why: nothing tests the functions that decide what a player sees, and the four fetch scripts parse wikitext with regexes that fail silently when UESP changes a template.
 
 - `tests/` with the standard library's `unittest` (no new dependency), run in CI before `validate.py`.

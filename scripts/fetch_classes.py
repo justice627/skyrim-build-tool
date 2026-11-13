@@ -12,7 +12,7 @@ import sys
 import yaml
 
 from common import ATTRS, DATA, SKILLS
-from fetch_npcs import get
+from uesp import page_text
 
 OUT = DATA / "classes.json"
 # The table's 24 cells per row: three blocks of six skills, then the attributes, with a spacer after each block.
@@ -40,7 +40,7 @@ def parse(wikitext):
 
 
 def main():
-    live = parse(get(action="parse", page="Skyrim:Classes", prop="wikitext")["parse"]["wikitext"]["*"])
+    live = parse(page_text("Skyrim:Classes"))
     groups = yaml.safe_load((DATA / "excluded_classes.yaml").read_text())["excluded"]
     excluded = {e for ids in groups.values() for e in ids}
     old = json.loads(OUT.read_text()) if OUT.exists() else {}

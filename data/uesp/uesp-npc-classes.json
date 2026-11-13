@@ -1,5 +1,5 @@
 {
- "retrieved": "2026-11-12",
+ "retrieved": "2026-11-13",
  "source": "https://en.uesp.net/w/api.php",
  "classes": {
   "AAAPlayerSpellswordClass": [
@@ -5599,7 +5599,7 @@
    {
     "name": "Katria",
     "page": "Skyrim:Katria",
-    "size": 10041,
+    "size": 10089,
     "matched_by": "class name",
     "perks": [
      {
@@ -8653,7 +8653,7 @@
    {
     "name": "Oengul War-Anvil",
     "page": "Skyrim:Oengul War-Anvil",
-    "size": 8186,
+    "size": 8406,
     "matched_by": "class_details",
     "perks": []
    },

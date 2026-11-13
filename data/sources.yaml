@@ -31,7 +31,7 @@ sources:
   - id: uesp-npc-classes
     title: UESP NPC pages, read through the wiki API (en.uesp.net/w/api.php)
     url: https://en.uesp.net/w/api.php
-    used_for: Example NPCs on builds and variants (docs/sources/uesp-npc-classes.json)
+    used_for: Example NPCs on builds and variants (data/uesp/uesp-npc-classes.json)
     evidence: sourced
     notes: >-
       scripts/fetch_npcs.py reads every page using the NPC Summary infobox and keeps an NPC when its
@@ -40,7 +40,7 @@ sources:
   - id: uesp-terms
     title: UESP pages for every perk, item, spell and power named by a build (wiki API)
     url: https://en.uesp.net/w/api.php
-    used_for: The `mentions` check in validate.py (docs/sources/uesp-terms.json)
+    used_for: The `mentions` check in validate.py (data/uesp/uesp-terms.json)
     evidence: sourced
     notes: >-
       Confirms each term has a UESP page and is not listed as unobtainable. It does not confirm every
@@ -48,15 +48,15 @@ sources:
   - id: uesp-npc-perks
     title: UESP NPC pages, perks field (wiki API)
     url: https://en.uesp.net/w/api.php
-    used_for: Perks on class builds and variants (perks in docs/sources/uesp-npc-classes.json)
+    used_for: Perks on class builds and variants (perks in data/uesp/uesp-npc-classes.json)
     evidence: sourced
     notes: >-
-      Each perk's skill tree comes from where UESP files the perk (docs/sources/uesp-terms.json).
+      Each perk's skill tree comes from where UESP files the perk (data/uesp/uesp-terms.json).
       Perks UESP files as NPC-only, or that have no page, are left out.
   - id: uesp-creations
     title: UESP item pages, CC Header and DLC categories (wiki API)
     url: https://en.uesp.net/w/api.php
-    used_for: Gear kit items and their requirement tags (origin in docs/sources/uesp-terms.json)
+    used_for: Gear kit items and their requirement tags (origin in data/uesp/uesp-terms.json)
     evidence: sourced
     notes: >-
       Which builds a kit fits, and the challenge-run pairings, come from the research ledger and keep
@@ -64,15 +64,17 @@ sources:
   - id: uesp-npc-gear
     title: UESP character pages, "wears / wields" sentences, and UESP item pages (wiki API)
     url: https://en.uesp.net/w/api.php
-    used_for: Signature gear and "As worn by" on cards (docs/sources/uesp-npc-gear.json, origins in uesp-terms.json)
+    used_for: Signature gear and "As worn by" on cards (data/uesp/uesp-npc-gear.json, origins in uesp-terms.json)
     evidence: sourced
     notes: >-
       The loadout (armor type and weapons) is derived from the card's skills and marked suggested.
+      "As worn by" keeps linked items UESP files as items and skips bug notes; it is not a full inventory.
+      Spot check of 11 characters: docs/sources/uesp-gear-spot-check.md.
       Signature sets are tied to their group by a UESP page named in a comment in builds.yaml.
   - id: uesp-skill-perks
     title: UESP skill pages, perk trees (wiki API)
     url: https://en.uesp.net/w/api.php
-    used_for: Early perks on cards (docs/sources/uesp-skill-perks.json)
+    used_for: Early perks on cards (data/uesp/uesp-skill-perks.json)
     evidence: sourced
     notes: >-
       180 perks with ranks, required levels and effects. Race fit uses the race bonuses already in

@@ -7,8 +7,10 @@ A static reference page of Skyrim character builds. NPC class weights from UESP 
 ```bash
 pip install -r requirements.txt     # PyYAML only
 python scripts/refresh.py           # refresh data from UESP, then validate and build (--offline: validate and build only)
+python -m unittest discover -s tests  # rules and parsers; must pass before every commit
 python scripts/validate.py          # must pass before every commit
-python scripts/build.py             # writes dist/index.html and dist/artifact.html
+python scripts/build.py             # writes dist/index.html and dist/artifact.html, then checks them
+node tests/smoke.js                 # browser check of the built page (needs Playwright; CI runs it)
 python -m http.server -d dist 8000  # preview at http://localhost:8000
 ```
 
@@ -19,22 +21,24 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - `data/races.yaml`: pure race builds. Attribute ratios here are recommendations, not game data.
 - `data/stones.yaml`, `data/shouts.yaml`: lookup lists that builds reference by id.
 - `data/sources.yaml`: where data came from and how much to trust it.
-- `scripts/`: `common.py` (loading, skill codes), `validate.py`, `build.py`.
+- `scripts/`: `common.py` (loading, skill codes, the card rules), `validate.py`, `build.py`, `uesp.py` (the wiki API: `get`, `batches`, `wikitext`; every fetch script uses it).
+- `data/uesp/`: caches the fetch scripts write and the build reads (`uesp-npc-classes.json`, `uesp-terms.json`, `uesp-npc-gear.json`, `uesp-skill-perks.json`). Read them with `cache("terms")`, write with `write_cache()`. Do not edit by hand.
+- `tests/`: `test_rules.py` (the `common.py` rules and the attribute plan, against real builds), `test_parsers.py` (the fetch scripts' wikitext parsers, against text copied from UESP), `smoke.js` (one Playwright check of the built page). Standard library `unittest`; no new Python dependency.
 - `src/template.html`: the page. `__DATA__` is replaced with the built JSON. It is a fragment because claude.ai artifacts supply their own skeleton; `build.py` wraps it into a full document for `index.html`.
 - `docs/roadmap.md`: the phased plan. Work in phase order.
 - `docs/research/`: the community and lore build ledger and the research notes behind it. These are leads, not verified data. `lore-groups.md` is ledger G: every UESP lore faction, how it fights, and whether it became an alias, a lore pick or a gap.
-- `docs/sources/`: the saved UESP class table (PDF plus a screenshot of the rows the PDF dropped), `uesp-npc-classes.json` (which named NPCs use each class), and the raw UESP text behind `stones.yaml`, `shouts.yaml` and the race bonuses.
+- `docs/sources/`: reference copies nothing reads at build time: the first saved class table (PDF and screenshot), the raw UESP text behind `stones.yaml`, `shouts.yaml` and the race bonuses, and check records (`uesp-lore-checks.md`, `uesp-gear-spot-check.md`).
 - `data/kits.yaml`, `data/modifiers.yaml`: gear kits (ledger D) and challenge runs (ledger F1).
 - `data/black_books.yaml`: the Dragonborn Black Books and their powers (sourced from UESP).
-- `scripts/fetch_terms.py`: checks every `mentions` term against UESP and saves `docs/sources/uesp-terms.json`. Run it after adding or renaming a mention, before `validate.py`.
+- `scripts/fetch_terms.py`: checks every `mentions` term against UESP and saves `data/uesp/uesp-terms.json`. Run it after adding or renaming a mention, before `validate.py`.
 - `scripts/refresh.py`: runs fetch_classes, fetch_npcs, fetch_gear, fetch_skill_perks, fetch_terms, validate and build in that order, stopping at the first failure. Use it instead of running the fetch scripts by hand.
-- `scripts/fetch_skill_perks.py`: all 18 skill trees from UESP's skill pages (`docs/sources/uesp-skill-perks.json`): each perk's ranks, required levels and effect.
-- `scripts/fetch_gear.py`: what each build's Example characters wear, from their UESP pages (`docs/sources/uesp-npc-gear.json`). Run before `fetch_terms.py`.
+- `scripts/fetch_skill_perks.py`: all 18 skill trees from UESP's skill pages (`data/uesp/uesp-skill-perks.json`): each perk's ranks, required levels and effect.
+- `scripts/fetch_gear.py`: what each build's Example characters wear, from their UESP pages (`data/uesp/uesp-npc-gear.json`). Run before `fetch_terms.py`.
 - `scripts/fetch_npcs.py`: refreshes `uesp-npc-classes.json` from UESP's wiki API. UESP's normal pages are blocked from cloud sessions, but `https://en.uesp.net/w/api.php` works.
 
 ## Rules
 
-1. Run `python scripts/validate.py` before every commit, and extend it whenever a new field or file is added.
+1. Run the tests and `python scripts/validate.py` before every commit. Extend the validator whenever a new field or file is added, and add a test case whenever a rule in `common.py` or a parser in a fetch script changes.
 2. Never invent perks, items, weights, NPC facts or sources. Anything not read from a source is tagged `evidence: derived` and shown as such on the page.
 3. `classes.json` holds UESP numbers only. Interpretation (names, groupings, attribute plans, playstyle text) goes in `builds.yaml` or `build.py`.
 4. One roadmap phase per branch. Each phase ends with a working page. When the work on a branch is done and `validate.py` passes, merge it into `main` (fast-forward when possible), push `main`, then delete the branch locally and on GitHub. No pull requests unless asked; pushing `main` triggers the Pages deploy.
@@ -48,7 +52,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Weight tiers on the page: primary is 3 or more, secondary 2, minor 1.
 - A build's first class decides the weights its card shows. Classes grouped in one build or one variant must have identical weights; the validator enforces this.
 - Every class in `classes.json` is used exactly once across all builds.
-- Every build has `evidence` (grade of its skills), a `stone` (`early`, optional `final`) and 2 to 4 `shouts`, each block with its own `evidence` and an optional ledger `ref` such as `B7`. Optional: `lore` (ledger A, C or G picks: `name`, `ref` such as `C12` or `G40`, `changes`, `evidence`, optional `requires` and `npc`), `aliases`, `requires`, `examples` (up to 3 named NPCs; the validator checks each against `uesp-npc-classes.json`).
+- Every build has `evidence` (grade of its skills), a `stone` (`early`, optional `final`) and 2 to 4 `shouts`, each block with its own `evidence` and an optional ledger `ref` such as `B7`. Every `ref` must name a row that exists in `docs/research/`; the validator checks. Optional: `lore` (ledger A, C or G picks: `name`, `ref` such as `C12` or `G40`, `changes`, `evidence`, optional `requires` and `npc`), `aliases`, `requires`, `examples` (up to 3 named NPCs; the validator checks each against `uesp-npc-classes.json`).
 - Evidence grades: `sourced`, `partly-sourced`, `derived`. Requirement tags: `vanilla`, `DG`, `HF`, `DB`, `CC`, `AE`. Mod-only content is out of scope, so there is no `Mod` tag.
 - Hand-set builds (family `beyond`) have `weights` instead of `classes`, plus a ledger A `ref`. Skills 1 to 4, all of Hea, Mag and Sta. Never graded `sourced`. No class variants or examples; use `lore` picks (refs may be A or C rows).
 - Hand-set weights: skills a ledger row calls core get 3, secondary 2. When a row lists skills without tiers, the first two listed get 3 and the rest 2. Where that would recommend a skill that does nothing for the playstyle (Speech on a shout build), adjust it, grade the build `derived` and give the reason in a comment.
@@ -58,7 +62,7 @@ python -m http.server -d dist 8000  # preview at http://localhost:8000
 - Gear kits (`data/kits.yaml`) list UESP item titles and the build ids they fit. Do not type requirement tags for kits: `build.py` reads them from each item's UESP origin (`fetch_terms.py` records `CC:<Creation>`, `DG`, `DB`, `HF` or `base`). Challenge runs (`data/modifiers.yaml`) have a rule, ledger M ref and natural `pairs`; items a rule names go in `mentions`.
 - Playstyle filter tags come from `playstyles()` in `scripts/common.py`: weapon, armor and Block skills are combat, the five spell schools magic, Sneak, Pickpocket and Lockpicking stealth; Light Armor does not count. A style is tagged when its skills (weight 2 or more) hold 30% of the fighting total. "k" (Craft) is added when Smithing, Enchanting, Alchemy and Speech weigh at least as much as the biggest fighting style. A build's `playstyles` field overrides the rule; keep overrides rare and give the reason in a comment.
 - Optional `play`: one or two sentences on how to actually play a build where its data misleads (too many primaries, both armors or both weapon styles, Sneak in heavy armor). Shown as "In play", always suggested. Perks or items it names go in `mentions`.
-- Gear: every card shows a Gear line. `signature` (on builds, variants and lore picks) lists a group's own set as UESP titles, with a comment naming the UESP page that ties group and gear; `fetch_terms.py` checks each item and records its origin from the item's own row or section. `loadout` comes from `loadout()` in `common.py` (armor from the armor skills, hands from weapon, Block and spell skills); a `loadout: {armor, hands}` override is allowed where the characters or the In play line say otherwise, with the reason in a comment. "As worn by" comes from `scripts/fetch_gear.py` (`docs/sources/uesp-npc-gear.json`).
+- Gear: every card shows a Gear line. `signature` (on builds, variants and lore picks) lists a group's own set as UESP titles, with a comment naming the UESP page that ties group and gear; `fetch_terms.py` checks each item and records its origin from the item's own row or section. `loadout` comes from `loadout()` in `common.py` (armor from the armor skills, hands from weapon, Block and spell skills); a `loadout: {armor, hands}` override is allowed where the characters or the In play line say otherwise, with the reason in a comment. "As worn by" comes from `scripts/fetch_gear.py` (`data/uesp/uesp-npc-gear.json`): linked items in "wears / wields / carries" sentences that UESP files as items, bug notes left out. It is not a full inventory (`docs/sources/uesp-gear-spot-check.md`).
 - Race fit: `race_fit()` in `common.py` scores each race by skill weight x race bonus (+10 signature, +5 others) over the build's skills weighted 2 or more, and shows the top two (three on a tie). It ignores racial powers and attributes; the page says so.
 - Early perks: for each primary skill the card shows no perk for, `early_perks()` lists that tree's perks needing skill 30 or less (at most 4), from `uesp-skill-perks.json`. Builds with no primary skill fall back to their secondary skills (at most three trees, skipping Block without a shield and armor the loadout does not wear).
 - Phone view: under 640px, Gear, Race and In play fold into a `details.fit` row ("Gear, race and how to play it"). It opens during a search and from a `#<id>` link.

@@ -27,8 +27,8 @@ def main():
     offline = "--offline" in sys.argv[1:]
     for script in ([] if offline else FETCH) + CHECK:
         run(script)
-    print("--- changes in docs/sources since the last commit:")
-    subprocess.run(["git", "diff", "--stat", "--", "docs/sources"], cwd=ROOT)
+    print("--- changes in data since the last commit:")
+    subprocess.run(["git", "diff", "--stat", "--", "data"], cwd=ROOT)
 
 
 if __name__ == "__main__":

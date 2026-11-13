@@ -7,6 +7,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+UESP = DATA / "uesp"  # caches the fetch scripts write and the build reads
 
 # Column codes as UESP's class table uses them, in UESP order.
 SKILLS = {
@@ -37,15 +38,30 @@ def load():
     return classes, builds, races
 
 
+def cache(name):
+    """A saved UESP read: cache("terms") is data/uesp/uesp-terms.json."""
+    return json.loads(cache_path(name).read_text())
+
+
+def cache_path(name):
+    return UESP / f"uesp-{name}.json"
+
+
+def write_cache(name, source, **body):
+    """Save a UESP read with the day it was made."""
+    import datetime
+    doc = {"retrieved": datetime.date.today().isoformat(), "source": source, **body}
+    cache_path(name).write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+
+
 def load_lookup(name):
     """A list file such as stones.yaml, as a list of entries (ids may repeat; validate.py checks)."""
     return yaml.safe_load((DATA / f"{name}.yaml").read_text())[name]
 
 
 def npc_classes():
-    """EditorID -> names of single-NPC UESP pages using that class (docs/sources/uesp-npc-classes.json)."""
-    doc = json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())
-    return {eid: {n["name"] for n in npcs} for eid, npcs in doc["classes"].items()}
+    """EditorID -> names of single-NPC UESP pages using that class (data/uesp/uesp-npc-classes.json)."""
+    return {eid: {n["name"] for n in npcs} for eid, npcs in cache("npc-classes")["classes"].items()}
 
 
 def skills_in_text(text):
@@ -157,8 +173,8 @@ def card_weights(b, classes):
 
 
 def uesp_terms():
-    """Term -> {page, section, missing} from docs/sources/uesp-terms.json (written by fetch_terms.py)."""
-    return json.loads((ROOT / "docs" / "sources" / "uesp-terms.json").read_text())["terms"]
+    """Term -> {page, section, missing} from data/uesp/uesp-terms.json (written by fetch_terms.py)."""
+    return cache("terms")["terms"]
 
 
 def by_id(entries):
@@ -241,3 +257,26 @@ def plain_names(stones, shouts, books):
     out |= {p["name"] for b in books for p in b["powers"]}
     out |= {name for name, _ in BEAST_FORMS.values()}
     return out | {s["name"] for s in stones} | {f"{s['name']} Stone" for s in stones}
+
+
+def ledger_rows():
+    """Row ids (A1, C12, G40, M3 ...) that exist in the research ledgers under docs/research/."""
+    text = "\n".join(p.read_text() for p in sorted((ROOT / "docs" / "research").glob("*.md")))
+    return set(re.findall(r"^\|\s*\**([A-Z]\d+)\**\s*\|", text, re.M))
+
+
+def ledger_refs(doc, kits, mods):
+    """(label, ref) for every ledger reference in the data."""
+    for b in doc["builds"]:
+        name = b.get("name", b["id"])
+        for part, blk in (("build", b), ("stone", b.get("stone")), ("shouts", b.get("shouts")),
+                          ("perks", b.get("perks")), ("black_book", b.get("black_book"))):
+            if blk and blk.get("ref"):
+                yield f"{name} [{part}]", str(blk["ref"])
+        for e in b.get("lore", []):
+            if e.get("ref"):
+                yield f"{name} [lore {e.get('name')!r}]", str(e["ref"])
+    for kind, entries in (("kit", kits), ("modifier", mods)):
+        for e in entries:
+            if e.get("ref"):
+                yield f"{kind} {e.get('id')}", str(e["ref"])

@@ -6,11 +6,11 @@ Writes two files to dist/:
 """
 import json
 import re
+import sys
+from dataclasses import dataclass
 
-import json as _json
-
-from common import (ARMOR, ATTRS, BEAST_FORMS, HANDS, ROOT, SCHOOL, SKILLS, by_id, card_weights, early_perks, load,
-                    load_lookup, loadout, npc_classes, playstyles, race_fit, uesp_terms, weights)
+from common import (ARMOR, ATTRS, BEAST_FORMS, HANDS, ROOT, SCHOOL, SKILLS, by_id, cache, card_weights, early_perks,
+                    load, load_lookup, loadout, playstyles, race_fit, weights)
 
 SPELL_SCHOOLS = ("ALT", "CON", "DES", "ILU", "RES")
 LEVELS = 49  # level-ups from level 2 to 50
@@ -77,10 +77,6 @@ def render_picks(b, stones, shouts, books):
     }
 
 
-def skills_of(b, classes):
-    return {k: v for k, v in card_weights(b, classes).items() if k in SKILLS}
-
-
 def npc_name(page_name):
     """'Miraak (person)' -> 'Miraak': UESP disambiguates pages, the page shows the character's name."""
     return re.sub(r"\s*\([^)]*\)$", "", page_name)
@@ -98,13 +94,13 @@ def render_lore(b, build_of_npc, terms):
     return out
 
 
-def npc_homes(doc):
+def npc_homes(doc, npcs):
     """NPC name -> name of the build that holds the NPC's class."""
     build_of_class = {}
     for b in doc["builds"]:
         for e in b.get("classes", []) + [c for v in b.get("variants", []) for c in v["classes"]]:
             build_of_class[e] = b["name"]
-    return {n: build_of_class[e] for e, names in npc_classes().items() for n in names if e in build_of_class}
+    return {n["name"]: build_of_class[e] for e, found in npcs.items() for n in found if e in build_of_class}
 
 
 def class_perks(eids, w, npcs, terms):
@@ -189,36 +185,53 @@ def tree_perks(skills, shown, trees, lo=None):
     return out
 
 
-def render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn, races=None, trees=None):
-    w = card_weights(b, classes)
+@dataclass
+class Sources:
+    """Everything a card is rendered from, loaded once in page_data()."""
+    classes: dict  # data/classes.json
+    races: list    # data/races.yaml
+    stones: dict   # by id
+    shouts: dict   # by id
+    books: dict    # Black Books by id
+    npcs: dict     # EditorID -> named NPCs with perks (uesp-npc-classes.json)
+    terms: dict    # UESP-checked terms (uesp-terms.json)
+    worn: dict     # NPC name -> gear items (uesp-npc-gear.json)
+    trees: dict    # skill code -> perks (uesp-skill-perks.json)
+    homes: dict    # NPC name -> name of the build holding its class
+
+
+def render_build(b, src):
+    w = card_weights(b, src.classes)
     hand = "weights" in b
     # A hand-set ratio is already a player recommendation, so plan() does not adjust it.
     attrs, why = ([w[a] for a in ATTRS], "") if hand else plan(w)
     skills = {k: x for k, x in w.items() if k in SKILLS}
     variants = []
     for v in b.get("variants", []):
-        vw = weights(classes, v["classes"][0])
+        vw = weights(src.classes, v["classes"][0])
         vskills = {k: x for k, x in vw.items() if k in SKILLS}
         variants.append({"label": v["label"], "eids": v["classes"], "skills": skill_line(vw),
-                         "sig": [{"n": i, "tag": gear_tag(i, terms)} for i in v.get("signature", [])],
-                         "perks": class_perks(v["classes"], vskills, npcs, terms),
+                         "sig": [{"n": i, "tag": gear_tag(i, src.terms)} for i in v.get("signature", [])],
+                         "perks": class_perks(v["classes"], vskills, src.npcs, src.terms),
                          "npcs": [npc_name(n) for n in v.get("examples", [])],
                          "attr": [vw.get(a, 0) for a in ATTRS]})
+    perks = hand_perks(b, skills, src.terms) if hand else class_perks(b["classes"], skills, src.npcs, src.terms)
+    own = b.get("perks") if hand else None
     return {
-        "id": b["id"], "styles": b.get("playstyles") or playstyles(skills), "fam": b["family"], "name": b["name"], "insp": b["inspired_by"], "eids": b.get("classes", []),
+        "id": b["id"], "styles": b.get("playstyles") or playstyles(skills), "fam": b["family"], "name": b["name"],
+        "insp": b["inspired_by"], "eids": b.get("classes", []),
         "hand": hand, "ref": b.get("ref", ""), "play": b.get("play", ""),
-        "gear": render_gear(b, skills_of(b, classes), terms, worn),
-        "races": race_fit(skills_of(b, classes), races or []), "mentions": b.get("mentions", []),
+        "gear": render_gear(b, skills, src.terms, src.worn),
+        "races": race_fit(skills, src.races), "mentions": b.get("mentions", []),
         "p": tiers(w, lambda v: v >= 3), "s": tiers(w, lambda v: v == 2), "m": tiers(w, lambda v: v == 1),
         "npc": [w.get(a, 0) for a in ATTRS], "plan": attrs, "lv50": split(attrs), "why": why,
         "variants": variants, "desc": b["description"],
         "npcs": [npc_name(n) for n in b.get("examples", [])], "aka": b.get("aliases", []),
-        "lore": render_lore(b, homes, terms),
-        "perks": hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms),
-        "tree": tree_perks(skills, hand_perks(b, skills, terms) if hand else class_perks(b["classes"], skills, npcs, terms),
-                           trees or {}, loadout(skills, b.get("loadout"))),
-        "perk_ev": b["perks"]["evidence"] if hand and b.get("perks") else ("sourced" if not hand else ""),
-        "perk_ref": b["perks"].get("ref", "") if hand and b.get("perks") else "", "ev": b["evidence"], **render_picks(b, stones, shouts, books),
+        "lore": render_lore(b, src.homes, src.terms),
+        "perks": perks, "tree": tree_perks(skills, perks, src.trees, loadout(skills, b.get("loadout"))),
+        "perk_ev": own["evidence"] if own else ("sourced" if not hand else ""),
+        "perk_ref": own.get("ref", "") if own else "", "ev": b["evidence"],
+        **render_picks(b, src.stones, src.shouts, src.books),
     }
 
 
@@ -251,20 +264,16 @@ def render_race(r):
 
 def page_data():
     classes, doc, races = load()
-    stones, shouts = by_id(load_lookup("stones")), by_id(load_lookup("shouts"))
-    homes = npc_homes(doc)
-    kits_by_build = render_kits(load_lookup("kits"), uesp_terms())
+    npcs = cache("npc-classes")["classes"]
+    src = Sources(classes=classes, races=races, stones=by_id(load_lookup("stones")), shouts=by_id(load_lookup("shouts")),
+                  books=by_id(load_lookup("black_books")), npcs=npcs, terms=cache("terms")["terms"],
+                  worn=cache("npc-gear")["npcs"], trees=cache("skill-perks")["trees"], homes=npc_homes(doc, npcs))
+    kits_by_build = render_kits(load_lookup("kits"), src.terms)
     mods = load_lookup("modifiers")
     name_of = {b["id"]: b["name"] for b in doc["builds"]}
-    books = by_id(load_lookup("black_books"))
-    npcs = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-classes.json").read_text())["classes"]
-    terms = uesp_terms()
-    worn = _json.loads((ROOT / "docs" / "sources" / "uesp-npc-gear.json").read_text())["npcs"]
-    trees = _json.loads((ROOT / "docs" / "sources" / "uesp-skill-perks.json").read_text())["trees"]
     return {
         "fams": doc["families"],
-        "builds": [dict(render_build(b, classes, stones, shouts, books, homes, npcs, terms, worn, races, trees),
-                        kits=kits_by_build.get(b["id"], []),
+        "builds": [dict(render_build(b, src), kits=kits_by_build.get(b["id"], []),
                         mods=[m["name"] for m in mods if b["id"] in m["pairs"]]) for b in doc["builds"]],
         "mods": [{"n": m["name"], "rule": m["rule"], "ref": m["ref"], "ev": m["evidence"],
                   "pairs": [name_of[p] for p in m["pairs"]]} for m in mods],
@@ -286,16 +295,47 @@ SKELETON = """<!doctype html>
 """
 
 
+DATA_LINE = re.compile(r"^const DATA = (.*);$", re.M)
+
+
+def embedded_data(html):
+    """The JSON a built page carries, parsed back out. Raises ValueError when it is missing or broken."""
+    m = DATA_LINE.search(html)
+    if not m:
+        raise ValueError("no `const DATA = ...;` line in the page")
+    return json.loads(m.group(1))
+
+
+def self_check(html, data):
+    """Problems with a written page: its data must read back whole, with every build and no leftover marker."""
+    try:
+        found = embedded_data(html)
+    except ValueError as e:
+        return [f"the page's data does not parse: {e}"]
+    problems = [] if found == data else ["the page's data differs from what was rendered"]
+    missing = {b["id"] for b in data["builds"]} - {b.get("id") for b in found.get("builds", [])}
+    problems += [f"build {i} is missing from the page" for i in sorted(missing)]
+    if "__DATA__" in html:
+        problems.append("the page still holds a __DATA__ marker")
+    return problems
+
+
 def main():
     template = (ROOT / "src" / "template.html").read_text()
-    data = json.dumps(page_data(), ensure_ascii=False)
-    page = template.replace("__DATA__", data)
+    built = page_data()
+    page = template.replace("__DATA__", json.dumps(built, ensure_ascii=False))
     out = ROOT / "dist"
     out.mkdir(exist_ok=True)
     (out / "artifact.html").write_text(page)
     (out / "index.html").write_text(SKELETON.format(page=page))
-    print(f"Wrote {out / 'index.html'} and {out / 'artifact.html'}")
+    problems = [f"{name}: {p}" for name in ("index.html", "artifact.html")
+                for p in self_check((out / name).read_text(), built)]
+    if problems:
+        print("\n".join(problems))
+        return 1
+    print(f"Wrote {out / 'index.html'} and {out / 'artifact.html'} ({len(built['builds'])} builds, checked)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

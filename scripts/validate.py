@@ -14,6 +14,7 @@ Rules:
 - beast forms and Black Book powers resolve; every `mentions` term exists on UESP and is not unobtainable
 - text names nothing outside its `mentions`: every UESP-checked term, and anything shaped like an item name,
   that a description, In play line, lore pick, kit note or challenge rule uses must be listed by that block
+- every ledger ref (A1, C12, G40, D3, M5 ...) names a row that exists in docs/research/
 - lore picks that list 3+ skills share at least half of them with their build (unless they say "adds")
 - community `perks` are UESP player perks in the build's skills (or the werewolf tree), named in mentions
 - gear kits and challenge runs have ledger refs, known builds, and items/mentions that exist on UESP
@@ -28,8 +29,10 @@ import re
 import sys
 from collections import Counter
 
-from common import (ROOT, ARMOR, ATTRS, BEAST_FORMS, EVIDENCE, HANDS, REQUIRES, SKILLS, STYLE_CODES, UNUSABLE_PAGES, by_id,
-                    card_weights, load, load_lookup, npc_classes, plain_names, skills_in_text, text_holders, unlisted,
+import yaml
+
+from common import (ROOT, ARMOR, cache, ATTRS, BEAST_FORMS, EVIDENCE, HANDS, REQUIRES, SKILLS, STYLE_CODES, UNUSABLE_PAGES, by_id,
+                    card_weights, ledger_refs, ledger_rows, load, load_lookup, npc_classes, plain_names, skills_in_text, text_holders, unlisted,
                     uesp_terms, weights)
 
 LEDGER_REF = re.compile(r"[A-F]\d+")
@@ -225,7 +228,6 @@ def main():
             if not isinstance(v, int) or not 1 <= v <= 9:
                 errors.append(f"class {eid}: weight {k}={v!r} is not 1-9")
 
-    import yaml
     left_out = yaml.safe_load((ROOT / "data" / "excluded_classes.yaml").read_text())["excluded"]
     errors += [f"class {e} is in both classes.json and excluded_classes.yaml"
                for ids in left_out.values() for e in ids if e in classes]
@@ -293,11 +295,14 @@ def main():
             used += eids
 
     n_kits, n_mods = check_layers({b["id"] for b in doc["builds"]}, terms, errors)
+    rows = ledger_rows()
+    errors += [f"{label}: ref {ref} is not a row in docs/research/"
+               for label, ref in ledger_refs(doc, load_lookup("kits"), load_lookup("modifiers")) if ref not in rows]
     known = {t for t, r in terms.items() if not r["missing"]}
     plain = plain_names(stone_list, shout_list, book_list)
     for label, text, own in text_holders(doc, load_lookup("kits"), load_lookup("modifiers")):
         errors += [f"{label}: text names {n!r}, which is not in its mentions" for n in unlisted(text, own, known, plain)]
-    trees = json.loads((ROOT / "docs" / "sources" / "uesp-skill-perks.json").read_text())["trees"]
+    trees = cache("skill-perks")["trees"]
     for code in SKILLS:
         tree = trees.get(code, [])
         if not any(p["levels"][0] == 0 for p in tree):

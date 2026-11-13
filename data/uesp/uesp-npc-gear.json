@@ -1,5 +1,5 @@
 {
- "retrieved": "2026-11-12",
+ "retrieved": "2026-11-13",
  "source": "https://en.uesp.net/w/api.php",
  "npcs": {
   "Adrianne Avenicci": [
@@ -28,9 +28,6 @@
   ],
   "Atub": [
    "Hooded Black Mage Robes"
-  ],
-  "Balimund": [
-   "The Scorched Hammer"
   ],
   "Belrand": [
    "Iron Armor",
@@ -115,8 +112,7 @@
   "Farkas": [
    "Steel Armor",
    "Skyforge Steel Greatsword",
-   "Iron Greatsword",
-   "Wolf Armor"
+   "Iron Greatsword"
   ],
   "Feran Sadri": [
    "Vampire Armor"

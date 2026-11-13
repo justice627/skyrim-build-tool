@@ -15,6 +15,7 @@ Needs Python 3.10 or newer.
 
 ```bash
 pip install -r requirements.txt
+python -m unittest discover -s tests
 python scripts/validate.py
 python scripts/build.py
 python -m http.server -d dist 8000   # then open http://localhost:8000
@@ -34,7 +35,7 @@ gh repo create skyrim-build-tool --public --source . --push   # or create it on 
 claude                                                        # open the folder in Claude Code
 ```
 
-GitHub Pages is set up: the workflow validates, builds and deploys on every push to `main`.
+GitHub Pages is set up: the workflow runs the tests, validates, builds, checks the page in a browser and deploys on every push to `main`.
 
 ## Where things are
 

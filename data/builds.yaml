@@ -6,7 +6,7 @@
 #   evidence  grade of the skill weights (sourced for every build read from UESP classes)
 #   stone     {early, final (optional), evidence, ref (optional ledger row)}; ids from stones.yaml
 #   shouts    {ids (2 to 4), evidence, ref (optional)}; ids from shouts.yaml
-#   examples  optional, up to 3 named NPCs who use the build's classes (from docs/sources/uesp-npc-classes.json);
+#   examples  optional, up to 3 named NPCs who use the build's classes (from data/uesp/uesp-npc-classes.json);
 #             variants can have their own examples
 #   lore      optional ledger C picks: {name, ref, evidence, changes, requires (optional), npc (optional,
 #             must be in the UESP NPC data)}. Text is condensed from the ledger row, nothing added.

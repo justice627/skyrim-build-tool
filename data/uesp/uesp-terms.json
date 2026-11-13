@@ -1,5 +1,5 @@
 {
- "retrieved": "2026-11-12",
+ "retrieved": "2026-11-13",
  "source": "https://en.uesp.net/w/api.php",
  "terms": {
   "Adept Conjuration": {
@@ -1666,13 +1666,6 @@
    "section": "",
    "missing": false,
    "tree": null
-  },
-  "The Scorched Hammer": {
-   "page": "Skyrim:The Scorched Hammer",
-   "section": "",
-   "missing": false,
-   "tree": null,
-   "origin": "base"
   },
   "Thieves Guild Armor": {
    "page": "Skyrim:Thieves Guild Armor",

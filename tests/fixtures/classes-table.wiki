@@ -1,0 +1,15 @@
+==Skill and Attribute Weights==
+{| class="wikitable sortable"
+! Class !! EditorID !! ID
+! [[Skyrim:Archery|ARC]] !! [[Skyrim:Block|BLO]] !! [[Skyrim:Heavy Armor|HVA]] !! [[Skyrim:One-handed|1HD]] !! [[Skyrim:Smithing|SMI]] !! [[Skyrim:Two-handed|2HD]] !!  !! [[Skyrim:Alteration|ALT]] !! [[Skyrim:Conjuration|CON]] !! [[Skyrim:Destruction|DES]] !! [[Skyrim:Enchanting|ENC]] !! [[Skyrim:Illusion|ILU]] !! [[Skyrim:Restoration|RES]] !!  !! [[Skyrim:Alchemy|ALC]] !! [[Skyrim:Light Armor|LTA]] !! [[Skyrim:Lockpicking|LOC]] !! [[Skyrim:Pickpocket|PIC]] !! [[Skyrim:Sneak|SNK]] !! [[Skyrim:Speech|SPE]] !!  !! [[Skyrim:Health|Hea]] !! [[Skyrim:Magicka|Mag]] !! [[Skyrim:Stamina|Sta]]
+|-
+|{{Anchor|Apothecary}}
+|{{Anchor|TrainerAlchemyExpert}}
+|{{ID|000e3a6e}}
+|  ||  ||  ||  ||  ||  ||  || 1 ||  ||  ||  ||  ||  ||  || 4 ||  ||  || 2 || 2 || 3 ||  || 1 || 1 || 1
+|-
+|{{Anchor|Warrior}}
+|{{Anchor|CombatWarrior1H}}
+|{{ID|00013176}}
+| 2 || 2 || 3 || 3 ||  || 1 ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  ||  || 4 ||  || 2
+|}

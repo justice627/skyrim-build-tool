@@ -238,7 +238,7 @@ function gearLine(b){
 }
 function wornBlock(b){
   if(!b.gear.worn.length)return '';
-  return `<div class="worn"><div class="plab">As worn by</div>${b.gear.worn.map(w=>`<div><b>${esc(w.npc)}</b>: ${w.items.map(i=>esc(i.n)+(i.tag?` <span class="req">${esc(i.tag)}</span>`:'')).join(', ')}</div>`).join('')}<div class="psrc">From their UESP pages.</div></div>`;
+  return `<div class="worn"><div class="plab">As worn by</div>${b.gear.worn.map(w=>`<div><b>${esc(w.npc)}</b>: ${w.items.map(i=>esc(i.n)+(i.tag?` <span class="req">${esc(i.tag)}</span>`:'')).join(', ')}</div>`).join('')}<div class="psrc">From their UESP pages. Not a full inventory.</div></div>`;
 }
 // Phones fold Gear, Race and In play behind one line, so a card stays short; wider screens show them open.
 const PHONE=matchMedia('(max-width:640px)');
